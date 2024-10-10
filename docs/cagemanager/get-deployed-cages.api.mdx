@@ -1,13 +1,13 @@
 ---
-id: get-the-public-key-of-a-cage
-title: "Get the public key of a cage."
-description: "Fetches the public key of a cage."
-sidebar_label: "Get the public key of a cage."
+id: get-deployed-cages
+title: "Get deployed cages."
+description: "Get deployed cages."
+sidebar_label: "Get deployed cages."
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU8Fu2zAM/RWBpxVQl2BAL74FQ1fkMGBIu1OQAyOzsVpZUik6WGDo3wfZmecEXbGTLZF8fHx86qGmZNhGscFDBd9ITENJSUMqdntnjXqlkwrPCpXBA30GDREZWxLiBNW2B1vqIkoDGjy2BBWUzHUNGpJpqEWoepBTLJEkbP0Bsgamt84y1VAJd6SveKzr0rOwMME53AfGElEpoiHIu1KfYvCJUkH/slyWzyXGU0Nq87i6mkMam6ZRTPBCXgaC9EsW0WEZp5+I+865nLOGu/c6rL0Qe3TqkfhIrO6ZA1/CYozOmoH84iWFC/BruA1FpkRekqKCpML+hYyA/qPedI4cIrHYcfqWUsIDvSPzhc7bKXGnQay4knm3XI6scx7mbEmaUEMFBxoalb1WsOjHlebFKObtK51Ag/XPYeh6BvuKB/qOHg/EavVjDddbXakj8UmZEJzCaJUE1Q7ps/vSKKnq9gY0HInTWOlQKEnxTQxJWhx0PLvtgeRDv15w6P8u57/MfhZ05o6soWNXkEZxtlBNfp+ps9PQhCQl3vd7TPSTXc7l+q0jPkG13Wk4IlvcF+22PdQ2lf8aqmd06fpJzIl/2pyXeqM+fij/4H++RF+WeETXlRNoKLyn15t3WUNDWBMP9MbgyhiKMiubI+9m/nm4f4KcfwMbJnz1
+api: eJyVkk1r3DAQhv+KmFtB7S6FXnxbSggt9IN+nIwPs/asrVSWlJnxUmP834tssvEmaaG+yMyX3mdeTaDYChQlNJR8HKGywCQpBiGBYoK3+30+GpKaXVIXAxRwMB+/f/lskBlHE0+mxpYELNQxKAXNDZiSdzXmht2d5K4JpO6ox/ynYyIoYBkAFpxSL5t4PN5RrWAhcUzE6lYtAXvaVImyCy3MdklIwvql7GxBnfoceo8twZw/Cw2dcPD6nO2WAjF6c8Mc+X+Yrsd8o8QkFFQM5UnmwvRvxp5EsswXQZjuB8fUZL8eCqtHvnf7/ar6wngNpmY1mZrVsTdgoSftYgMFtLSIQe2ggN2Doy6c4qJls8JPGLAlNoevH+DpJQdzJh5NHaM3mJzRaPqlfBNfZpvi9SuwcCaWtdOjkmh2M0XRHsOj43+RfnXzZV1Kv3WXPLqQZw3sc27FKmHFqix0UTQHpumIQj/Zz3MO3w/EIxRlZeGM7PCYoctqttARNsRQlBP8ojGT1jWlvLIz+mF5zE9fx1xt1nt78wPm+Q/Fkixg
 sidebar_class_name: "get api-method"
-info_path: docs/petstore/cagemanager-api
+info_path: docs/cagemanager/cagemanager-api
 custom_edit_url: null
 ---
 
@@ -27,54 +27,22 @@ import TabItem from "@theme/TabItem";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get the public key of a cage."}
+  children={"Get deployed cages."}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/{cageId}/public-key"}
+  path={"/cages"}
 >
   
 </MethodEndpoint>
 
 
 
-Fetches the public key of a cage.
+Get deployed cages.
 
-<Heading
-  id={"request"}
-  as={"h2"}
-  className={"openapi-tabs__heading"}
-  children={"Request"}
->
-</Heading>
-
-<details
-  style={{"marginBottom":"1rem"}}
-  className={"openapi-markdown__details"}
-  data-collapsed={false}
-  open={true}
->
-  <summary
-    style={{}}
-  >
-    <h3
-      className={"openapi-markdown__details-summary-header-params"}
-    >
-      Path Parameters
-    </h3>
-  </summary><div>
-    <ul>
-      <ParamsItem
-        className={"paramsItem"}
-        param={{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}}
-      >
-        
-      </ParamsItem>
-    </ul>
-  </div>
-</details><div>
+<div>
   <div>
     <ApiTabs
       label={undefined}
@@ -87,7 +55,7 @@ Fetches the public key of a cage.
         <div>
           
           
-          The RSA public key of this cage.
+          A JSON array of cages
           
           
         </div><div>
@@ -96,8 +64,8 @@ Fetches the public key of a cage.
             schemaType={"response"}
           >
             <TabItem
-              label={"text/plain"}
-              value={"text/plain"}
+              label={"application/json"}
+              value={"application/json"}
             >
               <SchemaTabs
                 className={"openapi-tabs__schema"}
@@ -126,22 +94,62 @@ Fetches the public key of a cage.
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
-                      any
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"name"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"namespace"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
                     </ul>
                   </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"name\": \"string\",\n    \"namespace\": \"string\"\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
             </TabItem>
           </MimeTabs>
         </div>
       </TabItem><TabItem
-        label={"500"}
-        value={"500"}
+        label={"default"}
+        value={"default"}
       >
         <div>
           
           
-          Internal Server Error
+          General Error
           
           
         </div><div>

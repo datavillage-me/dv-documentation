@@ -1,10 +1,4 @@
----
-sidebar_position: 1
-tags:
-  - test
----
-
-# Datavillage user manual intro
+Hello world from create-datacontract
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam nisi nec dictum faucibus. Proin sodales molestie velit non vestibulum. Curabitur id ex at est elementum aliquet dictum vitae enim. Integer sit amet viverra quam. Etiam pharetra risus in dui accumsan facilisis. Nullam ullamcorper tempus augue id vulputate. Ut ut tempus massa.
 

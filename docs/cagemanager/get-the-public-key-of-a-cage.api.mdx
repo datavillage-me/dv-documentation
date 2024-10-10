@@ -1,13 +1,13 @@
 ---
-id: get-the-logs-of-the-algo
-title: "Get the logs of the algo"
-description: "Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints."
-sidebar_label: "Get the logs of the algo"
+id: get-the-public-key-of-a-cage
+title: "Get the public key of a cage."
+description: "Fetches the public key of a cage."
+sidebar_label: "Get the public key of a cage."
 hide_title: true
 hide_table_of_contents: true
-api: eJzNU8Fu2zAM/RWCpxXQmmJH34Jh63IYUBTbKcuBkRlbmyypEp0uMPzvA520C9xswHqaL6ZpiXzv8XHAmovNLomLASv8yGJbLiAtg49NgbibYvJNhNyH4EIDLkw5Sw1fw71rWoEQH4EgebL8KfqaMySSFvaUHW09gytAdc01bNlSXxikdQUenfdQkncCLkiErvfikmfgUKfogpTrbwENJsrUsXAuWK0HdIpU66PBQB1jhYplVaPBYlvuCKsB5ZD0T5HsQoOjwcwPvctcYyW5ZzNjvqqfuNroPW1jJv0DJZFlHM3FtsJdulPS7UT6X/qPG82UFEPhouff3dzoy8YgHERDSsk7O8FYfC+KcnhZn3KmAxp0wl250Hd6DHYsbayxwoZlUlRarHAxHIUbFzrsxTDjM2rdsItTWSde676nhj9ToIYzLO9WONdxCXvOB7AxeqDkQMc6HT/La9MC1dsrNLjnXI43PQkXUaVSLNLRxPck9C3LRU/O25/p9596+TQe4Z+ySJ5cUMJ99or9OJU1Vs92VtxosJobbWOwjUX08DBsqfDX7MdR0w895wNW643BJ8TT0tSuaFxjtSNf5vY/1+3N/cmoV/D3pfgDmSdjBrXlnnyvX2jwBx9+b6ou1Ksgva7rXL9xMxpsmTRWdY6nltZykrP7LzZQt/Z5lW4/fMFx/AVeUNBY
+api: eJyNU8Fu2zAM/RWBpxVQl2BAL74FQ1fkMGBIu1PgA2OztlpZUik6WGDo3wfZmecEXbGTLZF8fHx8GkCwiVDsofPOiGcoNdQUKzZBjHdQwDeSqqWopCUV+oM1lXqlk/LPClWFDX0GDQEZOxLiDDWAyXUBpQUNDjuCAnLmtgYNsWqpQygGkFPIkShsXANJA9Nbb5hqKIR7uuaxrXPPzKLy1uLBM+aIigErglTm+hi8ixQz+pf1On8uMZ5aUrvHzdUc0po4j1J5J+RkJEi/ZBUs5nGGmbjrrU0pabh7r8PWCbFDqx6Jj8TqntnzJSyGYE01kl+9RH8Bfg23o8AUyUlUlJGUP7xQJaD/qDefA/tALGaavqMYsaF3ZL7QeT8nlhrEiM2Zd+v1xDqlcc6OpPU1FNDQ2CjvtYDVMK00rSYxb1/pBBqMe/Zj1zPYV2zoOzpsiNXmxxaut7pRR+KTqry3CoNR4lU3pi/uc6Ooitsb0HAkjlOlRaEo2TfBR+lw1PHstgeSD/16wWH4u5z/MvtZ0IU7koaebUaaxNlDMft9oU6pofVRcnwYDhjpJ9uU8vVbT3yCYl9qOCIbPGTt9gPUJub/GopntPH6SSyJf9qdl3qjPn4o/+B/vkSXl3hE2+cTaMi859ebyqShJayJR3pTcFNVFGRRtkQuF/55uH+ClH4DNcSDUg==
 sidebar_class_name: "get api-method"
-info_path: docs/petstore/cagemanager-api
+info_path: docs/cagemanager/cagemanager-api
 custom_edit_url: null
 ---
 
@@ -27,21 +27,20 @@ import TabItem from "@theme/TabItem";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get the logs of the algo"}
+  children={"Get the public key of a cage."}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/{cageId}/logs/{tempPlaceholder}"}
+  path={"/{cageId}/public-key"}
 >
   
 </MethodEndpoint>
 
 
 
-Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
-
+Fetches the public key of a cage.
 
 <Heading
   id={"request"}
@@ -72,11 +71,6 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
         param={{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}}
       >
         
-      </ParamsItem><ParamsItem
-        className={"paramsItem"}
-        param={{"in":"path","name":"tempPlaceholder","schema":{"type":"string"},"required":true}}
-      >
-        
       </ParamsItem>
     </ul>
   </div>
@@ -93,7 +87,61 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
         <div>
           
           
+          The RSA public key of this cage.
           
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"text/plain"}
+              value={"text/plain"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      any
+                    </ul>
+                  </details>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal Server Error
           
           
         </div><div>
@@ -132,27 +180,16 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
-                      <li>
-                        <div
-                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
-                        >
-                          Array [
-                        </div>
-                      </li><div
-                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      <SchemaItem
+                        collapsible={false}
+                        name={"message"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
                       >
                         
-                        
-                        string
-                        
-                        
-                      </div><li>
-                        <div
-                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
-                        >
-                          ]
-                        </div>
-                      </li>
+                      </SchemaItem>
                     </ul>
                   </details>
                 </TabItem><TabItem
@@ -160,7 +197,7 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
                   value={"Example (from schema)"}
                 >
                   <ResponseSamples
-                    responseExample={"[\n  \"string\"\n]"}
+                    responseExample={"{\n  \"message\": \"string\"\n}"}
                     language={"json"}
                   >
                     

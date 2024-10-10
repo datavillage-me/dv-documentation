@@ -4,9 +4,19 @@ info:
   description: A very cool api to manage very cool cages :-)
   version: latest
 
+tags:
+  - name: deploy
+    description: Endpoints related to deploying of a cage
+    x-displayName: Cage Deployment
+  - name: monitor
+    description: Endpoints to monitor a running cage
+    x-displayName: Cage Monitoring
+
 paths:
   /cages:
     get:
+      tags:
+        - deploy
       summary: Get deployed cages.
       responses:
         "200":
@@ -27,6 +37,8 @@ paths:
   "/{cageId}/deploy":
     post:
       summary: Deploy a cage
+      tags:
+        - deploy
       description: >
         Deploys a cage defined in a collaboration space.
       parameters:
@@ -69,6 +81,8 @@ paths:
   "/{cageId}/delete":
     post:
       summary: Delete a cage
+      tags:
+        - deploy
       description: >
         Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
       parameters:
@@ -103,6 +117,8 @@ paths:
   "/{cageId}/public-key":
     get:
       summary: Get the public key of a cage.
+      tags:
+        - monitor
       description: "Fetches the public key of a cage."
       parameters:
         - in: path
@@ -127,6 +143,8 @@ paths:
   "/{cageId}/logs/{tempPlaceholder}":
     get:
       summary: Get the logs of the algo
+      tags:
+        - monitor
       description: >
         Fetches the logs of the algo running in the cage.
         Right now a placeHolder path variable is added because this will split into multiple endpoints.

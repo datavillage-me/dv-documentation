@@ -7,18 +7,18 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Datavillage Developer Documentation",
+  tagline: "Trusted Data Collaborations",
+  url: "https://datavillage.me",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "Datavillage", // Usually your GitHub org/user name.
+  projectName: "Developer Documentation", // Usually your repo name.
 
   presets: [
     [
@@ -55,23 +55,22 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "My Site",
+      title: "Datavillage Developer Documentation",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "Datavillage Logo",
+        src: "img/logo.png",
       },
       items: [
         {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Tutorial",
+          label: "User Manual",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         {
-          label: "Petstore API",
+          label: "Cage Manager API",
           position: "left",
-          to: "/docs/category/petstore-api",
+          to: "/docs/developer/cagemanager",
         },
         {
           href: "https://github.com/facebook/docusaurus",
@@ -112,10 +111,6 @@ const config: Config = {
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
             {
               label: "GitHub",
               href: "https://github.com/facebook/docusaurus",
@@ -195,9 +190,9 @@ const config: Config = {
         id: "openapi",
         docsPluginId: "classic",
         config: {
-          petstore: {
+          cagemanager: {
             specPath: "examples/cage-manager.yaml",
-            outputDir: "docs/petstore",
+            outputDir: "docs/cagemanager",
             downloadUrl:
               "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
             sidebarOptions: {

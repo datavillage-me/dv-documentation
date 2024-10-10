@@ -4,39 +4,53 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "petstore/cagemanager-api",
+      id: "cagemanager/cagemanager-api",
     },
     {
       type: "category",
-      label: "UNTAGGED",
+      label: "Cage Deployment",
+      link: {
+        type: "doc",
+        id: "cagemanager/deploy",
+      },
       items: [
         {
           type: "doc",
-          id: "petstore/get-deployed-cages",
+          id: "cagemanager/get-deployed-cages",
           label: "Get deployed cages.",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "petstore/deploy-a-cage",
+          id: "cagemanager/deploy-a-cage",
           label: "Deploy a cage",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "petstore/delete-a-cage",
+          id: "cagemanager/delete-a-cage",
           label: "Delete a cage",
           className: "api-method post",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Cage Monitoring",
+      link: {
+        type: "doc",
+        id: "cagemanager/monitor",
+      },
+      items: [
         {
           type: "doc",
-          id: "petstore/get-the-public-key-of-a-cage",
+          id: "cagemanager/get-the-public-key-of-a-cage",
           label: "Get the public key of a cage.",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "petstore/get-the-logs-of-the-algo",
+          id: "cagemanager/get-the-logs-of-the-algo",
           label: "Get the logs of the algo",
           className: "api-method get",
         },
