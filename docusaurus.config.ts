@@ -7,7 +7,7 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: "Datavillage Developer Documentation",
+  title: "Datavillage Documentation",
   tagline: "Trusted Data Collaborations",
   url: "https://datavillage.me",
   baseUrl: "/",
@@ -18,7 +18,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Datavillage", // Usually your GitHub org/user name.
-  projectName: "Developer Documentation", // Usually your repo name.
+  projectName: "Documentation", // Usually your repo name.
 
   presets: [
     [
@@ -46,7 +46,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "Datavillage Developer Documentation",
+      title: "Datavillage Documentation",
       logo: {
         alt: "Datavillage Logo",
         src: "img/logo.png",
