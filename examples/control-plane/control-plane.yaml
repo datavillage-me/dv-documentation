@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: ControlPlane API
+  version: latest
+
+paths:
+  /auth/currentCredentials:
+    $ref: "./paths/auth/currentCredentialsGET.yaml"
+  /collaborationSpaces:
+    $ref: "./paths/collaborationSpaces.yaml"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []

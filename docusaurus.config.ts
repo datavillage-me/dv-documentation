@@ -32,15 +32,6 @@ const config: Config = {
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          onInlineAuthors: "ignore",
-          onUntruncatedBlogPosts: "ignore",
-        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -70,7 +61,13 @@ const config: Config = {
         {
           label: "Cage Manager API",
           position: "left",
-          to: "/docs/developer/cagemanager",
+          to: "/docs/api/cage-manager",
+        },
+        {
+          label: "Control Plane API",
+          position: "left",
+          to: "/docs/api/control-plane",
+          docsPluginId: "classic",
         },
         {
           href: "https://github.com/facebook/docusaurus",
@@ -187,14 +184,20 @@ const config: Config = {
     [
       "docusaurus-plugin-openapi-docs",
       {
-        id: "openapi",
+        id: "cage-manager",
         docsPluginId: "classic",
         config: {
           cagemanager: {
             specPath: "examples/cage-manager.yaml",
-            outputDir: "docs/cagemanager",
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
+            outputDir: "docs/api/cage-manager",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          controlplane: {
+            specPath: "examples/control-plane/control-plane.yaml",
+            outputDir: "docs/api/control-plane",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",

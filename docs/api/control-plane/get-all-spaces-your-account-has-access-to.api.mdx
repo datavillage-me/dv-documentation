@@ -1,13 +1,13 @@
 ---
-id: get-the-logs-of-the-algo
-title: "Get the logs of the algo"
-description: "Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints."
-sidebar_label: "Get the logs of the algo"
+id: get-all-spaces-your-account-has-access-to
+title: "Get all spaces your account has access to."
+description: "Get all spaces your account has access to."
+sidebar_label: "Get all spaces your account has access to."
 hide_title: true
 hide_table_of_contents: true
-api: eJzNU8Fu2zAM/RWCpxXQmmJH34Jh63IYUBTbKcuBkRlbmyypEp0uMPzvA520C9xswHqaL6ZpiXzv8XFAoaZgtcYuBicx48ZgzcVml8TFgBV+ZLEtF5CWwcemQNxNMfkmQu5DcKEBF6acpYav4d41rUCIj0CQPFn+FH3NGRJJC3vKjraewRWguuYatmypLwzSugKPznsoyTsBFyRC13txyTNwqFN0Qcr1t4AGE2XqWDgr+AGdItX6aDBQx1ihYlnVaLDYljvCakA5JP1TJLvQ4Ggw80PvMtdYSe55znxVP3G10Xvaxkz6B0oiyziai22Fu3SnpNuJ9L/0HzeaKSmGwkXPv7u50ZeNQTiIhpSSd3aCsfheFOXwsj7lTAc06IS7cqHv9BjsWNpYY4UNy6SotFjhYjgKNy502IthxmfUumEXp7JOvNZ9Tw1/pkANZ1jerXCu4xL2nA9gY/RAyYGOdTp+ltemBaq3V2hwz7kcb3oSLqJKpViko4nvSehblouenLc/0+8/9fJpPMI/ZZE8uaCE++wV+3Eqa6ye7ay40WA1N9rGYBuL6OFh2FLhr9mPo6Yfes4HrNYbg0+Ip6WpXdG4xmpHvsztf67bm/uTUa/g70vxBzJPxgxqyz35Xr/Q4A8+/N5UXahXQXpd17l+42Y02DJprOocTy2t5SRn919soG7t8yrdfviC4/gLHb/WtQ==
+api: eJyVkj1v3DAMhv+KwFnoBR29HYI2aIY0wDXoYHigZeasVJYUij7UMPzfC/oO7jXJUi8m+PJDfMgZmEpOsVCBaobPNzf666g49ll8ilDB3twfvj8YZMbJpGfjUgjYJkbVTcnoqIAFl6JQFM3HnIN3q757KVpkhuJ6GlAtmTJBBWs9sOCFhnLlT+0LOQELTK+jZ+qgqsF3YCHiQNoIhY6JJ2gsZE6ZWPz5+b67qlOEfTzCcsn7SNgqvRcXC+IlqOv2et6DjgvL+tk3oO5IDIZwQWKmNLJB59IYxfRY1KZSjKRPYGEg6VMHFRxJh80oPVSwc++aKdtCbmQvE1T1DC0hE+9HTaibpfkrH5TxGcV10DZcL5K12hoG1SUI7MX4mnhAgQruf/5YCfj4nNb0jUQUTuExYCSzf/wGFk7E5Tx9QKEiijWnIgOuWz+j/z8y/0Dd3i70W3Y5oI/aYuSg2plaDR9Rayz0qYjK89xioScOy6Lu15F053Vj4YTssdXh6max0BN2xCvlXzTp7TtHWfdzwjCuV/v2tJX/tsu7LwruD7wlJmI=
 sidebar_class_name: "get api-method"
-info_path: docs/cagemanager/cagemanager-api
+info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
 ---
 
@@ -27,60 +27,22 @@ import TabItem from "@theme/TabItem";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get the logs of the algo"}
+  children={"Get all spaces your account has access to."}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/{cageId}/logs/{tempPlaceholder}"}
+  path={"/collaborationSpaces"}
 >
   
 </MethodEndpoint>
 
 
 
-Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
+Get all spaces your account has access to.
 
-
-<Heading
-  id={"request"}
-  as={"h2"}
-  className={"openapi-tabs__heading"}
-  children={"Request"}
->
-</Heading>
-
-<details
-  style={{"marginBottom":"1rem"}}
-  className={"openapi-markdown__details"}
-  data-collapsed={false}
-  open={true}
->
-  <summary
-    style={{}}
-  >
-    <h3
-      className={"openapi-markdown__details-summary-header-params"}
-    >
-      Path Parameters
-    </h3>
-  </summary><div>
-    <ul>
-      <ParamsItem
-        className={"paramsItem"}
-        param={{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}}
-      >
-        
-      </ParamsItem><ParamsItem
-        className={"paramsItem"}
-        param={{"in":"path","name":"tempPlaceholder","schema":{"type":"string"},"required":true}}
-      >
-        
-      </ParamsItem>
-    </ul>
-  </div>
-</details><div>
+<div>
   <div>
     <ApiTabs
       label={undefined}
@@ -93,7 +55,7 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
         <div>
           
           
-          
+          A JSON array of collaboration spaces
           
           
         </div><div>
@@ -138,15 +100,34 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
                         >
                           Array [
                         </div>
-                      </li><div
-                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"id"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
                       >
                         
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"name"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
                         
-                        string
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"category"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
                         
-                        
-                      </div><li>
+                      </SchemaItem><li>
                         <div
                           style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
                         >
@@ -160,7 +141,7 @@ Fetches the logs of the algo running in the cage. Right now a placeHolder path v
                   value={"Example (from schema)"}
                 >
                   <ResponseSamples
-                    responseExample={"[\n  \"string\"\n]"}
+                    responseExample={"[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"category\": \"string\"\n  }\n]"}
                     language={"json"}
                   >
                     

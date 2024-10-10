@@ -4,31 +4,31 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "cagemanager/cagemanager-api",
+      id: "api/cage-manager/cagemanager-api",
     },
     {
       type: "category",
       label: "Cage Deployment",
       link: {
         type: "doc",
-        id: "cagemanager/deploy",
+        id: "api/cage-manager/deploy",
       },
       items: [
         {
           type: "doc",
-          id: "cagemanager/get-deployed-cages",
+          id: "api/cage-manager/get-deployed-cages",
           label: "Get deployed cages.",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "cagemanager/deploy-a-cage",
+          id: "api/cage-manager/deploy-a-cage",
           label: "Deploy a cage",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "cagemanager/delete-a-cage",
+          id: "api/cage-manager/delete-a-cage",
           label: "Delete a cage",
           className: "api-method post",
         },
@@ -39,18 +39,18 @@ const sidebar: SidebarsConfig = {
       label: "Cage Monitoring",
       link: {
         type: "doc",
-        id: "cagemanager/monitor",
+        id: "api/cage-manager/monitor",
       },
       items: [
         {
           type: "doc",
-          id: "cagemanager/get-the-public-key-of-a-cage",
+          id: "api/cage-manager/get-the-public-key-of-a-cage",
           label: "Get the public key of a cage.",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "cagemanager/get-the-logs-of-the-algo",
+          id: "api/cage-manager/get-the-logs-of-the-algo",
           label: "Get the logs of the algo",
           className: "api-method get",
         },

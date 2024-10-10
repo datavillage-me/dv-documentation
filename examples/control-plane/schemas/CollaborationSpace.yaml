@@ -1,0 +1,12 @@
+type: object
+required:
+  - id
+  - name
+  - category
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  category:
+    type: string
