@@ -2,6 +2,13 @@ openapi: 3.0.0
 info:
   title: ControlPlane API
   version: latest
+tags:
+  - name: auth
+    description: Endpoints related to authorization and authentication
+    x-displayName: Auth
+  - name: spaces
+    description: Endpoints related to collaboration spaces
+    x-displayName: Collaboration Spaces
 
 paths:
   /auth/currentCredentials:

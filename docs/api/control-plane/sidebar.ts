@@ -8,7 +8,11 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "UNTAGGED",
+      label: "Auth",
+      link: {
+        type: "doc",
+        id: "api/control-plane/auth",
+      },
       items: [
         {
           type: "doc",
@@ -16,10 +20,20 @@ const sidebar: SidebarsConfig = {
           label: "Get your current credentials",
           className: "api-method get",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Collaboration Spaces",
+      link: {
+        type: "doc",
+        id: "api/control-plane/spaces",
+      },
+      items: [
         {
           type: "doc",
           id: "api/control-plane/get-all-spaces-your-account-has-access-to",
-          label: "Get all spaces your account has access to.",
+          label: "Get all spaces your account has access to",
           className: "api-method get",
         },
       ],
