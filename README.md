@@ -1,6 +1,5 @@
 # Datavillage Documentation
 
-Testje
 Created with (docusaurus-openapi-docs)[https://github.com/PaloAltoNetworks/docusaurus-openapi-docs] plugin for (Docusaurus)[https://docusaurus.io/].
 
 To start the project, do the expected steps:
