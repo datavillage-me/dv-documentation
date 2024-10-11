@@ -196,7 +196,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
           controlplane: {
-            specPath: "examples/control-plane/control-plane.yaml",
+            specPath: "examples/control-plane.yaml",
             outputDir: "docs/api/control-plane",
             sidebarOptions: {
               groupPathsBy: "tag",
