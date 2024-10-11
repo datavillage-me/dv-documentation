@@ -18,7 +18,6 @@ yarn start
 
 A development server will start on `http://localhost:3000`.
 
-The `Petstore API` is generated from cage manager OpenAPI specs. To rebuild, run
 
 ```bash
 yarn docusaurus gen-api-docs all
