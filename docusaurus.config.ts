@@ -10,15 +10,16 @@ const config: Config = {
   title: "Datavillage Documentation",
   tagline: "Trusted Data Collaborations",
   url: "https://datavillage.me",
-  baseUrl: "/",
+  baseUrl: "/dv-documentation/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logo.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Datavillage", // Usually your GitHub org/user name.
-  projectName: "Documentation", // Usually your repo name.
+  organizationName: "datavillage-me", // Usually your GitHub org/user name.
+  projectName: "dv-documentation", // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
