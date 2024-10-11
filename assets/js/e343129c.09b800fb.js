@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus_openapi_test=self.webpackChunkdocusaurus_openapi_test||[]).push([[57],{30278:s=>{s.exports=JSON.parse('{"tags":[{"label":"test","permalink":"/dv-documentation/docs/tags/test","count":1}]}')}}]);
