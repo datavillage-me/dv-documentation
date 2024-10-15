@@ -1,0 +1,166 @@
+openapi: 3.0.0
+info:
+  title: ControlPlane API
+  version: latest
+servers:
+  - url: https://<cage-manager-api>
+security:
+  - bearerAuth: []
+tags:
+  - name: collaboration-spaces
+    description: Collaboration Spaces
+  - name: auth
+    description: Authentication
+paths:
+  /auth/currentCredentials:
+    get:
+      operationId: getCurrentCredentials
+      tags:
+        - auth
+      description: Get your current credentials
+      responses:
+        '200':
+          description: A JSON array of collaboration spaces
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - isAdmin
+                properties:
+                  isAdmin:
+                    type: boolean
+  /collaborationSpaces:
+    get:
+      operationId: getCollaborationSpaces
+      tags:
+        - collaboration-spaces
+      description: Get all spaces your account has access to.
+      responses:
+        '200':
+          description: A JSON array of collaboration spaces
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CollaborationSpace'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /collaborationSpaces/{spaceId}:
+    get:
+      operationId: getCollaborationSpace
+      tags:
+        - collaboration-spaces
+      summary: Get a specific collaboration space
+      description: |
+        This fetches a collaboration space, if you have access to this space. The necessary roles for this are:
+          * abc
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+      responses:
+        '200':
+          description: A JSON object representing a collaboration space
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollaborationSpace'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '403':
+          $ref: '#/components/responses/ForbiddenError'
+components:
+  schemas:
+    CollaborationSpace:
+      type: object
+      required:
+        - id
+        - name
+        - owner
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        owner:
+          type: string
+        category:
+          type: string
+        collaborators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Collaborator'
+    Collaborator:
+      description: Collaborator
+      discriminator:
+        propertyName: role
+        mapping:
+          CodeProvider: '#/components/schemas/CodeProvider'
+          DataProvider: '#/components/schemas/DataProvider'
+      oneOf:
+        - $ref: '#/components/schemas/CodeProvider'
+        - $ref: '#/components/schemas/DataProvider'
+    CodeProvider:
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborator'
+        - type: object
+          description: Someone who provides code
+          properties:
+            role:
+              type: string
+              example: CodeProvider
+            algoSettings:
+              type: object
+              properties:
+                test:
+                  type: string
+    DataProvider:
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborator'
+        - type: object
+          description: Someone who provides Data
+          properties:
+            role:
+              type: string
+              example: DataProvider
+    AbstractCollaborator:
+      type: object
+      description: Abstract Collaborator
+      required:
+        - clientId
+      properties:
+        clientId:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    UnauthorizedError:
+      description: User is not authenticated
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
+            required:
+              - error_message
+    ForbiddenError:
+      description: Authenticated user does not have access
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
+            required:
+              - error_message
