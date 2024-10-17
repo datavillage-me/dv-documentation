@@ -26,6 +26,12 @@ const sidebar: SidebarsConfig = {
           label: "Get a specific collaboration space",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/control-plane/get-collaboration-space-collaborators",
+          label: "Get the list of collaborators of a specific collaboration space",
+          className: "api-method get",
+        },
       ],
     },
     {
