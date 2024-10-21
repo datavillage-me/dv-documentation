@@ -54,10 +54,9 @@ const config: Config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "intro",
           position: "left",
           label: "User Manual",
+          to: "/docs/user-manual",
         },
         {
           label: "Cage Manager API",
