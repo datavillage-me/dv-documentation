@@ -1,10 +1,11 @@
 ---
-title: Create a new datacontract
+title: Create contracts
+description: Create a new data contract for your organisation as a data steward
 ---
 
 ## Intro
 
-Hello world from create-datacontract
+Hello world from create data contract
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquam nisi nec dictum faucibus. Proin sodales molestie velit non vestibulum. Curabitur id ex at est elementum aliquet dictum vitae enim. Integer sit amet viverra quam. Etiam pharetra risus in dui accumsan facilisis. Nullam ullamcorper tempus augue id vulputate. Ut ut tempus massa.
 

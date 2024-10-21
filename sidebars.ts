@@ -22,7 +22,7 @@ const sidebars: SidebarsConfig = {
         type: "generated-index",
         title: "User Manual",
         description:
-          "Datavillage user manual to manage collaboration spaces and datacontracts",
+          "Datavillage user manual to manage collaboration spaces and data contracts",
         slug: "/user-manual",
       },
       items: require("./docs/user-manual/sidebar.js"),
