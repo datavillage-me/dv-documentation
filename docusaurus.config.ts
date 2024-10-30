@@ -29,8 +29,7 @@ const config: Config = {
           sidebarPath: require.resolve("./sidebars.ts"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/datavillage-me/dv-documentation",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         theme: {
@@ -70,7 +69,7 @@ const config: Config = {
           docsPluginId: "classic",
         },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/datavillage-me",
           label: "GitHub",
           position: "right",
         },
@@ -110,7 +109,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/datavillage-me",
             },
           ],
         },

@@ -7,6 +7,10 @@ const sidebar: SidebarsConfig = {
       id: "user-manual/intro",
     },
     {
+      type: "doc",
+      id: "user-manual/auth",
+    },
+    {
       type: "category",
       label: "Collaboration Spaces",
       link: {
