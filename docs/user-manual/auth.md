@@ -33,8 +33,8 @@ The possible roles are
   - invite other clients as collaborator to a space owned by the client
 - **CS-\{space_id\}-COLLABORATOR**
   - accept/decline invites
-  - configure data contracts and data sources for the space (if the client was invited as data provider or data consumer)
-  - configure algorithm settings (if the client was invited as algorithm provider)
+  - configure data contracts and data sources for the space (if the client was invited as [data provider or data consumer](/docs/user-manual/intro#collaborators))
+  - configure algorithm settings (if the client was invited as [algorithm provider](/docs/user-manual/intro#collaborators))
 
 ### Authorization of clients
 

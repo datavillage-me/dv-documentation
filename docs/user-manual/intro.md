@@ -8,11 +8,11 @@ Welcome to the user manual of the Datavillage Collaboration Platform. This is co
 
 The user manual guides the user through the interface of the Datavillage Developer Console, a client side application that offers an intuitive UI to interact with the Datavillage Control Plane. If you wish to implement your own client side application, please consult the [Control Plane API](/docs/api/control-plane) to see the available endpoints.
 
-Users can log in using any configured IDP. By default, a [Keycloak](https://www.keycloak.org/) instance is delivered to manage different IDPs. Every user is logged in as a member of a certain organisation, registered by the platform admin. For more details about authentication and authorization, consult the [documentation page](/docs/user-manual/auth)
+Users can log in using any configured IDP. By default, a [Keycloak](https://www.keycloak.org/) instance is delivered to manage different IDPs. Every user is logged in as a member of a certain organisation, registered by the platform admin. For more details about authentication and authorization, consult the [documentation page](/docs/user-manual/auth).
 
 We start off with explaining some important concepts on which the DCP is built. Then it is shown how to make and configure a collaboration space. After going through all the steps, you will have a collaboration space setup that looks as follows.
 
-**TBA: SCREENSHOT OF FINISHED COLLABORATION SPACE**
+![screenshot of final state of collaboration space in Datavillage Developer Console](img/screenshot-finished-space.png)
 
 ## Collaboration Spaces
 
@@ -47,8 +47,12 @@ This is used to define where and how the algorithm should pull the data from, or
 
 This is done by configuring a **connector**, which defines what kind of data source will be used: an API call, an S3 bucket... The secrets needed are also defined within the collaboration space which together, forms the data source. This data is send encrypted to the trusted computing environment, which will use it to pull the data, perform the checks and do the algorithm.
 
+:::note
+The only thing that is stored in the database related to data sources, is the kind of connector that is used. Secrets are send encrypted and directly from the client-side application to the trusted environment. This ensures no leakage of secrets.
+:::
+
 Configuring where the results of the algorithm (insights) need to be pushed to, is done in the same way.
 
 ### Integrity check
 
-Within the Python SDK to develop algorithms for the Datavillage DCP, there is the possibility to perform _integrity checks_ before executing the algorithm. This will validate the pulled data to the configured data contract and throw an exception if it does not comply. The same goes for data that has to be pushed to a data consumer.
+Within the [Python SDK](https://pypi.org/project/dv-utils/) to develop algorithms for the Datavillage DCP, there is the possibility to perform _integrity checks_ before executing the algorithm. This will validate the pulled data to the configured data contract and throw an exception if it does not comply. The same goes for data that has to be pushed to a data consumer.
