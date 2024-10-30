@@ -11,7 +11,7 @@ Every client is associated with a unique IDP. Every request to the control plane
 
 The control plane will validate the token against the IDP and retreive the roles of the user that send the token.
 
-Although the client is free to bring it's own IDP to the table, a Keycloak instance is delivered by default. This allows the management of multiple IDPs. It offers a lot of features concerning user management.
+Although the client is free to bring it's own IDP to the table, a [Keycloak](https://www.keycloak.org/) instance is delivered by default. This allows the management of multiple IDPs. It offers a lot of features concerning user management.
 
 ## Authorization
 

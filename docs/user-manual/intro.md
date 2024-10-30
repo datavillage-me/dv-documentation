@@ -8,7 +8,7 @@ Welcome to the user manual of the Datavillage Collaboration Platform. This is co
 
 The user manual guides the user through the interface of the Datavillage Developer Console, a client side application that offers an intuitive UI to interact with the Datavillage Control Plane. If you wish to implement your own client side application, please consult the [Control Plane API](/docs/api/control-plane) to see the available endpoints.
 
-Users can log in using any configured IDP. By default, a Keycloak instance is delivered to manage different IDPs. Every user is logged in as a member of a certain organisation, registered by the platform admin. For more details about authentication and authorization, consult the [documentation page](/docs/user-manual/auth)
+Users can log in using any configured IDP. By default, a [Keycloak](https://www.keycloak.org/) instance is delivered to manage different IDPs. Every user is logged in as a member of a certain organisation, registered by the platform admin. For more details about authentication and authorization, consult the [documentation page](/docs/user-manual/auth)
 
 We start off with explaining some important concepts on which the DCP is built. Then it is shown how to make and configure a collaboration space. After going through all the steps, you will have a collaboration space setup that looks as follows.
 
