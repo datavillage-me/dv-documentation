@@ -7,11 +7,12 @@ Different organisations will also have different governance rules on how their m
 
 ## Authentication
 
-Every client is associated with a unique IDP. Every request to the control plane should have an access token send as a [Bearer authentication token](https://swagger.io/docs/specification/v3_0/authentication/bearer-authentication/). The token should contain an `iss` field, indicating which IDP issued the token. If it is not related to a known client, the request will be blocked.
+Every client is associated with a unique IDP. Every request to the Control Plane should have an access token send as a [Bearer authentication token](https://swagger.io/docs/specification/v3_0/authentication/bearer-authentication/). The token should contain an `iss` field, indicating which IDP issued the token. If it is not related to a known client, the request will be blocked.
 
-The control plane will validate the token against the IDP and retreive the roles of the user that send the token.
+The Control Plane will validate the token against the IDP and retreive the roles of the user that send the token.
 
 Although the client is free to bring it's own IDP to the table, a [Keycloak](https://www.keycloak.org/) instance is delivered by default. This allows the management of multiple IDPs. It offers a lot of features concerning user management.
+Keycloak uses the [OpenID Connect protocol](https://openid.net/developers/how-connect-works/). Documentation on how Keycloak implements this and which endpoints it exposes, can be found [here](https://www.keycloak.org/securing-apps/oidc-layers).
 
 ## Authorization
 
@@ -37,10 +38,10 @@ The possible roles are
 
 ### Authorization of clients
 
-Not only will the control plane check the roles of the user given by the client, it will also check the role of the client within the collaboration space.
+Not only will the Control Plane check the roles of the user given by the client, it will also check the role of the client within the collaboration space.
 This is to prevent clients to edit (or even see) a collaboration space it is not part of.
 
 ## Platform Admin
 
-Every instance of the control plane, has a **platform admin** configured. This could be seen as 'the client owning the instance of the DCP'. It can add and remove clients from the platform.
+Every instance of the Control Plane, has a **platform admin** configured. This could be seen as 'the client owning the instance of the DCP'. It can add and remove clients from the platform.
 To be able to do this, the user must have the `PLATFORM-ADMIN` role.
