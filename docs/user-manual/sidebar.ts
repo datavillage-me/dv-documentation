@@ -44,6 +44,10 @@ const sidebar: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: "doc",
+      id: "user-manual/secret-manager",
+    },
   ],
 };
 
