@@ -43,7 +43,7 @@ openssl rand -hex 32 > $RANDOMPASSWORD
 openssl aes-256-cbc -md sha256 -pbkdf2 -salt -in $FILE -out $FILE.enc -pass file:$RANDOMPASSWORD
 
 # encrypt the password using rsa key of cage
-curl --location "https://$API_URL/collaborationSpaces/$SPACE/cage/resources/output/public.pem" \
+curl --location "https://$API_URL/collaborationSpaces/$SPACE/publicKey" \
 --header "Authorization: Bearer $TOKEN"  > $TEMPFOLDER/publicKey
 
 
