@@ -34,7 +34,7 @@ To manually encrypt such a file a few steps need to be taken.
 We also provide a bash script to do these steps for you.
 
 ```bash
-source .env # containing the $TOKEN variable
+source .env # containing the $TOKEN, $SPACE and $API_URL variable
 TEMPFOLDER=$(mktemp -d)
 FILE=$1
 RANDOMPASSWORD=$TEMPFOLDER/randompassword
@@ -43,8 +43,8 @@ openssl rand -hex 32 > $RANDOMPASSWORD
 openssl aes-256-cbc -md sha256 -pbkdf2 -salt -in $FILE -out $FILE.enc -pass file:$RANDOMPASSWORD
 
 # encrypt the password using rsa key of cage
-curl --location 'https://api.datavillage.me/collaborationSpaces/kjhbphjk/cage/resources/output/public.pem' \
---header "Authorization: $TOKEN"  > $TEMPFOLDER/publicKey
+curl --location "https://$API_URL/collaborationSpaces/$SPACE/cage/resources/output/public.pem" \
+--header "Authorization: Bearer $TOKEN"  > $TEMPFOLDER/publicKey
 
 
 openssl pkeyutl -encrypt -inkey $TEMPFOLDER/publicKey -pubin -in $RANDOMPASSWORD -out randompassword.encrypted
@@ -60,5 +60,5 @@ The algorithm running in the cage does not have access to the private key. But i
 You can simply make a call to the `/decrypt` endpoint of the secret manager.
 
 ```
-curl --location "secret-manager/decrypt" --form 'file=@message'
+curl --location "http://secret-manager/decrypt" --form 'file=@message'
 ```
