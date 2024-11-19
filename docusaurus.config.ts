@@ -58,6 +58,11 @@ const config: Config = {
           to: "/docs/user-manual",
         },
         {
+          position: "left",
+          label: "Cage Development",
+          to: "/docs/cage-development",
+        },
+        {
           label: "Cage Manager API",
           position: "left",
           to: "/docs/api/cage-manager",
