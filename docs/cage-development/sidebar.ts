@@ -8,7 +8,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "doc",
-      id: "cage-development/cage-template",
+      id: "cage-development/event-processing",
     },
   ],
 };
