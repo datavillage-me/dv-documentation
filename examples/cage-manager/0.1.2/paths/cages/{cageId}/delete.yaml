@@ -1,5 +1,7 @@
 post:
-  summary: Delete a cage
+  summary: "[DEPRECATED] Delete a cage"
+  deprecated: true
+  operationId: deleteCageDeprecated
   tags:
     - crud
   description: >

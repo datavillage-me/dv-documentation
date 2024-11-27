@@ -1,7 +1,9 @@
 post:
-  summary: Send an event to a cage
+  summary: "[DEPRECATED] Send an event to a cage"
   tags:
     - operate
+  deprecated: true
+  operationId: sendEventDeprecated
   parameters:
     - in: path
       name: cageId

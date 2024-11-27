@@ -1,6 +1,7 @@
 get:
   operationId: getPodStatusLogsBackup
-  summary: Get the status of all pods running
+  summary: "[DEPRECATED] Get the status of all pods running"
+  deprecated: true
   tags:
     - monitor
   parameters:

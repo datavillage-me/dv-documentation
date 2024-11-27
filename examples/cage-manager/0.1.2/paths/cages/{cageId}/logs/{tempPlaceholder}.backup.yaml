@@ -1,5 +1,7 @@
 get:
-  summary: Get the logs of the algo
+  summary: "[DEPRECATED] Get the logs of the algo"
+  operationId: getLogsDeprecated
+  deprecated: true
   tags:
     - monitor
   description: >

@@ -1,5 +1,7 @@
 post:
-  summary: Deploy a cage
+  summary: "[DEPRECATED] Deploy a cage"
+  operationId: deployCageDeprecated
+  deprecated: true
   tags:
     - operate
   description: >

@@ -1,6 +1,7 @@
 get:
   operationId: getAlgoLogsBackup
-  summary: Get the logs of the running algorithm
+  deprecated: true
+  summary: "[DEPRECATED] Get the logs of the running algorithm"
   tags:
     - monitor
   parameters:
