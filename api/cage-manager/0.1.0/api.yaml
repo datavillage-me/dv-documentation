@@ -3,21 +3,14 @@ info:
   title: CageManager API
   description: A very cool api to manage very cool cages :-)
   version: latest
-
-tags:
-  - name: deploy
-    description: Endpoints related to deploying of a cage
-    x-displayName: Cage Deployment
-  - name: monitor
-    description: Endpoints to monitor a running cage
-    x-displayName: Cage Monitoring
-
+servers:
+  - url: https://<cage-manager-api>
 paths:
   /cages:
     get:
-      tags:
-        - deploy
       summary: Get deployed cages.
+      tags:
+        - crud
       responses:
         "200":
           description: A JSON array of cages
@@ -38,7 +31,7 @@ paths:
     post:
       summary: Deploy a cage
       tags:
-        - deploy
+        - operate
       description: >
         Deploys a cage defined in a collaboration space.
       parameters:
@@ -82,7 +75,7 @@ paths:
     post:
       summary: Delete a cage
       tags:
-        - deploy
+        - crud
       description: >
         Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
       parameters:
@@ -118,7 +111,7 @@ paths:
     get:
       summary: Get the public key of a cage.
       tags:
-        - monitor
+        - operate
       description: "Fetches the public key of a cage."
       parameters:
         - in: path
@@ -229,6 +222,18 @@ components:
         algo:
           type: object
           properties:
+            cron:
+              type: array
+              items:
+                type: object
+                required:
+                  - expression
+                  - type
+                properties:
+                  expression:
+                    type: string
+                  type:
+                    type: string
             source:
               type: object
               properties:
@@ -241,5 +246,10 @@ components:
                 secret:
                   type: string
 
-        # name:
-        #   type: string
+tags:
+  - name: crud
+    description: CRUD operations on cage resources
+  - name: operate
+    description: Endpoints to operate a cage
+  - name: monitor
+    description: Endpoints to monitor a cage

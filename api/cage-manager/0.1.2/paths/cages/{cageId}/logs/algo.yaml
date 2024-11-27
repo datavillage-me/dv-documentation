@@ -1,0 +1,23 @@
+get:
+  operationId: getAlgoLogs
+  summary: Get the logs of the running algorithm
+  tags:
+    - monitor
+  parameters:
+    - in: path
+      name: cageId
+      schema:
+        type: string
+      required: true
+      description: Id of the collaboration space
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+
+    "404":
+      $ref: "../../../../schemas/errors/404NotFound.yaml"

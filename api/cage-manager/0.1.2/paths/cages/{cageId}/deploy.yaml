@@ -1,0 +1,32 @@
+post:
+  summary: Deploy a cage
+  tags:
+    - operate
+  description: >
+    Deploys a cage defined in a collaboration space.
+  parameters:
+    - in: path
+      name: cageId
+      schema:
+        type: string
+      required: true
+      description: Id of the collaboration space
+    - in: query
+      name: keep_data
+      schema:
+        type: boolean
+        default: true
+      required: false
+      description: Keep the data associated with this cage.
+  requestBody:
+    description: Settings for the cage to be deployed
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../../schemas/CageSettings.yaml"
+  responses:
+    "200":
+      description: Succesfully deployed cage
+    "422":
+      $ref: "../../../schemas/errors/422UnprocessableEntity.yaml"

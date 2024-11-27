@@ -1,11 +1,11 @@
 ---
-id: get-the-public-key-of-a-cage
-title: "Get the public key of a cage."
+id: get-key-deprecated
+title: "[DEPRECATED] Get the public key of a cage."
 description: "Fetches the public key of a cage."
-sidebar_label: "Get the public key of a cage."
+sidebar_label: "[DEPRECATED] Get the public key of a cage."
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU8GK2zAQ/RUxpy4o9dKjKIVQ2iWHQtluT8GHiTyxxcqWVhqHBqN/L2OnqTfQpSfbo5mn9948T8DYZjB7CJESMkGtoaFsk4vswgAGvhLbjrLijlQcD95Z9UxnFY4KlcWW3oOGiAl7YkoCNYGTuYjcgYYBewID0rlrQEO2HfUIZgI+RznJnNzQQtGQ6GV0iRownEa65bFr5E5hYYP3eAgJ5UTliJag1DKfYxgyZUH/cH8vj9cYTx2pxx/bGx3cuXyVYsPANPBMkH5xFT2KnOlKfBi9L6UUDT1xFxow0BLPJnAHBipBytW0KC7Vctfmmc6intLpj0tj8mCgY47ZVNVH6d/0OGBLaYPRfZo1ueEYZi6Ovbj1GVv6tjSp7fcd3Lq0VSdKZ2VD8AqjUxzUgrmqzwSV2dyBBmGzTHpkyix7iCFzj7Poy/YeiN/c/ysO018P/ys8lxys3C56MWe6eLqf45NBg7nmaGVrraELmaVvmg6Y6WfypUj5ZaR0BrOvNZwwOTyIh/sJGpflvQFzRJ9vo7YW8O7xEso79XYA/6HjUsRBtn9CP8oXaBDe17+i1EVDR9hQmukth1trKfJqbI1cr+L38OUJSvkN+vhH8Q==
+api: eJyNU02L2zAQ/StiTl1QmqVHUQphky6hFJY0PQUfJvYkFqtYWmkcGoz+e5nYTZzALj3Jms/3np47qChEKpGpAsOxJQ0+UES2vllWYGBP/INO82uVBsZ9ArMZCgkKDRWlMtogXWDgO3FZU1Jckwrt1tlSvdJJ+Z1CVeKePoOGgBEPxBRlVAdW+gJyDRoaPBAYkMql7EtlTQcE0wGfgmQSR9vsIWuI9NbaeMV+i2NZyU5BUXrncOt7XioFLAlyIf0p+CZRkulfHh/luJ2xrkmtfs3ueHBt04VK6Rumhs8A6Q9Pg0Oh012AN61zOees4UBc+0HWswhcg4Fp13PN037L5JVOwpvi8Z8+bXRgoGYOyUynX6V+csAG9xQnGOy3Mxvb7PwZhWUnOj3hnn72RWr2soR7fWbqSPGkSu+dwmAVe9XPHMVlU1Jm8gAaBE3f6ZApsbxA8IkPeKY7vNtmvnhZLZ5m68W8UM/EH9rgBlB3lfK/PDTYYSR61r1S3SDtBszFRiNtCw21Tyz5rttiot/R5Szht5biCcym0HDEaHErQm46qGyS7wrMDl26d9oY+KfV4MkH9bH/3sE/BLERCxzRtXIDDYL78lPkImuoCSuKZ3h9claWFHjUNp5cjNz3vFhDzn8Bc/JZNg==
 sidebar_class_name: "get api-method"
 info_path: docs/api/cage-manager/cagemanager-api
 custom_edit_url: null
@@ -22,19 +22,23 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get the public key of a cage."}
+  children={"[DEPRECATED] Get the public key of a cage."}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/cages/{cageId}/public-key"}
+  path={"/{cageId}/public-key"}
   context={"endpoint"}
 >
   
 </MethodEndpoint>
 
+:::caution deprecated
 
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
 
 Fetches the public key of a cage.
 

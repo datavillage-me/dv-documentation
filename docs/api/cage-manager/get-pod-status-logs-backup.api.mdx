@@ -1,0 +1,75 @@
+---
+id: get-pod-status-logs-backup
+title: "[DEPRECATED] Get the status of all pods running"
+description: "[DEPRECATED] Get the status of all pods running"
+sidebar_label: "[DEPRECATED] Get the status of all pods running"
+hide_title: true
+hide_table_of_contents: true
+api: eJydlG9r2zAQxr+KuFcrKKSMvjJjkLWhBDYoXfcqhHKRL45aWVKlc1gw/u7j7DR/2nSw+Y1tSSc997vn1EKIlJBt8LMSCqiI70L5k5Gb/D1U+Rua5yaChpJiIoNMJRScGtLAWGUo5lAHbzkkWGiImLAmpiQTLVgPBUTkNWjwWBMUYLCiWQkasllTjVC0wNsoM5mT9RV0GhK9NDYdDiopm2SjaIQCZqUKK8VrUiY4h8swqFc5oiHoFhKfY/CZsuz++fJSXiZ4Js/yiTE6a/qg8VOWPdv3ajAl3IIGy1Tno/GwfCLDcCxyPuSmIffUeg5JqLIdJAypn0l0F/Dx1GO23pyJ1bAKqUaGAkpkGrGtCbpOA1t2sm5fQ+jk0XB1eSXbnKK8pxyaZIRk40rlA6slqVVovFToX5Ht0ZxmTymF9FhTzlidw9CdsjxdvtjJP9U9v5ne3U+vJw/Tm4W6Je7dMBATb6BzKoYyq9R4P+Cqiddh529RKJ4sYNwOduzGLlR5HEP5uCuJhkxp8+rjJjkoYM0cczEef5GgUY0eK0ojjPZr7zrrV6FPb1eCa6zox7BITe5m8DaJidpQ2ioTglMYreKghj2PxuWkrIrRBWgQNUOkQ6bM4pIYMtfoDyb7DzQnqvbVYfrN4+jQejmnB9DusM2h2HexcBOeB3ILDeuQWZa17RIz/Uqu62T4paG0hWK+0LDBZHEpmOYtlDbLdwnFCl1+2+9HrQuf7ndGuVB/vwX0+TRee9tLZ2/QNfIHGp5pe7iaukWnYU1YUurlDZMTYyjyUdi7lhAP7G12O32ArvsDXwDXxw==
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[DEPRECATED] Get the status of all pods running"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/{cageId}/logs/pod_status"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+[DEPRECATED] Get the status of all pods running
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","required":["name","status"],"properties":{"name":{"type":"string"},"status":{"type":"string"},"status_since":{"type":"string","format":"date-time"}},"title":"PodStatus"}}}}},"404":{"description":"Resource could not be found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

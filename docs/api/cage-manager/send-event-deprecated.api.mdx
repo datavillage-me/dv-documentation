@@ -1,0 +1,75 @@
+---
+id: send-event-deprecated
+title: "[DEPRECATED] Send an event to a cage"
+description: "[DEPRECATED] Send an event to a cage"
+sidebar_label: "[DEPRECATED] Send an event to a cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJytlU1v2zAMhv+KwNMKOEsx9GQMA7I2hxyGBWl2CoyBsZnYnSypkpwuMPzfB0punDRdP4D2VvHr4WuSacHj1kG6Am3IoifIEijIWMrRUwGptw0lvbHSalZACo5UMd2R8jeDYwIGLdbkyXK6FioFKRj0JSSgsCZIIcctzdjV5SXVCGkLfm/Y4ryt1Ba6BCzdN5UdKhfkclsZrg0pzAqhN8KXJHItJa51pBLOYE7QJX3Z+4bsHp4GL0sSzlvCWjyUZCnkIe5DuFI3shBrEtyb8PrzQB1D3kq9QekC9gYb6SGFUMBBl0Uvcv67Lvac5ZTuADNUfvz3qSa5Vp4taQtojKzyIML4znGi9pxTr+8o50TG8of0FbnBetbNSTuraM0SwKKouAzK+VEWBuq6GOOMVi6m/nJ5ed7hbZPn5DaNlPte5pJE3+IHtVSTc3HIXu1rcM1iA1eXV+fMC3K6sTnPGw+I0p6HZKMbVXwcNVmr7e8e6HXyU/dA3z2d9dXNdL6YXk+W05tM3LLYqPpZ91qg4FWEBGrypeaVNtoFLt7XFMZtXNVu/DiCjuzucbMbKyGF0nvj0vH4K7uOalS4JTtCU30Ls84aLIZ5n/7F2sjnmkugUhsdDJVnD7jGLf2I+cRkPjvb44nYkd2LXGsp0FTcUCx/9M5QTqSjC0iAwWOkRE/Oc03ut8bwlfple6NiJyiHZjz99WMjsVKcPAjU9mKuID3cvahmlkDJcqcraNs1OvplZdfxc7xbrHFROVzLk4NyUvcwee++as8S/6H98aXboWzYKXzJHdqKWd7J9WnRj+yFePlq/wepf0S1PwZ6RO0l7bIugZKwIBvwovE6QoyWnGIIPltR/r2IEZM8J+Nf9M2OtmX+83YJCaz7Q17rgmMsPvCxxocIqoMoYcHDWwsS1bYJKw4xJ//9AyrLlfk=
+sidebar_class_name: "post api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[DEPRECATED] Send an event to a cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/{cageId}/event"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+[DEPRECATED] Send an event to a cage
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"},{"in":"query","description":"The stream where the event should be send to.","name":"stream","schema":{"type":"string"},"required":false,"default":"events"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"the event","name":"event","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string"}},"required":["type"],"additionalProperties":true}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Succesfully send the vent","content":{"application/json":{"schema":{"type":"object","properties":{"messageId":{"type":"string"}},"required":["messageId"]}}}},"404":{"description":"Resource could not be found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

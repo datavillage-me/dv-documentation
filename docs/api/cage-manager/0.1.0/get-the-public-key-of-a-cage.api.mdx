@@ -5,9 +5,9 @@ description: "Fetches the public key of a cage."
 sidebar_label: "Get the public key of a cage."
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU8GK2zAQ/RUxpy4o9dKjKIVQ2iWHQtluT8GHiTyxxcqWVhqHBqN/L2OnqTfQpSfbo5mn9948T8DYZjB7CJESMkGtoaFsk4vswgAGvhLbjrLijlQcD95Z9UxnFY4KlcWW3oOGiAl7YkoCNYGTuYjcgYYBewID0rlrQEO2HfUIZgI+RznJnNzQQtGQ6GV0iRownEa65bFr5E5hYYP3eAgJ5UTliJag1DKfYxgyZUH/cH8vj9cYTx2pxx/bGx3cuXyVYsPANPBMkH5xFT2KnOlKfBi9L6UUDT1xFxow0BLPJnAHBipBytW0KC7Vctfmmc6intLpj0tj8mCgY47ZVNVH6d/0OGBLaYPRfZo1ueEYZi6Ovbj1GVv6tjSp7fcd3Lq0VSdKZ2VD8AqjUxzUgrmqzwSV2dyBBmGzTHpkyix7iCFzj7Poy/YeiN/c/ysO018P/ys8lxys3C56MWe6eLqf45NBg7nmaGVrraELmaVvmg6Y6WfypUj5ZaR0BrOvNZwwOTyIh/sJGpflvQFzRJ9vo7YW8O7xEso79XYA/6HjUsRBtn9CP8oXaBDe17+i1EVDR9hQmukth1trKfJqbI1cr+L38OUJSvkN+vhH8Q==
+api: eJyNU8Fu2zAM/RWBpxVQlmBAL8IwIBi6IocBQ9qdAh8Ym7XVypYq0cECQ/8+0M4yJ+iKnWyJ1OPje+QAjHUCswMfKCITFBoqSmW0ga3vwMA34rKhpLghFfq9s6V6oaPyTwpViTV9BA0BI7bEFAVqACvvAnIDGjpsCQxI5qYCDalsqEUwA/AxSCRxtF0NWUOk195GqsBw7Omax6aSmsKi9M7h3keUiEoBS4JcyPsUfJcoCfqn1Uo+lxiPDantw/qqD25sOrdS+o6p45Eg/eJlcCjtDGfiXe9czlnD7VsVNh1T7NCpB4oHiuouRh8vYTEEZ8uR/PI5+Qvwa7gthUiJOk6KBEn5/TOVDPqPeudziOIg26n7llLCmt6Q+ULn3Tmx0MCWnWTerlYT65zHPlvixldgoKaxkPhqYDlMlublJObihY5i79j2NAZ9dGCgYQ7JLJefJX/RYoc1xQUG+2U0zXZPfqR5qv4Va/o+Jan1jw1cj8FaHSgeVem9UxisYq8mzNm9VErKLG5Ag7CZXjpkSiyDFnziFkfhT+N5T/zugF9wGP66+V/bcXJgNk5ZT+IMJzV3YM4LMpOz0ND4xBIfhj0m+hldznL92lM8gtkVGg4YLe5Fu90AlU3yX4F5Qpeud2hO/MP2NAU36v3N+gf/0yV24voBXS8n0CC8z+uei6yhIawojvSm4LosKfDs2Ry5mA3c/d0j5PwbO5aT9w==
 sidebar_class_name: "get api-method"
-info_path: docs/api/cage-manager/cagemanager-api
+info_path: docs/api/cage-manager/0.1.0/cagemanager-api
 custom_edit_url: null
 ---
 
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"get"}
-  path={"/cages/{cageId}/public-key"}
+  path={"/{cageId}/public-key"}
   context={"endpoint"}
 >
   
@@ -62,7 +62,7 @@ Fetches the public key of a cage.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"The RSA public key of this cage.","content":{"text/plain":{"schema":null}}}}}
+  responses={{"200":{"description":"The RSA public key of this cage.","content":{"text/plain":{"schema":null}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"500Error"}}}}}}
 >
   
 </StatusCodes>

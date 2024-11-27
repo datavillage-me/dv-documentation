@@ -1,0 +1,46 @@
+post:
+  summary: Send an event to a cage
+  tags:
+    - operate
+  parameters:
+    - in: path
+      name: cageId
+      schema:
+        type: string
+      required: true
+      description: Id of the collaboration space
+    - in: query
+      description: The stream where the event should be send to.
+      name: stream
+      schema:
+        type: string
+      required: false
+      default: events
+  requestBody:
+    description: the event
+    name: event
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            type:
+              type: string
+          required:
+            - type
+          additionalProperties: true
+  responses:
+    "200":
+      description: Succesfully send the vent
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              messageId:
+                type: string
+            required:
+              - messageId
+    "404":
+      $ref: "../../../schemas/errors/404NotFound.yaml"

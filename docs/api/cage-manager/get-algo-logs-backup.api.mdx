@@ -1,0 +1,75 @@
+---
+id: get-algo-logs-backup
+title: "[DEPRECATED] Get the logs of the running algorithm"
+description: "[DEPRECATED] Get the logs of the running algorithm"
+sidebar_label: "[DEPRECATED] Get the logs of the running algorithm"
+hide_title: true
+hide_table_of_contents: true
+api: eJydU11r3DAQ/CtinxpQcCh5EqVwTY5w0EII6dNhyp69ZyuRJUVaHz2M/3tZ+5LcJaHQ+sW29kOzMzsDhEgJ2Qa/qsFAQ7xwTfgemvwNq8c+goaaYqIKmWownHrSwNhkMGvogrccEpQaIibsiClJYADrwUBEbkGDx47AQIUNrWrQkKuWOgQzAO+jRDIn6xsYNSR66m16vaimXCUbBR4YWNUqbBW3pKrgHG7CDFzliBXBWEp9jsFnytL988WFvKrgmTzLJ8bobDUVFQ9Zeg7v0WBKuAcNlqnLH6CUR8PlxaXETgHeUQ59qgRf72rlA6sNqW3ovcz9r0DC5oEqBg0xiUhs57EopZB+dZQzNvQRvmMa12/SywP8U9zr6+Xt3fJqcb+8LtUN8cSxC01+5jv13lvfKHRNSJbbDjR0xG047IyAFLENFMOs81hIfSEFIjml3fNq9MmBgZY5ZlMUXyT9vEOPDaVzjPbrJKT12zDNZtnJcFfY0I85SS1uV/B2goXaUdqrKgSnMFrFQc09j87lpqzM+RloEDRzpUOmzLJ8MWTucNLisLL/xcsJsBd1mH5zER1aL1dNHAwHztZgXrwhzUHDRFupoQ2ZJWEYNpjpZ3LjKMdPPaU9mHWpYYfJ4kY4Wg9Q2yzfNZgtuvzWP0dWgE93hxU5U393lf54gGeveHHKDl0vf6DhkfavVh/LUUNLWFOa4M3BRVVR5KOyd2aQBXjZrpvlPYzjHwwgmBk=
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[DEPRECATED] Get the logs of the running algorithm"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/{cageId}/logs/algo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+[DEPRECATED] Get the logs of the running algorithm
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}},"404":{"description":"Resource could not be found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
