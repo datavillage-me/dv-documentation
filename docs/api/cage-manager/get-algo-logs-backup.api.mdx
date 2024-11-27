@@ -1,0 +1,71 @@
+---
+id: get-algo-logs-backup
+title: "Get the logs of the running algorithm"
+description: "Get the logs of the running algorithm"
+sidebar_label: "Get the logs of the running algorithm"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU9tq3DAQ/RUxTw0oOJQ8iVLYlhIWWiilfVqWMmvP2kpkSRmNly7G/17G3qSbC6X1i2XNxWfOOTNCysQoPsV1Aw5aklVo0+fUlg9Y3w0ZLAi2BdwG+hS9JIathYyMPQmxBkbwERxklA4sROwJHNTY0roBC6XuqEdwI8gxa6QI+9jCZIHpfvBMDTjhgSw0VGr2WcGAg3Vj0t5IR6ZOIeAuLTBNyVgTTFutLznFQkW7v7260ledolAUPWLOwddzUXVbtOf4Eg0y4xEseKG+vIJSHwvXV9caewrwG5U0cK34htCYmMTsyOzTEHXu/wWSdrdUC1jIrJKIX8Yi5sQ/eyoFW3oN3zmNm2fp2xP8p7hvSGZaQ2rLA8U8xOhjazC0ib10PVjoSbp0MoXiUn0dVOMi7VRpfaUFqjLx4cENAwdw0Ink4qrqnaZf9hixJb7E7N/P2vm4T/M4XoLO8xFb+rIkmdXXNTwHvTIH4qOpUwoGszeSzNLz7F7/VIy7vAALimapDChURP2WU5EeZ/pPLv1XKp5gedRA6JdUOaCP2n0eezzRtAH3uAHaHCzMTG0tdKmIJozjDgv94DBNen0/EB/BbbYWDsged0rLZoTGFz034PYYyvMtOTM8vPl2MsKF+fvu2NcHeNiIqPtwwDDoF1i4o+OfhZ62k4WOsCGe4S3BVV1TlrOyF5ZXzR8NdfPpO0zTb52cikw=
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the logs of the running algorithm"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/{cageId}/logs/algo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the logs of the running algorithm
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}},"404":{"description":"Resource could not be found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

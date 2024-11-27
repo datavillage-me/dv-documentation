@@ -1,0 +1,72 @@
+---
+id: delete-a-cage
+title: "Delete a cage"
+description: "Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability"
+sidebar_label: "Delete a cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVE1v2zAM/SsCTy3gLkGQXoxhQNHtkMOwoulOWQ6MxMRqFEmV6G6G4f8+0E7TNO16Xk+JbfLxvcePFhg3GcoF6FQbWBZgKOtkI9vgoYSv5IgpK65InRmKLjRkzpXGDSln/ZaM4qBQ6eAcrkJCyVM5oqZPSs3RuEZxZbMygbLygVWdqUczPbJ6pLT6pO4kxGbB2hJFtUK9/Y3JZBVDYlxZZ7n55aGAiAl3xJSEdAtWSEbkCgrwuCMoQbjNDBSQdUU7hLIFbqJ8yZys30BXQKKH2iYyUHKq6VT0zKiw7km+IQu6peTnGHymLOiT8Vh+XmLMa60pr2vnGvXkW2+blJ+Op68zrkPtTG/R2nozlBebOajVk10iSwfP5FkAMEZndU9udJ8FpT1S/RL+lmKiTJ6zopRCUmF1T5qheHLn8BxTiJTYDup2lLPQfm3jCx8Xh8BlAWzZSeR0PP0mtaDrJHo6mbwnO6agKQ+zJsCU+YPJnUyO5V6+NRczz5Q8OjWn9EhJDQkfSublePwssytgR1wFI3sY+o7161jCqB02sRsNsysb2WseNrdODkqomGMuR6PPEnuxQ48bShcY7Zd+z6xfh57jvvQ1buj7EKSubmZwurlXck8apUNwCqOV3Rkwj95LpazKi3MoQNgMmQ5Z5q0rehU77F3fX5ThCMqVEydOarbPrfv/ruW+t0x/eBQdWi8Ce+fbfZsWUB4O5r5PywIq6WS5gLZdYaafyXWdvH6oKTVQLpYFPGKyuJKmLFowNst/A+UaXT69p8cOnd3uZ+tcvX9l/8F9/xJ9I91DV8sTFLCl5vn0d8uugIrQUOrpDR+vtKbIR2mv9kwm7jDMNz/md9B1fwEPinbh
+sidebar_class_name: "post api-method"
+info_path: docs/api/cage-manager/0.1.0/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/{cageId}/delete"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Succesfully deployed cage"},"404":{"description":"Could not find the cage to be deleted","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"404Error"}}}},"422":{"description":"Could not process the request","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"422Error"}}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"500Error"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

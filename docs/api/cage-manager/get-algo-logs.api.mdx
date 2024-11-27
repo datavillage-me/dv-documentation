@@ -1,0 +1,71 @@
+---
+id: get-algo-logs
+title: "Get the logs of the running algorithm"
+description: "Get the logs of the running algorithm"
+sidebar_label: "Get the logs of the running algorithm"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVk29r3DAMxr+K0asVXFJGX5kxOMYoBxuMsr06jqFLdIk7x3Zl5dgR8t2Hkmt3/UPZ8iaJZYmf9OgZIWViFJ/iugEHLckqtOlLagtYEGwLuA30KXpJDFsLGRl7EmINjOAjOMgoHViI2BM4qLGldQMWSt1Rj+BGkGPWSBH2sYXJAtP94JkacMIDWWio1OyzYoCDdWPS3khHpk4h4C4tgKZkrAmmreaXnGKhotXfX13pq05RKIp+Ys7B13NSdVe05viSBpnxCBa8UF9eodTHwvXVtcaeAt5SSQPXyjeExsQkZkdmn4aoff8vSNrdUS1gIbOKIX5pi5gT/+ypFGzpNb7zMW6eXd+e8J9y35DMYw2pLQ8j5iFGH1uDoU3spevBQk/SpdM6KJfq66BSZUs1LgJPlVapNE21Jj487MTAARx0Irm4qvqg1y97jNgSX2L2H2cFfdynuSkvQbv6hC19XS6Z1bc1PEdfmQPx0dQpBYPZG0lmqXl2PvMZd3kBFpRmyQwoVES3LqciPc4inHb1XwfyhOVRCaHfUuWAPmr1ue3xNKzNbAP1kHv0Q1hMNU9sa6FLRfTiOO6w0A8O06TH9wPxEdxma+GA7HGn49mM0Pii3w24PYby3DNn6w/vbk9rcWHedpJ9vZEHf0R1xwHDoH9g4Rcd/9p72k4WOsKGeMZbgqu6pixnaS8MoNo/rtfN5+8wTX8A3wSMmw==
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the logs of the running algorithm"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cages/{cageId}/logs/algo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the logs of the running algorithm
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}},"404":{"description":"Resource could not be found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

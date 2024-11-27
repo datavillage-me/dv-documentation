@@ -5,9 +5,9 @@ description: "Fetches the public key of a cage."
 sidebar_label: "Get the public key of a cage."
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU02L2zAQ/StiTl1Q6qVHUQqhtEsOhbLdnoIPE3lii5UtrTQODUb/vYydpt5Al55sz+d7b54nYGwzmD2ESAmZoNbQULbJRXZhAANfiW1HWXFHKo4H76x6prMKR4XKYkvvQUPEhD0xJRk1gZO+iNyBhgF7AgNSuWtAQ7Yd9QhmAj5HyWRObmihaEj0MrpEDRhOI93i2DWyU1DY4D0eQkLJqBzREpRa+nMMQ6Ys0z/c38vj9YynjtTjj+0ND+5cvlKxYWAaeAZIv7iKHoXOdAU+jN6XUoqGnrgLDRhoiWcRuAMD1bRwLdWyZfNMZ+FN6fRHnzF5MNAxx2yq6qPUb3ocsKW0weg+zWzccAwzCsdedPqMLX1bitT2+w5u9dmqE6WzsiF4hdEpDmqZuYrLpqzM5g40CJql0yNTZrlADJl7nOle7vZA/OblX2GY/qr3X7a5OGClc9GLONNFzT2Yq3NWctYaupBZ8tN0wEw/ky9Fwi8jpTOYfa3hhMnhQbTbT9C4LO8NmCP6fGuuNfB3jxcb3qm3LfcP/JcgDnL1E/pRvkCD4L7+B6UuGjrChtIMb0luraXIq7b15HpluIcvT1DKb/2MQ0w=
+api: eJyNU8Fu2zAM/RWBpxVQlmBAL8IwIBi6IocBQ9qdAh8Ym7XVypYq0cECQ/8+0M4yJ+iKnWyJ1OPje+QAjHUCswMfKCITFBoqSmW0ga3vwMA34rKhpLghFfq9s6V6oaPyTwpViTV9BA0BI7bEFAVqACvvAnIDGjpsCQxI5qYCDalsqEUwA/AxSCRxtF0NWUOk195GqsBw7Omax6aSmsKi9M7h3keUiEoBS4JcyPsUfJcoCfqn1Uo+lxiPDantw/qqD25sOrdS+o6p45Eg/eJlcCjtDGfiXe9czlnD7VsVNh1T7NCpB4oHiuouRh8vYTEEZ8uR/PI5+Qvwa7gthUiJOk6KBEn5/TOVDPqPeudziOIg26n7llLCmt6Q+ULn3Tmx0MCWnWTerlYT65zHPlvixldgoKaxkPhqYDlMlublJObihY5i79j2NAZ9dGCgYQ7JLJefJX/RYoc1xQUG+2U0zXZPfqR5qv4Va/o+Jan1jw1cj8FaHSgeVem9UxisYq8mzNm9VErKLG5Ag7CZXjpkSiyDFnziFkfhT+N5T/zugF9wGP66+V/bcXJgNk5ZT+IMJzV3YM4LMpOz0ND4xBIfhj0m+hldznL92lM8gtkVGg4YLe5Fu90AlU3yX4F5Qpeud2hO/MP2NAU36v3N+gf/0yV24voBXS8n0CC8z+uei6yhIawojvSm4LosKfDs2Ry5mA3c/d0j5PwbO5aT9w==
 sidebar_class_name: "get api-method"
-info_path: docs/api/cage-manager/cagemanager-api
+info_path: docs/api/cage-manager/0.1.0/cagemanager-api
 custom_edit_url: null
 ---
 
@@ -62,7 +62,7 @@ Fetches the public key of a cage.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"The RSA public key of this cage.","content":{"text/plain":{"schema":null}}}}}
+  responses={{"200":{"description":"The RSA public key of this cage.","content":{"text/plain":{"schema":null}}},"500":{"description":"Internal Server Error","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"500Error"}}}}}}
 >
   
 </StatusCodes>

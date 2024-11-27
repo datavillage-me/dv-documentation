@@ -1,0 +1,72 @@
+---
+id: deploy-a-cage
+title: "Deploy a cage"
+description: "Deploys a cage defined in a collaboration space."
+sidebar_label: "Deploy a cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVlFv4zYM/isCn3aAeymC24sxDOi6w1AMww6921MWFIzNOLrKkk6i0waB//tAy4md1G3Xe7u8RabIjx/JT9wDYxUhX4DzFJAJlhmUFIugPWtnIYffyRu3iwpVgRWpktbaUqm0lRNnDK5cQLFV0WNB7/+1kIHHgDUxBfG9By2OPPIGMrBYE+Qgzm5KyCAWG6oR8j3wzsuXyEHbCtoMAn1rdKAScg4NnQO7KZVbK97QFAxosz7st4bCboh7T+TvSmScCr1yzhBKAiWtsTGcIp9AWaOJT7D8SeQ7KOJZYYyu0MhUqgfNG8UbHTv23kO7TL4o8m+u3EnsU0+fiVnbKqq1Cyk5YZ2dWgn3UgoS1s6pKZxlsiz+0Huji46L2dcoTvdPM3Wrr1SwVCpI5VlT7O/e6XKyGIXRZPm5r+X2jt092emrWJF3zkx+JLvVwdmaLMeRAYaAUjbNVMfXgafqTrjfommmvrRtmwGayr3uuwjOvgXZUJsF0KMPFKPUNkuGy3P3I5OpBNLBNP7omlDQ6xkEqnTksJsMoGusprljrCbPIxWBeBqUwGLNRo6vsaJDP/eIA0XvbEyw5peXEwPQFAXFdWPM7tjw3RBI5A/z+dMb164xpbKOlQ+uoBiHuUkOpLdUP3Xwhlk5DXNLUidpU0UhuKCOZL9Mfk0xTjPcnvbKwXA5MPhhPv8osXr2jqp0ju0PshTQqGT8Q6X48+XlkGKbQU28caW8F66rVvds5DDbpxejnaWainxT2B5emCYYyGHD7GM+m/0ithc1WqwoXKDXv3bCK+nfDuL78RFrb2isewfcJ3I3HA4qNzI8ittwdqppi4M8DQa9Kh1pWg5alNRmcaoLw80zfpdjERjGfLDvp3vkQIZ6+HuY5dEMZ6DtOuniaJD/Smyqq083cP78XakthZ0qnDMKvZbnKpE/Oheeosov3kn6FPq8DLIMZZt15a7RDmLebx794nEecz/0+PetKD2RTI888wa1FRBdG+37nltAftxS+qZbZrCRtswXsN+vMNI/wbStHKc1Q+pW6ogr89yqMMb9v7eGZ9De0+5sozn0VdcYWwxakLwR1U+3/cC+Uy+vWM+gOjyTdjcGdEDbM9ou2ww2hCWFDl76eJ1AXHwRF8PlJxImy126cVUU5PlF2+VIUz79/fkLZLDqV6/alXIn4IM82/iQgLqOlPRwytkeDNqqSXOUfMrvPx/Q4lw=
+sidebar_class_name: "post api-method"
+info_path: docs/api/cage-manager/0.1.0/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Deploy a cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/{cageId}/deploy"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deploys a cage defined in a collaboration space.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"},{"in":"query","name":"keep_data","schema":{"type":"boolean","default":true},"required":false,"description":"Keep the data associated with this cage."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Settings for the cage to be deployed","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"app_id":{"type":"string"},"client_id":{"type":"string"},"dv_token":{"type":"string"},"cagepool":{"type":"string"},"environments":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"}}}},"algo":{"type":"object","properties":{"cron":{"type":"array","items":{"type":"object","required":["expression","type"],"properties":{"expression":{"type":"string"},"type":{"type":"string"}}}},"source":{"type":"object","properties":{"registry":{"type":"string"},"image":{"type":"string"},"tag":{"type":"string"},"secret":{"type":"string"}}}}}},"title":"CageSettings"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Succesfully deployed cage"},"422":{"description":"Could not process the cage deployment request","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"422Error"}}}},"default":{"description":"General Error","content":{"application/json":{"schema":{"description":"Represents error object","type":"object","properties":{"message":{"type":"string"}},"required":["message"],"title":"500Error"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

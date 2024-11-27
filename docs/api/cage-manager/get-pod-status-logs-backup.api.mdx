@@ -1,0 +1,71 @@
+---
+id: get-pod-status-logs-backup
+title: "Get the status of all pods running"
+description: "Get the status of all pods running"
+sidebar_label: "Get the status of all pods running"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVlFFr2zAQx7+KuKcVFFxGn8QYdGOUwAal255CKBf7YquVJVU6hwXj7z7OdtOkzcbmF9uS7vy/3/3PPYRICdkGv6zAQE18G6rvjNzlr6HOn7B87CJoYKwzmBW0wVsOCdYaIiZsiSnJRg/Wg4GI3IAGjy2BgRJrWlagIZcNtQimB95H2cmcrK9h0JDoqbOJKjCcOtJQUS6TjaIIDCwrFbaKG1JlcA43YdKqcsSSYFhLfI7BZ8qS/f3lpdzK4Jk8yyPG6Gw5BhUPWXL2b9VgSrgHDZapzUfrYfNAJcOxyNVUm4Y8Mho5JGHIdpIwlX6m0Dngz1v32fryTKyGbUgtMhiokGnBtiUYBg1s2cm5Q8dgkEvD1eWVpDlFeUc5dKkUkp2rlA+sNqS2ofPSof9FdkBzWj2lFNJ9SzljfQ7DcMry9Ph6ln+q+4Z4NMAESeyAzqkYqqxS5/1EqCVuwmxgESU2NFD0kwOHwoU6FzFU93MXNGRKu2frdsmBgYY5ZlMUHyRo0aLHmtICo/04Gs36bRgrmql/xpq+TYfU9e0SXuu+VjtKe1WG4BRGqzioKefRunwpK7O4AA2iZop0yJRZjBFD5hb9i6/+jcaJkEMPmH5xER1aL6nHmvuZ1ArMYVYFlSB8gbXW0ITMcqzvN5jpZ3LDIMtPHaU9mNVaww6TxY2QWfVQ2SzPFZgtuvx6qo8GFN7dzXa4UH+fdX2+jOcJ9jK/O3SdvIGGR9q//ICG9aChIawojfKmzeuypMhHYW+ML20/OOvmyw8Yht/1kcn6
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the status of all pods running"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/{cageId}/logs/pod_status"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the status of all pods running
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"object","required":["name","status"],"properties":{"name":{"type":"string"},"status":{"type":"string"},"status_since":{"type":"string","format":"date-time"}},"title":"PodStatus"}}}}},"404":{"description":"Resource could not be found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
