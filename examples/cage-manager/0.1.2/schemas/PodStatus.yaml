@@ -1,0 +1,12 @@
+type: object
+required:
+  - name
+  - status
+properties:
+  name:
+    type: string
+  status:
+    type: string
+  status_since:
+    type: string
+    format: date-time

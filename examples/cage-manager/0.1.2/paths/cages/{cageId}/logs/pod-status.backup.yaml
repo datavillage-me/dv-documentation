@@ -1,0 +1,23 @@
+get:
+  operationId: getPodStatusLogsBackup
+  summary: Get the status of all pods running
+  tags:
+    - monitor
+  parameters:
+    - in: path
+      name: cageId
+      schema:
+        type: string
+      required: true
+      description: Id of the collaboration space
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../../../../schemas/PodStatus.yaml"
+
+    "404":
+      $ref: "../../../../schemas/errors/404NotFound.yaml"

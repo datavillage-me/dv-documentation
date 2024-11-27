@@ -1,0 +1,20 @@
+delete:
+  summary: Delete a cage
+  tags:
+    - crud
+  description: >
+    Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
+  parameters:
+    - in: path
+      name: cageId
+      schema:
+        type: string
+      required: true
+      description: Id of the collaboration space
+  responses:
+    "200":
+      description: Succesfully deployed cage
+    "404":
+      $ref: "../../schemas/errors/404NotFound.yaml"
+    "422":
+      $ref: "../../schemas/errors/422UnprocessableEntity.yaml"

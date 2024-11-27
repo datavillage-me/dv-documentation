@@ -1,0 +1,18 @@
+get:
+  summary: Get the public key of a cage.
+  tags:
+    - operate
+  description: "Fetches the public key of a cage."
+  parameters:
+    - in: path
+      name: cageId
+      schema:
+        type: string
+      required: true
+      description: Id of the collaboration space
+  responses:
+    "200":
+      description: The RSA public key of this cage.
+      content:
+        text/plain:
+          schema:

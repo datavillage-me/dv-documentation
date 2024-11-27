@@ -1,0 +1,57 @@
+type: object
+required:
+  - algo
+properties:
+  cage_id:
+    type: string
+    description: There is talks about an appId and a cageId. We only use the cageId. AppId is still used here and there, until we remove the rest of dv-platform.
+  client_id:
+    type: string
+  dv_token:
+    type: string
+
+  cagepool:
+    type: string
+
+  environments:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+
+  algo:
+    type: object
+    required:
+      - source
+    properties:
+      cron:
+        type: array
+        items:
+          type: object
+          required:
+            - expression
+            - type
+          properties:
+            expression:
+              type: string
+            type:
+              type: string
+      source:
+        type: object
+        required:
+          - registry
+          - image
+          - tag
+        properties:
+          registry:
+            type: string
+          image:
+            type: string
+          tag:
+            type: string
+          secret:
+            type: string
