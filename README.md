@@ -181,3 +181,9 @@ Then, add a new object with key `cage-manager-0.1.3` that looks as follows:
 ```
 
 You can now [start the development](#start-development-server) server to see the results.
+
+## Global versions
+
+In the future, we will want a way to version the platform, which will be a collection of versions of components that are well integrated. We can achieve this with [docusaurus versioning](https://docusaurus.io/docs/versioning) (you can already see it in action in the Docusaurus documentation itself)
+
+We should be carefull with this as it significantly increases the size of the repository and makes it harder to manage. Also, we need to consider the fact that if someone wants to find the documentation of an older version of a certain component, that person needs to know to which global version this belongs.
