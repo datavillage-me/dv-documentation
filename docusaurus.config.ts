@@ -191,7 +191,7 @@ const config: Config = {
         id: "cage-manager",
         docsPluginId: "classic",
         config: {
-          cagemanager: {
+          "cage-manager": {
             specPath: "api/cage-manager/0.1.2",
             outputDir: "docs/api/cage-manager",
             sidebarOptions: {
@@ -210,7 +210,7 @@ const config: Config = {
               },
             },
           } satisfies OpenApiPlugin.Options,
-          controlplane: {
+          "control-plane": {
             specPath: "api/control-plane.yaml",
             outputDir: "docs/api/control-plane",
             sidebarOptions: {
