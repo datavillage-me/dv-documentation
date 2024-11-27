@@ -11,7 +11,13 @@
 
 // @ts-check
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-import "./docs/api/cage-manager/sidebar";
+import cagemanagersidebar from "./docs/api/cage-manager/sidebar";
+import cagemanager010sidebar from "./docs/api/cage-manager/0.1.0/sidebar";
+import {
+  versionSelector,
+  versionCrumb,
+} from "docusaurus-plugin-openapi-docs/lib/sidebars/utils";
+import cagemanagerversions from "./docs/api/cage-manager/versions.json";
 
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
@@ -28,17 +34,50 @@ const sidebars: SidebarsConfig = {
       items: require("./docs/user-manual/sidebar.js"),
     },
   ],
-  cageManagerSidebar: [
+  "cage-manager-0.1.2": [
+    {
+      type: "html",
+      defaultStyle: true,
+      value: versionSelector(cagemanagerversions),
+    },
+    {
+      type: "html",
+      defaultStyle: true,
+      value: versionCrumb("0.1.2"),
+    },
     {
       type: "category",
-      label: "Cage Manager",
+      label: "Cage Manager latest",
       link: {
         type: "generated-index",
         title: "Cagemanager API",
         description: "Endpoints implemented in the Cage Manager",
         slug: "/api/cage-manager",
       },
-      items: require("./docs/api/cage-manager/sidebar.js"),
+      items: cagemanagersidebar,
+    },
+  ],
+  "cage-manager-0.1.0": [
+    {
+      type: "html",
+      defaultStyle: true,
+      value: versionSelector(cagemanagerversions),
+    },
+    {
+      type: "html",
+      defaultStyle: true,
+      value: versionCrumb("0.1.0"),
+    },
+    {
+      type: "category",
+      label: "Cage Manager v0.1.0",
+      link: {
+        type: "generated-index",
+        title: "Cagemanager API",
+        description: "Endpoints implemented in the Cage Manager",
+        slug: "/api/cage-manager/0.1.0",
+      },
+      items: cagemanager010sidebar,
     },
   ],
   controlPlaneSidebar: [
