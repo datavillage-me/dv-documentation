@@ -1,11 +1,11 @@
 ---
-id: send-an-event-to-a-cage
-title: "Send an event to a cage"
-description: "Send an event to a cage"
-sidebar_label: "Send an event to a cage"
+id: send-event-deprecated
+title: "[DEPRECATED] Send an event to a cage"
+description: "[DEPRECATED] Send an event to a cage"
+sidebar_label: "[DEPRECATED] Send an event to a cage"
 hide_title: true
 hide_table_of_contents: true
-api: eJytlUtP3DAQx7+KNaciZRtUcYqqShT1wKEqAnpaRdVsMrsxdWxjOwtRlO9ejZ19sTyKBDc8r99/MjM7QMCVh2IOxpLDQFBmYNFhS4EcGwaQGgqwGBrIQGNLUECFK7qsIQNfNdQiFAOE3rLFByf1CsYMHN130lENRXAdZVCTr5y0QRrOd1kLsxShIVEZpXBhHLJFeIsVwZhNZe87cj08Db5tSPjgCFvx0JCjmIfWpIPwjelULRYkPOlaBPN5R51C/pd6icpH7CV2KkABsYCHsUxe5MN3U/ec5ZBuC7OrvPn3aU8qowNbigHQWiWr2IT8znOi4ZjTLO6o4kTW8fcKkvzOeqTmQM48WcsMsK4ll0F1tZeFgcYxxXhrtE+pv5yeHiu86aqK/LJTqp/a3JCYJH6QpJa8T0P2pq6da5kEnJ2eHTNfkzedq3jeeEC0CTwkS9Pp+uOoyTnj/kxAb5Mfukf68ems33B/UU/jHYxAwdsHGbQUGlPzbhofUXhFC8jZ7PMh7eiYb2bPk1tvVrpzCgpoQrC+yPOv7DprUeOK3Ayt/BaHnMVf7wb9xyO2Vj2nKgOplyYaZGAPuMAV/Uz5xPnV5dECn4s1uV5UxiiBVrKsVH7vPcoQxewEMmDwFKkwkA9ck1W3GD/PtGUvt+qg+pY/0GPIrUKpOV/syTB1cR5PnIcMiu2tS40sM2i438UchmGBnn47NY78nG4Vt7eWHhfq4Igc1N9O27sv2bPkf6nfv25rVB07xY+4RieZ5Z1cn66nMT0Rr1/qF5CmR9T9PtAGdWrpWI4ZNIQ1uYiXjBcJYnbLKXbBR2vJvxEp4ryqyIZXfcu9dbn6dXMLGSym492ammMcPvCBxocEamJT4lLHtwEU6lUX1xpSTv77Bxywf8g=
+api: eJytlU1v2zAMhv+KwNMKOEsx9GQMA7I2hxyGBWl2CoyBsZnYnSypkpwuMPzfB0punDRdP4D2VvHr4WuSacHj1kG6Am3IoifIEijIWMrRUwGptw0lvbHSalZACo5UMd2R8jeDYwIGLdbkyXK6FioFKRj0JSSgsCZIIcctzdjV5SXVCGkLfm/Y4ryt1Ba6BCzdN5UdKhfkclsZrg0pzAqhN8KXJHItJa51pBLOYE7QJX3Z+4bsHp4GL0sSzlvCWjyUZCnkIe5DuFI3shBrEtyb8PrzQB1D3kq9QekC9gYb6SGFUMBBl0Uvcv67Lvac5ZTuADNUfvz3qSa5Vp4taQtojKzyIML4znGi9pxTr+8o50TG8of0FbnBetbNSTuraM0SwKKouAzK+VEWBuq6GOOMVi6m/nJ5ed7hbZPn5DaNlPte5pJE3+IHtVSTc3HIXu1rcM1iA1eXV+fMC3K6sTnPGw+I0p6HZKMbVXwcNVmr7e8e6HXyU/dA3z2d9dXNdL6YXk+W05tM3LLYqPpZ91qg4FWEBGrypeaVNtoFLt7XFMZtXNVu/DiCjuzucbMbKyGF0nvj0vH4K7uOalS4JTtCU30Ls84aLIZ5n/7F2sjnmkugUhsdDJVnD7jGLf2I+cRkPjvb44nYkd2LXGsp0FTcUCx/9M5QTqSjC0iAwWOkRE/Oc03ut8bwlfple6NiJyiHZjz99WMjsVKcPAjU9mKuID3cvahmlkDJcqcraNs1OvplZdfxc7xbrHFROVzLk4NyUvcwee++as8S/6H98aXboWzYKXzJHdqKWd7J9WnRj+yFePlq/wepf0S1PwZ6RO0l7bIugZKwIBvwovE6QoyWnGIIPltR/r2IEZM8J+Nf9M2OtmX+83YJCaz7Q17rgmMsPvCxxocIqoMoYcHDWwsS1bYJKw4xJ//9AyrLlfk=
 sidebar_class_name: "post api-method"
 info_path: docs/api/cage-manager/cagemanager-api
 custom_edit_url: null
@@ -22,21 +22,25 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Send an event to a cage"}
+  children={"[DEPRECATED] Send an event to a cage"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"post"}
-  path={"/cages/{cageId}/event"}
+  path={"/{cageId}/event"}
   context={"endpoint"}
 >
   
 </MethodEndpoint>
 
+:::caution deprecated
 
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
 
-Send an event to a cage
+:::
+
+[DEPRECATED] Send an event to a cage
 
 <Heading
   id={"request"}

@@ -1,11 +1,11 @@
 ---
-id: get-the-logs-of-the-algo
-title: "Get the logs of the algo"
+id: get-logs-deprecated
+title: "[DEPRECATED] Get the logs of the algo"
 description: "Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints."
-sidebar_label: "Get the logs of the algo"
+sidebar_label: "[DEPRECATED] Get the logs of the algo"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNU8Fq3EAM/RWhUwOTOPRoSiGUNM2hEEJ7SvegtRV72vHMZEbedDH+96LZ3XRx0kJzqi+W5dHovSe9CYW6jPUdDsFbCQlXBlvOTbJRbPBY40eWpucM0jO40GUI9yUm1wVIo/fWd2B9yTXU8Rnc2q4X8OERCKKjhj8F13KCSNLDhpKltWOwGahtuYU1NzRmBulthkfrHOTorID1EmAYndjoGNi3MVgv+eybR4OREg0snBT8hFaR6v1o0NPAWKNiuW7RYG56HgjrCWUb9U+WZH2Hs8HED6NN3GItaeQl8+v2wLUJztE6JNI/kCM1jLN5sa3wEG+UdF9I/0v/eaWZHIPPnPX82/NzfTXBC3vRkGJ0tikwqu9ZUU7P76eUaIsGrfCQX+hbHoMDSx9arLFjKYpKjzVWqluupp18c6Ujr6YFq1lpcdoc5B+Twxp7kZjrqnqntacDeeo4nVK071GpWX8fChorTuF8oI4/7w7Bxc01LuW/gA2nLTQhOKBoQbehHD/KF7BQn56gQUWzq3QknEUFjiHLQEWm/XyuWF5c5WX7I9n/Uwvspyr8U6royHolXCYx7Yd5V0yQ0WD95AbFr4nlnq4M9iGLFk3TmjJ/TW6eNf0wctpifbcyeEBeht7arHGL9T25vHTPsX5vbvd7fgJ/99QfSB322utWb8iN+oUGf/D2t9HVj6+C9LquS/3m1WywZ9JY1dmdumgajnJU/8zA6ownJ15dfsF5/gXQGewX
+api: eJzNU8Fu2zAM/RWCpxVQm2JHYxgQtFkXYAOKojtlOTA2a2uTJVWi0wWG/32gk7Rp2g1YT/PFNE2J7z3y9RgiJxIb/LzCAmuWL6HOlxwTlyRcocHq6aOQ1LFBoTpjscA2eCsh4VKLcpls1IuwwE8sZcMZpGFwoc4Q7saYXB0gdd5bX4P1Y66kms/gxtaNgA8PQBAdlfw5uIoTRJIG1pQsrRyDzUBVxRWsuKQuM0hjMzxY5yBHZwWslwBt58RGx8C+isF6yWffPRqMlKhl4aTge7SKVO9Hg55axgIVy1w557LhlrDoUTZR/2RJ1tc4GEx839n0JMZz5vNqz7UMztEqbMWFHKlkHMyrbYXbeK2km5H0v/QflprJMfjMWevfn5/rqwxe2IuGFKOz5Qhj8iMryv7l/ZQSbdCgFW7zK33Hx2DL0oTdooyKSoMFTvqtcMNEhz3pj/gMSojTei98lxwW2IjEXEwmH/TsaUueak6nFO1HVFLW34URhxWnQC6o5q/bIphez/FY+CmsOW2gDMEBRQu6B2P5QV47ZShOT9CgotmedCScRaWNIUtLo0C7ySwuZ9c3s4vp7exyCVcsr270MZYD9f9TJ+yGK/xLJtGR9cp+HEu/m+kCi0czKG40WByv6dJgE7Jocd+vKPO35IZB0/cdpw0Wi6XBPeJx8pXNGldY3JHLx+Y51O3dzW7NT+DvlvoDmf1ae13qNblOv9DgT948+Vzt+CZIb+t6rN+wHAw2TBqrOtuqaVlylIPzL/yr9ng04tXsFofhN+Vn/cg=
 sidebar_class_name: "get api-method"
 info_path: docs/api/cage-manager/cagemanager-api
 custom_edit_url: null
@@ -22,19 +22,23 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get the logs of the algo"}
+  children={"[DEPRECATED] Get the logs of the algo"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/cages/{cageId}/logs/{tempPlaceholder}"}
+  path={"/{cageId}/logs/{tempPlaceholder}"}
   context={"endpoint"}
 >
   
 </MethodEndpoint>
 
+:::caution deprecated
 
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
 
 Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
 
