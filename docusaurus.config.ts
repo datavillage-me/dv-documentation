@@ -192,11 +192,22 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           cagemanager: {
-            specPath: "examples/cage-manager.yaml",
+            specPath: "examples/cage-manager/0.1.2",
             outputDir: "docs/api/cage-manager",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
+            },
+            version: "0.1.2", // Current version
+            label: "v0.1.2", // Current version label
+            baseUrl: "/dv-documentation/docs/api/cage-manager",
+            versions: {
+              "0.1.0": {
+                specPath: "examples/cage-manager/0.1.0/api.yaml",
+                outputDir: "docs/api/cage-manager/0.1.0",
+                label: "v0.1.0",
+                baseUrl: "/dv-documentation/docs/api/cage-manager/0.1.0",
+              },
             },
           } satisfies OpenApiPlugin.Options,
           controlplane: {
