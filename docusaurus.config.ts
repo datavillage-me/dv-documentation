@@ -192,7 +192,7 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           "cage-manager": {
-            specPath: "api/cage-manager/0.1.2",
+            specPath: "api/cage-manager/0.1.2.yaml",
             outputDir: "docs/api/cage-manager",
             sidebarOptions: {
               groupPathsBy: "tag",
@@ -203,7 +203,7 @@ const config: Config = {
             baseUrl: "/dv-documentation/docs/api/cage-manager",
             versions: {
               "0.1.0": {
-                specPath: "api/cage-manager/0.1.0/api.yaml",
+                specPath: "api/cage-manager/0.1.0.yaml",
                 outputDir: "docs/api/cage-manager/0.1.0",
                 label: "v0.1.0",
                 baseUrl: "/dv-documentation/docs/api/cage-manager/0.1.0",
@@ -211,7 +211,7 @@ const config: Config = {
             },
           } satisfies OpenApiPlugin.Options,
           "control-plane": {
-            specPath: "api/control-plane.yaml",
+            specPath: "api/control-plane/0.2.0.yaml",
             outputDir: "docs/api/control-plane",
             sidebarOptions: {
               groupPathsBy: "tag",
