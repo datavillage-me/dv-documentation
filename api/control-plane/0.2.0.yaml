@@ -1,0 +1,411 @@
+openapi: 3.0.0
+info:
+  title: ControlPlane API
+  version: latest
+servers:
+  - url: https://<control-plane-api>
+security:
+  - bearerAuth: []
+tags:
+  - name: auth
+    description: Authentication
+  - name: data-contracts
+    description: Data Contracts (OCDS v3)
+paths:
+  /auth/currentCredentials:
+    get:
+      operationId: getCurrentCredentials
+      tags:
+        - auth
+      description: Get your current credentials
+      responses:
+        "200":
+          description: The developer that is logged in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Developer"
+  /data-contracts:
+    get:
+      tags:
+        - data-contracts
+      summary: All data contracts
+      description: Get all data contracts
+      responses:
+        "200":
+          description: A JSON array of data contracts in OCDS format
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/DataContractSummary"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+    post:
+      tags:
+        - data-contracts
+      description: Create a new data contract
+      summary: Create data contract
+      requestBody:
+        description: The data contract in ODCS format
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DataContractODCS"
+          application/yaml:
+            schema:
+              $ref: "#/components/schemas/DataContractODCS"
+      responses:
+        "201":
+          description: Data contract successfullly created
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+                example: http://example.com/data-contracts/123
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+  /data-contracts/{contractId}:
+    get:
+      tags:
+        - data-contracts
+      summary: Get a specific data contract
+      description: |
+        Fetches a data contract by id. Fields might be hidden depending on the access rights of the requesting user
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract to get
+      responses:
+        "200":
+          description: A JSON object representing the data contract in ODCS format
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DataContract"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+    patch:
+      tags:
+        - data-contracts
+      summary: Update the ODCS definition of a specific data contract
+      description: |
+        Overwrite included fields of the ODCS specs
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract to update
+      requestBody:
+        description: Fields of ODCS to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DataContractODCSProps"
+      responses:
+        "204":
+          description: Update was succesful
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+    delete:
+      tags:
+        - data-contracts
+      summary: Delete a specific data contract
+      description: |
+        Deletes a data contract if the user has the DATA-COLLABORATOR role
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract to delete
+      responses:
+        "204":
+          description: Deletion was succesful
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+components:
+  schemas:
+    Developer:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            type: string
+        clientId:
+          type: string
+      required:
+        - clientId
+    DataContract:
+      title: Data Contract
+      allOf:
+        - $ref: "#/components/schemas/DataContractDV"
+        - type: object
+          properties:
+            dataContract:
+              allOf:
+                - $ref: "#/components/schemas/DataContractODCS"
+      required:
+        - dataContract
+    DataContractDV:
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique identifier used in the Datavillage DCP to identify a data contract
+        clientId:
+          type: string
+          description: Id of the client owning the data contract
+      required:
+        - id
+        - clientId
+        - created
+        - updated
+    DataContractODCSBase:
+      type: object
+      properties:
+        version:
+          type: string
+          description: Current version of the data contract.
+        name:
+          type: string
+          description: Name of the data contract.
+        status:
+          type: string
+          description: Current status of the dataset. Valid values are `production`, `test`, or `development`.
+          example:
+            - production
+            - test
+            - development
+    DataContractSummary:
+      title: Data Contract summary
+      allOf:
+        - $ref: "#/components/schemas/DataContractDV"
+        - type: object
+          properties:
+            dataContractSummary:
+              allOf:
+                - $ref: "#/components/schemas/DataContractODCSBase"
+                - required:
+                    - version
+                    - name
+                    - status
+    SchemaElement:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the element.
+        physicalType:
+          type: string
+          description: The physical element data type in the data source.
+          example:
+            - table
+            - view
+            - topic
+            - file
+        description:
+          type: string
+          description: Description of the element.
+        businessName:
+          type: string
+          description: The business name of the element.
+    SchemaProperty:
+      allOf:
+        - $ref: "#/components/schemas/SchemaElement"
+          required:
+            - name
+        - type: object
+          properties:
+            primaryKey:
+              type: boolean
+              description: Boolean value specifying whether the element is primary or not. Default is false.
+            primaryKeyPosition:
+              type: integer
+              default: -1
+              description: If element is a primary key, the position of the primary key element. Starts from 1. Example of `account_id, name` being primary key columns, `account_id` has primaryKeyPosition 1 and `name` primaryKeyPosition 2. Default to -1.
+            logicalType:
+              type: string
+              description: The logical element data type.
+              enum:
+                - string
+                - date
+                - number
+                - integer
+                - object
+                - array
+                - boolean
+            logicalTypeOptions:
+              type: object
+              description: Additional optional metadata to describe the logical type.
+            physicalType:
+              type: string
+              description: The physical element data type in the data source. For example, VARCHAR(2), DOUBLE, INT.
+            required:
+              type: boolean
+              default: false
+              description: Indicates if the element may contain Null values; possible values are true and false. Default is false.
+            unique:
+              type: boolean
+              default: false
+              description: Indicates if the element contains unique values; possible values are true and false. Default is false.
+            partitioned:
+              type: boolean
+              default: false
+              description: Indicates if the element is partitioned; possible values are true and false.
+            partitionKeyPosition:
+              type: integer
+              default: -1
+              description: If element is used for partitioning, the position of the partition element. Starts from 1. Example of `country, year` being partition columns, `country` has partitionKeyPosition 1 and `year` partitionKeyPosition 2. Default to -1.
+            classification:
+              type: string
+              description: Can be anything, like confidential, restricted, and public to more advanced categorization. Some companies like PayPal, use data classification indicating the class of data in the element; expected values are 1, 2, 3, 4, or 5.
+              example:
+                - confidential
+                - restricted
+                - public
+            encryptedName:
+              type: string
+              description: The element name within the dataset that contains the encrypted element value. For example, unencrypted element `email_address` might have an encryptedName of `email_address_encrypt`.
+            transformSourceObjects:
+              type: array
+              description: List of objects in the data source used in the transformation.
+              items:
+                type: string
+            transformLogic:
+              type: string
+              description: Logic used in the element transformation.
+            transformDescription:
+              type: string
+              description: Describes the transform logic in very simple terms.
+            example:
+              type: array
+              description: List of sample element values.
+              items:
+                anyOf:
+                  - type: string
+                  - type: number
+                  - type: integer
+                  - type: boolean
+                  - type: array
+                  - type: object
+            criticalDataElement:
+              type: boolean
+              default: false
+              description: True or false indicator; If element is considered a critical data element (CDE) then true else false.
+          required:
+            - name
+    SchemaObject:
+      allOf:
+        - $ref: "#/components/schemas/SchemaElement"
+        - type: object
+          properties:
+            logicalType:
+              type: string
+              description: The logical element data type.
+              enum:
+                - object
+            physicalName:
+              type: string
+              description: Physical name.
+              example:
+                - table_1_2_0
+            dataGranularityDescription:
+              type: string
+              description: Granular level of the data in the object.
+              example:
+                - Aggregation by country
+            properties:
+              type: array
+              description: A list of properties for the object.
+              items:
+                $ref: "#/components/schemas/SchemaProperty"
+      required:
+        - name
+    DataContractODCSProps:
+      title: Data Contract in ODCS format
+      allOf:
+        - $ref: "#/components/schemas/DataContractODCSBase"
+        - type: object
+          description: An open data contract specification to establish agreement between data producers and consumers (ODCS v3).
+          properties:
+            id:
+              type: string
+              description: |
+                A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. This only has meaning for the data owner and is not used to identify data contracts in the Datavillage DCP
+            kind:
+              type: string
+              default: DataContract
+              description: The kind of file this is. Valid value is `DataContract`.
+              enum:
+                - DataContract
+            apiVersion:
+              type: string
+              default: v3.0.0
+              description: Version of the standard used to build data contract. Default value is v3.0.0.
+              enum:
+                - v3.0.0
+                - v2.2.2
+                - v2.2.1
+                - v2.2.0
+            schema:
+              type: array
+              description: A list of elements within the schema to be cataloged.
+              items:
+                $ref: "#/components/schemas/SchemaObject"
+    DataContractODCS:
+      allOf:
+        - $ref: "#/components/schemas/DataContractODCSProps"
+        - required:
+            - version
+            - name
+            - status
+            - id
+            - apiVersion
+            - kind
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    UnauthorizedError:
+      description: User is not authenticated
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
+            required:
+              - error_message
+    NotFoundError:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
+                default: Document not found
+            required:
+              - error_message

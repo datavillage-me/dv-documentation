@@ -1,0 +1,527 @@
+openapi: 3.0.0
+info:
+  title: CageManager API
+  description: A very cool api to manage very cool cages :-)
+  version: latest
+servers:
+  - url: https://<cage-manager-api>
+tags:
+  - name: crud
+    description: CRUD operations on cage resources
+  - name: operate
+    description: Endpoints to operate a cage
+  - name: monitor
+    description: Endpoints to monitor a cage
+paths:
+  /cages:
+    get:
+      summary: Get deployed cages.
+      tags:
+        - crud
+      responses:
+        '200':
+          description: A JSON array of cages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cage'
+  /{cageId}/deploy:
+    post:
+      summary: '[DEPRECATED] Deploy a cage'
+      operationId: deployCageDeprecated
+      deprecated: true
+      tags:
+        - operate
+      description: |
+        Deploys a cage defined in a collaboration space.
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: query
+          name: keep_data
+          schema:
+            type: boolean
+            default: true
+          required: false
+          description: Keep the data associated with this cage.
+      requestBody:
+        description: Settings for the cage to be deployed
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CageSettings'
+      responses:
+        '200':
+          description: Succesfully deployed cage
+        '422':
+          $ref: '#/components/responses/422UnprocessableEntity'
+  /cages/{cageId}/deploy:
+    post:
+      summary: Deploy a cage
+      tags:
+        - operate
+      description: |
+        Deploys a cage defined in a collaboration space.
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: query
+          name: keep_data
+          schema:
+            type: boolean
+            default: true
+          required: false
+          description: Keep the data associated with this cage.
+      requestBody:
+        description: Settings for the cage to be deployed
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CageSettings'
+      responses:
+        '200':
+          description: Succesfully deployed cage
+        '422':
+          $ref: '#/components/responses/422UnprocessableEntity'
+  /{cageId}/delete:
+    post:
+      summary: '[DEPRECATED] Delete a cage'
+      deprecated: true
+      operationId: deleteCageDeprecated
+      tags:
+        - crud
+      description: |
+        Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          description: Succesfully deployed cage
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '422':
+          $ref: '#/components/responses/422UnprocessableEntity'
+  /cages/{cageId}:
+    delete:
+      summary: Delete a cage
+      tags:
+        - crud
+      description: |
+        Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          description: Succesfully deployed cage
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '422':
+          $ref: '#/components/responses/422UnprocessableEntity'
+  /{cageId}/event:
+    post:
+      summary: '[DEPRECATED] Send an event to a cage'
+      tags:
+        - operate
+      deprecated: true
+      operationId: sendEventDeprecated
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: query
+          description: The stream where the event should be send to.
+          name: stream
+          schema:
+            type: string
+          required: false
+          default: events
+      requestBody:
+        description: the event
+        name: event
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+              required:
+                - type
+              additionalProperties: true
+      responses:
+        '200':
+          description: Succesfully send the vent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messageId:
+                    type: string
+                required:
+                  - messageId
+        '404':
+          $ref: '#/components/responses/404NotFound'
+  /cages/{cageId}/event:
+    post:
+      summary: Send an event to a cage
+      tags:
+        - operate
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: query
+          description: The stream where the event should be send to.
+          name: stream
+          schema:
+            type: string
+          required: false
+          default: events
+      requestBody:
+        description: the event
+        name: event
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+              required:
+                - type
+              additionalProperties: true
+      responses:
+        '200':
+          description: Succesfully send the vent
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messageId:
+                    type: string
+                required:
+                  - messageId
+        '404':
+          $ref: '#/components/responses/404NotFound'
+  /{cageId}/public-key:
+    get:
+      summary: '[DEPRECATED] Get the public key of a cage.'
+      deprecated: true
+      operationId: getKeyDeprecated
+      tags:
+        - operate
+      description: Fetches the public key of a cage.
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          description: The RSA public key of this cage.
+          content:
+            text/plain:
+              schema: null
+  /cages/{cageId}/public-key:
+    get:
+      summary: Get the public key of a cage.
+      tags:
+        - operate
+      description: Fetches the public key of a cage.
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          description: The RSA public key of this cage.
+          content:
+            text/plain:
+              schema: null
+  /{cageId}/logs/pod_status:
+    get:
+      operationId: getPodStatusLogsBackup
+      summary: '[DEPRECATED] Get the status of all pods running'
+      deprecated: true
+      tags:
+        - monitor
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PodStatus'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+  /cages/{cageId}/logs/pod_status:
+    get:
+      operationId: getPodStatusLogs
+      summary: Get the status of all pods running
+      tags:
+        - monitor
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PodStatus'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+  /{cageId}/logs/algo:
+    get:
+      operationId: getAlgoLogsBackup
+      deprecated: true
+      summary: '[DEPRECATED] Get the logs of the running algorithm'
+      tags:
+        - monitor
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          $ref: '#/components/responses/404NotFound'
+  /cages/{cageId}/logs/algo:
+    get:
+      operationId: getAlgoLogs
+      summary: Get the logs of the running algorithm
+      tags:
+        - monitor
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          $ref: '#/components/responses/404NotFound'
+  /{cageId}/logs/{tempPlaceholder}:
+    get:
+      summary: '[DEPRECATED] Get the logs of the algo'
+      operationId: getLogsDeprecated
+      deprecated: true
+      tags:
+        - monitor
+      description: |
+        Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: path
+          name: tempPlaceholder
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /cages/{cageId}/logs/{tempPlaceholder}:
+    get:
+      summary: Get the logs of the algo
+      tags:
+        - monitor
+      description: |
+        Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
+      parameters:
+        - in: path
+          name: cageId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: path
+          name: tempPlaceholder
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+components:
+  schemas:
+    Cage:
+      type: object
+      properties:
+        name:
+          type: string
+        namespace:
+          type: string
+    PodStatus:
+      type: object
+      required:
+        - name
+        - status
+      properties:
+        name:
+          type: string
+        status:
+          type: string
+        status_since:
+          type: string
+          format: date-time
+    CageSettings:
+      type: object
+      required:
+        - algo
+      properties:
+        cage_id:
+          type: string
+          description: There is talks about an appId and a cageId. We only use the cageId. AppId is still used here and there, until we remove the rest of dv-platform.
+        client_id:
+          type: string
+        dv_token:
+          type: string
+        cagepool:
+          type: string
+        environments:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+        algo:
+          type: object
+          required:
+            - source
+          properties:
+            cron:
+              type: array
+              items:
+                type: object
+                required:
+                  - expression
+                  - type
+                properties:
+                  expression:
+                    type: string
+                  type:
+                    type: string
+            source:
+              type: object
+              required:
+                - registry
+                - image
+                - tag
+              properties:
+                registry:
+                  type: string
+                image:
+                  type: string
+                tag:
+                  type: string
+                secret:
+                  type: string
+  responses:
+    422UnprocessableEntity:
+      description: Request was semantically incorrect
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
+            required:
+              - error_message
+    404NotFound:
+      description: Resource could not be found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
+            required:
+              - error_message
