@@ -11,21 +11,7 @@
 
 // @ts-check
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-import { loadSidebars } from "./loadSidebars";
-
-// const importedSidebars = {
-//   "0.1.0": ,
-//   "0.2.0": await ,
-// };
-
-let importedSidebars = new Map<String, any>();
-
-import("./docs/api/cage-manager/0.1.0/sidebar").then((sidebar) =>
-  importedSidebars.set("0.1.0", sidebar)
-);
-
-console.log("imported sidebars");
-// const importedSidebars["0.1.0"] = await import("./docs/api/cage-manager/0.1.0/sidebar");
+import { loadSidebars } from "./loadConfiguration";
 
 const sidebars: SidebarsConfig = loadSidebars();
 

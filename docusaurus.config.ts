@@ -217,6 +217,17 @@ const config: Config = {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
             },
+            version: "0.2.0",
+            label: "v0.2.0",
+            baseUrl: "/dv-documentation/docs/api/control-plane",
+            versions: {
+              "0.1.0": {
+                specPath: "api/control-plane/0.1.0.yaml",
+                outputDir: "docs/api/control-plane/0.1.0",
+                label: "v0.1.0",
+                baseUrl: "/dv-documentation/docs/api/control-plane/0.1.0",
+              },
+            },
           } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
       },
