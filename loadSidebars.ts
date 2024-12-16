@@ -1,6 +1,4 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-import cagemanagersidebar from "./docs/api/cage-manager/sidebar";
-import cagemanager010sidebar from "./docs/api/cage-manager/0.1.0/sidebar";
 import {
   versionSelector,
   versionCrumb,

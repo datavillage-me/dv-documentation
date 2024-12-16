@@ -11,14 +11,6 @@
 
 // @ts-check
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-
-import cagemanagersidebar from "./docs/api/cage-manager/sidebar";
-import cagemanager010sidebar from "./docs/api/cage-manager/0.1.0/sidebar";
-import {
-  versionSelector,
-  versionCrumb,
-} from "docusaurus-plugin-openapi-docs/lib/sidebars/utils";
-import cagemanagerversions from "./docs/api/cage-manager/versions.json";
 import { loadSidebars } from "./loadSidebars";
 
 // const importedSidebars = {
