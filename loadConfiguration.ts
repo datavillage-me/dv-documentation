@@ -3,13 +3,12 @@ import {
   versionSelector,
   versionCrumb,
 } from "docusaurus-plugin-openapi-docs/lib/sidebars/utils";
-import cagemanagerversions from "./docs/api/cage-manager/versions.json";
 import fs from "fs";
 import path from "path";
-import {
-  SidebarConfig,
-  SidebarItemConfig,
-} from "@docusaurus/plugin-content-docs/src/sidebars/types.js";
+import { SidebarItemConfig } from "@docusaurus/plugin-content-docs/src/sidebars/types.js";
+
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import type * as Plugin from "@docusaurus/types/src/plugin";
 
 const defaultSidebars: SidebarsConfig = {
   tutorialSidebar: [
@@ -143,87 +142,83 @@ function createSidebarConfigProjectVersion(
   ];
 }
 
+function getHighestVersion(
+  versions: ProjectVersionConfig[]
+): ProjectVersionConfig | null {
+  let highestVersion: ProjectVersionConfig | null = null;
+  versions.forEach((vc) => {
+    if (highestVersion == null || vc.version > highestVersion.version) {
+      highestVersion = vc;
+    }
+  });
+  return highestVersion;
+}
+
 export function loadSidebars(): SidebarsConfig {
   const projects = loadVersionsFromJsons();
-  console.log(projects);
 
   const result = defaultSidebars;
-  for (const [projectId, allVersions] of Object.entries(projects)) {
-    const highestVersion = allVersions
-      .map((obj) => obj.version)
-      .sort((a, b) => b.localeCompare(a))[0];
+  for (const [projectId, versions] of Object.entries(projects)) {
+    const highestVersion = getHighestVersion(versions);
 
-    allVersions.forEach((version) => {
-      const projectVersionId = `${projectId}-${version.version}`;
+    versions.forEach((v) => {
+      const projectVersionId = `${projectId}-${v.version}`;
       result[projectVersionId] = createSidebarConfigProjectVersion(
         projectId,
-        version,
-        versionSelector(allVersions),
-        version.version == highestVersion
+        v,
+        versionSelector(versions),
+        v.version == highestVersion?.version
       );
     });
   }
-  // console.log(JSON.stringify(result));
   return result;
-  // return {
-  //   "cage-manager-0.1.2": [
-  //     {
-  //       type: "html",
-  //       defaultStyle: true,
-  //       value: versionSelector(cagemanagerversions),
-  //     },
-  //     {
-  //       type: "html",
-  //       defaultStyle: true,
-  //       value: versionCrumb("0.1.2"),
-  //     },
-  //     {
-  //       type: "category",
-  //       label: "Cage Manager latest",
-  //       link: {
-  //         type: "generated-index",
-  //         title: "Cagemanager API",
-  //         description: "Endpoints implemented in the Cage Manager",
-  //         slug: "/api/cage-manager",
-  //       },
-  //       items: require("./docs/api/cage-manager/sidebar"),
-  //     },
-  //   ],
-  //   "cage-manager-0.1.0": [
-  //     {
-  //       type: "html",
-  //       defaultStyle: true,
-  //       value: versionSelector(cagemanagerversions),
-  //     },
-  //     {
-  //       type: "html",
-  //       defaultStyle: true,
-  //       value: versionCrumb("0.1.0"),
-  //     },
-  //     {
-  //       type: "category",
-  //       label: "Cage Manager v0.1.0",
-  //       link: {
-  //         type: "generated-index",
-  //         title: "Cagemanager API",
-  //         description: "Endpoints implemented in the Cage Manager",
-  //         slug: "/api/cage-manager/0.1.0",
-  //       },
-  //       items: require("./docs/api/cage-manager/0.1.0/sidebar"),
-  //     },
-  //   ],
-  //   controlPlaneSidebar: [
-  //     {
-  //       type: "category",
-  //       label: "Control Plane",
-  //       link: {
-  //         type: "generated-index",
-  //         title: "Control Plane API",
-  //         description: "Endpoints implemented in the Control Plane",
-  //         slug: "/api/control-plane",
-  //       },
-  //       items: require("./docs/api/control-plane/sidebar.js"),
-  //     },
-  //   ],
-  // };
+}
+
+export function loadApiConfiguration(): Plugin.PluginOptions {
+  const projects = loadVersionsFromFileStructure();
+  const result: Plugin.PluginOptions = {};
+  for (const [projectId, versions] of Object.entries(projects)) {
+    const projectConfig = createApiConfigurationForProject(projectId, versions);
+    result[projectId] = projectConfig;
+  }
+
+  return result;
+}
+
+function createApiConfigurationForProject(
+  projectId: string,
+  versions: ProjectVersionConfig[]
+): OpenApiPlugin.Options {
+  const highestVersion = getHighestVersion(versions);
+  if (highestVersion == null) {
+    return {};
+  }
+  const result: OpenApiPlugin.Options = {
+    specPath: `api/${projectId}/${highestVersion.version}.yaml`,
+    outputDir: `docs/api/${projectId}`,
+    sidebarOptions: {
+      groupPathsBy: "tag",
+      categoryLinkSource: "tag",
+    },
+    version: highestVersion.version,
+    label: highestVersion.label,
+    baseUrl: `/dv-documentation/docs/api/${projectId}`,
+  };
+
+  versions
+    .filter((v) => v.version != highestVersion.version)
+    .forEach((v) => {
+      const versionConfig = {
+        specPath: `api/${projectId}/${v.version}.yaml`,
+        outputDir: `docs/api/${projectId}/${v.version}`,
+        label: v.label,
+        baseUrl: v.baseUrl,
+      };
+      if (result["versions"] == undefined) {
+        result["versions"] = {};
+      }
+      result["versions"][v.version] = versionConfig;
+    });
+
+  return result;
 }

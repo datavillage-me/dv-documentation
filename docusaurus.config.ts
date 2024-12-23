@@ -3,8 +3,7 @@
 
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
-import type * as Plugin from "@docusaurus/types/src/plugin";
-import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import { loadApiConfiguration } from "./loadConfiguration";
 
 const config: Config = {
   title: "Datavillage Documentation",
@@ -188,48 +187,9 @@ const config: Config = {
     [
       "docusaurus-plugin-openapi-docs",
       {
-        id: "cage-manager",
+        id: "api-docs",
         docsPluginId: "classic",
-        config: {
-          "cage-manager": {
-            specPath: "api/cage-manager/0.1.2.yaml",
-            outputDir: "docs/api/cage-manager",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-            version: "0.1.2", // Current version
-            label: "v0.1.2", // Current version label
-            baseUrl: "/dv-documentation/docs/api/cage-manager",
-            versions: {
-              "0.1.0": {
-                specPath: "api/cage-manager/0.1.0.yaml",
-                outputDir: "docs/api/cage-manager/0.1.0",
-                label: "v0.1.0",
-                baseUrl: "/dv-documentation/docs/api/cage-manager/0.1.0",
-              },
-            },
-          } satisfies OpenApiPlugin.Options,
-          "control-plane": {
-            specPath: "api/control-plane/0.2.0.yaml",
-            outputDir: "docs/api/control-plane",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-            version: "0.2.0",
-            label: "v0.2.0",
-            baseUrl: "/dv-documentation/docs/api/control-plane",
-            versions: {
-              "0.1.0": {
-                specPath: "api/control-plane/0.1.0.yaml",
-                outputDir: "docs/api/control-plane/0.1.0",
-                label: "v0.1.0",
-                baseUrl: "/dv-documentation/docs/api/control-plane/0.1.0",
-              },
-            },
-          } satisfies OpenApiPlugin.Options,
-        } satisfies Plugin.PluginOptions,
+        config: loadApiConfiguration(),
       },
     ],
   ],
