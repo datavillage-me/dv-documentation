@@ -94,6 +94,7 @@ function getVersionsFromFileStructure(
     .filter((file) => !file.isDirectory())
     .filter((file) => file.name.endsWith(".yaml"))
     .map((file) => file.name.substring(0, ".yaml".length))
+    .sort((a, b) => b.localeCompare(a))
     .map((version) => {
       return {
         version,
