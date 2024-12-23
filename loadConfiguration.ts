@@ -110,6 +110,8 @@ function createSidebarConfigProjectVersion(
   versionSelector: string,
   isLatest: boolean
 ): SidebarItemConfig[] {
+  const projectName = projectIdToName(projectId);
+
   const sidebarLocation = isLatest
     ? `./docs/api/${projectId}/sidebar`
     : `./docs/api/${projectId}/${version.version}/sidebar`;
@@ -131,11 +133,11 @@ function createSidebarConfigProjectVersion(
     },
     {
       type: "category",
-      label: "Test label",
+      label: `${projectName} ${version.label} API`,
       link: {
         type: "generated-index",
-        title: "Test title",
-        description: "Test description",
+        title: `${projectName} ${version.label}`,
+        description: `An exhaustive API description of ${projectName} ${version.label}`,
         slug,
       },
       items: require(sidebarLocation),
@@ -153,6 +155,13 @@ function getHighestVersion(
     }
   });
   return highestVersion;
+}
+
+function projectIdToName(projectId: string): string {
+  return projectId
+    .split("-")
+    .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
 }
 
 export function loadSidebars(): SidebarsConfig {
