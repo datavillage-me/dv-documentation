@@ -32,6 +32,23 @@ The other subdirectories of `docs` contain manually created Markdown files.
 
 This sections shows how to apply changes to the OpenAPI files in the `api/` folder and regenerate the corresponding files in the `docs/api` folder.
 
+### File structure
+
+The configuration is loaded from the file structure in the `api/` folder. This looks as follows
+
+```text
+|-- api/
+|---- <project1_id>/
+|------ <version1>.yaml
+|------ <version2>.yaml
+|------ ...
+|---- <project2_id>/
+|------ <version1>.yaml
+|------ <version2>.yaml
+|------ ...
+|---- ...
+```
+
 ### Update latest version
 
 Apply the needed changes to the corresponding yaml files in the `api/` folder. Then, run
@@ -54,133 +71,20 @@ In the `docusaurus.config.ts` file, you can find the ids of the different projec
 
 ### Add new API version
 
-#### Add OpenAPI specs
+Add the specs of the new version with the correct name in the correct folder.
+Use the commands of the previous section to update the docs for the most recent version.
 
-Let's say we have a project `cage-manager` on version `0.1.2`. We want to add `0.1.3` . Version `0.1.1` was released prior to `0.1.2`.
-Before changing anything, clean up the generated files for the current version **of that project** with commands
-
-```bash
-yarn docusaurus clean-api-docs cage-manager
-```
-
-In the folder `api/cage-manager/` add the new specs in a new subdirectory named `0.1.3`.
-
-#### Update configuration
-
-Go to the file `docusaurus.config.ts` and look for the configuration of the docusaurus-plugin-openapi-docs plugin.
-There should be an object structured as follows
-
-```typescript
-{
-  ...
-  config: {
-    "cage-manager": {
-      specPath: "...",
-      ...,
-      versions: {
-        "0.1.1": {
-          specPath: "api/cage-manager/0.1.0/api.yaml",
-          outputDir: "docs/api/cage-manager/0.1.0",
-          label: "v0.1.0",
-          baseUrl: "/dv-documentation/docs/api/cage-manager/0.1.0",
-        },
-        ...
-      }
-    }
-  }
-}
-```
-
-In the `versions` object, add a new object with key `"0.1.2"`. It should have the same keys as the already existing ones. If you are unsure about the values, you can copy them from the `cage-manager` object one level up.
-
-Update the values in the `cage-manager` object according to the new `0.1.3` version.
-
-#### Regenerate specs
-
-We will now update the `docs/api/` folder with the new specs.
-
-First, generate files for the current version (v0.1.3):
+What is left to do, is to generate the new legacy version (the previous latest version). To do this, run following command
 
 ```bash
-yarn docusaurus clean-api-docs cage-manager
+yarn docusaurus gen-api-docs:version <project_id>:<version>
 ```
 
-then, generate the files for the now legacy version 0.1.2:
+To regenerate all versions of a project (also an option, but takes longer):
 
 ```bash
-yarn docusaurus clean-api-docs:version cage-manager:0.1.2
+yarn docusaurus gen-api-docs:version <project_id>:all
 ```
-
-_replace `0.1.2` with `all` in the previous command to regenerate all legacy versions_
-
-Running `yarn build` will result in failure as we still need to update the sidebar configuration
-
-#### Update sidebars configuration
-
-Open `sidebars.ts` and import the 0.1.2 sidebar as follows
-
-```typescript
-import cagemanager012sidebar from "./docs/api/cage-manager/0.1.2/sidebar";
-```
-
-In the `SidebarsConfig` array, search for the `cage-manager-0.1.2` key and replace
-
-```typescript
-{
-  ...
-  link: {
-    ...
-    slug: "/api/cage-manager"
-  }
-  items: cagemanagersidebar;
-}
-```
-
-with
-
-```typescript
-{
-  ...
-  link: {
-    ...
-    slug: "/api/cage-manager/0.1.2"
-  }
-  items: cagemanager012sidebar;
-}
-```
-
-Then, add a new object with key `cage-manager-0.1.3` that looks as follows:
-
-```typescript
-[
-  ...
-  "cage-manager-0.1.3": {
-    {
-      type: "html",
-      defaultStyle: true,
-      value: versionSelector(cagemanagerversions),
-    },
-    {
-      type: "html",
-      defaultStyle: true,
-      value: versionCrumb("0.1.3"),
-    },
-    {
-      type: "category",
-      label: "Cage Manager latest",
-      link: {
-        type: "generated-index",
-        title: "Cagemanager API",
-        description: "Endpoints implemented in the Cage Manager",
-        slug: "/api/cage-manager",
-      },
-      items: cagemanagersidebar,
-    },
-  }
-]
-```
-
-You can now [start the development](#start-development-server) server to see the results.
 
 ## Global versions
 
