@@ -73,8 +73,8 @@ const config: Config = {
           docsPluginId: "classic",
         },
         {
-          href: "https://github.com/datavillage-me",
-          label: "GitHub",
+          href: "https://datavillage.me",
+          label: "Datavillage website",
           position: "right",
         },
       ],
