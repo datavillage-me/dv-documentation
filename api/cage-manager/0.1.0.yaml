@@ -8,9 +8,9 @@ servers:
 paths:
   /cages:
     get:
-      summary: Get deployed cages.
+      summary: Get Cages
       tags:
-        - crud
+        - CRUD
       responses:
         "200":
           description: A JSON array of cages
@@ -29,9 +29,9 @@ paths:
 
   "/{cageId}/deploy":
     post:
-      summary: Deploy a cage
+      summary: Deploy Cage
       tags:
-        - operate
+        - Operate
       description: >
         Deploys a cage defined in a collaboration space.
       parameters:
@@ -73,9 +73,9 @@ paths:
 
   "/{cageId}/delete":
     post:
-      summary: Delete a cage
+      summary: Delete Cage
       tags:
-        - crud
+        - CRUD
       description: >
         Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
       parameters:
@@ -109,9 +109,9 @@ paths:
 
   "/{cageId}/public-key":
     get:
-      summary: Get the public key of a cage.
+      summary: Get Public Key
       tags:
-        - operate
+        - Operate
       description: "Fetches the public key of a cage."
       parameters:
         - in: path
@@ -135,9 +135,9 @@ paths:
 
   "/{cageId}/logs/{tempPlaceholder}":
     get:
-      summary: Get the logs of the algo
+      summary: Get logs
       tags:
-        - monitor
+        - Monitor
       description: >
         Fetches the logs of the algo running in the cage.
         Right now a placeHolder path variable is added because this will split into multiple endpoints.
@@ -247,9 +247,9 @@ components:
                   type: string
 
 tags:
-  - name: crud
+  - name: CRUD
     description: CRUD operations on cage resources
-  - name: operate
+  - name: Operate
     description: Endpoints to operate a cage
-  - name: monitor
+  - name: Monitor
     description: Endpoints to monitor a cage

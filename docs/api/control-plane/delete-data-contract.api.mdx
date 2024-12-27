@@ -1,0 +1,72 @@
+---
+id: delete-data-contract
+title: "Delete Data Contract"
+description: "Deletes a data contract if the user has the DATA-COLLABORATOR role"
+sidebar_label: "Delete Data Contract"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VFFr2zAQ/ivinjZwSDf6ZMYgazroKLRkKXvIzLjYl1qdLKnSqVsw/u/jbKdN0o7tYezJlvSd7vvuvlMLjLcR8hXMkVGdOcsBS45QZFBRLIP2rJ2FHOZkiCkqVJUgyxGp9EZxTSpFCqrG2C/ms+VscnZ1eTn7cLWYLa8WKjhDXy1k4DFgQ0xBkrag5WqPXEMGFhuCHHY3X1SQQSxrahDyFnjr5TRy0PYWugwC3ScdqIKcQ6JjuheVcgOzQ7rsVNUrga6QO6J3NlKUDG9PTuXzgmztrPqBUcVUlhQ3yUj+05M3z+E3UgYdlXWsMHFNlnWJTKJFOJBlCULvjexrZ6d3USLb51Ld+o5KlpoF5ymwHmhSCC58ayhGvKUXKnNQmtURvOi6ruf+gtQFRZdCST35jUv2/5GW7m0wGZaKuzI1ZHmPxl9o6jJoiGtXQQ5jg7PBWDlMxQKTnQXitH2yWCceo/Cw82MKBnKomX3Mp9N3PdCZiTdoaYJev+9tE6lMQfO2D1kTBgqzJKlWxf7xZynOoH8f9Che0uw8LusBBNn489GFBqUin74s+xJou3F9uGYj+LOB3bWQU7PrC8hAhAzdNMgUWYzqXeQG+3aNIzbMsjoYeTiaoPap9f9q9kfZTD956g1qK+z6irdjq1Zw2CrIIN97D4oMahdZcG27xkg3wXSdbN8nCtKOIoMHDBrXUqBVC5WO8l9BvkETj1+JfY2vFqPBXqs/vx2/0TJuot1KK9AkWUEG32l7+LB1RZdBTVhR6GkOgFlZkue90GcTJ+56tPn8/PJ8eQ5d9wuuK/3W
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Data Contract"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/data-contracts/{contractId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a data contract if the user has the DATA-COLLABORATOR role
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"contractId","schema":{"type":"string"},"required":true,"description":"Id of the data contract to delete"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Deletion was succesful"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

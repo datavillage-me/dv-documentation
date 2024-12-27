@@ -73,8 +73,8 @@ const config: Config = {
           docsPluginId: "classic",
         },
         {
-          href: "https://github.com/datavillage-me",
-          label: "GitHub",
+          href: "https://datavillage.me",
+          label: "Datavillage home",
           position: "right",
         },
       ],
@@ -83,28 +83,32 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "User Manual",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "Introduction",
+              to: "/docs/user-manual/intro",
+            },
+            {
+              label: "Authentication & authorization",
+              to: "/docs/user-manual/auth",
+            },
+            {
+              label: "Cage development",
+              to: "/docs/cage-development",
             },
           ],
         },
         {
-          title: "Community",
+          title: "API docs",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Cage Manager API",
+              href: "/docs/api/cage-manager",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              label: "Control Plane API",
+              href: "/docs/api/control-plane",
             },
           ],
         },
@@ -115,10 +119,14 @@ const config: Config = {
               label: "GitHub",
               href: "https://github.com/datavillage-me",
             },
+            {
+              label: "Datavillage Home",
+              href: "https://datavillage.me",
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Datavillage, Inc. Built with Docusaurus.`,
     },
     prism: {
       prism: {

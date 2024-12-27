@@ -8,7 +8,7 @@ security:
   - bearerAuth: []
 tags:
   - name: Collaboration Spaces
-    description: 'Endpoints related to collaboration spaces: CRUD and operating the space'
+    description: "Endpoints related to collaboration spaces: CRUD and operating the space"
   - name: Authentication
     description: The account that performs actions in the Control Plane
   - name: Data Contracts
@@ -19,17 +19,17 @@ paths:
   /auth/currentCredentials:
     get:
       operationId: getCurrentCredentials
-      summary: Get Your Current Credentials
+      summary: Get Current Credentials
       tags:
         - Authentication
       description: Get credentials of authenticated account
       responses:
-        '200':
+        "200":
           description: The developer that is logged in
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Developer'
+                $ref: "#/components/schemas/Developer"
   /collaboration-spaces:
     get:
       operationId: getCollaborationSpaces
@@ -38,21 +38,21 @@ paths:
         - Collaboration Spaces
       description: Get all spaces your account has access to.
       responses:
-        '200':
+        "200":
           description: A JSON array of collaboration spaces
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
     post:
       operationId: createCollaborationSpace
       tags:
         - Collaboration Spaces
-      summary: Create New Collaboration Space
+      summary: Create Collaboration Space
       description: Creates a new collaboration space owned by the client the user is authenticated against
       requestBody:
         description: The space to be created
@@ -60,9 +60,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaborationSpaceCreate'
+              $ref: "#/components/schemas/CollaborationSpaceCreate"
       responses:
-        '201':
+        "201":
           description: Space was created successfully
           headers:
             Location:
@@ -70,14 +70,14 @@ paths:
               schema:
                 type: string
                 example: http://example.com/collaborationSpaces/123
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
   /collaboration-spaces/{spaceId}:
     get:
       operationId: getCollaborationSpace
       tags:
         - Collaboration Spaces
-      summary: Get Collaboration Space By ID
+      summary: Get Collaboration Space
       description: |
         This fetches a collaboration space, if you have access to this space. The necessary roles for this are:
           * abc
@@ -89,21 +89,21 @@ paths:
           required: true
           description: Id of the collaboration space to get
       responses:
-        '200':
+        "200":
           description: A JSON object representing a collaboration space
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       operationId: patchCollaborationSpace
       tags:
         - Collaboration Spaces
-      summary: Update Collaboration Space By ID
+      summary: Update Collaboration Space
       parameters:
         - in: path
           name: spaceId
@@ -117,9 +117,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaborationSpaceUpdate'
+              $ref: "#/components/schemas/CollaborationSpaceUpdate"
       responses:
-        '201':
+        "201":
           description: Space was updated successful
           headers:
             Location:
@@ -127,8 +127,8 @@ paths:
               schema:
                 type: string
                 example: http://example.com/collaborationSpaces/123
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/collaborators:
     get:
       operationId: getCollaborationSpaceCollaborators
@@ -145,18 +145,18 @@ paths:
           required: true
           description: Id of the collaboration space to get
       responses:
-        '200':
+        "200":
           description: An array containing the collaborators of a space
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Collaborator'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                  $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/public-key:
     get:
       operationId: getCollaborationSpacePublicKey
@@ -172,15 +172,15 @@ paths:
           required: true
           description: Id of the collaboration space to get
       responses:
-        '200':
+        "200":
           description: An string containing the public key.
           content:
             text/plain:
               schema: null
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/event:
     post:
       operationId: postCollaborationSpaceEvent
@@ -216,7 +216,7 @@ paths:
                 - type
               additionalProperties: true
       responses:
-        '200':
+        "200":
           description: The id of the event that has been send
           content:
             application/json:
@@ -227,8 +227,8 @@ paths:
                     type: string
                 required:
                   - messageId
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/attestation-token:
     get:
       summary: Get Attestation Report
@@ -252,15 +252,15 @@ paths:
               - fingerprint
           required: false
       responses:
-        '200':
+        "200":
           description: An attestation report
           content:
             text/plain:
               schema: null
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts:
     get:
       tags:
@@ -274,20 +274,20 @@ paths:
             type: string
           description: A string to search for against all data contracts you have access to. Will match case insensitive.
       responses:
-        '200':
+        "200":
           description: A JSON array of data contracts in OCDS format
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DataContractSummary'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/DataContractSummary"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
     post:
       tags:
         - Data Contracts
-      summary: Create New Data Contract
+      summary: Create Data Contract
       description: Create a new data contract owned by the client the account is authenticated for
       requestBody:
         description: The data contract in ODCS format
@@ -295,12 +295,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataContractCreate'
+              $ref: "#/components/schemas/DataContractCreate"
           application/yaml:
             schema:
-              $ref: '#/components/schemas/DataContractCreate'
+              $ref: "#/components/schemas/DataContractCreate"
       responses:
-        '201':
+        "201":
           description: Data contract successfullly created
           headers:
             Location:
@@ -308,13 +308,13 @@ paths:
               schema:
                 type: string
                 example: http://example.com/data-contracts/123
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
   /data-contracts/{contractId}:
     get:
       tags:
         - Data Contracts
-      summary: Get Data Contract By ID
+      summary: Get Data Contract
       description: |
         Fetches a data contract by id. Fields might be hidden depending on the access rights of the requesting user
       parameters:
@@ -325,23 +325,23 @@ paths:
           required: true
           description: Id of the data contract to get
       responses:
-        '200':
+        "200":
           description: A JSON object representing the data contract in ODCS format
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataContract'
+                $ref: "#/components/schemas/DataContract"
             application/yaml:
               schema:
-                $ref: '#/components/schemas/DataContract'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/DataContract"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       tags:
         - Data Contracts
-      summary: Update Data Contract By ID
+      summary: Update Data Contract
       description: |
         Overwrite included fields of the ODCS specs
       parameters:
@@ -357,18 +357,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataContractUpdate'
+              $ref: "#/components/schemas/DataContractUpdate"
       responses:
-        '204':
+        "204":
           description: Update was succesful
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       tags:
         - Data Contracts
-      summary: Delete Data Contract By ID
+      summary: Delete Data Contract
       description: |
         Deletes a data contract if the user has the DATA-COLLABORATOR role
       parameters:
@@ -379,17 +379,17 @@ paths:
           required: true
           description: Id of the data contract to delete
       responses:
-        '204':
+        "204":
           description: Deletion was succesful
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema:
     post:
       tags:
         - Data Contracts
-      summary: Create New Schema
+      summary: Create Schema
       description: Adds a new schema to the array in the data contract and generates a unique identifier for it
       parameters:
         - in: path
@@ -404,9 +404,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SchemaCreate'
+              $ref: "#/components/schemas/SchemaCreate"
       responses:
-        '201':
+        "201":
           description: Schema succesfully created
           headers:
             Location:
@@ -414,15 +414,15 @@ paths:
               schema:
                 type: string
                 example: http://example.com/data-contracts/123/schema/456
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema/{schemaId}:
     get:
       tags:
         - Data Contracts
-      summary: Get Schema By ID
+      summary: Get Schema
       description: |
         Fetches a schema identified by the id generated by Datavillage DCP. Fields might be hidden depending on access rights
       parameters:
@@ -439,20 +439,20 @@ paths:
           required: true
           description: Id of the schema to be fetched
       responses:
-        '200':
+        "200":
           description: A JSON object representing the schema in ODCS format with the identifier generated by Datavillage DCP.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Schema"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       tags:
         - Data Contracts
-      summary: Update Schema By ID
+      summary: Update Schema
       description: |
         Will only update the the fields mentioned in the request body. If properties array is specified, it will be completely overwritten
       parameters:
@@ -474,18 +474,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SchemaUpdate'
+              $ref: "#/components/schemas/SchemaUpdate"
       responses:
-        '204':
+        "204":
           description: Update was succesful
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       tags:
         - Data Contracts
-      summary: Delete Schema By ID
+      summary: Delete Schema
       description: |
         Deletes a specific schema from the list in a data contract, identified by the id generated by the Datavillage DCP
       parameters:
@@ -502,17 +502,17 @@ paths:
           required: true
           description: Id of the schema to be fetched
       responses:
-        '204':
+        "204":
           description: Deletion was succesful
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema/{schemaId}/properties:
     post:
       tags:
         - Data Contracts
-      summary: Create New Property
+      summary: Create Property
       description: Adds a new property to the properties array of the schema and generates a unique identifier for it
       parameters:
         - in: path
@@ -533,9 +533,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PropertyCreate'
+              $ref: "#/components/schemas/PropertyCreate"
       responses:
-        '201':
+        "201":
           description: Property succesfully created
           headers:
             Location:
@@ -543,15 +543,15 @@ paths:
               schema:
                 type: string
                 example: http://example.com/data-contracts/123/schema/456/properties/789
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema/{schemaId}/properties/{propertyId}:
     get:
       tags:
         - Data Contracts
-      summary: Get Property By ID
+      summary: Get Property
       description: |
         Fetches a property identified by the ID generated by Datavillage DCP. Fields might be hidden depending on access rights
       parameters:
@@ -574,20 +574,20 @@ paths:
           required: true
           description: Id of the property to update
       responses:
-        '200':
+        "200":
           description: A JSON object representing the property in ODCS format with the identifier generated by Datavillage DCP.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Property'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Property"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       tags:
         - Data Contracts
-      summary: Update Property By ID
+      summary: Update Property
       description: |
         Will only update the fields mentioned in the request body
       parameters:
@@ -615,18 +615,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PropertyUpdate'
+              $ref: "#/components/schemas/PropertyUpdate"
       responses:
-        '204':
+        "204":
           description: Update was succesful
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       tags:
         - Data Contracts
-      summary: Delete Property By ID
+      summary: Delete Property
       description: |
         Deletes a specific property of a schema in a data contract, identified by the ID generated by the Datavillage DCP
       parameters:
@@ -649,12 +649,12 @@ paths:
           required: true
           description: Id of the property to be deleted
       responses:
-        '204':
+        "204":
           description: Deletion was succesful
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /.well-known/{spaceId}/webid:
     get:
       security: []
@@ -672,7 +672,7 @@ paths:
           required: true
           description: Id of the collaboration space associated with the webId
       responses:
-        '200':
+        "200":
           description: The webId document serialized as Turtle
           content:
             text/turtle:
@@ -689,8 +689,8 @@ paths:
                     skos:prefLabel "Test collaboration space";
                     foaf:logo <https://client.example/logo.png>;
                     foaf:homepage <https://client.example/>.
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /.well-known/{spaceId}/appid:
     get:
       security: []
@@ -708,7 +708,7 @@ paths:
           required: true
           description: Id of the collaboration space associated with the appId
       responses:
-        '200':
+        "200":
           description: The appId document serialized as JSON-LD
           content:
             application/ld+json:
@@ -724,13 +724,13 @@ paths:
                     "client_name": "Test collaboration space - application",
                     "logo_uri": "https://client.example/logo.png"
                   }
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
 components:
   schemas:
     CollaborationSpace:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - $ref: "#/components/schemas/AbstractCollaborationSpace"
         - type: object
           properties:
             id:
@@ -738,25 +738,25 @@ components:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/Collaborator'
+                $ref: "#/components/schemas/Collaborator"
           required:
             - id
             - name
     CollaborationSpaceCreate:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - $ref: "#/components/schemas/AbstractCollaborationSpace"
         - type: object
           properties:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/CollaboratorCreate'
+                $ref: "#/components/schemas/CollaboratorCreate"
           required:
             - name
     Collaborator:
       description: Collaborator
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           properties:
             id:
@@ -767,7 +767,7 @@ components:
     CollaboratorCreate:
       description: CollaboratorCreate
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           required:
             - clientId
@@ -786,18 +786,18 @@ components:
       title: Data Contract
       description: ODCS compliant description of a data contract with metadata fields added by Datavillage DCP
       allOf:
-        - $ref: '#/components/schemas/DataContractDV'
+        - $ref: "#/components/schemas/DataContractDV"
         - type: object
           properties:
             dataContract:
               allOf:
-                - $ref: '#/components/schemas/AbstractDataContract'
+                - $ref: "#/components/schemas/AbstractDataContract"
                 - type: object
                   properties:
                     schema:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Schema'
+                        $ref: "#/components/schemas/Schema"
                   required:
                     - version
                     - name
@@ -811,13 +811,13 @@ components:
       title: Data Contract Create
       description: ODCS description of a data contract
       allOf:
-        - $ref: '#/components/schemas/AbstractDataContract'
+        - $ref: "#/components/schemas/AbstractDataContract"
         - type: object
           properties:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/SchemaCreate'
+                $ref: "#/components/schemas/SchemaCreate"
           required:
             - version
             - name
@@ -829,7 +829,7 @@ components:
       title: Schema
       description: Identifiable ODCS description of a schema
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             _id:
@@ -837,7 +837,7 @@ components:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/Property'
+                $ref: "#/components/schemas/Property"
           required:
             - name
             - _id
@@ -845,20 +845,20 @@ components:
       title: Schema Create
       description: ODCS description of a schema
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/PropertyCreate'
+                $ref: "#/components/schemas/PropertyCreate"
           required:
             - name
     Property:
       title: Property
       description: Identifiable ODCS description of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
+        - $ref: "#/components/schemas/AbstractProperty"
         - type: object
           properties:
             _id:
@@ -870,7 +870,7 @@ components:
       title: Property Create
       description: ODCS compliant description of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
+        - $ref: "#/components/schemas/AbstractProperty"
         - type: object
           required:
             - name
@@ -919,22 +919,22 @@ components:
       discriminator:
         propertyName: role
         mapping:
-          CodeProvider: '#/components/schemas/CollaboratorRoleCodeProvider'
-          DataProvider: '#/components/schemas/CollaboratorRoleDataProvider'
-          DataConsumer: '#/components/schemas/CollaboratorRoleDataConsumer'
+          CodeProvider: "#/components/schemas/CollaboratorRoleCodeProvider"
+          DataProvider: "#/components/schemas/CollaboratorRoleDataProvider"
+          DataConsumer: "#/components/schemas/CollaboratorRoleDataConsumer"
       oneOf:
-        - $ref: '#/components/schemas/CollaboratorRoleCodeProvider'
-        - $ref: '#/components/schemas/CollaboratorRoleDataProvider'
-        - $ref: '#/components/schemas/CollaboratorRoleDataConsumer'
+        - $ref: "#/components/schemas/CollaboratorRoleCodeProvider"
+        - $ref: "#/components/schemas/CollaboratorRoleDataProvider"
+        - $ref: "#/components/schemas/CollaboratorRoleDataConsumer"
     CollaborationSpaceUpdate:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - $ref: "#/components/schemas/AbstractCollaborationSpace"
         - type: object
           properties:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/AbstractCollaborator'
+                $ref: "#/components/schemas/AbstractCollaborator"
     DataContractDV:
       description: Metadata added to data contracts by Datavillage DCP
       type: object
@@ -952,7 +952,7 @@ components:
       title: Data Contract Summary
       description: The metadata fields added by Datavillage DCP along with key properties of ODCS description
       allOf:
-        - $ref: '#/components/schemas/DataContractDV'
+        - $ref: "#/components/schemas/DataContractDV"
         - type: object
           properties:
             dataContractSummary:
@@ -1033,7 +1033,7 @@ components:
           description: The business name of the element.
     AbstractSchema:
       allOf:
-        - $ref: '#/components/schemas/Element'
+        - $ref: "#/components/schemas/Element"
         - type: object
           properties:
             logicalType:
@@ -1065,7 +1065,7 @@ components:
               - type: array
               - type: object
       allOf:
-        - $ref: '#/components/schemas/Element'
+        - $ref: "#/components/schemas/Element"
         - type: object
           properties:
             primaryKey:
@@ -1131,29 +1131,29 @@ components:
       title: Data Contract Update
       description: ODCS properties of a data contract where schemas should comply
       allOf:
-        - $ref: '#/components/schemas/AbstractDataContract'
+        - $ref: "#/components/schemas/AbstractDataContract"
         - type: object
           properties:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/SchemaCreate'
+                $ref: "#/components/schemas/SchemaCreate"
     SchemaUpdate:
       title: Schema Update
       description: ODCS properties of a schema where 'properties'-property should comply
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/PropertyCreate'
+                $ref: "#/components/schemas/PropertyCreate"
     PropertyUpdate:
       title: Update Property
       description: ODCS properties of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
+        - $ref: "#/components/schemas/AbstractProperty"
   securitySchemes:
     bearerAuth:
       type: http

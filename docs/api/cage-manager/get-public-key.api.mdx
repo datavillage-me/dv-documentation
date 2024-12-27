@@ -1,0 +1,71 @@
+---
+id: get-public-key
+title: "Get Public Key"
+description: "Fetches the public key of a cage."
+sidebar_label: "Get Public Key"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU02L2zAQ/StiTl1Q6qVHUQqhtMtSSpft9hR8mMgTW6xsaaVxaDD672XsNPUGWnqyPZ/vvXmegLHNYHbwLVJCJqg1NJRtcpFdGMDAZ2LbUVbckYrj3jurnumkwkGhstjSW9AQMWFPTElGTeCkLyJ3oGHAnsCAVN43oCHbjnoEMwGfomQyJze0UDQkehldogYMp5Gucdw3slNQ2OA97kNCyagc0RKUWvpzDEOmLNPf3d7K4/WMp47U4/ftFQ/uXL5QsWFgGngGSD+5ih6FznQBPozel1KKhp64Cw0YaIlnEbgDA5VMytW0MC7VsmvzTCdhT+n4W6UxeTDQMcdsquq91G96HLCltMHoPsyc3HAIMxbHXtT6iC19XYrU9uEerlXaqiOlk7IheIXRKQ5qmbmKzwCV2dyABkGzdHpkyix3iCFzjzPp8/XuiNXDotmXmcerpdMf0f7LLefDr+QtelFjOou4m/2SQYO5GGelY62hC5mlbpr2mOlH8qVI+GWkdAKzqzUcMTnci2i7CRqX5b0Bc0Cfr721JvDm8ezCG/Vvx/2FxzmIg8h0RD/KF2gQ3JffoNRFQ0fYUJrhLcmttRR51baeXK/8dvfpCUr5BYgTQtw=
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Public Key"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cages/{cageId}/public-key"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Fetches the public key of a cage.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The RSA public key of this cage.","content":{"text/plain":{"schema":null}}}}}
+>
+  
+</StatusCodes>
+
+
+      

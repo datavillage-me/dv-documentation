@@ -8,7 +8,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "crud",
+      label: "CRUD",
       link: {
         type: "doc",
         id: "api/cage-manager/0.1.0/crud",
@@ -16,21 +16,21 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/cage-manager/0.1.0/get-deployed-cages",
-          label: "Get deployed cages.",
+          id: "api/cage-manager/0.1.0/get-cages",
+          label: "Get Cages",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/cage-manager/0.1.0/delete-a-cage",
-          label: "Delete a cage",
+          id: "api/cage-manager/0.1.0/delete-cage",
+          label: "Delete Cage",
           className: "api-method post",
         },
       ],
     },
     {
       type: "category",
-      label: "operate",
+      label: "Operate",
       link: {
         type: "doc",
         id: "api/cage-manager/0.1.0/operate",
@@ -38,21 +38,21 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/cage-manager/0.1.0/deploy-a-cage",
-          label: "Deploy a cage",
+          id: "api/cage-manager/0.1.0/deploy-cage",
+          label: "Deploy Cage",
           className: "api-method post",
         },
         {
           type: "doc",
-          id: "api/cage-manager/0.1.0/get-the-public-key-of-a-cage",
-          label: "Get the public key of a cage.",
+          id: "api/cage-manager/0.1.0/get-public-key",
+          label: "Get Public Key",
           className: "api-method get",
         },
       ],
     },
     {
       type: "category",
-      label: "monitor",
+      label: "Monitor",
       link: {
         type: "doc",
         id: "api/cage-manager/0.1.0/monitor",
@@ -60,8 +60,8 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/cage-manager/0.1.0/get-the-logs-of-the-algo",
-          label: "Get the logs of the algo",
+          id: "api/cage-manager/0.1.0/get-logs",
+          label: "Get logs",
           className: "api-method get",
         },
       ],

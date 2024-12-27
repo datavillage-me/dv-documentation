@@ -1,0 +1,72 @@
+---
+id: get-logs
+title: "Get Logs"
+description: "Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints."
+sidebar_label: "Get Logs"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNU8Fq3EAM/RWhUwOTOvQ4lEIobRpoIIT2lO5Bayv2tOOZyYy86WL870Xe3XRx0kJzqi+W5dHovaenEYXagvYWr2JwEjOuDDZc6uySuBjQ4keWuuMC0jH42BaId3NMvo2QhxBcaMGFOVdTy6/hxrWdQIgPQJA81fwp+oYzJJIONpQdrT2DK0BNww2suaahMEjnCjw476Ek7wRckAj94MUlz8ChSdEFKa+/BTSYKFPPwlnBj+gUqd6PBgP1jBYVy2WDBkvdcU9oR5Rt0j9FsgstTgYz3w8uc4NW8sBL5pfNgWsdvad1zKR/oCSqGSfzbFvhPl0r6W4m/S/9p5VmSoqhcNHzb87O9FXHIBxEQ0rJu3qGUX0vinJ8ej/lTFs06IT78kzf+THYs3SxQYsty6yodGixUt1KNe7kmyodeTUuWE1Ki/PmIP+QPVrsRFKxVfVWa097CtRyPqXk3qFSc+EuzmiceIXznlq+2h2C8+tLXMp/DhvOW6hj9EDJgbphPn6Un8GCPT1Bg4pmV+lJuIgKnGKRnmaZ9vO5YIHPsS3Ldkcy/6eW309R+KdUyZMLSnBWftwP73Y2vVKzj+73O6526cuVwS4W0aJxXFPhr9lPk6bvB85btLcrgwfk85AbVzRu0N6RL8ttOdbv1c3e1yfw9x36A6mDj4O6eEN+0C80+IO3vxdb9+9FkF7WdanftJoMdkwaqzq7U+d1zUmO6p8srG7C4+ZdfPiC0/QLNJDmXQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/cage-manager/cagemanager-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Logs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cages/{cageId}/logs/{tempPlaceholder}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"cageId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"},{"in":"path","name":"tempPlaceholder","schema":{"type":"string"},"required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

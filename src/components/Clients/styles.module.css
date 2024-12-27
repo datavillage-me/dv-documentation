@@ -1,0 +1,137 @@
+.section-title {
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  line-height: 1;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.section-title-border {
+  width: 0;
+  height: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #00ffff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section {
+  padding-top: 70px;
+  padding-bottom: 20px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section-minimal {
+  padding-top: 0px;
+  padding-bottom: 90px;
+  position: relative;
+}
+
+.section-lg {
+  padding: 100px 0;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 20));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 20));
+  }
+}
+.slider {
+  /* background: white; */
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before,
+.slider::after {
+  /* background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%); */
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slideTrack {
+  -webkit-animation: scroll 60s linear infinite;
+  animation: scroll 60s linear infinite;
+  display: flex;
+  width: calc(250px * 20);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+
+.clientsImg {
+  height: 80px;
+  width: auto;
+  padding: 10px;
+  margin: 20px;
+  filter: grayscale(100%) opacity(70%);
+}
+
+.clientsImgMedium {
+  height: 60px;
+  width: auto;
+  padding: 10px;
+  margin: 20px;
+  margin-top: 30px;
+  filter: grayscale(100%) opacity(70%);
+}
+
+.clientsImgSmall {
+  height: 50px;
+  width: auto;
+  padding: 10px;
+  margin: 20px;
+  margin-top: 35px;
+  filter: grayscale(100%) opacity(70%);
+}
+
+.clientsImgSmaller {
+  height: 20px;
+  filter: grayscale(100%) opacity(70%);
+}

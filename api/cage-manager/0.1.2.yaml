@@ -6,34 +6,34 @@ info:
 servers:
   - url: https://<cage-manager-api>
 tags:
-  - name: crud
+  - name: CRUD
     description: CRUD operations on cage resources
-  - name: operate
+  - name: Operate
     description: Endpoints to operate a cage
-  - name: monitor
+  - name: Monitor
     description: Endpoints to monitor a cage
 paths:
   /cages:
     get:
-      summary: Get deployed cages.
+      summary: Get Deployed Cages
       tags:
-        - crud
+        - CRUD
       responses:
-        '200':
+        "200":
           description: A JSON array of cages
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Cage'
+                  $ref: "#/components/schemas/Cage"
   /{cageId}/deploy:
     post:
-      summary: '[DEPRECATED] Deploy a cage'
+      summary: "[DEPRECATED] Deploy Cage"
       operationId: deployCageDeprecated
       deprecated: true
       tags:
-        - operate
+        - Operate
       description: |
         Deploys a cage defined in a collaboration space.
       parameters:
@@ -56,17 +56,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CageSettings'
+              $ref: "#/components/schemas/CageSettings"
       responses:
-        '200':
+        "200":
           description: Succesfully deployed cage
-        '422':
-          $ref: '#/components/responses/422UnprocessableEntity'
+        "422":
+          $ref: "#/components/responses/422UnprocessableEntity"
   /cages/{cageId}/deploy:
     post:
-      summary: Deploy a cage
+      summary: Deploy Cage
       tags:
-        - operate
+        - Operate
       description: |
         Deploys a cage defined in a collaboration space.
       parameters:
@@ -89,19 +89,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CageSettings'
+              $ref: "#/components/schemas/CageSettings"
       responses:
-        '200':
+        "200":
           description: Succesfully deployed cage
-        '422':
-          $ref: '#/components/responses/422UnprocessableEntity'
+        "422":
+          $ref: "#/components/responses/422UnprocessableEntity"
   /{cageId}/delete:
     post:
-      summary: '[DEPRECATED] Delete a cage'
+      summary: "[DEPRECATED] Delete Cage"
       deprecated: true
       operationId: deleteCageDeprecated
       tags:
-        - crud
+        - CRUD
       description: |
         Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
       parameters:
@@ -112,17 +112,17 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           description: Succesfully deployed cage
-        '404':
-          $ref: '#/components/responses/404NotFound'
-        '422':
-          $ref: '#/components/responses/422UnprocessableEntity'
+        "404":
+          $ref: "#/components/responses/404NotFound"
+        "422":
+          $ref: "#/components/responses/422UnprocessableEntity"
   /cages/{cageId}:
     delete:
-      summary: Delete a cage
+      summary: Delete Cage
       tags:
-        - crud
+        - CRUD
       description: |
         Deletes the (deployed) cage linked to a collaboration space.  Sadly this does not use the delete verb. This is to keep backwards portability
       parameters:
@@ -133,17 +133,17 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           description: Succesfully deployed cage
-        '404':
-          $ref: '#/components/responses/404NotFound'
-        '422':
-          $ref: '#/components/responses/422UnprocessableEntity'
+        "404":
+          $ref: "#/components/responses/404NotFound"
+        "422":
+          $ref: "#/components/responses/422UnprocessableEntity"
   /{cageId}/event:
     post:
-      summary: '[DEPRECATED] Send an event to a cage'
+      summary: "[DEPRECATED] Send Event"
       tags:
-        - operate
+        - Operate
       deprecated: true
       operationId: sendEventDeprecated
       parameters:
@@ -175,8 +175,8 @@ paths:
                 - type
               additionalProperties: true
       responses:
-        '200':
-          description: Succesfully send the vent
+        "200":
+          description: Succesfully send the event
           content:
             application/json:
               schema:
@@ -186,13 +186,13 @@ paths:
                     type: string
                 required:
                   - messageId
-        '404':
-          $ref: '#/components/responses/404NotFound'
+        "404":
+          $ref: "#/components/responses/404NotFound"
   /cages/{cageId}/event:
     post:
-      summary: Send an event to a cage
+      summary: Send Event
       tags:
-        - operate
+        - Operate
       parameters:
         - in: path
           name: cageId
@@ -222,7 +222,7 @@ paths:
                 - type
               additionalProperties: true
       responses:
-        '200':
+        "200":
           description: Succesfully send the vent
           content:
             application/json:
@@ -233,15 +233,15 @@ paths:
                     type: string
                 required:
                   - messageId
-        '404':
-          $ref: '#/components/responses/404NotFound'
+        "404":
+          $ref: "#/components/responses/404NotFound"
   /{cageId}/public-key:
     get:
-      summary: '[DEPRECATED] Get the public key of a cage.'
+      summary: "[DEPRECATED] Get Public Key"
       deprecated: true
       operationId: getKeyDeprecated
       tags:
-        - operate
+        - Operate
       description: Fetches the public key of a cage.
       parameters:
         - in: path
@@ -251,16 +251,16 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           description: The RSA public key of this cage.
           content:
             text/plain:
               schema: null
   /cages/{cageId}/public-key:
     get:
-      summary: Get the public key of a cage.
+      summary: Get Public Key
       tags:
-        - operate
+        - Operate
       description: Fetches the public key of a cage.
       parameters:
         - in: path
@@ -270,7 +270,7 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           description: The RSA public key of this cage.
           content:
             text/plain:
@@ -278,10 +278,10 @@ paths:
   /{cageId}/logs/pod_status:
     get:
       operationId: getPodStatusLogsBackup
-      summary: '[DEPRECATED] Get the status of all pods running'
+      summary: "[DEPRECATED] Get Status"
       deprecated: true
       tags:
-        - monitor
+        - Monitor
       parameters:
         - in: path
           name: cageId
@@ -290,21 +290,22 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PodStatus'
-        '404':
-          $ref: '#/components/responses/404NotFound'
+                  $ref: "#/components/schemas/PodStatus"
+        "404":
+          $ref: "#/components/responses/404NotFound"
   /cages/{cageId}/logs/pod_status:
     get:
       operationId: getPodStatusLogs
-      summary: Get the status of all pods running
+      summary: Get Status
+      description: Returns a status of all running pods
       tags:
-        - monitor
+        - Monitor
       parameters:
         - in: path
           name: cageId
@@ -313,22 +314,22 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PodStatus'
-        '404':
-          $ref: '#/components/responses/404NotFound'
+                  $ref: "#/components/schemas/PodStatus"
+        "404":
+          $ref: "#/components/responses/404NotFound"
   /{cageId}/logs/algo:
     get:
       operationId: getAlgoLogsBackup
       deprecated: true
-      summary: '[DEPRECATED] Get the logs of the running algorithm'
+      summary: "[DEPRECATED] Get Logs"
       tags:
-        - monitor
+        - Monitor
       parameters:
         - in: path
           name: cageId
@@ -337,21 +338,21 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
                 type: array
                 items:
                   type: string
-        '404':
-          $ref: '#/components/responses/404NotFound'
+        "404":
+          $ref: "#/components/responses/404NotFound"
   /cages/{cageId}/logs/algo:
     get:
       operationId: getAlgoLogs
-      summary: Get the logs of the running algorithm
+      summary: Get Logs
       tags:
-        - monitor
+        - Monitor
       parameters:
         - in: path
           name: cageId
@@ -360,22 +361,22 @@ paths:
           required: true
           description: Id of the collaboration space
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
                 type: array
                 items:
                   type: string
-        '404':
-          $ref: '#/components/responses/404NotFound'
+        "404":
+          $ref: "#/components/responses/404NotFound"
   /{cageId}/logs/{tempPlaceholder}:
     get:
-      summary: '[DEPRECATED] Get the logs of the algo'
+      summary: "[DEPRECATED] Get Logs"
       operationId: getLogsDeprecated
       deprecated: true
       tags:
-        - monitor
+        - Monitor
       description: |
         Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
       parameters:
@@ -391,7 +392,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
@@ -400,9 +401,9 @@ paths:
                   type: string
   /cages/{cageId}/logs/{tempPlaceholder}:
     get:
-      summary: Get the logs of the algo
+      summary: Get Logs
       tags:
-        - monitor
+        - Monitor
       description: |
         Fetches the logs of the algo running in the cage. Right now a placeHolder path variable is added because this will split into multiple endpoints.
       parameters:
@@ -418,7 +419,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:

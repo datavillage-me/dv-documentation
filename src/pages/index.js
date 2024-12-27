@@ -4,21 +4,21 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
-
+import dvLogoWhite from "../../static/img/Datavillage_Logo_White.png";
+import Clients from "../components/Clients";
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <img src={dvLogoWhite} className={styles.dvLogo} />
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro"
+            to="https://datavillage.me"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            🔗 Go to homepage
           </Link>
         </div>
       </div>
@@ -31,11 +31,11 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description="Trusted Data Collaborations"
     >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <Clients />
       </main>
     </Layout>
   );
