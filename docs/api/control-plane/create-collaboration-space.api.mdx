@@ -1,0 +1,71 @@
+---
+id: create-collaboration-space
+title: "Create New Collaboration Space"
+description: "Creates a new collaboration space owned by the client the user is authenticated against"
+sidebar_label: "Create New Collaboration Space"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlV99v2zYQ/leIe6bntduTMAxIvQ3oMLRBk2IPgjHQ1MViR5EsScUxBP3vw5GyLdmKmxXYQzG/2CHv1/fdHe/SgXXoRVTWvK2gAOlRRFxZrcXG5vM7JyQChyi2AYoSJpcs3QZYc6gwSK8cnUIBq2QoMMEM7pic6ATSYXZnsGKbPYs1MqkVmph+tgE9U4GJNtZoopIiYsXEVigTInDw+LnFEN/Yag9Fd+b2vsbBfLRsgyzjqQY15bGCIvoWOUhrIppIJoRzmtwoa5afAtnpIMgaG5FutX7/AEXZQdw7hALs5hNKisR5Ii8qDCRnRIP0PUiF6JXZQs+BAGyt389c9hyiipqObjYheiHjDPc9/5LvE7/Wh5Ef4b3YAwcVsQmXbK1GajlhwK/gnSofAmZjK5eRpcRSbc2BrxRZbJRJukV3UN6/S2SCt5pCaoRzpFJ0sLIV3nr7qCr0I5vHGJ8WdotmkZMxlT4HcGcbtAbZrrbMZaHApK3wAkQK4wIAB3wSjdMXjnoicWvvMEZltmEuzKn9iCHOETSujzHLH6zGc4+/iCheTsxE+kXEkMZXEDNxdA3PVDDjWVkT2ualeI7S1/DILBRY9fV4jo6+hGck2HOwBp9prP9r0X7zVfqtl+X62vyx8whPg7Q8ve7rsamZsZKqYqyZCHpG6zD4TrpJOThrQibk9fevLqdZ0mE7EQ5Tn4VWSgzhodWapmCNosI8H/+wed4nds82g9Pof57vOkZXLJfDwXfSNkt5EX9Yvnr9wxD+j3MRfxxWHWPjdN2Bf7GfXO9S9N76vxoMQWzn1pOztEzF130OvsFYW1oPnU0rmBOxhgKmkBchr4IcAvrHxHPZQev1QFcolsufCJW3euG0MLgQTv2cijCgbL2K+6SyQeHR37Tko1yPr+8IdMY1FjqCIjcwJJD+zkLAhx+/Wd+ICAX8/ud9Qk5kfjitk78e0ntY5k6ZP+1wo7Pp0lUe+vT8Ab94VtPDOcrAUfHidRmdj5q256DMg022js2TeL0lWtnN7VvgQCnIZaZFctnzlL9GmBHC3GPsHe7YzGJ//mZ1p7L8Dzf8IZsRn+LSaaEMhZ4KqRtKr4TZ0ltzqKlCixK6biMCfvS67+n4c4uUvHLN4VF4JTbEWklM5kchpe9v3A9UoomLe4qCxHWbVunzJqT8ZI0bKdHFq7LrURPdvr+7p5oc/oFpaHgX4MWOHlexgwKAg02M59efzjrQwmzb1MSQbdLnH1Al2Og=
+sidebar_class_name: "post api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create New Collaboration Space"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaboration-spaces"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new collaboration space owned by the client the user is authenticated against
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"The space to be created","required":true,"content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"}},"title":"AbstractCollaborationSpace"},{"type":"object","properties":{"collaborators":{"type":"array","items":{"description":"CollaboratorCreate","allOf":[{"type":"object","description":"Abstract Collaborator","properties":{"clientId":{"type":"string"}},"discriminator":{"propertyName":"role","mapping":{"CodeProvider":{"type":"object","x-ogen-name":"CodeProvider","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"algoSettings":{"type":"object","properties":{"test":{"type":"string"}}}},"title":"CollaboratorRoleCodeProvider"},"DataProvider":{"type":"object","x-ogen-name":"DataProvider","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"}},"title":"CollaboratorRoleDataProvider"},"DataConsumer":{"type":"object","x-ogen-name":"DataConsumer","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"}},"title":"CollaboratorRoleDataConsumer"}}},"oneOf":[{"type":"object","x-ogen-name":"CodeProvider","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"algoSettings":{"type":"object","properties":{"test":{"type":"string"}}}},"title":"CollaboratorRoleCodeProvider"},{"type":"object","x-ogen-name":"DataProvider","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"}},"title":"CollaboratorRoleDataProvider"},{"type":"object","x-ogen-name":"DataConsumer","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"}},"title":"CollaboratorRoleDataConsumer"}],"title":"AbstractCollaborator"},{"type":"object","required":["clientId"]}],"title":"CollaboratorCreate"}}},"required":["name"]}],"title":"CollaborationSpaceCreate"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Space was created successfully","headers":{"Location":{"required":true,"schema":{"type":"string","example":"http://example.com/collaborationSpaces/123"}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
