@@ -1,0 +1,71 @@
+---
+id: get-attestation-report
+title: "Get Attestation Report"
+description: "Get an attestation report of the virtual machine"
+sidebar_label: "Get Attestation Report"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU1v00AQ/SurOQFylFIVDhZCigqUcqpaqh5KhCbrSbztene7Oy6NLP93NHaS2m2pgAPilGR2Pt68mTdpoKCkowlsvIMcjogVOoXMlBjFqCIFH1n5peKS1K2JXKNVFerSOIIMGFcJ8ks49Nbiwsc+6iygpgTzDAJGrIgpilcDRsoE5BIycFgR5JDE97iADJIuqULIG+B16J44GreCNoNIN7WJVEDOsabsAe7jYgtQj2B0qaHNNnVvaorr+8LOOy0tjHNdlORUImbjVopLk1QXpnaNKFRdpPphrFULUlgUVCj2HYDH3OXqlVoat6IYjONczZhRlwpVSXcTctpL9Nnn2WT/zdutYzRux3moF9ZodU3rb+4ZkjIgV1cyikEOmI+4W6JN1M7FlIJ3iZLk2d/bk48xDbOn1gAy0N4xOe7q0x1Pg0XhttnhcrW1bdtmcLD3+nHa80RRmaScZ4U1l+TYaGQqxqkxBCt24930KvlRgV3jfnFFWjCF6ANFNn07FKOP3ytKCVf0xDKNGLl84D5vN9gPHmM/peTrqKkDv/S1+3egZUmXWFuGHD54XVfkeADjN3pqM6iIS19ADivqAIgKc5iOJDPpJJOmzUaV7XSwBRP219TtIMXbraLraCGHkjmkfDp9J3xEbyfBoqMJBvMeZOES6ToaXnchC8JIcVZL/cv58PlM6OoZGTrt6JAyWw3I794Jss2XTz5WKBx9ufjakWLc0nfhhq34H/boTgScmp0cQwbSSD9fi9KpXJvgE1fYDXBzK+QyzgZ6ON3qYbQizf06/NUt7Zsc6KrNen6bzbQu4alpQQb5/RV9PLB5BqVPLOFNs8BE59G2rZj7iygzKUzChd0diWca+98P5JMsXtN6cPFv0dbi063mLUYjrf8hDS9ON4J7qZ7/+/kFoo0R3XoIaIt0O85WDnhJWFDs8PWvM60p8CBumHo+UPrRR9HBT8oAw7A=
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Attestation Report"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaboration-spaces/{spaceId}/attestation-token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get an attestation report of the virtual machine
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"},{"in":"query","name":"nonce","description":"When setting this query parameter a nonce will be added to the attestation report: * fingerpint: Attach a hex-encoded SHA-256 fingerprint of the public key\n","schema":{"type":"string","enum":["fingerprint"]},"required":false}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"An attestation report","content":{"text/plain":{"schema":null}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

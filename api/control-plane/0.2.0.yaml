@@ -7,58 +7,300 @@ servers:
 security:
   - bearerAuth: []
 tags:
-  - name: auth
-    description: Authentication
-  - name: data-contracts
-    description: Data Contracts (OCDS v3)
+  - name: Collaboration Spaces
+    description: 'Endpoints related to collaboration spaces: CRUD and operating the space'
+  - name: Authentication
+    description: The account that performs actions in the Control Plane
+  - name: Data Contracts
+    description: Endpoints related to CRUD update of data contracts using ODCS (v3)
+  - name: Public
+    description: Endpoints without authentication
 paths:
   /auth/currentCredentials:
     get:
       operationId: getCurrentCredentials
+      summary: Get Your Current Credentials
       tags:
-        - auth
-      description: Get your current credentials
+        - Authentication
+      description: Get credentials of authenticated account
       responses:
-        "200":
+        '200':
           description: The developer that is logged in
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Developer"
+                $ref: '#/components/schemas/Developer'
+  /collaboration-spaces:
+    get:
+      operationId: getCollaborationSpaces
+      summary: Get All Collaboration Spaces
+      tags:
+        - Collaboration Spaces
+      description: Get all spaces your account has access to.
+      responses:
+        '200':
+          description: A JSON array of collaboration spaces
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CollaborationSpace'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+    post:
+      operationId: createCollaborationSpace
+      tags:
+        - Collaboration Spaces
+      summary: Create New Collaboration Space
+      description: Creates a new collaboration space owned by the client the user is authenticated against
+      requestBody:
+        description: The space to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollaborationSpaceCreate'
+      responses:
+        '201':
+          description: Space was created successfully
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+                example: http://example.com/collaborationSpaces/123
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /collaboration-spaces/{spaceId}:
+    get:
+      operationId: getCollaborationSpace
+      tags:
+        - Collaboration Spaces
+      summary: Get Collaboration Space By ID
+      description: |
+        This fetches a collaboration space, if you have access to this space. The necessary roles for this are:
+          * abc
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+      responses:
+        '200':
+          description: A JSON object representing a collaboration space
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollaborationSpace'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    patch:
+      operationId: patchCollaborationSpace
+      tags:
+        - Collaboration Spaces
+      summary: Update Collaboration Space By ID
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+      requestBody:
+        description: The updates that need to be made to the space.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollaborationSpaceUpdate'
+      responses:
+        '201':
+          description: Space was updated successful
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+                example: http://example.com/collaborationSpaces/123
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /collaboration-spaces/{spaceId}/collaborators:
+    get:
+      operationId: getCollaborationSpaceCollaborators
+      tags:
+        - Collaboration Spaces
+      summary: Get Collaborators
+      description: |
+        This fetches a collaboration space, if you have access to this space. You have access to a collaboration space when your client is part of this space.
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+      responses:
+        '200':
+          description: An array containing the collaborators of a space
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Collaborator'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /collaboration-spaces/{spaceId}/public-key:
+    get:
+      operationId: getCollaborationSpacePublicKey
+      tags:
+        - Collaboration Spaces
+      title: Get Public Key
+      description: Get the public key linked to the collaboration space
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+      responses:
+        '200':
+          description: An string containing the public key.
+          content:
+            text/plain:
+              schema: null
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /collaboration-spaces/{spaceId}/event:
+    post:
+      operationId: postCollaborationSpaceEvent
+      tags:
+        - Collaboration Spaces
+      summary: Publish Event
+      description: Publish an event to the confidential environment of the collaboration space.
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+        - in: query
+          name: stream
+          schema:
+            type: string
+          required: false
+          default: events
+      requestBody:
+        description: the event
+        name: event
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+              required:
+                - type
+              additionalProperties: true
+      responses:
+        '200':
+          description: The id of the event that has been send
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messageId:
+                    type: string
+                required:
+                  - messageId
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /collaboration-spaces/{spaceId}/attestation-token:
+    get:
+      summary: Get Attestation Report
+      description: Get an attestation report of the virtual machine
+      tags:
+        - Collaboration Spaces
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space
+        - in: query
+          name: nonce
+          description: |
+            When setting this query parameter a nonce will be added to the attestation report: * fingerpint: Attach a hex-encoded SHA-256 fingerprint of the public key
+          schema:
+            type: string
+            enum:
+              - fingerprint
+          required: false
+      responses:
+        '200':
+          description: An attestation report
+          content:
+            text/plain:
+              schema: null
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
   /data-contracts:
     get:
       tags:
-        - data-contracts
-      summary: All data contracts
-      description: Get all data contracts
+        - Data Contracts
+      summary: Get All Data Contracts
+      description: Get all data contracts your account has access to
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: A string to search for against all data contracts you have access to. Will match case insensitive.
       responses:
-        "200":
+        '200':
           description: A JSON array of data contracts in OCDS format
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/DataContractSummary"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+                  $ref: '#/components/schemas/DataContractSummary'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
     post:
       tags:
-        - data-contracts
-      description: Create a new data contract
-      summary: Create data contract
+        - Data Contracts
+      summary: Create New Data Contract
+      description: Create a new data contract owned by the client the account is authenticated for
       requestBody:
         description: The data contract in ODCS format
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/DataContractODCS"
+              $ref: '#/components/schemas/DataContractCreate'
           application/yaml:
             schema:
-              $ref: "#/components/schemas/DataContractODCS"
+              $ref: '#/components/schemas/DataContractCreate'
       responses:
-        "201":
+        '201':
           description: Data contract successfullly created
           headers:
             Location:
@@ -66,13 +308,13 @@ paths:
               schema:
                 type: string
                 example: http://example.com/data-contracts/123
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
   /data-contracts/{contractId}:
     get:
       tags:
-        - data-contracts
-      summary: Get a specific data contract
+        - Data Contracts
+      summary: Get Data Contract By ID
       description: |
         Fetches a data contract by id. Fields might be hidden depending on the access rights of the requesting user
       parameters:
@@ -83,20 +325,23 @@ paths:
           required: true
           description: Id of the data contract to get
       responses:
-        "200":
+        '200':
           description: A JSON object representing the data contract in ODCS format
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DataContract"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
-        "404":
-          $ref: "#/components/responses/NotFoundError"
+                $ref: '#/components/schemas/DataContract'
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/DataContract'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
     patch:
       tags:
-        - data-contracts
-      summary: Update the ODCS definition of a specific data contract
+        - Data Contracts
+      summary: Update Data Contract By ID
       description: |
         Overwrite included fields of the ODCS specs
       parameters:
@@ -112,18 +357,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/DataContractODCSProps"
+              $ref: '#/components/schemas/DataContractUpdate'
       responses:
-        "204":
+        '204':
           description: Update was succesful
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
-        "404":
-          $ref: "#/components/responses/NotFoundError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
     delete:
       tags:
-        - data-contracts
-      summary: Delete a specific data contract
+        - Data Contracts
+      summary: Delete Data Contract By ID
       description: |
         Deletes a data contract if the user has the DATA-COLLABORATOR role
       parameters:
@@ -134,14 +379,398 @@ paths:
           required: true
           description: Id of the data contract to delete
       responses:
-        "204":
+        '204':
           description: Deletion was succesful
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
-        "404":
-          $ref: "#/components/responses/NotFoundError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /data-contracts/{contractId}/schema:
+    post:
+      tags:
+        - Data Contracts
+      summary: Create New Schema
+      description: Adds a new schema to the array in the data contract and generates a unique identifier for it
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract to add a schema to
+      requestBody:
+        description: ODCS compliant description of the schema
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SchemaCreate'
+      responses:
+        '201':
+          description: Schema succesfully created
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+                example: http://example.com/data-contracts/123/schema/456
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /data-contracts/{contractId}/schema/{schemaId}:
+    get:
+      tags:
+        - Data Contracts
+      summary: Get Schema By ID
+      description: |
+        Fetches a schema identified by the id generated by Datavillage DCP. Fields might be hidden depending on access rights
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract where the schema can be found
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          required: true
+          description: Id of the schema to be fetched
+      responses:
+        '200':
+          description: A JSON object representing the schema in ODCS format with the identifier generated by Datavillage DCP.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    patch:
+      tags:
+        - Data Contracts
+      summary: Update Schema By ID
+      description: |
+        Will only update the the fields mentioned in the request body. If properties array is specified, it will be completely overwritten
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract where the schema can be found
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          description: Id of the schema to be fetched
+          required: true
+      requestBody:
+        description: Fields of ODCS to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SchemaUpdate'
+      responses:
+        '204':
+          description: Update was succesful
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    delete:
+      tags:
+        - Data Contracts
+      summary: Delete Schema By ID
+      description: |
+        Deletes a specific schema from the list in a data contract, identified by the id generated by the Datavillage DCP
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract where the schema can be found
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          required: true
+          description: Id of the schema to be fetched
+      responses:
+        '204':
+          description: Deletion was succesful
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /data-contracts/{contractId}/schema/{schemaId}/properties:
+    post:
+      tags:
+        - Data Contracts
+      summary: Create New Property
+      description: Adds a new property to the properties array of the schema and generates a unique identifier for it
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract that contains the schema to add a property to
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          required: true
+          description: Id of the schema to add a property to
+      requestBody:
+        description: ODCS compliant description of the property
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PropertyCreate'
+      responses:
+        '201':
+          description: Property succesfully created
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+                example: http://example.com/data-contracts/123/schema/456/properties/789
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /data-contracts/{contractId}/schema/{schemaId}/properties/{propertyId}:
+    get:
+      tags:
+        - Data Contracts
+      summary: Get Property By ID
+      description: |
+        Fetches a property identified by the ID generated by Datavillage DCP. Fields might be hidden depending on access rights
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract where the schema can be found
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          description: Id of the schema where the property can be found
+          required: true
+        - in: path
+          name: propertyId
+          schema:
+            type: string
+          required: true
+          description: Id of the property to update
+      responses:
+        '200':
+          description: A JSON object representing the property in ODCS format with the identifier generated by Datavillage DCP.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    patch:
+      tags:
+        - Data Contracts
+      summary: Update Property By ID
+      description: |
+        Will only update the fields mentioned in the request body
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract where the schema can be found
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          description: Id of the schema where the property can be found
+          required: true
+        - in: path
+          name: propertyId
+          schema:
+            type: string
+          required: true
+          description: Id of the property to update
+      requestBody:
+        description: Fields of ODCS to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PropertyUpdate'
+      responses:
+        '204':
+          description: Update was succesful
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    delete:
+      tags:
+        - Data Contracts
+      summary: Delete Property By ID
+      description: |
+        Deletes a specific property of a schema in a data contract, identified by the ID generated by the Datavillage DCP
+      parameters:
+        - in: path
+          name: contractId
+          schema:
+            type: string
+          required: true
+          description: Id of the data contract where the property can be found
+        - in: path
+          name: schemaId
+          schema:
+            type: string
+          required: true
+          description: Id of the schema where the property can be found
+        - in: path
+          name: propertyId
+          schema:
+            type: string
+          required: true
+          description: Id of the property to be deleted
+      responses:
+        '204':
+          description: Deletion was succesful
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /.well-known/{spaceId}/webid:
+    get:
+      security: []
+      operationId: getWebId
+      tags:
+        - Public
+      summary: Get WebId Document
+      description: |
+        Return an RDF document containing metadata about the application. It is used in the Solid-OIDC flow to check the issuer of the tokens related to this application.
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space associated with the webId
+      responses:
+        '200':
+          description: The webId document serialized as Turtle
+          content:
+            text/turtle:
+              schema:
+                type: string
+                example: |
+                  @prefix foaf: <http://xmlns.com/foaf/0.1/>.
+                  @prefix solid: <http://www.w3.org/ns/solid/terms#>.
+                  @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+                  <https://api.gke.datavillage.me/.well-known/abcd/webid>
+                    a foaf:Agent ;
+                    solid:oidcIssuer   <https://solid-idp.datavillage.me> ;
+                    skos:prefLabel "Test collaboration space";
+                    foaf:logo <https://client.example/logo.png>;
+                    foaf:homepage <https://client.example/>.
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+  /.well-known/{spaceId}/appid:
+    get:
+      security: []
+      operationId: getAppId
+      tags:
+        - Public
+      summary: Get AppId Document
+      description: |
+        Return an RDF document containing metadata about the application.
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space associated with the appId
+      responses:
+        '200':
+          description: The appId document serialized as JSON-LD
+          content:
+            application/ld+json:
+              schema:
+                type: string
+                example: |
+                  {
+                    "@context": "https://www.w3.org/ns/solid/oidc-context.jsonld",
+                    "client_id": "https://api.gke.datavillage.me/.well-known/abcd/appid",
+                    "redirect_uris": [],
+                    "scope": "openid webid",
+                    "grant_types": ["password"],
+                    "client_name": "Test collaboration space - application",
+                    "logo_uri": "https://client.example/logo.png"
+                  }
+        '404':
+          $ref: '#/components/responses/NotFoundError'
 components:
   schemas:
+    CollaborationSpace:
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - type: object
+          properties:
+            id:
+              type: string
+            collaborators:
+              type: array
+              items:
+                $ref: '#/components/schemas/Collaborator'
+          required:
+            - id
+            - name
+    CollaborationSpaceCreate:
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - type: object
+          properties:
+            collaborators:
+              type: array
+              items:
+                $ref: '#/components/schemas/CollaboratorCreate'
+          required:
+            - name
+    Collaborator:
+      description: Collaborator
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborator'
+        - type: object
+          properties:
+            id:
+              type: string
+          required:
+            - id
+            - clientId
+    CollaboratorCreate:
+      description: CollaboratorCreate
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborator'
+        - type: object
+          required:
+            - clientId
     Developer:
       type: object
       properties:
@@ -155,16 +784,159 @@ components:
         - clientId
     DataContract:
       title: Data Contract
+      description: ODCS compliant description of a data contract with metadata fields added by Datavillage DCP
       allOf:
-        - $ref: "#/components/schemas/DataContractDV"
+        - $ref: '#/components/schemas/DataContractDV'
         - type: object
           properties:
             dataContract:
               allOf:
-                - $ref: "#/components/schemas/DataContractODCS"
-      required:
-        - dataContract
+                - $ref: '#/components/schemas/AbstractDataContract'
+                - type: object
+                  properties:
+                    schema:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Schema'
+                  required:
+                    - version
+                    - name
+                    - status
+                    - id
+                    - apiVersion
+                    - kind
+          required:
+            - dataContract
+    DataContractCreate:
+      title: Data Contract Create
+      description: ODCS description of a data contract
+      allOf:
+        - $ref: '#/components/schemas/AbstractDataContract'
+        - type: object
+          properties:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SchemaCreate'
+          required:
+            - version
+            - name
+            - status
+            - id
+            - apiVersion
+            - kind
+    Schema:
+      title: Schema
+      description: Identifiable ODCS description of a schema
+      allOf:
+        - $ref: '#/components/schemas/AbstractSchema'
+        - type: object
+          properties:
+            _id:
+              type: string
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/Property'
+          required:
+            - name
+            - _id
+    SchemaCreate:
+      title: Schema Create
+      description: ODCS description of a schema
+      allOf:
+        - $ref: '#/components/schemas/AbstractSchema'
+        - type: object
+          properties:
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/PropertyCreate'
+          required:
+            - name
+    Property:
+      title: Property
+      description: Identifiable ODCS description of a property
+      allOf:
+        - $ref: '#/components/schemas/AbstractProperty'
+        - type: object
+          properties:
+            _id:
+              type: string
+          required:
+            - name
+            - _id
+    PropertyCreate:
+      title: Property Create
+      description: ODCS compliant description of a property
+      allOf:
+        - $ref: '#/components/schemas/AbstractProperty'
+        - type: object
+          required:
+            - name
+    AbstractCollaborationSpace:
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+    CollaboratorRoleCodeProvider:
+      type: object
+      x-ogen-name: CodeProvider
+      description: Someone who provides code
+      properties:
+        role:
+          type: string
+          example: CodeProvider
+        algoSettings:
+          type: object
+          properties:
+            test:
+              type: string
+    CollaboratorRoleDataProvider:
+      type: object
+      x-ogen-name: DataProvider
+      description: Someone who provides Data
+      properties:
+        role:
+          type: string
+          example: DataProvider
+    CollaboratorRoleDataConsumer:
+      type: object
+      x-ogen-name: DataConsumer
+      description: Someone who consumes data
+      properties:
+        role:
+          type: string
+          example: DataConsumer
+    AbstractCollaborator:
+      type: object
+      description: Abstract Collaborator
+      properties:
+        clientId:
+          type: string
+      discriminator:
+        propertyName: role
+        mapping:
+          CodeProvider: '#/components/schemas/CollaboratorRoleCodeProvider'
+          DataProvider: '#/components/schemas/CollaboratorRoleDataProvider'
+          DataConsumer: '#/components/schemas/CollaboratorRoleDataConsumer'
+      oneOf:
+        - $ref: '#/components/schemas/CollaboratorRoleCodeProvider'
+        - $ref: '#/components/schemas/CollaboratorRoleDataProvider'
+        - $ref: '#/components/schemas/CollaboratorRoleDataConsumer'
+    CollaborationSpaceUpdate:
+      allOf:
+        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - type: object
+          properties:
+            collaborators:
+              type: array
+              items:
+                $ref: '#/components/schemas/AbstractCollaborator'
     DataContractDV:
+      description: Metadata added to data contracts by Datavillage DCP
       type: object
       properties:
         id:
@@ -176,9 +948,36 @@ components:
       required:
         - id
         - clientId
-        - created
-        - updated
-    DataContractODCSBase:
+    DataContractSummary:
+      title: Data Contract Summary
+      description: The metadata fields added by Datavillage DCP along with key properties of ODCS description
+      allOf:
+        - $ref: '#/components/schemas/DataContractDV'
+        - type: object
+          properties:
+            dataContractSummary:
+              type: object
+              properties:
+                version:
+                  type: string
+                  description: Current version of the data contract.
+                name:
+                  type: string
+                  description: Name of the data contract.
+                status:
+                  type: string
+                  description: Current status of the dataset. Valid values are `production`, `test`, or `development`.
+                  example:
+                    - production
+                    - test
+                    - development
+              required:
+                - version
+                - name
+                - status
+        - required:
+            - dataContractSummary
+    AbstractDataContract:
       type: object
       properties:
         version:
@@ -194,20 +993,25 @@ components:
             - production
             - test
             - development
-    DataContractSummary:
-      title: Data Contract summary
-      allOf:
-        - $ref: "#/components/schemas/DataContractDV"
-        - type: object
-          properties:
-            dataContractSummary:
-              allOf:
-                - $ref: "#/components/schemas/DataContractODCSBase"
-                - required:
-                    - version
-                    - name
-                    - status
-    SchemaElement:
+        id:
+          type: string
+          description: |
+            A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. This only has meaning for the data owner and is not used to identify data contracts in the Datavillage DCP
+        apiVersion:
+          type: string
+          description: Version of the standard used to build data contract. Default value is v3.0.0.
+          default: v3.0.0
+          enum:
+            - v3.0.0
+            - v2.2.2
+            - v2.2.1
+            - v2.2.0
+        kind:
+          type: string
+          default: DataContract
+          enum:
+            - DataContract
+    Element:
       type: object
       properties:
         name:
@@ -227,11 +1031,41 @@ components:
         businessName:
           type: string
           description: The business name of the element.
-    SchemaProperty:
+    AbstractSchema:
       allOf:
-        - $ref: "#/components/schemas/SchemaElement"
-          required:
-            - name
+        - $ref: '#/components/schemas/Element'
+        - type: object
+          properties:
+            logicalType:
+              type: string
+              description: The logical element data type.
+              enum:
+                - object
+            physicalName:
+              type: string
+              description: Physical name.
+              example:
+                - table_1_2_0
+            dataGranularityDescription:
+              type: string
+              description: Granular level of the data in the object.
+              example:
+                - Aggregation by country
+    AbstractProperty:
+      properties:
+        examples:
+          type: array
+          description: List of sample element values.
+          items:
+            anyOf:
+              - type: string
+              - type: number
+              - type: integer
+              - type: boolean
+              - type: array
+              - type: object
+      allOf:
+        - $ref: '#/components/schemas/Element'
         - type: object
           properties:
             primaryKey:
@@ -239,7 +1073,6 @@ components:
               description: Boolean value specifying whether the element is primary or not. Default is false.
             primaryKeyPosition:
               type: integer
-              default: -1
               description: If element is a primary key, the position of the primary key element. Starts from 1. Example of `account_id, name` being primary key columns, `account_id` has primaryKeyPosition 1 and `name` primaryKeyPosition 2. Default to -1.
             logicalType:
               type: string
@@ -260,19 +1093,15 @@ components:
               description: The physical element data type in the data source. For example, VARCHAR(2), DOUBLE, INT.
             required:
               type: boolean
-              default: false
               description: Indicates if the element may contain Null values; possible values are true and false. Default is false.
             unique:
               type: boolean
-              default: false
               description: Indicates if the element contains unique values; possible values are true and false. Default is false.
             partitioned:
               type: boolean
-              default: false
               description: Indicates if the element is partitioned; possible values are true and false.
             partitionKeyPosition:
               type: integer
-              default: -1
               description: If element is used for partitioning, the position of the partition element. Starts from 1. Example of `country, year` being partition columns, `country` has partitionKeyPosition 1 and `year` partitionKeyPosition 2. Default to -1.
             classification:
               type: string
@@ -295,91 +1124,36 @@ components:
             transformDescription:
               type: string
               description: Describes the transform logic in very simple terms.
-            example:
-              type: array
-              description: List of sample element values.
-              items:
-                anyOf:
-                  - type: string
-                  - type: number
-                  - type: integer
-                  - type: boolean
-                  - type: array
-                  - type: object
             criticalDataElement:
               type: boolean
-              default: false
               description: True or false indicator; If element is considered a critical data element (CDE) then true else false.
-          required:
-            - name
-    SchemaObject:
+    DataContractUpdate:
+      title: Data Contract Update
+      description: ODCS properties of a data contract where schemas should comply
       allOf:
-        - $ref: "#/components/schemas/SchemaElement"
+        - $ref: '#/components/schemas/AbstractDataContract'
         - type: object
           properties:
-            logicalType:
-              type: string
-              description: The logical element data type.
-              enum:
-                - object
-            physicalName:
-              type: string
-              description: Physical name.
-              example:
-                - table_1_2_0
-            dataGranularityDescription:
-              type: string
-              description: Granular level of the data in the object.
-              example:
-                - Aggregation by country
-            properties:
-              type: array
-              description: A list of properties for the object.
-              items:
-                $ref: "#/components/schemas/SchemaProperty"
-      required:
-        - name
-    DataContractODCSProps:
-      title: Data Contract in ODCS format
-      allOf:
-        - $ref: "#/components/schemas/DataContractODCSBase"
-        - type: object
-          description: An open data contract specification to establish agreement between data producers and consumers (ODCS v3).
-          properties:
-            id:
-              type: string
-              description: |
-                A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. This only has meaning for the data owner and is not used to identify data contracts in the Datavillage DCP
-            kind:
-              type: string
-              default: DataContract
-              description: The kind of file this is. Valid value is `DataContract`.
-              enum:
-                - DataContract
-            apiVersion:
-              type: string
-              default: v3.0.0
-              description: Version of the standard used to build data contract. Default value is v3.0.0.
-              enum:
-                - v3.0.0
-                - v2.2.2
-                - v2.2.1
-                - v2.2.0
             schema:
               type: array
-              description: A list of elements within the schema to be cataloged.
               items:
-                $ref: "#/components/schemas/SchemaObject"
-    DataContractODCS:
+                $ref: '#/components/schemas/SchemaCreate'
+    SchemaUpdate:
+      title: Schema Update
+      description: ODCS properties of a schema where 'properties'-property should comply
       allOf:
-        - $ref: "#/components/schemas/DataContractODCSProps"
-        - required:
-            - version
-            - name
-            - status
-            - id
-            - apiVersion
-            - kind
+        - $ref: '#/components/schemas/AbstractSchema'
+        - type: object
+          properties:
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/PropertyCreate'
+    PropertyUpdate:
+      title: Update Property
+      description: ODCS properties of a property
+      allOf:
+        - $ref: '#/components/schemas/AbstractProperty'
   securitySchemes:
     bearerAuth:
       type: http
