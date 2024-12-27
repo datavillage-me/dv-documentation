@@ -8,7 +8,7 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "collaboration-spaces",
+      label: "Collaboration Spaces",
       link: {
         type: "doc",
         id: "api/control-plane/0.1.0/collaboration-spaces",
@@ -17,35 +17,35 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/control-plane/0.1.0/get-collaboration-spaces",
-          label: "getCollaborationSpaces",
+          label: "Get All Collaboration Spaces",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "api/control-plane/0.1.0/get-collaboration-space",
-          label: "Get a specific collaboration space",
+          label: "Get Collaboration Space",
           className: "api-method get",
         },
         {
           type: "doc",
           id: "api/control-plane/0.1.0/get-collaboration-space-collaborators",
-          label: "Get the list of collaborators of a specific collaboration space",
+          label: "Get Collaborators",
           className: "api-method get",
         },
       ],
     },
     {
       type: "category",
-      label: "auth",
+      label: "Authentication",
       link: {
         type: "doc",
-        id: "api/control-plane/0.1.0/auth",
+        id: "api/control-plane/0.1.0/authentication",
       },
       items: [
         {
           type: "doc",
           id: "api/control-plane/0.1.0/get-current-credentials",
-          label: "getCurrentCredentials",
+          label: "Get Current Credentials",
           className: "api-method get",
         },
       ],

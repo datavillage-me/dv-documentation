@@ -7,47 +7,49 @@ servers:
 security:
   - bearerAuth: []
 tags:
-  - name: collaboration-spaces
-    description: Collaboration Spaces
-  - name: auth
-    description: Authentication
+  - name: Collaboration Spaces
+    description: "Endpoints related to collaboration spaces: CRUD and operating the space"
+  - name: Authentication
+    description: The account that performs actions in the Control Plane
 paths:
   /auth/currentCredentials:
     get:
       operationId: getCurrentCredentials
       tags:
-        - auth
+        - Authentication
+      summary: Get Current Credentials
       description: Get your current credentials
       responses:
-        '200':
+        "200":
           description: The developer that is logged in
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Developer'
+                $ref: "#/components/schemas/Developer"
   /collaborationSpaces:
     get:
       operationId: getCollaborationSpaces
       tags:
-        - collaboration-spaces
+        - Collaboration Spaces
+      summary: Get All Collaboration Spaces
       description: Get all spaces your account has access to.
       responses:
-        '200':
+        "200":
           description: A JSON array of collaboration spaces
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
   /collaborationSpaces/{spaceId}:
     get:
       operationId: getCollaborationSpace
       tags:
-        - collaboration-spaces
-      summary: Get a specific collaboration space
+        - Collaboration Spaces
+      summary: Get Collaboration Space
       description: |
         This fetches a collaboration space, if you have access to this space. The necessary roles for this are:
           * abc
@@ -59,22 +61,22 @@ paths:
           required: true
           description: Id of the collaboration space to get
       responses:
-        '200':
+        "200":
           description: A JSON object representing a collaboration space
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaborationSpaces/{spaceId}/collaborators:
     get:
       operationId: getCollaborationSpaceCollaborators
       tags:
-        - collaboration-spaces
-      summary: Get the list of collaborators of a specific collaboration space
+        - Collaboration Spaces
+      summary: Get Collaborators
       description: |
         This fetches a collaboration space, if you have access to this space. You have access to a collaboration space when your client is part of this space.
       parameters:
@@ -85,18 +87,18 @@ paths:
           required: true
           description: Id of the collaboration space to get
       responses:
-        '200':
+        "200":
           description: An array containing the collaborators of a space
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Collaborator'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                  $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
 components:
   schemas:
     CollaborationSpace:
@@ -117,22 +119,22 @@ components:
         collaborators:
           type: array
           items:
-            $ref: '#/components/schemas/Collaborator'
+            $ref: "#/components/schemas/Collaborator"
     Collaborator:
       description: Collaborator
       discriminator:
         propertyName: role
         mapping:
-          CodeProvider: '#/components/schemas/CodeProvider'
-          DataProvider: '#/components/schemas/DataProvider'
-          DataConsumer: '#/components/schemas/DataConsumer'
+          CodeProvider: "#/components/schemas/CodeProvider"
+          DataProvider: "#/components/schemas/DataProvider"
+          DataConsumer: "#/components/schemas/DataConsumer"
       oneOf:
-        - $ref: '#/components/schemas/CodeProvider'
-        - $ref: '#/components/schemas/DataProvider'
-        - $ref: '#/components/schemas/DataConsumer'
+        - $ref: "#/components/schemas/CodeProvider"
+        - $ref: "#/components/schemas/DataProvider"
+        - $ref: "#/components/schemas/DataConsumer"
     CodeProvider:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           description: Someone who provides code
           properties:
@@ -146,7 +148,7 @@ components:
                   type: string
     DataProvider:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           description: Someone who provides Data
           properties:
@@ -155,7 +157,7 @@ components:
               example: DataProvider
     DataConsumer:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           description: Someone who consumes data
           properties:
