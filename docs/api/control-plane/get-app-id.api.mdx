@@ -1,0 +1,72 @@
+---
+id: get-app-id
+title: "Get AppId Document"
+description: "Return an RDF document containing metadata about the application."
+sidebar_label: "Get AppId Document"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFu20YQ/ZXFnFqUIo0mJ6IIatRNoCBoDcdBD6JgjLgjauPl7mZ3aMUl+O/FkJQlufal6InkcvbNvHkzr4dEdRcNP0K5WmfgA0Vk491SQwkN8WUISw0ZMDYJyhVcdxtralhnoCnV0QQJhhJuiLvoFDp1c/VeaV93LTlWtXeMxhnXqJYYNTIq3PiOFe9IYQjW1GO+vHKQQcCILTFFydWDEeSAvIMMHLYEJaSANY0VpXpHLULZAz+G8RdH4xoYMoj0rTORNJQcO3pe6lIrvx3z195a3PiJsRqhFabka4NMWu0N7w51LjUMa0FOwbtESfL+fHEhj3P020P8sQmJokFr/iatMKmPn//8Y/HpCjKQ5pBjwTjpRGH1T1+TYPWvcsyAvmMbrBz1lVOqgl9HtO9cQakq2DGHVBbFfr/P929yH5vCpSJ5a3Thja4Xc3QumayuIJtQamvI8Z3R5zAYTN7cUy76PRhrsaG8pSLfk7WLe+f3rsBNrQsMwRzBImkTqea7LpokgKv1/CfVPtCUwgdyRqs9bU5uNhEd3wnn6V4FAVPa+6grWJ+XKnMxId1S4hclXZwO2lMO6xsvlZ0znVDzub2FBOXBNRVUbqgcDMMwZPD24u2/hb+h5LtYk3Ke1dZ3Tr8u8av6+s1Xqlk2IcoqspkmjWL08a6llLChl8ZB0xY7y1DC1WHqjmUMZyuxeoa2HiZSLfHOz1s/riLvoIQzjft5+4ZJaFlCig+Hbe2ihfKpkb8I9ejtIlh0tMBg3o0bdPCbz0J9YrchjBQvO0n4RE1wDlsu31MQZPPLex9bFL4f/7odCRq39eN1w+Na/Dalv5bs6vJ6CRlIpZNWFpkSi1UEn7jFUYzZYT4Qq9H11KGV8MxB+qOs/5PvzZxlI4tg0TgpbexnPwuxghMhIIPyaISTFusMdj6xRPb9BhN9iXYY5PhbR3G29weMBjfSn1UP2iR511Bu0abnNnlK8oebeXp+VP/VPF/hOB+iexR90HbyBRnc0+OJ2Q/rIYMdoaY4Vj79vaxrCnxy7yUTlZF7muwPv8us/ANni2dz
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get AppId Document"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/.well-known/{spaceId}/appid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Return an RDF document containing metadata about the application.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space associated with the appId"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The appId document serialized as JSON-LD","content":{"application/ld+json":{"schema":{"type":"string","example":"{\n  \"@context\": \"https://www.w3.org/ns/solid/oidc-context.jsonld\",\n  \"client_id\": \"https://api.gke.datavillage.me/.well-known/abcd/appid\",\n  \"redirect_uris\": [],\n  \"scope\": \"openid webid\",\n  \"grant_types\": [\"password\"],\n  \"client_name\": \"Test collaboration space - application\",\n  \"logo_uri\": \"https://client.example/logo.png\"\n}\n"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
