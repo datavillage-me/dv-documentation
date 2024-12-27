@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import dvLogoWhite from "../../static/img/Datavillage_Logo_White.png";
-
+import Clients from "../components/Clients";
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -34,7 +34,9 @@ export default function Home() {
       description="Trusted Data Collaborations"
     >
       <HomepageHeader />
-      {/* <main><HomepageFeatures /></main> */}
+      <main>
+        <Clients />
+      </main>
     </Layout>
   );
 }
