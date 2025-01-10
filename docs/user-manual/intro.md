@@ -30,28 +30,19 @@ There are 3 kinds of collaborators:
 
 An organisation can take on multiple roles. The owner of the space is not required to take on any of these roles.
 
-### Individuals
-
-If the algorithm requires personal data, stored in a Personal Online Datastore (POD), then the _individuals_ should be configured in the collaboration space. This could be any kind of POD: Solid POD, (DV-)SFTP PODs or even a Google Drive folder.
-
 ## Data Contracts and Data Sources
 
-Another very important concept in the DCP, is a **data contract**. This defines the schema of the data an organisation delivers. Before execution of the algorithm, the integrity of the data can be checked and the algorithm can be stopped if the data does not comply with the schema that is defined in the data contract.
+Another very important concept in the DCP, is a **data contract**. This defines the schema of the data an organisation delivers/recieves. Before execution of the algorithm, the integrity of the data can be checked and the algorithm can be stopped if the data does not comply with the schema that is defined in the data contract.
 
 Data contracts are defined apart from collaboration spaces: an organisation could already define all their schemas before joining a single collaboration space.
+The data model is defined using [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/), current implementation supports up to `v3.0.0`, which is backwards compatible until `v2.2.0`. The endpoints to perform CRUD operations can be found [here](/dv-documentation/docs/api/control-plane/data-contracts).
 
-### Data Sources
+### Servers
 
-To tie the concepts 'data contract' and 'collaboration space' together, there is the notion of a **data source**.
-This is used to define where and how the algorithm should pull the data from, or push the insights to.
+To tie the concepts 'data contract' and 'collaboration space' together, there is the notion of **servers** (analagous to servers in [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#infrastructure-and-servers)).
+This is used to define where and how the algorithm should pull the data from, or push the insights to. It can be defined either for a data contract or specifically for a collaboration space.
 
-This is done by configuring a **connector**, which defines what kind of data source will be used: an API call, an S3 bucket... The secrets needed are also defined within the collaboration space which together, forms the data source. This data is send encrypted to the trusted computing environment, which will use it to pull the data, perform the checks and do the algorithm.
-
-:::note
-The only thing that is stored in the database related to data sources, is the kind of connector that is used. Secrets are send encrypted and directly from the client-side application to the trusted environment. This ensures no leakage of secrets.
-:::
-
-Configuring where the results of the algorithm (insights) need to be pushed to, is done in the same way.
+The ODCS model for servers does not incorporate secrets. This is a good thing, as we don't want secrets leaking. To tell the cage which secrets it should use to pull/push data, we should configure a **connector**. This is a simple object containing the secrets. It is not stored in the database, but rather send encrypted directly to the cage from the client side application.
 
 ### Integrity check
 
