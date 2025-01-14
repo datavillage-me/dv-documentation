@@ -16,7 +16,7 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/control-plane/get-collaboration-spaces",
+          id: "api/control-plane/get-all-collaboration-spaces",
           label: "Get All Collaboration Spaces",
           className: "api-method get",
         },
@@ -34,25 +34,61 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/patch-collaboration-space",
+          id: "api/control-plane/update-collaboration-space",
           label: "Update Collaboration Space",
           className: "api-method patch",
         },
         {
           type: "doc",
-          id: "api/control-plane/get-collaboration-space-collaborators",
+          id: "api/control-plane/delete-collaboration-space",
+          label: "Delete Collaboration Space",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/invite-collaborator",
+          label: "Invite Collaborator",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-collaborators",
           label: "Get Collaborators",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/control-plane/get-collaboration-space-public-key",
-          label: "getCollaborationSpacePublicKey",
+          id: "api/control-plane/create-collaborator",
+          label: "Create Collaborator",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-collaborator",
+          label: "Get Collaborator",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/control-plane/post-collaboration-space-event",
+          id: "api/control-plane/update-collaborator",
+          label: "Update Collaborator",
+          className: "api-method patch",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/delete-collaborator",
+          label: "Delete Collaborator",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-public-key",
+          label: "GetPublicKey",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/publish-event",
           label: "Publish Event",
           className: "api-method post",
         },
@@ -60,6 +96,52 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "api/control-plane/get-attestation-report",
           label: "Get Attestation Report",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Cages",
+      link: {
+        type: "doc",
+        id: "api/control-plane/cages",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/control-plane/deploy-cage",
+          label: "Deploy Cage",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/delete-cage",
+          label: "Delete Cage",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/upload-resource",
+          label: "Upload Resource",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-algorithm-logs",
+          label: "Get Algorithm Logs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-deployment-logs",
+          label: "Get Deployment Logs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-pod-statusses",
+          label: "Get Pod Status",
           className: "api-method get",
         },
       ],
@@ -75,7 +157,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/control-plane/get-current-credentials",
-          label: "Get Current Credentials",
+          label: "Get Your Current Credentials",
           className: "api-method get",
         },
       ],
@@ -90,7 +172,7 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/control-plane/get-all-data-contracts",
+          id: "api/control-plane/get-data-contracts",
           label: "Get All Data Contracts",
           className: "api-method get",
         },
@@ -170,6 +252,22 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Clients",
+      link: {
+        type: "doc",
+        id: "api/control-plane/clients",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/control-plane/get-notifications",
+          label: "Get Notifications",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Public",
       link: {
         type: "doc",
@@ -178,14 +276,20 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/control-plane/get-web-id",
+          id: "api/control-plane/get-collaboration-space-web-id",
           label: "Get WebId Document",
           className: "api-method get",
         },
         {
           type: "doc",
-          id: "api/control-plane/get-app-id",
+          id: "api/control-plane/get-collaboration-space-app-id",
           label: "Get AppId Document",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-client",
+          label: "Get Client Info",
           className: "api-method get",
         },
       ],
