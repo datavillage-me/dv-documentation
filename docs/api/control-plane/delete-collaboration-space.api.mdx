@@ -1,11 +1,11 @@
 ---
-id: delete-data-contract
-title: "Delete Data Contract"
-description: "Deletes a data contract if the user has the DATA-COLLABORATOR role"
-sidebar_label: "Delete Data Contract"
+id: delete-collaboration-space
+title: "Delete Collaboration Space"
+description: "Delete a collaboration space"
+sidebar_label: "Delete Collaboration Space"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VFFr2zAQ/ivinjZQSDf6ZMYgazrIKLRkKXvIwrjYl1qdLLnSqTQY//dxtpMmacf2MPZkW/5O+r77Pl0DjHcRsiVMkVFdeMcBc46w0uBrCsjGu1kBGUzJEpOgdiDQUFDMg6kFtIdEhaqQzfIBp8xGcUkqRQqqxNh9TCeLyeji+upq8ul6Pllcz1Xwlr470FBjwIqYgvBqwMjWNXIJGhxWBBnsdp4VoCHmJVUIWQO8reVv5GDcHbQaAj0kE6iAjEOiU7qzQvme2TFd9qrolEC7kj1i7V2kKCe8PzuXx/E+c3pIFFnRE+WJqVAx5TnFuEnWboXG+dm7l1W30g0TlfOsMHFJjk2OTCJJqJBjKcK6trJuvBvfR6lsXir263vq/KiDmMamZ0sh+PCjohjxjl5p0FGHlifwVdu2HfdXFUefQk4d+Y1P7v+RFhM3mCxL3nyeKnJ8QOMvNLUaKuLSS6gHn3WfrwzGkoTRLglx3DwnrZWoUXjcxTIFCxmUzHXMxuMPHdDbUW3R0Qhr87FLT6Q8BcPbrmRNGChMkhy1XB3+/irN6fUfgvbi5Zhd1OW7B4EeXj77UKF05Mu3RdcC4za+KzdsBX/Rs7sRcmpyMwMNIqR30yJTZAlq7SNX2Nk13LT+Squj4XB675tn6//VCBhkMz3xuLZonLDrOt4MVi3h2CrQkB2MhZWG0kcWXNOsMdJtsG0ryw+Jgtix0vCIweBaGrRsoDBR3gvINmjj6bA41PhmPgTsrfrzCPmNlmER3VasQJvkCzT8pO3xfGtXrYaSsKDQ0ewBkzynmg9KX9w4Sdc+5tPLq8vFJbTtL9s7DXU=
+api: eJy9VE1r3DAQ/StmTi0obFpyMqUQkhS29BDyQQ/LUmbl2VipLCnSKGQx/u9lZCfZ3WxpTj1Zni+9efNGPfhAEdl4N2+ghnOyxHTmrcWVH+3XATWBAsa7BPUCdpxV8SZYKmgo6WiCWF8KVVjpnfA0FQsYsSOmKCV7MJISkFtQ4LAjqKFEzhtQkHRLHULdA29CcXE07g4GBZEesonUQM0x0z6GeVP5dcUtHQJRsa+aAhKGpVRKwbtESe75fHwin91qV/SQKXFFT6QzU1OlrDWltM7WbgTMyfGnt1m3iWJlUuU8V5i5JcdGI5M0pr1jcixJGIIVu/Fudp8ks3/bt1/dk2ZhL8rU2IxoKUYff3WUEt7RAZp2eFrshS+HYSjYD3acfI6aCvi1z+7/gZZRrjFbFil5nTtyvAXjHT0NCjri1ouqpzmrUWI1zHb0cFT0kGb9JLlBNEfx8VmcOVqooWUOqZ7NvggB0dujYNHREQbztQgokc7R8KakrAgjxdMsty2W2+5r4WekYDvopX+55lnz8j8GgZoO33zsUEj5/vOmsGDc2pd0w1biz0Z0lwKuOr2cgwJpZByoRabEotXgE3dYJjbt27SwB7Yb9vaqf9XAv9Z8aorpiWfBonFyd+Gzn2axgEOzAAX18wOwVND6xBLa9ytMdBvtMIj5IVMUvpcKHjEaXAkDix4ak+TcQL1Gm/afhW34H64mEX2s3vtY/KWpyYhuI4yjzfIHCn7TZusxG5aDgpawoViQjt5TrSnwVt6bxRIFvaj5/OLHxc0FDMMftI8Axg==
 sidebar_class_name: "delete api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -22,13 +22,13 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Delete Data Contract"}
+  children={"Delete Collaboration Space"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"delete"}
-  path={"/data-contracts/{contractId}"}
+  path={"/collaboration-spaces/{spaceId}"}
   context={"endpoint"}
 >
   
@@ -36,8 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Deletes a data contract if the user has the DATA-COLLABORATOR role
-
+Delete a collaboration space
 
 <Heading
   id={"request"}
@@ -48,7 +47,7 @@ Deletes a data contract if the user has the DATA-COLLABORATOR role
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"contractId","schema":{"type":"string"},"required":true,"description":"Id of the data contract to delete"}]}
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space to delete"}]}
 >
   
 </ParamsDetails>

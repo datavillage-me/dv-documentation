@@ -9,17 +9,21 @@ security:
 tags:
   - name: Collaboration Spaces
     description: "Endpoints related to collaboration spaces: CRUD and operating the space"
+  - name: Cages
+    description: Endpoints related to operating and monitoring cages
   - name: Authentication
     description: The account that performs actions in the Control Plane
   - name: Data Contracts
     description: Endpoints related to CRUD update of data contracts using ODCS (v3)
+  - name: Clients
+    description: Endpoints related to clients
   - name: Public
     description: Endpoints without authentication
 paths:
   /auth/currentCredentials:
     get:
       operationId: getCurrentCredentials
-      summary: Get Current Credentials
+      summary: Get Your Current Credentials
       tags:
         - Authentication
       description: Get credentials of authenticated account
@@ -32,7 +36,6 @@ paths:
                 $ref: "#/components/schemas/Developer"
   /collaboration-spaces:
     get:
-      operationId: getCollaborationSpaces
       summary: Get All Collaboration Spaces
       tags:
         - Collaboration Spaces
@@ -49,7 +52,7 @@ paths:
         "401":
           $ref: "#/components/responses/UnauthorizedError"
     post:
-      operationId: createCollaborationSpace
+      operationId: CreateCollaborationSpace
       tags:
         - Collaboration Spaces
       summary: Create Collaboration Space
@@ -63,18 +66,12 @@ paths:
               $ref: "#/components/schemas/CollaborationSpaceCreate"
       responses:
         "201":
-          description: Space was created successfully
-          headers:
-            Location:
-              required: true
-              schema:
-                type: string
-                example: http://example.com/collaborationSpaces/123
+          $ref: "#/components/responses/CreatedResource"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
   /collaboration-spaces/{spaceId}:
     get:
-      operationId: getCollaborationSpace
+      operationId: GetCollaborationSpace
       tags:
         - Collaboration Spaces
       summary: Get Collaboration Space
@@ -100,7 +97,7 @@ paths:
         "404":
           $ref: "#/components/responses/NotFoundError"
     patch:
-      operationId: patchCollaborationSpace
+      operationId: UpdateCollaborationSpace
       tags:
         - Collaboration Spaces
       summary: Update Collaboration Space
@@ -120,18 +117,53 @@ paths:
               $ref: "#/components/schemas/CollaborationSpaceUpdate"
       responses:
         "201":
-          description: Space was updated successful
-          headers:
-            Location:
-              required: true
-              schema:
-                type: string
-                example: http://example.com/collaborationSpaces/123
+          $ref: "#/components/responses/NoContent"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+    delete:
+      operationId: DeleteCollaborationSpace
+      tags:
+        - Collaboration Spaces
+      summary: Delete Collaboration Space
+      description: Delete a collaboration space
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to delete
+      responses:
+        "204":
+          description: Space was deleted successfully
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/invite:
+    post:
+      operationId: InviteCollaborator
+      tags:
+        - Collaboration Spaces
+      summary: Invite Collaborator
+      description: Invite a client as collaborator of a space
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/collaborators:
     get:
-      operationId: getCollaborationSpaceCollaborators
+      operationId: GetCollaborators
       tags:
         - Collaboration Spaces
       summary: Get Collaborators
@@ -157,9 +189,119 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFoundError"
+    post:
+      operationId: CreateCollaborator
+      tags:
+        - Collaboration Spaces
+      summary: Create Collaborator
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to get
+      requestBody:
+        description: The collaborator to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CollaboratorCreate"
+      responses:
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/collaborators/{collaboratorId}:
+    get:
+      operationId: GetCollaborator
+      tags:
+        - Collaboration Spaces
+      summary: Get Collaborator
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: collaboratorId
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: A JSON object representing the collaborator
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+    patch:
+      operationId: UpdateCollaborator
+      tags:
+        - Collaboration Spaces
+      summary: Update Collaborator
+      description: Update a collaborator
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: collaboratorId
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: The properties to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CollaboratorUpdate"
+      responses:
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+    delete:
+      operationId: DeleteCollaborator
+      tags:
+        - Collaboration Spaces
+      summary: Delete Collaborator
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: collaboratorId
+          schema:
+            type: string
+          required: true
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/public-key:
     get:
-      operationId: getCollaborationSpacePublicKey
+      operationId: GetPublicKey
       tags:
         - Collaboration Spaces
       title: Get Public Key
@@ -183,7 +325,7 @@ paths:
           $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/event:
     post:
-      operationId: postCollaborationSpaceEvent
+      operationId: PublishEvent
       tags:
         - Collaboration Spaces
       summary: Publish Event
@@ -227,10 +369,55 @@ paths:
                     type: string
                 required:
                   - messageId
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/deploy:
+    post:
+      operationId: DeployCage
+      tags:
+        - Cages
+      summary: Deploy Cage
+      description: Deploys the latest version of the algorithm in the cage
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space for which to deploy a cage
+      responses:
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/cage:
+    delete:
+      operationId: DeleteCage
+      tags:
+        - Cages
+      summary: Delete Cage
+      description: Delete a cage
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: Id of the collaboration space to delete a cage from
+      responses:
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/attestation-token:
     get:
+      operationId: GetAttestationReport
       summary: Get Attestation Report
       description: Get an attestation report of the virtual machine
       tags:
@@ -261,10 +448,135 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "404":
           $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/resources/{path}:
+    put:
+      operationId: UploadResource
+      tags:
+        - Cages
+      summary: Upload Resource
+      description: Stores the content of the request as file in the cages resources. If file already exists, it will be overwritten
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: path
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: The content of the file to upload to the cage
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/logs/algo:
+    get:
+      operationId: GetAlgorithmLogs
+      summary: Get Algorithm Logs
+      description: Get x most recent lines of the output generated by the algorithm
+      tags:
+        - Cages
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: tail_lines
+          schema:
+            type: integer
+          required: false
+      responses:
+        "200":
+          description: List of latest `tail_lines` algorithm logs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/logs/deployment:
+    get:
+      operationId: GetDeploymentLogs
+      summary: Get Deployment Logs
+      description: Get x most recent lines of the output generated by the deployment of a cage
+      tags:
+        - Cages
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: tail_lines
+          schema:
+            type: integer
+          required: false
+      responses:
+        "200":
+          description: List of latest `tail_lines` deployment logs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /collaboration-spaces/{spaceId}/logs/pod-status:
+    get:
+      operationId: GetPodStatusses
+      summary: Get Pod Status
+      description: Get the status of all current pods in the cluster of a cage
+      tags:
+        - Cages
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: List of status of pods
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PodStatus"
+          headers:
+            Signature:
+              description: A base64 encoding of the response body signed by the secret manager
+              required: false
+              schema:
+                type: string
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts:
     get:
       tags:
         - Data Contracts
+      operationId: GetDataContracts
       summary: Get All Data Contracts
       description: Get all data contracts your account has access to
       parameters:
@@ -287,6 +599,7 @@ paths:
     post:
       tags:
         - Data Contracts
+      operationId: CreateDataContract
       summary: Create Data Contract
       description: Create a new data contract owned by the client the account is authenticated for
       requestBody:
@@ -301,19 +614,14 @@ paths:
               $ref: "#/components/schemas/DataContractCreate"
       responses:
         "201":
-          description: Data contract successfullly created
-          headers:
-            Location:
-              required: true
-              schema:
-                type: string
-                example: http://example.com/data-contracts/123
+          $ref: "#/components/responses/CreatedResource"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
   /data-contracts/{contractId}:
     get:
       tags:
         - Data Contracts
+      operationId: GetDataContract
       summary: Get Data Contract
       description: |
         Fetches a data contract by id. Fields might be hidden depending on the access rights of the requesting user
@@ -341,6 +649,7 @@ paths:
     patch:
       tags:
         - Data Contracts
+      operationId: UpdateDataContract
       summary: Update Data Contract
       description: |
         Overwrite included fields of the ODCS specs
@@ -360,7 +669,7 @@ paths:
               $ref: "#/components/schemas/DataContractUpdate"
       responses:
         "204":
-          description: Update was succesful
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -368,6 +677,7 @@ paths:
     delete:
       tags:
         - Data Contracts
+      operationId: DeleteDataContract
       summary: Delete Data Contract
       description: |
         Deletes a data contract if the user has the DATA-COLLABORATOR role
@@ -380,7 +690,7 @@ paths:
           description: Id of the data contract to delete
       responses:
         "204":
-          description: Deletion was succesful
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -389,6 +699,7 @@ paths:
     post:
       tags:
         - Data Contracts
+      operationId: CreateSchema
       summary: Create Schema
       description: Adds a new schema to the array in the data contract and generates a unique identifier for it
       parameters:
@@ -407,13 +718,7 @@ paths:
               $ref: "#/components/schemas/SchemaCreate"
       responses:
         "201":
-          description: Schema succesfully created
-          headers:
-            Location:
-              required: true
-              schema:
-                type: string
-                example: http://example.com/data-contracts/123/schema/456
+          $ref: "#/components/responses/CreatedResource"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -422,6 +727,7 @@ paths:
     get:
       tags:
         - Data Contracts
+      operationId: GetSchema
       summary: Get Schema
       description: |
         Fetches a schema identified by the id generated by Datavillage DCP. Fields might be hidden depending on access rights
@@ -453,6 +759,7 @@ paths:
       tags:
         - Data Contracts
       summary: Update Schema
+      operationId: UpdateSchema
       description: |
         Will only update the the fields mentioned in the request body. If properties array is specified, it will be completely overwritten
       parameters:
@@ -477,7 +784,7 @@ paths:
               $ref: "#/components/schemas/SchemaUpdate"
       responses:
         "204":
-          description: Update was succesful
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -486,6 +793,7 @@ paths:
       tags:
         - Data Contracts
       summary: Delete Schema
+      operationId: DeleteSchema
       description: |
         Deletes a specific schema from the list in a data contract, identified by the id generated by the Datavillage DCP
       parameters:
@@ -503,7 +811,7 @@ paths:
           description: Id of the schema to be fetched
       responses:
         "204":
-          description: Deletion was succesful
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -513,6 +821,7 @@ paths:
       tags:
         - Data Contracts
       summary: Create Property
+      operationId: CreateProperty
       description: Adds a new property to the properties array of the schema and generates a unique identifier for it
       parameters:
         - in: path
@@ -536,13 +845,7 @@ paths:
               $ref: "#/components/schemas/PropertyCreate"
       responses:
         "201":
-          description: Property succesfully created
-          headers:
-            Location:
-              required: true
-              schema:
-                type: string
-                example: http://example.com/data-contracts/123/schema/456/properties/789
+          $ref: "#/components/responses/CreatedResource"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -552,6 +855,7 @@ paths:
       tags:
         - Data Contracts
       summary: Get Property
+      operationId: GetProperty
       description: |
         Fetches a property identified by the ID generated by Datavillage DCP. Fields might be hidden depending on access rights
       parameters:
@@ -588,6 +892,7 @@ paths:
       tags:
         - Data Contracts
       summary: Update Property
+      operationId: UpdateProperty
       description: |
         Will only update the fields mentioned in the request body
       parameters:
@@ -618,7 +923,7 @@ paths:
               $ref: "#/components/schemas/PropertyUpdate"
       responses:
         "204":
-          description: Update was succesful
+          $ref: "#/components/responses/NoContent"
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -627,6 +932,7 @@ paths:
       tags:
         - Data Contracts
       summary: Delete Property
+      operationId: DeleteProperty
       description: |
         Deletes a specific property of a schema in a data contract, identified by the ID generated by the Datavillage DCP
       parameters:
@@ -650,7 +956,25 @@ paths:
           description: Id of the property to be deleted
       responses:
         "204":
-          description: Deletion was succesful
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /clients/{clientId}/notifications:
+    get:
+      operationId: GetNotifications
+      tags:
+        - Clients
+      summary: Get Notifications
+      description: Returns all notifications related to a client
+      parameters:
+        - in: path
+          name: clientId
+          schema:
+            type: string
+          required: true
+      responses:
         "401":
           $ref: "#/components/responses/UnauthorizedError"
         "404":
@@ -658,7 +982,7 @@ paths:
   /.well-known/{spaceId}/webid:
     get:
       security: []
-      operationId: getWebId
+      operationId: GetCollaborationSpaceWebId
       tags:
         - Public
       summary: Get WebId Document
@@ -694,7 +1018,7 @@ paths:
   /.well-known/{spaceId}/appid:
     get:
       security: []
-      operationId: getAppId
+      operationId: GetCollaborationSpaceAppId
       tags:
         - Public
       summary: Get AppId Document
@@ -724,6 +1048,36 @@ paths:
                     "client_name": "Test collaboration space - application",
                     "logo_uri": "https://client.example/logo.png"
                   }
+        "404":
+          $ref: "#/components/responses/NotFoundError"
+  /.well-known/clients/{clientLabel}:
+    get:
+      operationId: GetClient
+      security: []
+      tags:
+        - Public
+      summary: Get Client Info
+      description: Returns some public information about a client
+      parameters:
+        - in: path
+          name: clientLabel
+          required: true
+          schema:
+            type: string
+          description: A human readable unique label representing the client
+      responses:
+        "200":
+          description: A JSON object containing public information about the client
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  issuer:
+                    type: string
+                    description: The issuer the client uses to authenticate its developers
+                required:
+                  - issuer
         "404":
           $ref: "#/components/responses/NotFoundError"
 components:
@@ -889,11 +1243,27 @@ components:
         role:
           type: string
           example: CodeProvider
-        algoSettings:
+        settings:
           type: object
           properties:
-            test:
+            description:
               type: string
+        source:
+          type: object
+          required:
+            - registry
+            - image
+            - tag
+          properties:
+            registry:
+              type: string
+            image:
+              type: string
+            tag:
+              type: string
+            secret:
+              type: string
+              description: A value that will be interpreted as an ImagePullSecret. An example would be a github access token that has at least the scope `packages:read`, base64 encoded as `username:token`. If no value is provided no ImagePullSecret will be used when deploying the cage.
     CollaboratorRoleDataProvider:
       type: object
       x-ogen-name: DataProvider
@@ -902,6 +1272,11 @@ components:
         role:
           type: string
           example: DataProvider
+        settings:
+          type: object
+          properties:
+            description:
+              type: string
     CollaboratorRoleDataConsumer:
       type: object
       x-ogen-name: DataConsumer
@@ -910,12 +1285,29 @@ components:
         role:
           type: string
           example: DataConsumer
+        settings:
+          type: object
+          properties:
+            description:
+              type: string
     AbstractCollaborator:
       type: object
       description: Abstract Collaborator
       properties:
         clientId:
           type: string
+        name:
+          type: string
+          description: A name given the collaborator. This value is intended to be read by humans.
+          example: My Collaborator
+        label:
+          type: string
+          description: A label given the collaborator. This value is intended to refered to in code.
+          example: my-collaborator
+        configuration:
+          description: A configuration of the collaborator. This is an object representing key-value pairs that will be available in the cage as environment variables.
+          type: object
+          additionalProperties: true
       discriminator:
         propertyName: role
         mapping:
@@ -934,7 +1326,29 @@ components:
             collaborators:
               type: array
               items:
-                $ref: "#/components/schemas/AbstractCollaborator"
+                $ref: "#/components/schemas/CollaboratorCreate"
+    CollaboratorUpdate:
+      description: Collaborator Update
+      allOf:
+        - $ref: "#/components/schemas/AbstractCollaborator"
+    PodStatus:
+      type: object
+      required:
+        - name
+        - status
+        - imageId
+      properties:
+        name:
+          type: string
+        status:
+          type: string
+        status_since:
+          type: string
+          format: date-time
+        imageIds:
+          type: array
+          items:
+            type: string
     DataContractDV:
       description: Metadata added to data contracts by Datavillage DCP
       type: object
@@ -1171,6 +1585,22 @@ components:
                 type: string
             required:
               - error_message
+    CreatedResource:
+      description: Resource was created successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+            required:
+              - id
+      headers:
+        Location:
+          required: true
+          schema:
+            type: string
     NotFoundError:
       description: Resource not found
       content:
@@ -1181,5 +1611,18 @@ components:
               error_message:
                 type: string
                 default: Document not found
+            required:
+              - error_message
+    NoContent:
+      description: Request executed successfully
+    BadRequestError:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_message:
+                type: string
             required:
               - error_message

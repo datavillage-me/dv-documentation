@@ -1,11 +1,11 @@
 ---
-id: post-collaboration-space-event
+id: publish-event
 title: "Publish Event"
 description: "Publish an event to the confidential environment of the collaboration space."
 sidebar_label: "Publish Event"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVcFu2zAM/RWDpw1QlmLoyRgGdF0HZJcFbYYdAmNgbCZWJ0uqJKcLDP/7QMlpnKbteqhPtkiR75GPdAfGksMgjZ5VkIM1PlwapXBl0umNxZKutqQDCAi48ZAv4cgjiy4eCgEV+dJJy6eQw7xdKenrDHVGHCALJgs1ZaXRa1mRDhJVRnorndEN2816sI+je47+AQRYdNhQIMcQOpCcwmKoQYDGhiCH6DqrQIAva2oQ8g7CzkZTcFJvoBfg6K6VjirIg2vpMeZZ9QIKJrChAL0Y0t+15Haj/MERNq9Nv0blY/41tipADrFIHvoieZEPX0y14yjHGBkdDR0ZMu8/H5MrjQ5syTtAa5UsI5vpredA3SlOs7qlkgNZx7oIkvzBesLmiM4yWQsBWFWS06Caj6IwoL5Pd7w12qfQH8/OThkuasrkQycG8dQYshp9tiLSmSfNfX4jfg15jxuWzn9JHlyLxOb87PyUwDV507qSMm1CtjbtW4Il54z7PeA4BTxW1FdTtnGyDjAe8zmOFjn1AhoKtdnvgzh7oYYcpkdDMYlD4afdMHf9dC9DT267n9PWKcihDsH6fDr9xEVwRk2sQk0TtPJzFLynsnUy7OKVFaEjd9FyzmUxNt9wjVIZxk4PNeA0+/nj7+QEYnj5ZlyDXJjvvxaxElz768OsXf3FxqqnpC5A6rWJBhnYAy4TkTnzyC7mMxDAnFP/FQbyvChiARuMDR5mdb8W90v1SDndQSVvvT8HRoH+hqlVKDXDi93phv4u4an+goD8sFlTiwsBNSsjX0LXrdDTT6f6no/TSuQuVtLjSo023R/ajZfkFlXLgGL/t+gkez9989kSvbsepPw+e9XmfqYKwyHq3RjXA+KBfF/0AmrCilyEmayXCcxkwTEOt08mnH8a6cZFWZINL/oWoxGc/7hZsIKHf0FjKr7j8J73Pd4npCYWJw5GPOtAod60cUNAisnPP6CgxCk=
+api: eJytVU1v2zAM/SsGTxvgLN3QkzEM6LoOyC4L2hQ7BMbA2EysTpZUSU4bGP7vAyUncZp+HZJTLFLke/x4akEbsuiFVpMSMpg2CylcdbUm5SEFjysH2RwutZS40NExuTFYkIM8hZJcYYXh0/3lBFVCHCDxOvEVJYVWS1GS8gJlQmotrFY12/Wytw+jO47+CVIwaLEmT5YhtCA4hUFfQQoKa4IMguukhBRcUVGNkLXgNyaYvBVqBV0Klu4bYamEzNuGnmKelK+gYAIr8tClffr7huxmkN9bwvq96ZcoXci/xEZ6yCAUyUGXRy9y/rsuNxzlECOjo74jfebt51NyhVaeLVkLaIwURWAzvnMcqD3GqRd3VHAgY3kQvCC3tx6xOaAzj9Y8BSxLwWlQTgdRGFDXxTvOaOVi6C9nZ8cMZxUlYteJfngq9EmFLlkQqcSR4j6fiF9NzuGKR+dNknvXPLI5P/t8TODWkU2ES5T2CTa+4mEv0NMJMZO12v7t4byN+9B9h/38GPs1Od3YggL4pW5OWeg3QA+34YcumqAKexjv4NSlUJOvNIuX0S4gYI3IYHyw0KOw0G7c9prRjbcr5MiutxrTWAkZVN4bl43HX7kIVsuRkahohEZ8C8vqqGis8JtwZUFoyV40nHOeD803XKNYhqHTrgacZqsd/B2dIO3//NS2Ri7Mrz+zUAmu/fVeJ64esTbyuUlIQailDgbh2QMuI5Ep80guphNIgTnH/kv05FjkQgFrDA3udWYr6dsH4WBy2v2UnFr7e0aeHv3YSBSK4YXutH1/5/BcfyGFbP8qxBbnKVQ8Gdkc2naBjm6t7Do+jnLOXSyFw4UcqPQ/2gwFfo2yYUCh/2u0gr2fv/liiT5c96P8MXnXq/NCFfpDVJshrh3innyXdylUhCXZADNaLyOY0Yxj7G8fbTg/ePHGRVGQ8a/65oMVnP6+mfEE9+9YrUu+Y/GB3yp8iEh1KE5YjHDWgkS1aoJCQIzJv//tHQEV
 sidebar_class_name: "post api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Publish an event to the confidential environment of the collaboration space.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"The id of the event that has been send","content":{"application/json":{"schema":{"type":"object","properties":{"messageId":{"type":"string"}},"required":["messageId"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"The id of the event that has been send","content":{"application/json":{"schema":{"type":"object","properties":{"messageId":{"type":"string"}},"required":["messageId"]}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>
