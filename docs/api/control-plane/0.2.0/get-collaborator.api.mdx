@@ -1,0 +1,71 @@
+---
+id: get-collaborator
+title: "Get Collaborator"
+description: "Get Collaborator"
+sidebar_label: "Get Collaborator"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWE2P2zYQ/SvEnFpAXqdF0INQFFikbbABmix2E/RgGN0xNZaYpUiGpLwxBP33Yih/SVa2m6DIoc3JMjWaefP4ZqRhC9aRx6isuSogh5cUX1itcWU9Rushg4hlgHwBx2Vljbh1KCnAMgOHHmuK5NmqBWUgB4exggwM1gQ5BLa9KiCDICuqEfIW4talW9ErU0KXgacPjfJUQB59Q1026UmeQPtMh0teCc6aQIHtf3z2jH8KCtIrxzlBDpfi1e2b18Ku3pOMwpPzFMhEZUoRKxJyyIy0JpKJ7Aad00omaubvA/tqT7ANg4z4Ra3frBN1uxT66JCNsa1C9CijGD3vPO9gVH1aUisykbdygpKexfGNs0CC7USpNmTO0r4QbysVxAZ1Q0IFoZiCggoRrViR8ISFWG1F1dRowgVkQB+xdprD/bEdQu8y0Lgi/RREyfALIHlak+8vlRHSFjTEVG9ncoRJWrNWZdPrfEoiAwNh158CpIJAM6mle9rOergOlQ8iVhjFg9KaKcQNKo0rTYw4ucaSBAZBZqO8NTWZKDboFdskise6waJQjA319Yk2UhV0GRSK06mVSQnn7V5A29d9jXmrCTKo0Tnei7yFF7aga283qiB/slmHeB9ntiQz29XowHq8k7e2JmtIPFRWuN4opG05E3KCMaGM494NAnUZBIrMbpiCOPQ9wHRWJ0xSsI2XNOXp2FYW4KlUIfotZKBqLKnvlqkpDnPZ200VZf/k1B32NbUeSHqKTymbXmQDeXF1eOcpUsGiQiOuGMB1o/Vt8nshLo3YsSwebKOLpEpRqlg1K4FSUggi2vtUihhFxW6i0IQhJsEGaR2JO4fyHksKOTeFu0ysMNBPzwUZ3u8U/K4J5Fk2eXJ3dyGu1sLYYynvJFLw4gjmIaEmUCEeKjKiIKft9tCssaQL3k1mUsWdZI5VemM1jSX0K0Z8utIH1k9SOj/xBUofBPpXlf4IN+Og/P+FNaGpn8rNwfoxbmRvFETx5dwcAn1Nbo5B2dIa+sRb/Ft3/NYd/xPd8Vs7/Ewy/i/9b3k03A8pow/9f4KipuaVbthOFM97h/FmeRp1GC0hf/7sh/Nv93eBPBeOsVFgEyv+HJcYqficYe7xTMh76/+qKYTpvjVKami+3GN/fo79hvqum8CvbWO+HmiW7xobHVluVjZpAjnCeEJO3bgCXtLZHFtTrCwfQZSUEPLgn8Ncnh47zNJRQpi3uyOFbn46d4V5Ozwg6PiEgPxmfzbReA05VDG6kM/nPzN73uqZ02hohk79krQcSDZexW16ZEXoyV82DGaxPL19y+T2/J0aHcjjMPsTCv7fG0G2u/jd+hqZ0Vd/vk0UKrO26fGDqBO6awYnLq+vIANOpOdPY6QQud6dDbHGtN271jPB7XSpR/oY506jMuwokdPueF/AFO+QQX48zBlQz7dGpzPLDCobIjtrW369vfO663j5Q0P8ul8sM9gPsonsQgW+LiBfow50hvsgd/juZie478VxAB7ms1tEwx8g6Z0JOUAG97Q9OZPi3vQVw44o6pZdBhVhGjcW7c7oUkpy8eTxs9pmHR7q5eVvLKC/AbOY9Pk=
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Collaborator"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaboration-spaces/{spaceId}/collaborators/{collaboratorId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Collaborator
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true},{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A JSON object representing the collaborator","content":{"application/json":{"schema":{"description":"Collaborator","allOf":[{"type":"object","description":"Abstract Collaborator","properties":{"clientId":{"type":"string"},"name":{"type":"string","description":"A name given the collaborator. This value is intended to be read by humans.","example":"My Collaborator"},"label":{"type":"string","description":"A label given the collaborator. This value is intended to refered to in code.","example":"my-collaborator"},"configuration":{"description":"A configuration of the collaborator. This is an object representing key-value pairs that will be available in the cage as environment variables.","type":"object","additionalProperties":true}},"discriminator":{"propertyName":"role","mapping":{"CodeProvider":{"type":"object","x-ogen-name":"CodeProvider","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}},"source":{"type":"object","required":["registry","image","tag"],"properties":{"registry":{"type":"string"},"image":{"type":"string"},"tag":{"type":"string"},"secret":{"type":"string","description":"A value that will be interpreted as an ImagePullSecret. An example would be a github access token that has at least the scope `packages:read`, base64 encoded as `username:token`. If no value is provided no ImagePullSecret will be used when deploying the cage."}}}},"title":"CollaboratorRoleCodeProvider"},"DataProvider":{"type":"object","x-ogen-name":"DataProvider","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataProvider"},"DataConsumer":{"type":"object","x-ogen-name":"DataConsumer","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataConsumer"}}},"oneOf":[{"type":"object","x-ogen-name":"CodeProvider","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}},"source":{"type":"object","required":["registry","image","tag"],"properties":{"registry":{"type":"string"},"image":{"type":"string"},"tag":{"type":"string"},"secret":{"type":"string","description":"A value that will be interpreted as an ImagePullSecret. An example would be a github access token that has at least the scope `packages:read`, base64 encoded as `username:token`. If no value is provided no ImagePullSecret will be used when deploying the cage."}}}},"title":"CollaboratorRoleCodeProvider"},{"type":"object","x-ogen-name":"DataProvider","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataProvider"},{"type":"object","x-ogen-name":"DataConsumer","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataConsumer"}],"title":"AbstractCollaborator"},{"type":"object","properties":{"id":{"type":"string"}},"required":["id","clientId"]}],"title":"Collaborator"}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

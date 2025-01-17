@@ -1,11 +1,11 @@
 ---
 id: get-client
 title: "Get Client Info"
-description: "Returns some public information about a client"
+description: "Get public information about a client based on a human readable label."
 sidebar_label: "Get Client Info"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVFFr1EAQ/ivLPCmkpkifFhGOqqVFtLSKD8chc8ncZdvN7nZ3tvUI+e8ySa4976yg+JRNMvvNfN98Mx34QBHZeHdeg4Yz4lNryDEUkKjK0fAG9HxRAOM6gZ7DZV5aU8GigJpSFU2Qu6DhijhHl1TyLakwBCnjVj62A7rCpc+sUFVb+IARW2KKAtuBEZCA3EABDlsCDWPoR1yShQIi3WUTqQbNMVMBqWqoRdAd8CZIeOJo3Br6/cpmqsktOhUJa1xaUtmZu0zKCrCKFCIlcmzcWnFD2wL7haRMwbtESbK8Pj6Wxz72xfXnT8ovb6hiVXnHaJwgPavATooC5IKcdAcYgjXVEFneJAHvDimOeUS8KH1jM5ZmUsoUD6XYV+JLQ2qM3SlD5URJsVeYuREdKmRShpOq6Z6s5EnQ97sNmG8zLvpe/pwcnxxKc0XJ51iRcp7VymdX/z/CFKOP31tKCdf0e94rzJZBwztf5VZoPpWxT+ZXtIFTX0BL3HiZiTWNduUGNJSvHsjao1vnH1w5CpjKbsep/TA58X7r6xwtaGiYQ9Jl+UYEiN4eBYuOjjCYt4PTtrN2LQKMHJeEkeIsS9pHgoIDk/flfQyCYjp8GMwGGi6+fRloiv+G64atxJ+O6S8lu5pdnkMBUunYMYtMiWWAgk/c4tCSaRbPiNW4GdS5YO5Zq3vq7N9vgokb0w8ug0XjpIRBt26SfQ47souNRuGhAL27JBYFND6xxHfdEhN9jbbv5fNdpjgtsnuMRtbA0J3aJDnXoFdoE/2B1YuryTEv1b8tlGd4Th/RbaQXaLO8QQG3tNlbgf2iL6AhrGXU590UMasqCrxz92CuxF+PZj57L8b4CXKQFfE=
+api: eJytVMFu2zAM/RWBpw1QmmLoSRgGBO1WZNsh6Dr0UASDYjOxWllSJaptYPjfB9pu6yTtLuvJtkzx8fE9sgEfMGoy3s1LUHCOdGoNOgIJjxO/QTd5Dphsos8BFFyhtT+cf3AgIWGRo6EtqOulBNKbBOoaFnllTQFLCSWmIprA9/v0InT/hHFrH+susdArn0loUXTQYqUTloLPRZVr7UREXeqVRWH1Cu0RSAg66hoJI8M1YDh50FSBBKdrBAV9rp98ASREvMsmYgmKYkYJqaiw1qAaoG3g8ETRuA20+xXPXi1BUKVJZGfuMtqtMCU6MmuDSVCFA40jaJcMnIJ3CRNjfTo+5scuwuKtfoxTSSi8I9ZFNaBDsKboQqc3iZM0h4T86gYLljFEVpBMX4JJKWM8JL7P+7JCMT9bjIoQOTE/L3SmivkWmlAYSqLEe7QMko6gbcfNvn7CW7Yt/zk5PjlswAUmn2OBwnkSa59d+X50MUYf/9SYkt7g66zXOlsCBWe+yDXzfCljn8xuto5TKwEfCV0y3vVevMUtqLeGR8K9thl3hohtUiNVngdwgx0JtrKC6dEDWju55bBpr0KaNiNnt90ExvunOcjRgoKKKCQ1nX7mJkZvJ8FqhxMdzJcO7Glmf3ET+z6tUEeMs8ywz03iPDDMCn/3QSCHl2+dX0HB96vLrlVs4e66Icvxpz38gtHFbDFn9hhTr7rVhIl44IJPVOtO1mF2eU30a0jMOeeeOZsXd7zfRhk4Ez7SNFhtHJfW9bMZ5LiGkRxs0V4QkKDGy2YpofKJOL5pGPh3tG3Lx3cZ47Ao73U0jN+pVprE7yWotbYJ/8H2w8Xgxo/ifxbTG2yHQ+22I5+CHBw95tguWwkV6pJXybPnZ0WBgUZ3DyZ3x+rnX9k2fwHf00SN
 sidebar_class_name: "get api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Returns some public information about a client
+Get public information about a client based on a human readable label.
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ Returns some public information about a client
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"clientLabel","required":true,"schema":{"type":"string"},"description":"A human readable unique label representing the client"}]}
+  parameters={[{"in":"path","name":"clientLabel","required":true,"schema":{"type":"string"},"description":"A human readable label that uniquely identifies the client."}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Returns some public information about a client
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"A JSON object containing public information about the client","content":{"application/json":{"schema":{"type":"object","properties":{"issuer":{"type":"string","description":"The issuer the client uses to authenticate its developers"}},"required":["issuer"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"Public information about the client.","content":{"application/json":{"schema":{"type":"object","properties":{"issuer":{"type":"string","description":"The IDP the client uses to authenticate its developers."}},"required":["issuer"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

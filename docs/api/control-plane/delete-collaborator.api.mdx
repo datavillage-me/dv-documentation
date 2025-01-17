@@ -1,11 +1,11 @@
 ---
 id: delete-collaborator
 title: "Delete Collaborator"
-description: "Delete Collaborator"
+description: "Delete a collaborator by ID. Allowed if the client owns the collaborator."
 sidebar_label: "Delete Collaborator"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9lE1r3DAQhv+KmVMLCk5LTqYUQpJCSg8hH/SwmDIrz8ZKZUmRRiGL8X8vY2833o9De8nJ9mhm/M6rR+rBB4rIxrvrBiq4JEtMF95aXPqI7CMoYHxMUC3gLWy8K+4CakpQKwgYsSOmKFk9GAcVBOQWFDjsCCpIknvdgIKkW+oQqh54HcYljsY9wqAg0nM2kRqoOGYa1NFOeibtPxvWEknBu0RJ8j+fnsmjoaSjCTITVHBLz5kSF/RKOjM1RcpaU0qrbO1amp6dfjqsekgUC5MK57nAzC05NhqZRKD2jsmxFGEIVuLGu/IpSWV/qN8vn0gzKAhR9obNpJZi9PFXRynhIx0Zd2fexV56PQzDqP3oxMnnqGkUv/LZvZ9oBQ2tMFsW8rzOHTmeyfiHmQa1N80EcLFHcEfceuG7GZdFp1BVQannTJ+MnKay3/A6lHPcUtnv0jcIfhRf/oKfo4UKWuaQqrL8Ih5Gb0+CRUcnGMxXEAYT6RwNr8eSJWGkeJ5FzKKeL9+JxZOL86SthfKbv/jL95QEavPyzccOxdfvP+9HI41b+bHcsJX8i0ndjYgrzm+uQYEMMrlokSmx4B584g7HTd+cwOMO7+zCViTTK5fBonHSa/Sn31i/gGPWg4Lq7bLYcV+W9k5/raD1iaVZ3y8x0UO0wyDh50xRHK4VvGA0uJSZFz00Jsl7A9UKbaID3Vvu4cPthryPhVyBx+bZBNGtxTy0Wb5AwW9az+48ucje8bd7Fg31oKAlbCiOBkxJ51pT4Fn5wSEXFLen5vLqx9X9FQzDH8yjJtI=
+api: eJy9VN9r2zAQ/lfEPW3g1N3okxmDsHSQsYfSH+whhKHYl1idLKnSqW0w/t/HOW5jOwmMUvYUR7o7fffd910N1qGXpKyZF5DBDDUSfrNay5X1kqyHBJ4ndoNm8ho52XgbHWSwj1PW3DiZY4AESG4CZIvhreiulwkUGHKvHJ++viikyHuPitVWzGdnYqq1fcJCqLWgEkWuFRoS9smE3f9eyhkk4KSXFRJ6fr8GxfWdpBISMLJCyCAwinkBCYS8xEpCVgNtXXtFXpkNNAl4fIjKYwEZ+YhjwLclivlM2PUIAjfZlj+8YnRNchRQP+g9cXEsBsJiDGPJdYKzJmDgVz6fX/DPsNb1LlvgM+aRi4SY5xjCOmq9ZSgX558Os+4CeqGCMJaEjFSiIZVLQm4rt4bQECdJ5zSfK2vS+8CZ9WHXdnWPOfFMPeuO1A4tem/97wpDkBs8QtKApcUofNk0TYv9aMfBRp9jC35to/l/oHmQaxk1sRtsHivW+B7GP/TUJIDPhCYoa3bS/4NbyE4ZN4FHqSOeMDArpEIqLe+DonVnay0qIYN0oPdJq/eQ1p2tmrQvtpDWQ3U3LG/0jy/+jF5DBiWRC1mafmG2vdUTp6XBiXTqa4slYB69om2bskLp0U8jg1ks+9c3PIwd3/2gV7L5mRd78f9dECTdx3frK8kT+PHrtqVcmbVt0xXpHVUtuisGJ6ZXc2YRfdipR0vCQGwMZwNVspVH5/BuwY126kB99V5p77oPu9YJnyl1WirDCFvW626gCzg2UEgg22/KwUz5arSzlgmUNhAXq+uVDHjnddPw8UNEz3NbsuK8kitmclFDoQJ/F5CtpQ7jTdZn48N1p/yP4o179wQL3aE0254dIOmM89I8L+13AHtqGb8J24j9ZtkkUKIs0PecP81zdNRLP9hfA5vPLn9e3l5C0/wFK5nSIg==
 sidebar_class_name: "delete api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Delete Collaborator
+Delete a collaborator by ID. Allowed if the client owns the collaborator.
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ Delete Collaborator
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true},{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true}]}
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space of the collaborator."},{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaborator."}]}
 >
   
 </ParamsDetails>
