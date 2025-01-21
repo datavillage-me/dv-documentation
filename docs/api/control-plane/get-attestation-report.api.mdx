@@ -5,7 +5,7 @@ description: "Get an attestation report of the virtual machine"
 sidebar_label: "Get Attestation Report"
 hide_title: true
 hide_table_of_contents: true
-api: eJzNVU1vEzEQ/SvWnABtlFIBhxVCivgsJ9SCeigRmngnWbde29izhWi1/x2NN0k3JFTAAXFKMp6PN29mXjrwgSKy8e6sghLeEs+YKXE2nVPwkaGAipKOJohtcFLoFN45qpg9lV8qrkndmsgtWtWgro0jKIBxlaC8gpfeWlz4oaK6CKgpwbyAgBEbYori1YGRMgG5hgIcNgQlJPE9q6CApGtqEMoOeB3yE0fjVtAXEOlrayJVUHJs6WfcZ9UWoN6DkVNDX2zqfm0pru8KO+80HXBwWZNTiZiNWymuTVI5TO0aUahypPpmrFULUlhVVCn2GcAhd6V6pJbGrSgG47hUM2bUtUJV0/cJOe0l+uLdbHL69NnWMRq34zy0C2u0uqH1Z3cPSQWQaxsZxSgHzPe4W6JN1M/FlIJ3iZLkOT05kY99GmbH1gAK0N4xOc716TtPg0Xhttvhcq21fd8X8OTk8WHaT4miMkk5zwpbrsmx0chU7afGEKzYjXfT6+T3Cuwa94tr0oIpRNl1NkM7FKOPXxpKCVd0ZJn2GLn6yX3eb7A/OcR+Tsm3UVMGv/St+3egZUmX2FqGEl553TbkeATjN3rqC2iIay9asKIMQK6whOneyUzyyaRpt7nKfjraggn7G8o7SPF2e9FttFBCzRxSOZ0+Fz6it5Ng0dEEg3kBsnCJdBsNr3PIgjBSnLVS/2o+fr4QugZGxk47OqTM9gbk9+AExebLGx8bFI7eX37MpBi39DncsBX/lwO6DwJOzT6cQQHSyDBfi9KpqE3wiRvMA9xohSjjSD/VcQHt7tbhr7R0aHJ0V30x8NttpnUFx6YFBZR3Kno4sHkBtU8s4V23wESfou17MQ+KKDOpTMKF3YnEPY397wJ5lMUbWo8U/xZtKz55NW8xGmn9D2l4cL45uIfq/r+fXyDaGNGtx4C2SLfj7EXAa8KKYsY3vM60psCjuHHq+ejS376WO/gBQd7RSA==
+api: eJzFVcGO2zYQ/RViTk0hxZsg7UEoAhhNk25PwW6CHrZGMabGFrMUyZCjxRqC/j0YSvbKa2+Q5NCebA+HnDdv5j334ANFZOPdZQ0VvCNeMlPiHLqi4CNDATUlHU2Q2Jik0Cl8SFQxZyq/UdyQujORO7SqRd0YR1DAfem35MpDsXIbfReggt+9tbj2Y/Q6oKYEBTBuE1Q3x6dqOl4VEDBiS0xRsnowgiogN1CAw5aggiS5lzUUkHRDLULVA+9CPuJo3BaGAiJ97kykGiqOHT1u80ND6vLNvifJpcRUK30EKhd6DkMxwfjcUdw94HDeaTphcKlyXLFXWNfyISVOCa3Uz2pj3JZiMI4rtWRG3ShUDd2X5LSvqVbXfy7Ll7/8uk+Mxh0GEbq1NVrd0u4f9xUqCiDXtUL47A1YHTG0QZtoWEkoBe8SJXnn5cWFfDzq7txuPIcCtHdMjjMAuudFsCic9QdgrrN2GIYCXl28OH33Y6KoTFLOs8KOG3JsNDLVx09jCFbixrvFp+SPChw69+tPpGW1Q5SlZDP2QzH6+G9LKeGWzuzMESU3j9JXw4T91Sn2K0q+i5oy+I3v3H8HWpZvg51lqOCN111LjmcwvqGnoQC6Z3LJeDcq7pZ2UD2l6gLu0Hb0hLplh1rixovfbCm3I9KtYHGkrDIrKy36ScrDYrZUJftbyitN8W5vA120UEHDHFK1WPwm7EZvy2DRUYnBvM61E+kuGt7lK2vCSHHZSf2b1fz4Wsgf+Z0nHciVMntJye8xCYrpy1sfWxTG//r7Q6bYuI3P1w3bkZqM7r2AU8v3l8IaxTRui0XpVCwq+MQt5nWYHEXcd+bR6rxJ9w/L9SN+PTU5U+lQjPz207Ru4Ny0oIDqwXpPB7YqoPGJ5XrfrzHRx2iHQcKjb8pMapNwbQ+e85XG/icbPUvOqIi93e8FkDfuDqORjr6zu5+uJlU+U9/1V/QEwCmIbjfHtwe+H9ogrt8Q1hRnQl9qTYFn9+ZPz/X87g/Z9i+oCeo6
 sidebar_class_name: "get api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Get an attestation report of the virtual machine
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space"},{"in":"query","name":"nonce","description":"When setting this query parameter a nonce will be added to the attestation report: * fingerpint: Attach a hex-encoded SHA-256 fingerprint of the public key\n","schema":{"type":"string","enum":["fingerprint"]},"required":false}]}
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaboration space."},{"in":"query","name":"nonce","description":"A nonce to add to the attestation report: * fingerpint: Attach a hex-encoded SHA-256 fingerprint of the public key\n","schema":{"type":"string","enum":["fingerprint"]},"required":false}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Get an attestation report of the virtual machine
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"An attestation report","content":{"text/plain":{"schema":null}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"An attestation report.","content":{"text/plain":{"schema":null}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

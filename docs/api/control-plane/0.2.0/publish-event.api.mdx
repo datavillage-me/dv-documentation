@@ -1,0 +1,71 @@
+---
+id: publish-event
+title: "Publish Event"
+description: "Publish an event to the confidential environment of the collaboration space."
+sidebar_label: "Publish Event"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1v2zAM/SsGTxvgLN3QkzEM6LoOyC4L2hQ7BMbA2EysTpZUSU4bGP7vAyUncZp+HZJTLFLke/x4akEbsuiFVpMSMpg2CylcdbUm5SEFjysH2RwutZS40NExuTFYkIM8hZJcYYXh0/3lBFVCHCDxOvEVJYVWS1GS8gJlQmotrFY12/Wytw+jO47+CVIwaLEmT5YhtCA4hUFfQQoKa4IMguukhBRcUVGNkLXgNyaYvBVqBV0Klu4bYamEzNuGnmKelK+gYAIr8tClffr7huxmkN9bwvq96ZcoXci/xEZ6yCAUyUGXRy9y/rsuNxzlECOjo74jfebt51NyhVaeLVkLaIwURWAzvnMcqD3GqRd3VHAgY3kQvCC3tx6xOaAzj9Y8BSxLwWlQTgdRGFDXxTvOaOVi6C9nZ8cMZxUlYteJfngq9EmFLlkQqcSR4j6fiF9NzuGKR+dNknvXPLI5P/t8TODWkU2ES5T2CTa+4mEv0NMJMZO12v7t4byN+9B9h/38GPs1Od3YggL4pW5OWeg3QA+34YcumqAKexjv4NSlUJOvNIuX0S4gYI3IYHyw0KOw0G7c9prRjbcr5MiutxrTWAkZVN4bl43HX7kIVsuRkahohEZ8C8vqqGis8JtwZUFoyV40nHOeD803XKNYhqHTrgacZqsd/B2dIO3//NS2Ri7Mrz+zUAmu/fVeJ64esTbyuUlIQailDgbh2QMuI5Ep80guphNIgTnH/kv05FjkQgFrDA3udWYr6dsH4WBy2v2UnFr7e0aeHv3YSBSK4YXutH1/5/BcfyGFbP8qxBbnKVQ8Gdkc2naBjm6t7Do+jnLOXSyFw4UcqPQ/2gwFfo2yYUCh/2u0gr2fv/liiT5c96P8MXnXq/NCFfpDVJshrh3innyXdylUhCXZADNaLyOY0Yxj7G8fbTg/ePHGRVGQ8a/65oMVnP6+mfEE9+9YrUu+Y/GB3yp8iEh1KE5YjHDWgkS1aoJCQIzJv//tHQEV
+sidebar_class_name: "post api-method"
+info_path: docs/api/control-plane/0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Publish Event"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaboration-spaces/{spaceId}/event"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Publish an event to the confidential environment of the collaboration space.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space to get"},{"in":"query","name":"stream","schema":{"type":"string"},"required":false,"default":"events"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"the event","name":"event","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"type":{"type":"string"}},"required":["type"],"additionalProperties":true}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The id of the event that has been send","content":{"application/json":{"schema":{"type":"object","properties":{"messageId":{"type":"string"}},"required":["messageId"]}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,11 +1,11 @@
 ---
 id: deploy-cage
 title: "Deploy Cage"
-description: "Deploys the latest version of the algorithm in the cage"
+description: "Starts a confidential cluster if necessary and deploys the version of the algorithm as configured in the collaboration space model."
 sidebar_label: "Deploy Cage"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VFFrGzEM/itGTxtcSTf6dIxB6RhkLyvtyh5CGIpPybnz2a4tZw3H/fch37VNmhbGBnu6syzJnz59Ug8+UEQ23s0bqOETBet3F7ghqIBxk6BegBwTLCtoKOlogng/+ibFLSmLTInVlmIy3im/Lla0Gx8Nt50yrhj0mDhgxI6YoqTvwUi2gNxCBQ47ghpSQE3zBipIuqUOoe6Bd6FccTRuA0MFke6yidRAzTHTc3jz5gGG9tbiyo9lqpJarX1Uv1qjW8VeNaUShSO+YSmpU/AuUZKH35+eyucw/RXdZSmZ7klnpkalrDWltM7W7gTd2em746ibRFGZpJxnhZlbcmw0Mkml2jsmxxKEIVixG+9mt0ki+2Mi/OqWNAudUZrIZkRLMfr4o6OUpJhj3g6IWzxzXw7DULCfvVRx8jlqKuDXPrv/B1p6u8ZsWWTnde7I8R6MP6hpqKAjbr2IPPhUEIjiapgdyOOkyCPN+kmBw2wUhyiR4vZBsjlaqKFlDqmezT4IC9Hbk2DR0QkG87GoKJHO0fCuhKwII8XzLI8ulvvX10LSyMO+0yMJ8szDJMh5dIJq+vnsY4fCzJfv3woVxq19CTdsxf9iRHcp4NT55RwqmAYVahgnVwQrtHRY2jZN4TjhaloHB2ronzr/D4tgKpDpnmfBonGCo3DbT+1ZwEvtgQrqpxUxdWhZQSudrRfQ9ytMdBPtMIj5LlOUJiwr2GI0uBJaFj00Jsl/A/UabXq+QfZLfHM1yeut+uu98kq5kxGdaGyLNssJKvhJu71FOCyHClrChmKBPt6ea02B9+KOZlB09ij8y6/XopDfoSwTcA==
+api: eJzNVF2L1EAQ/CtDPylkXRWfgginIpwvHp7iw7JI76STjE5m5mZ6zltC/rv0JKe7d3sgCOJTvroz1dVVNYIPFJGNd+cN1PCWgvX7N9gRVHCz8h251a+KVRd9DlDDG28t7vz89jKgpgQVMHYJ6g1Id4JtBQ0lHU2QIqjhkjFyUqi0d61pyLFBq7TNiSkq0ypHmlLCuFfoGtUUJElxT+qaYjLeKd+WR7Sdj4b7QWGa/9blSI0yrnzWh+hUEnhq8A3ZJ1BBwIgDMUWBOoIRZAG5hwocDgQ1lIbzBipIuqcBoR6B96F84mhcB1MFka6yidRAzTHT3VE/9aTO397CPYWn9VH96I3uFftlVGEGO3oC01b+n4J3iZKc/vzpU7kcn/GRrjIlVnRDOjM1KmUt/LXZ2r1AfHGq6zU2Ks6dUIH2jsmxlGEI1ugCcf0tSe14f36/+0ZaGkMUUbCZ8VGMPn4dZHkdnaDriK/NnfLtNE0F7bP7aD8nUUZSzrPCzL1oRiNT879hf3FqP8nnqKmAb312/w60yLHFbFkM7XUeyPEBjD+YaaqAbpicuG42ynfaQ/1QIlRwjTbTA8kgeh6Iey8BE3xRXrFcDesjb6yKN9J6XCw4rWdniBUpXt96NkcLNfTMIdXr9UvhNHq7ChYdrTCYV+XERDpHw/vSsiOMFM+yHLrZHn6+FMpnVg+LflEqx9xGgTzPRVAtN+98HFB4fv/lUyHWuNaXdsN2JqSguxBw6uziXLia0wxqsMhixKkqtAxYRLDE0JzEaoniI22Nv3X0n6TqQhbTDa+DReNkprKncVn1Bk6tGiqof+ftsu1tBb2opN7AOO4w0edop0leX2WKstCtCC4a3AnFmxEak+S+gbpFm+7G8SFdjz4uwn+s/i6kH5h5eYluf2AKqBb73I46bacKesKG4oG5zrSmwAd99yLiyEkXHy5Fcj8B2d66IQ==
 sidebar_class_name: "post api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Deploys the latest version of the algorithm in the cage
+Starts a confidential cluster if necessary and deploys the version of the algorithm as configured in the collaboration space model.
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ Deploys the latest version of the algorithm in the cage
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space for which to deploy a cage"}]}
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space for which to deploy a cage."}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Deploys the latest version of the algorithm in the cage
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"Request executed successfully"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

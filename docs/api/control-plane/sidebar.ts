@@ -16,8 +16,8 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/control-plane/get-all-collaboration-spaces",
-          label: "Get All Collaboration Spaces",
+          id: "api/control-plane/get-collaboration-spaces",
+          label: "Get Collaboration Spaces",
           className: "api-method get",
         },
         {
@@ -35,7 +35,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/control-plane/update-collaboration-space",
-          label: "Update Collaboration Space",
+          label: "Update a collaboration space by ID. Allowed if the client owns the space.",
           className: "api-method patch",
         },
         {
@@ -157,7 +157,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/control-plane/get-current-credentials",
-          label: "Get Your Current Credentials",
+          label: "Get Current Credentials",
           className: "api-method get",
         },
       ],
@@ -173,7 +173,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/control-plane/get-data-contracts",
-          label: "Get All Data Contracts",
+          label: "Get Data Contracts",
           className: "api-method get",
         },
         {

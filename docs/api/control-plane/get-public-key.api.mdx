@@ -1,11 +1,11 @@
 ---
 id: get-public-key
 title: "GetPublicKey"
-description: "Get the public key linked to the collaboration space"
+description: "Get the public key linked to a collaboration space"
 sidebar_label: "Get Public Key"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VE1r3DAQ/StmTi1o67TkZEphSduw7SUkDT0spszas2slsqRI49DF+L+XsZzEm48SeujJsjQfb968mR6cp4CsnV3VUMAp8Vm3Mbr6TntQwLiLUKzhxBmDG5cMswuPFUUoFbBmQ8ktS35ZcqwpVkF7MZ+euaHMJ5Nr2mdG22uqM3bjQ3UQP0p8UOAxYEtMQTD0oCWUR25AgcVW8o6WqxoUxKqhFqHogfd+fOKg7Q4GBYFuOh2ohoJDR4+xrerMbV8CIfh2xDCUEiZ6ZyNFSfLh6Eg+h6GWNktZs8pZRm3leFj3O1Agj2R5xEq/OfcGpbT+vgbbGTMMg4Ljo/dPs1xGCpmOmXWcYccNWdYVMtWHodF7I/fa2fwquoME9yS5zRVVLFQH0QHrVB2F4MKvlmLEHT3D6QGp60fm5TBhP36K/Zyi60JFI/it6+z/Ay1932JnGAr47KquJcszGK+oaVDQEjdO5kREoZIYC8gPlLMYlRPzfhLnkKf2L67HyYgUbu8U3QUDBTTMPhZ5/lGICM4svEFLC/T60yi8SFUXNO9Hlw1hoLDsJPG6nD9fCE+JirnRPQ+S5m5Q5D8ZgZoOX11oUcj59vPHyIa2Wze6TzN+ktCdCbhsebYCBVJIaqxBpsgybd5FbnHs3DSkf18O/UP//3VPTAXOhmlQidt+atEanmsRKCgeNsisS6WCxkUWv77fYKTLYIZBrm86CtKIUsEtBo0boWbdQ62jnGsotmji4yUzr/HN+aSyt9mrVs8L5U2XaIXQWzSd/IECgf+wF4dyUNAQ1hRGmOl1WVXkeeY3D13OVH76RaTwBwiPImk=
+api: eJy9VE1v2zAM/SsCTxsgN93QkzEMKNqtyHYp+oEdAmNQbCZWI0uqRBUNDP/3gbaTOv0Yth12iiNS5OPTe2zBeQyKtLPzCnK4QLpMS6PL77gFCY+ZW6PN9jnZOrjkIYczZ4xauuH02qsSI0ggtY6QLw6jYgwXEkiTwaGLGNqIoU+FsQzac/oYphqFH1I2uBVG2w1WgpxQojyoHrk6SPAqqAYJAyNoQXMhr6gGCVY13LXPnFcgIZY1NgryFmjr+xAFbdfQSQh4n3TACnIKCZ8ju6lRzM+FW/X4OBcjYfUapCPoCi4XvbMRIzf7eHzMPy9LPg16BBJKZwkt9fDwkWbeKJ6m3cO2yZiu6yScHH94WfA2YhA6CutIqEQ1WtKlIqwOSyvvDZ9rZ2d30R002PPilndYErMbWAOkh0EwBBd+NhijWuMrNB7wuHiWXnQj9pOX2K8wuhRK7MGvXLL/DzQ/9UolQ5DDuStTg5YmMP5gpk4CPhLaqJ0dRLjBLeRvmUjCgzIJ3zATi6dBqh27co39OKzmHGYHYst6scVZO6q7mw1iyja9sSKGh50lUjCQQ03kYz6bfWJagzOZN8piprz+3DeNWKagadtfWaIKGE4TN14U0/A1sz4QO03as8ptdk7j/0MSyPHjqwuNYqq//bjpudV25frr44o4G9BdMjhxejlnujDEQSZGEUZiu3oXqVG9DkaX/363tE9q+rc1M443MWYnB2bb8YEW8NoDgYT8aQFN3qiQULtIfK9tlyribTBdx8f3CQM/Q8FKCVotmZhFC5WO/F1BvlImPt9R0wnfXY2KfS/+anO9MeZ4qOx2Il6Qo8x303VFJ6FGVWGYmOC0LNHT5N609FTrF19YEL8AogRLvw==
 sidebar_class_name: "get api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Get the public key linked to the collaboration space
+Get the public key linked to a collaboration space
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ Get the public key linked to the collaboration space
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space to get"}]}
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaboration space."}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Get the public key linked to the collaboration space
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"An string containing the public key.","content":{"text/plain":{"schema":null}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"The public key.","content":{"text/plain":{"schema":null}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>
