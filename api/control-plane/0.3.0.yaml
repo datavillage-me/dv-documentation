@@ -44,7 +44,7 @@ paths:
       description: Get all collaboration spaces the user has access to.
       responses:
         '200':
-          description: The descriptions of the collaboration spaces.
+          description: The models of the collaboration spaces.
           content:
             application/json:
               schema:
@@ -531,9 +531,10 @@ paths:
           schema:
             type: integer
           required: false
+          description: Number of lines to return.
       responses:
         '200':
-          description: List of latest `tail_lines` algorithm logs
+          description: List of `tail_lines` most recent algorithm logs
           content:
             application/json:
               schema:
@@ -567,7 +568,7 @@ paths:
           description: Number of lines to return.
       responses:
         '200':
-          description: List of latest `tail_lines` deployment logs.
+          description: List of `tail_lines` most recent deployment logs.
           content:
             application/json:
               schema:
@@ -741,7 +742,7 @@ paths:
       operationId: CreateSchema
       x-ogen-operation-group: DataContracts
       summary: Create Schema
-      description: Create a new schema based on an ODCS description. The client will be the owner of the contract.
+      description: Create a new schema based on an ODCS description. Allowed if the client is the owner of the contract.
       parameters:
         - in: path
           name: contractId
@@ -807,7 +808,7 @@ paths:
           schema:
             type: string
           required: true
-          description: The ID of the data contract the schema can be found.
+          description: The ID of the data contract where the schema can be found.
         - in: path
           name: schemaId
           schema:

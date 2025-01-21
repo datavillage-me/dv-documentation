@@ -5,7 +5,7 @@ description: "Get `tail_lines` most recent lines of the output written by the al
 sidebar_label: "Get Algorithm Logs"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VNuK3DgQ/RVRTwm407MhTyYEhtyYJQ8hF/ZhaCbV7mpbWVlSSuXJNMb/vpRs92WmB5bsEr+0u6ySTh2dc3oIkRjFBn+1gRLek1y6OrCVpv0Q6gQF3C1CTX6xX7eoOXQRSngdnMN1GKufI1akyzeUKrZRa+N+5pugdTfOekrfTBuSGKaKvJhcMmFrpCETOomdmJ9sRcib9S5XcQbzDAoQrBOU1/Aaa0qwKiAiY0tCrOUerJ4YURoowGNLUEJSWFcbKCBVDbUIZQ+yi/mTsPU1DAUw/egs0wZK4Y7uj/ClIXP1ZoZZHQ9t8vYGUwqVRaGN+WmlGddhTc9gKCZUPzri3QHWgZFzyKwXqolPoW3RJRpWWkox+ERJO55fXOjPKeIPNonidSiU7vG/J9S48Xqr4IW86C4Yo7NVnmz5PelW/UNwyIw6iRVq0xk69SngxcUfD3F9TcTGJuODGOykIS96HG1+AUZYf6dKoIDIqkyxIx/EHPimpZSwpnPojim9vrd8NWN/8RD7J0qh44oy+G3o/O8DrYLcYucESngTqq5V7xxg/IuZhgLoTsgnG/xolb9pB+Vj1i7gFl1Hj1hcNdiSNEHzoqY8jnquhOWJORbZHGnZTx4clqq4pQpQRU98O/u2YwclNCIxlcvlS2WVg1tEh54WGO2rfGaiqmMru9yyJmTiy07PvV4df/6spI+8Hi/ak6rHzKbT/+MiKKaXd4FbVKb//OtLptb6bcjtVtxISUb3UcGZy49XyhZxGlUyOk6NG0OSFrMMJs9rFO6z1UzheiKy/iCo/zk4x9GF7mQZHVqvCDPr/XR313Du7qCA8pCgU2DkC1wV0IQk2tj3a0z0ld0waHlMOr2jjU24dvvsKibRnWTfLLR8w7fIVjvOdz9K1ZNPk/qfmv+S1Y/QNMee3x3DnYeZ2RlWQwEN4Yb4yF+XVUVRjvoepMSJmd6/Vcn9A4j6pXM=
+api: eJy9VduO20YM/ZUBn1pAXm+LPAlFgUXSBlsERZAL+rAwElqmpUlHMxMOZ7OGoH8vOLLWdrwuekP9YpsaDg8PD48GCJEYxQZ/u4EaXpLcuDawla5/FdoEFTwsQkt+8Xhu0XLIEWp4HpzDdZiibyM2pMc3lBq2UWPTfeajoHUfnPWUPpo+JDFMDXkxJWTC1khHJmSJWcwXtiLkzXpXojiDuYIKBNsE9R08x5YSrCqIyNiTEGt4AKsVI0oHFXjsCWpICut2AxWkpqMeoR5AdrE8Era+hbECps/ZMm2gFs70dQvvOjK3L2aYzXHTplxvMKXQWBTamC9WuukctnQFY7VH9TkT7w6wDow8hcx6oZb4FNoWXTrD9mvu18SKbeJSgmGSzP4KxpVmpxh8oqSXf399rV+nF7yySTT94oweB2DcJIcmeCEvehXG6GxTmFh+SnrfcN4MMqN2boX69AT9+qng2fV35+DeJ2Jjk/FBDGbpyIuWo80/gBHWn6gRqCCyKlnsRAoxB/7QU0rY0lPojkdw99Xx1Yz92Tn2N5RC5oYK+G3I/v8DrSLZYnYCNbwITe51jgcYf6GnsQJ6EPLJBj+t1u+0g/qSFVRwjy7TBUtQIfYkXVB/aam0oztaw/JkmRZlmdJy2O/suFTFLVWAuiTE9/OeZ3ZQQycSU71c/qCscnCL6NDTAqP9sdRM1GS2sispa0Imvsla9251/Pitkj7xenzokVQtMy+p/p8OQbX/8XPgHpXpX357V6i1fhtKuhU3UVLQvVZw5ub1rbJFnCaVOBRKooseQ5Ieiwz2HqHW+ejFZm/GJyIbDoL6j412al3oQZbRofWKsLA+7Gd3B0/NDiqoD467N4wywFUFXUiiicOwxkTv2Y2jhidn1BltbMK1u+R1x83+ie1dAD/p98R2Z80WsdwjWy3+N4F882a/SN+af/OauAB6dlC/O4Y7NzMTPa7GCjrCDfHRqt40DUU5yjsznJO9fPmTqvcP3grQqw==
 sidebar_class_name: "get api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -47,7 +47,7 @@ Get `tail_lines` most recent lines of the output written by the algorithm.
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space associated with the cage."},{"in":"query","name":"tail_lines","schema":{"type":"integer"},"required":false}]}
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space associated with the cage."},{"in":"query","name":"tail_lines","schema":{"type":"integer"},"required":false,"description":"Number of lines to return."}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Get `tail_lines` most recent lines of the output written by the algorithm.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"List of latest `tail_lines` algorithm logs","content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"List of `tail_lines` most recent algorithm logs","content":{"application/json":{"schema":{"type":"array","items":{"type":"string"}}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>
