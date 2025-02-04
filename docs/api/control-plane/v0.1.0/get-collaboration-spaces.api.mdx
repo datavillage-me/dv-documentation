@@ -1,0 +1,63 @@
+---
+id: get-collaboration-spaces
+title: "Get All Collaboration Spaces"
+description: "Get all spaces your account has access to."
+sidebar_label: "Get All Collaboration Spaces"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlV0uP1DgQ/itWnc32LNpTtFppNDw0HGCkXrSHqIWqnZrE4NjGrgy0ovx3ZCc0SXcWxEggMZza7bKrvodjlXtwngKydva6ggJq4itnDO7dOLn1qCiCBMY6QlHCIiqm8E5CRVEF7dMsFPCcWKAxIua4OLguCFTKdZZFgzGNKUbB7g+QECh6ZyNFKHp4fHGRfpbpLsWL7auXAkPAg3C3Qi1AxM8YlbNMltN+9N5oleObtzEl6SGqhlpMIz54ggJyPpCgmdo4m3f7t6Q4I3vf6UBVIq4rkGCxJZDgPlgKibUPST7WI3ZdzZJEDtrWMEyb1gJjmrWIQqbahcN68Mjehfg1OksRr2bbQEKlU7DVNv8v+s9cDi8zXAjOJKotep/qFj1cuYpugrvT1YgajXl1C0V5rtuJe/vIARWLEwRzdZXRZPm6Ohf1GDmXYpDAmg3NaixKDPJb0LauJWdJfGic8CO1KJSrEvMljCzHGQQJ9BFbnyEs5BkkoKndlpi1rVcP1zI/U+Q1isMw7L7QPK3xBBl/B0sSz3tYspBnqeQyNCp55Wzs2geppBqpRVHdX8mjPOdKzkMSnKVJuwem4i94RTxcD374nfDgpPtpl8DiOM7hzgmd95njWZbw18Wf5+3L60hB6CisY4EdN2Q5NXhU3aPx+58PjEJw4U1LMWK91rENS0eXy3cT+Ja4cVMrnSogN1DARq121ZHCHaUmruyhCwYKaJh9LDabvxXW9KhFizWFR+j1P1nWSKoLmg95x54wULjsUoVyNw9vE+OR1HzRkVGqksrnZVBMi0BOg2cutMhQwIv//s20tb11efvRO8vBmRuDlsTlzTVISDxGpwzmm2qQ4F3kFrMHYxOcHwaXxojVZ8TJ2e2/+Pp9D4qJJNNH3niD2iYsWd5+8qOENT92EhqX7tgS+n6PkV4HMwxp+n1HqRkvdxLuMGjcJxXK3SChIcy9V9nDOzqk71Qp8sn5OzRdbstPT2Qy6nhKnj9NCn8CqWG+RQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/v0.1.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get All Collaboration Spaces"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaborationSpaces"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get all spaces your account has access to.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A JSON array of collaboration spaces","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","required":["id","name","owner"],"properties":{"id":{"type":"string"},"name":{"type":"string"},"owner":{"type":"string"},"category":{"type":"string"},"collaborators":{"type":"array","items":{"description":"Collaborator","discriminator":{"propertyName":"role","mapping":{"CodeProvider":{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"algoSettings":{"type":"object","properties":{"test":{"type":"string"}}}}}],"title":"CodeProvider"},"DataProvider":{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"}}}],"title":"DataProvider"},"DataConsumer":{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"}}}],"title":"DataConsumer"}}},"oneOf":[{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"algoSettings":{"type":"object","properties":{"test":{"type":"string"}}}}}],"title":"CodeProvider"},{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"}}}],"title":"DataProvider"},{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"}}}],"title":"DataConsumer"}],"title":"Collaborator"}}},"title":"CollaborationSpace"}}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: get-client
+title: "Get Client Info"
+description: "Returns some public information about a client"
+sidebar_label: "Get Client Info"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVFFr1EAQ/ivLPCmkpkifFhGOqqVFtLSKD8chc8ncZdvN7nZ3tvUI+e8ySa4976yg+JRNMvvNfN98Mx34QBHZeHdeg4Yz4lNryDEUkKjK0fAG9HxRAOM6gZ7DZV5aU8GigJpSFU2Qu6DhijhHl1TyLakwBCnjVj62A7rCpc+sUFVb+IARW2KKAtuBEZCA3EABDlsCDWPoR1yShQIi3WUTqQbNMVMBqWqoRdAd8CZIeOJo3Br6/cpmqsktOhUJa1xaUtmZu0zKCrCKFCIlcmzcWnFD2wL7haRMwbtESbK8Pj6Wxz72xfXnT8ovb6hiVXnHaJwgPavATooC5IKcdAcYgjXVEFneJAHvDimOeUS8KH1jM5ZmUsoUD6XYV+JLQ2qM3SlD5URJsVeYuREdKmRShpOq6Z6s5EnQ97sNmG8zLvpe/pwcnxxKc0XJ51iRcp7VymdX/z/CFKOP31tKCdf0e94rzJZBwztf5VZoPpWxT+ZXtIFTX0BL3HiZiTWNduUGNJSvHsjao1vnH1w5CpjKbsep/TA58X7r6xwtaGiYQ9Jl+UYEiN4eBYuOjjCYt4PTtrN2LQKMHJeEkeIsS9pHgoIDk/flfQyCYjp8GMwGGi6+fRloiv+G64atxJ+O6S8lu5pdnkMBUunYMYtMiWWAgk/c4tCSaRbPiNW4GdS5YO5Zq3vq7N9vgokb0w8ug0XjpIRBt26SfQ47souNRuGhAL27JBYFND6xxHfdEhN9jbbv5fNdpjgtsnuMRtbA0J3aJDnXoFdoE/2B1YuryTEv1b8tlGd4Th/RbaQXaLO8QQG3tNlbgf2iL6AhrGXU590UMasqCrxz92CuxF+PZj57L8b4CXKQFfE=
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/v0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Client Info"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/.well-known/clients/{clientLabel}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns some public information about a client
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"clientLabel","required":true,"schema":{"type":"string"},"description":"A human readable unique label representing the client"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A JSON object containing public information about the client","content":{"application/json":{"schema":{"type":"object","properties":{"issuer":{"type":"string","description":"The issuer the client uses to authenticate its developers"}},"required":["issuer"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

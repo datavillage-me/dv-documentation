@@ -1,0 +1,73 @@
+---
+id: get-collaboration-space
+title: "Get Collaboration Space"
+description: "This fetches a collaboration space, if you have access to this space. The necessary roles for this are:"
+sidebar_label: "Get Collaboration Space"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlV12v2zYM/SsCn7ZBXe6GPhnDgIu7rUgf2ovmFntIg4GRGVudLbkSnTYw/N8HyklmJy46dNjX3VNsUyJ5DimFpwPfUEC23i1zyKAgvvNVhVs/fFw1aAg0MBYRsjVMjCpZI2w05BRNsI18hQweShvVjtiUFBUqM9kUZZNWdqcOvlUl7kmhMRSjYq9YdqYVX6uHkpQjsWA4qOArimrnw7AGA2VvnFJfKdyaNw40NBiwJqYgiXZgJZEGuQQNDmuCDJLfZQ4aoimpRsg64EOTTBysK6DXEOhdawPlkHFo6RLZMld+p7ikOVACoCCGfiNuYuNdpChBvr25kZ+pq1v1fPXyhfLbt2RYBWoCRXJsXTFPGWgw3jE5Fl/YNJU1ybx4G8Vhd41q8A1jUGuw+YkRDf69oyD1a4L0AdshX5vPUjPQOGMY3MxZDDIVPhzmjWeQPsTRCgwBD6DBMtXxmri70TbQkFsx1tal96w7YTm8GKoujQMaamwaiZt1cOdzug9+b/Mha6yql7vUNJe8XVRsGzmgYXWRwZhdU1lyvMyvST1brqnoNbDlikYxJiF6/anUVr4m70i9L71qBmhRGZ8L8mkaiY6rFDTQB6yblMKEnl4DVoVfEUtnxrnmmvpnijwHse/lWJxgXsb4ARn/DyURnJ9Rkgk9UyanpoHJO+9iWz9KJs0ALar885k803PN5NikwTs6cvfIWPwPXhGPtwZ/+Z3w6Kj72y6BSTuO0x0DmhmY+7Tg6c0319PL60hB2aicZ4UtlzLyyZSU/5n5bkoAheDDL7UMzsXcwNZPCzpdvjnl/vQ691cUfRsMpeR3vnX/qqR7DTVx6Y86JkkCLiGDhbmqUFx0RzXQixygsD/phjZUkEHJ3MRssfjOYEFPanRYUHiCjf0+NUUk0wbLh7RjSxgo3LYSa70Zm1eCfYA3XnTGJlFOakTeh0Wgjw8/+VAjQwbPf35IBFi382n7ufMcB1/dV+hI3d4vQYPgGIpVYbpnew2Nj1xjqsZRCT2j8RE/S7nLQ9f9Xtx/RtMdeWL6wIumQusETqpQdyzuGmaKCxqyk9jbaCi9/N+soeu2GOl1qPpePr9rSYTJeqNhj8HiVjhddyIo5DmHbIdVvJSAY06+eHXsyC/VHxKGHwF0kj1ORM8eq1beQMOvdBip1n7TaygJ04S87o7WW2Oo4dG+qzMoDXk+F89+lE76DZy0l6g=
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/v0.1.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Collaboration Space"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaborationSpaces/{spaceId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This fetches a collaboration space, if you have access to this space. The necessary roles for this are:
+  * abc
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space to get"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A JSON object representing a collaboration space","content":{"application/json":{"schema":{"type":"object","required":["id","name","owner"],"properties":{"id":{"type":"string"},"name":{"type":"string"},"owner":{"type":"string"},"category":{"type":"string"},"collaborators":{"type":"array","items":{"description":"Collaborator","discriminator":{"propertyName":"role","mapping":{"CodeProvider":{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"algoSettings":{"type":"object","properties":{"test":{"type":"string"}}}}}],"title":"CodeProvider"},"DataProvider":{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"}}}],"title":"DataProvider"},"DataConsumer":{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"}}}],"title":"DataConsumer"}}},"oneOf":[{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"algoSettings":{"type":"object","properties":{"test":{"type":"string"}}}}}],"title":"CodeProvider"},{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"}}}],"title":"DataProvider"},{"allOf":[{"type":"object","description":"Abstract Collaborator","required":["clientId"],"properties":{"clientId":{"type":"string"}},"title":"AbstractCollaborator"},{"type":"object","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"}}}],"title":"DataConsumer"}],"title":"Collaborator"}}},"title":"CollaborationSpace"}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: delete-cage
+title: "Delete Cage"
+description: "Delete a cage"
+sidebar_label: "Delete Cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VMFq3DAQ/RUxpxYcNi05mVIISQpbeghpQg+LKbPyOFYqS4o0ClmM/72M7STebAqlh55sSfNGb968UQ8+UEQ23q1rKOGcLDGd4S1BAYy3CcoNyDJBVUBNSUcTJPo5VqHSU3jAiB0xRQH1YCQmILdQgMOOoIQUUNO6hgKSbqlDKHvgXRiPOBp3C0MBke6ziVRDyTHT60vXtfKN4paU9tbi1k/k1ZhasVf1kpVqou9gqCRrCt4lSnLnx+MT+exnvqL7TIkVPZLOTLVKWWtKqcnW7oTYyfGHQ9RNoqhMUs6zwswtOTYamaRI7R2TYwFhCFb2jXeruyTI/lADv70jzaJklK6wmdhSjD7+7Cgl0flQsj3NNq/Cq2EYRu5vVpx8jppG8o3P7v+RlrY2mC2Lj7zOHTle0PiLmoYCOuLWi2unno8W5BZKWO1542j0Rlr1s/2G1WzYRPHhya05WiihZQ6pXK0+iQrR26Ng0dERBvN5dFEinaPh3QjZEkaKp1mu3FTL4+8i0qTDMuhZBLnmaQhkPQVBMf988bFDUebrj+tRCuMaP8INW4k/m9hdCjl1ermGAqSQqasWmRKLYYNP3OHYtnkA55Gd53vPDf1L5w8me6bN9MirYNE4yT4q1s+Sb+AtyaGA8mXmx2RVAa1PLIi+32Kim2iHQbbvM0URtirgAaPBrZS66aE2Sf5rKBu06fWDsKT97mq2zHv1L8/EH+qcN9HtRGa0WVZQwC/aLZ60oRoKaAlriiPr6fRUawq8wB2MlNjm2cfnF98uri9gGH4DIbzu5w==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/v0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/collaboration-spaces/{spaceId}/cage"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a cage
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space to delete a cage from"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
