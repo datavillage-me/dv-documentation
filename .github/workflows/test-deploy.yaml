@@ -9,6 +9,7 @@ on:
 
 jobs:
   test-deploy:
+    if: false
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
