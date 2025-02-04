@@ -1,12 +1,12 @@
 [
   {
-    "version": "0.1.2",
-    "label": "v0.1.2",
+    "version": "v0.1.2",
+    "label": "version 0.1.2",
     "baseUrl": "/dv-documentation/docs/api/cage-manager"
   },
   {
-    "version": "0.1.0",
-    "label": "v0.1.0",
-    "baseUrl": "/dv-documentation/docs/api/cage-manager/0.1.0"
+    "version": "v0.1.0",
+    "label": "version 0.1.0",
+    "baseUrl": "/dv-documentation/docs/api/cage-manager/v0.1.0"
   }
 ]

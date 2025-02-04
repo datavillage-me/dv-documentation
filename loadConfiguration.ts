@@ -93,12 +93,12 @@ function getVersionsFromFileStructure(
     .readdirSync(dir, { withFileTypes: true })
     .filter((file) => !file.isDirectory())
     .filter((file) => file.name.endsWith(".yaml"))
-    .map((file) => file.name.substring(0, ".yaml".length))
+    .map((file) => file.name.substring(0, ".yaml".length + 1))
     .sort((a, b) => b.localeCompare(a))
     .map((version) => {
       return {
         version,
-        label: `v${version}`,
+        label: version.replace("v", "version "),
         baseUrl: `${baseUrl}/${projectId}/${version}`,
       };
     });
@@ -133,7 +133,7 @@ function createSidebarConfigProjectVersion(
     },
     {
       type: "category",
-      label: `${projectName} ${version.label} API`,
+      label: `${projectName} API ${version.label}`,
       link: {
         type: "generated-index",
         title: `${projectName} ${version.label}`,
@@ -171,12 +171,14 @@ export function loadSidebars(): SidebarsConfig {
   for (const [projectId, versions] of Object.entries(projects)) {
     const highestVersion = getHighestVersion(versions);
 
+    const selector = versionSelector(versions);
+
     versions.forEach((v) => {
       const projectVersionId = `${projectId}-${v.version}`;
       result[projectVersionId] = createSidebarConfigProjectVersion(
         projectId,
         v,
-        versionSelector(versions),
+        selector,
         v.version == highestVersion?.version
       );
     });
@@ -191,7 +193,6 @@ export function loadApiConfiguration(): Plugin.PluginOptions {
     const projectConfig = createApiConfigurationForProject(projectId, versions);
     result[projectId] = projectConfig;
   }
-
   return result;
 }
 

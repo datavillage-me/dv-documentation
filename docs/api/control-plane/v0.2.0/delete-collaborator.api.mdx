@@ -1,0 +1,71 @@
+---
+id: delete-collaborator
+title: "Delete Collaborator"
+description: "Delete Collaborator"
+sidebar_label: "Delete Collaborator"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9lE1r3DAQhv+KmVMLCk5LTqYUQpJCSg8hH/SwmDIrz8ZKZUmRRiGL8X8vY2833o9De8nJ9mhm/M6rR+rBB4rIxrvrBiq4JEtMF95aXPqI7CMoYHxMUC3gLWy8K+4CakpQKwgYsSOmKFk9GAcVBOQWFDjsCCpIknvdgIKkW+oQqh54HcYljsY9wqAg0nM2kRqoOGYa1NFOeibtPxvWEknBu0RJ8j+fnsmjoaSjCTITVHBLz5kSF/RKOjM1RcpaU0qrbO1amp6dfjqsekgUC5MK57nAzC05NhqZRKD2jsmxFGEIVuLGu/IpSWV/qN8vn0gzKAhR9obNpJZi9PFXRynhIx0Zd2fexV56PQzDqP3oxMnnqGkUv/LZvZ9oBQ2tMFsW8rzOHTmeyfiHmQa1N80EcLFHcEfceuG7GZdFp1BVQannTJ+MnKay3/A6lHPcUtnv0jcIfhRf/oKfo4UKWuaQqrL8Ih5Gb0+CRUcnGMxXEAYT6RwNr8eSJWGkeJ5FzKKeL9+JxZOL86SthfKbv/jL95QEavPyzccOxdfvP+9HI41b+bHcsJX8i0ndjYgrzm+uQYEMMrlokSmx4B584g7HTd+cwOMO7+zCViTTK5fBonHSa/Sn31i/gGPWg4Lq7bLYcV+W9k5/raD1iaVZ3y8x0UO0wyDh50xRHK4VvGA0uJSZFz00Jsl7A9UKbaID3Vvu4cPthryPhVyBx+bZBNGtxTy0Wb5AwW9az+48ucje8bd7Fg31oKAlbCiOBkxJ51pT4Fn5wSEXFLen5vLqx9X9FQzDH8yjJtI=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/v0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Collaborator"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/collaboration-spaces/{spaceId}/collaborators/{collaboratorId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Collaborator
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true},{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

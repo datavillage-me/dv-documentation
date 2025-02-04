@@ -1,0 +1,71 @@
+---
+id: invite-collaborator
+title: "Invite Collaborator"
+description: "Invite a client as collaborator of a space"
+sidebar_label: "Invite Collaborator"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9lE1v2zAMhv+KwNMGqHA39GQMA4oOA7LLimbFDoExMDJTq5MlRaKKBob/+0DHbdKPDdtlp9g0Kb18+TADhEgJ2Qa/aKGGhb+zTBfBOVyHhBwSaGC8yVCv4BC2watlREMZGg0tZZNslOjjEQqVcZY8K8zKHJ2nwkahylIMGiIm7IkpyQUDWDkgInegwWNPUMOUuWhBQzYd9Qj1ALyL0ydO1t/AqCHRtthELdScCo2NRHIMPlOW/PenZ/LzVOcVbQtlVnRPpjC1KhdjKOdNcW4nh56dvntZdZ0pKZuVD6ywcEeerUEmEWiCZ/IsRRijk7gNvrrNUjm81B/Wt2RYXEgyBbZ7tZRSSD96yhlv6JV2n/S7epbejOM4aX+14xxKMjSJ34Ti/59ogWSDxTHU8CmY0gsZBxl/0dOooSfuglAaQ54UCCg1VOaYy5MJmFwNMzhjZScgBSBKdw+kleSgho455rqqPogLKbiT6NDTCUb7EYSiTKYky7upZE2YKJ0XuXTVHH9eikl7H46THk2Qax4Alvd9Euj54XNIPYozX75/m6ywfhOmcstO8i/26i5FnDq/XIAGaWQ/VYdMmQVYsaXHaWzz8sy7+Gyfn1AxHAj4t9Wde2O65yo6tF4kTLYO82RW8NpkQEN9WOp5OI2GToZar2AY1pjpOrlxlPC2UBL/Gw13mCyuxZHVAK3N8txCvUGX6Q9dvbmayXqrfid7DqLfibXoiryBhp+0O/oLGptRQ0fYUpok7L+eG0ORj+perJGg8sju5delDPkX9UroIg==
+sidebar_class_name: "post api-method"
+info_path: docs/api/control-plane/v0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Invite Collaborator"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaboration-spaces/{spaceId}/invite"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Invite a client as collaborator of a space
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

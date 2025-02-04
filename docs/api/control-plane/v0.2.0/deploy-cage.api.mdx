@@ -1,0 +1,71 @@
+---
+id: deploy-cage
+title: "Deploy Cage"
+description: "Deploys the latest version of the algorithm in the cage"
+sidebar_label: "Deploy Cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VFFrGzEM/itGTxtcSTf6dIxB6RhkLyvtyh5CGIpPybnz2a4tZw3H/fch37VNmhbGBnu6syzJnz59Ug8+UEQ23s0bqOETBet3F7ghqIBxk6BegBwTLCtoKOlogng/+ibFLSmLTInVlmIy3im/Lla0Gx8Nt50yrhj0mDhgxI6YoqTvwUi2gNxCBQ47ghpSQE3zBipIuqUOoe6Bd6FccTRuA0MFke6yidRAzTHTc3jz5gGG9tbiyo9lqpJarX1Uv1qjW8VeNaUShSO+YSmpU/AuUZKH35+eyucw/RXdZSmZ7klnpkalrDWltM7W7gTd2em746ibRFGZpJxnhZlbcmw0Mkml2jsmxxKEIVixG+9mt0ki+2Mi/OqWNAudUZrIZkRLMfr4o6OUpJhj3g6IWzxzXw7DULCfvVRx8jlqKuDXPrv/B1p6u8ZsWWTnde7I8R6MP6hpqKAjbr2IPPhUEIjiapgdyOOkyCPN+kmBw2wUhyiR4vZBsjlaqKFlDqmezT4IC9Hbk2DR0QkG87GoKJHO0fCuhKwII8XzLI8ulvvX10LSyMO+0yMJ8szDJMh5dIJq+vnsY4fCzJfv3woVxq19CTdsxf9iRHcp4NT55RwqmAYVahgnVwQrtHRY2jZN4TjhaloHB2ronzr/D4tgKpDpnmfBonGCo3DbT+1ZwEvtgQrqpxUxdWhZQSudrRfQ9ytMdBPtMIj5LlOUJiwr2GI0uBJaFj00Jsl/A/UabXq+QfZLfHM1yeut+uu98kq5kxGdaGyLNssJKvhJu71FOCyHClrChmKBPt6ea02B9+KOZlB09ij8y6/XopDfoSwTcA==
+sidebar_class_name: "post api-method"
+info_path: docs/api/control-plane/v0.2.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Deploy Cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaboration-spaces/{spaceId}/deploy"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deploys the latest version of the algorithm in the cage
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"Id of the collaboration space for which to deploy a cage"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
