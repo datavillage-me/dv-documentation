@@ -1,6 +1,7 @@
 logs/
 scrapbook/
 tmp/
+.env
 
 # Dependencies
 /node_modules

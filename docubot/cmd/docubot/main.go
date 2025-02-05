@@ -15,7 +15,6 @@ func main() {
 	godotenv.Load()
 	r := router.DocubotRouter{}
 	port := internal.GetSafePort()
-	fmt.Println(port)
 
 	srv, err := api.NewServer(&r)
 	if err != nil {
