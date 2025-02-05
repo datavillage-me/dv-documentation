@@ -1,0 +1,5 @@
+[build]
+cmd = "go build -o ./tmp/build/docubot cmd/docubot/main.go"
+bin = "./tmp/build"
+full_bin = "./tmp/build/docubot 2> logs/docubot.log"
+delay = 300                                                             #ms
