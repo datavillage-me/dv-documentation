@@ -1,0 +1,9 @@
+type: object
+additionalProperties: true
+properties:
+  tag_name:
+    type: string
+  target_commitish:
+    type: string
+  url:
+    type: string
