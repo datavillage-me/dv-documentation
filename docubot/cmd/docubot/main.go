@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 
 	api "github.com/datavillage-me/dv-documentation/docubot/api/docubot-gen"
@@ -18,10 +17,10 @@ func main() {
 
 	srv, err := api.NewServer(&r)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	if err = http.ListenAndServe(fmt.Sprintf(":%d", port), srv); err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 }
