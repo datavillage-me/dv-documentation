@@ -199,6 +199,7 @@ type Release struct {
 	TagName         OptString `json:"tag_name"`
 	TargetCommitish OptString `json:"target_commitish"`
 	URL             OptString `json:"url"`
+	TarballURL      OptString `json:"tarball_url"`
 	AdditionalProps ReleaseAdditional
 }
 
@@ -215,6 +216,11 @@ func (s *Release) GetTargetCommitish() OptString {
 // GetURL returns the value of URL.
 func (s *Release) GetURL() OptString {
 	return s.URL
+}
+
+// GetTarballURL returns the value of TarballURL.
+func (s *Release) GetTarballURL() OptString {
+	return s.TarballURL
 }
 
 // GetAdditionalProps returns the value of AdditionalProps.
@@ -235,6 +241,11 @@ func (s *Release) SetTargetCommitish(val OptString) {
 // SetURL sets the value of URL.
 func (s *Release) SetURL(val OptString) {
 	s.URL = val
+}
+
+// SetTarballURL sets the value of TarballURL.
+func (s *Release) SetTarballURL(val OptString) {
+	s.TarballURL = val
 }
 
 // SetAdditionalProps sets the value of AdditionalProps.

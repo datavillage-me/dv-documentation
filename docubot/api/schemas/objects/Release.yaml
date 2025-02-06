@@ -7,3 +7,5 @@ properties:
     type: string
   url:
     type: string
+  tarball_url:
+    type: string

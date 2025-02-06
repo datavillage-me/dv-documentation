@@ -169,6 +169,12 @@ func (s *Release) encodeFields(e *jx.Encoder) {
 			s.URL.Encode(e)
 		}
 	}
+	{
+		if s.TarballURL.Set {
+			e.FieldStart("tarball_url")
+			s.TarballURL.Encode(e)
+		}
+	}
 	for k, elem := range s.AdditionalProps {
 		e.FieldStart(k)
 
@@ -178,10 +184,11 @@ func (s *Release) encodeFields(e *jx.Encoder) {
 	}
 }
 
-var jsonFieldsNameOfRelease = [3]string{
+var jsonFieldsNameOfRelease = [4]string{
 	0: "tag_name",
 	1: "target_commitish",
 	2: "url",
+	3: "tarball_url",
 }
 
 // Decode decodes Release from json.
@@ -222,6 +229,16 @@ func (s *Release) Decode(d *jx.Decoder) error {
 				return nil
 			}(); err != nil {
 				return errors.Wrap(err, "decode field \"url\"")
+			}
+		case "tarball_url":
+			if err := func() error {
+				s.TarballURL.Reset()
+				if err := s.TarballURL.Decode(d); err != nil {
+					return err
+				}
+				return nil
+			}(); err != nil {
+				return errors.Wrap(err, "decode field \"tarball_url\"")
 			}
 		default:
 			var elem jx.Raw
