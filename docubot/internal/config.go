@@ -6,20 +6,20 @@ import (
 	"strconv"
 )
 
-func GetAppId() int {
+func GetAppId() int64 {
 	v, err := getEnvironmentVariable("APP_ID")
 	if err != nil {
 		panic(err)
 	}
-	return atoiSafe(v)
+	return int64(atoiSafe(v))
 }
 
-func GetInstallationId() int {
+func GetInstallationId() int64 {
 	v, err := getEnvironmentVariable("INSTALLATION_ID")
 	if err != nil {
 		panic(err)
 	}
-	return atoiSafe(v)
+	return int64(atoiSafe(v))
 }
 
 func GetPrivateKeyFile() string {
@@ -27,6 +27,23 @@ func GetPrivateKeyFile() string {
 	if err != nil {
 		panic(err)
 	}
+	return v
+}
+
+func GetSafeRepoOwner() string {
+	v, err := getEnvironmentVariable("REPO_OWNER")
+	if err != nil {
+		panic(err)
+	}
+	return v
+}
+
+func GetSafeRepoName() string {
+	v, err := getEnvironmentVariable("REPO_NAME")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(v)
 	return v
 }
 
