@@ -112,17 +112,3 @@ func (g *GithubService) CreatePR(ctx context.Context, title string, body string,
 func branchNameToRef(branchName string) string {
 	return fmt.Sprintf("refs/heads/%s", branchName)
 }
-
-// TODO: debug method, remove before merge
-// func writeJsonSafe(filename string, v any) {
-// 	m, err := json.Marshal(v)
-// 	if err != nil {
-// 		fmt.Printf("could not unmarshal: %s", err.Error())
-// 		return
-// 	}
-
-// 	err = os.WriteFile(filename, m, 0644)
-// 	if err != nil {
-// 		fmt.Printf("could not write: %s", err.Error())
-// 	}
-// }

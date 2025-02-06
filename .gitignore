@@ -2,6 +2,7 @@ logs/
 scrapbook/
 tmp/
 .env
+docubot_tmp/
 
 # Dependencies
 /node_modules
