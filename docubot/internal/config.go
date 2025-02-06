@@ -55,6 +55,14 @@ func GetSafePort() int {
 	return atoiSafe(v)
 }
 
+func GetRedoclyPathSafe() string {
+	v, err := getEnvironmentVariable("REDOCLY_EXEC_PATH")
+	if err != nil {
+		return "redocly"
+	}
+	return v
+}
+
 func getEnvironmentVariable(key string) (string, error) {
 	value, found := os.LookupEnv(key)
 	if !found {

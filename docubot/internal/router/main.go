@@ -3,8 +3,11 @@ package router
 import (
 	"context"
 	"fmt"
+	"os/exec"
+	"strings"
 
 	api "github.com/datavillage-me/dv-documentation/docubot/api/docubot-gen"
+	"github.com/datavillage-me/dv-documentation/docubot/internal"
 	"github.com/datavillage-me/dv-documentation/docubot/internal/service/eventhandler"
 	"github.com/datavillage-me/dv-documentation/docubot/internal/service/tarball"
 )
@@ -15,8 +18,21 @@ func (d *DocubotRouter) HandleEvent(ctx context.Context, req *api.ReleasePublish
 	tUrl := req.Release.Value.TarballURL.Value
 
 	ts := tarball.TarballService{}
-	err := ts.DownloadAndExtract(tUrl, "docubot_tmp")
+	codePath, err := ts.DownloadAndExtract(tUrl, "docubot_tmp")
 	if err != nil {
+		return err
+	}
+
+	redoclyPath := internal.GetRedoclyPathSafe()
+
+	fmt.Printf("running %s %s", redoclyPath, codePath)
+	command := exec.Command(redoclyPath, codePath)
+
+	var errBuf, outBuf strings.Builder
+	command.Stderr = &errBuf
+	command.Stdout = &outBuf
+	if err := command.Run(); err != nil {
+		fmt.Println(errBuf.String())
 		return err
 	}
 
