@@ -1,4 +1,4 @@
-package eventhandler
+package docuupdate
 
 import "github.com/google/go-github/github"
 

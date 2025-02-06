@@ -3,22 +3,29 @@ package router
 import (
 	"context"
 	"fmt"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 
 	api "github.com/datavillage-me/dv-documentation/docubot/api/docubot-gen"
 	"github.com/datavillage-me/dv-documentation/docubot/internal"
-	"github.com/datavillage-me/dv-documentation/docubot/internal/service/eventhandler"
+
+	docuupdate "github.com/datavillage-me/dv-documentation/docubot/internal/service/docu-update"
 	"github.com/datavillage-me/dv-documentation/docubot/internal/service/tarball"
 )
 
 type DocubotRouter struct{}
 
 func (d *DocubotRouter) HandleEvent(ctx context.Context, req *api.ReleasePublishedEvent) error {
+	tmpFolder := "docubot_tmp"
+	os.Mkdir(tmpFolder, 0700)
+	defer os.RemoveAll(tmpFolder)
+
 	tUrl := req.Release.Value.TarballURL.Value
 
 	ts := tarball.TarballService{}
-	codePath, err := ts.DownloadAndExtract(tUrl, "docubot_tmp")
+	codePath, err := ts.DownloadAndExtract(tUrl, tmpFolder)
 	if err != nil {
 		return err
 	}
@@ -36,25 +43,12 @@ func (d *DocubotRouter) HandleEvent(ctx context.Context, req *api.ReleasePublish
 		return err
 	}
 
-	rs := eventhandler.ReleaseEventHandler{}
-	err = rs.HandlePublishRelease(ctx, req.Release.Value.TagName.Value)
+	rs := docuupdate.DocuUpdater{}
+	bundlePath := filepath.Join(codePath, "api", "bundle.yaml")
+	err = rs.UpdateDocumentation(ctx, req.Release.Value.TagName.Value, bundlePath)
 	if err != nil {
 		fmt.Printf("%s", err.Error())
 	}
 
 	return err
 }
-
-// TODO: debug method, remove before merge
-// func writeJsonSafe(filename string, v any) {
-// 	m, err := json.Marshal(v)
-// 	if err != nil {
-// 		fmt.Printf("could not unmarshal: %s", err.Error())
-// 		return
-// 	}
-
-// 	err = os.WriteFile(filename, m, 0644)
-// 	if err != nil {
-// 		fmt.Printf("could not write: %s", err.Error())
-// 	}
-// }

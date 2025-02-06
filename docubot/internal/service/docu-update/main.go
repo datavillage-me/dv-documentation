@@ -1,4 +1,4 @@
-package eventhandler
+package docuupdate
 
 import (
 	"context"
@@ -8,9 +8,9 @@ import (
 	gh_s "github.com/datavillage-me/dv-documentation/docubot/internal/service/github"
 )
 
-type ReleaseEventHandler struct{}
+type DocuUpdater struct{}
 
-func (r *ReleaseEventHandler) HandlePublishRelease(ctx context.Context, releaseName string) error {
+func (r *DocuUpdater) UpdateDocumentation(ctx context.Context, releaseName string, bundlePath string) error {
 	var owner = internal.GetSafeRepoOwner()
 	var repo = internal.GetSafeRepoName()
 
@@ -28,7 +28,7 @@ func (r *ReleaseEventHandler) HandlePublishRelease(ctx context.Context, releaseN
 	// commit blob
 	blobContent := "This file was added through docubot"
 	commitMessage := "[DOCUBOT] Test from Docubot"
-	fileName := fmt.Sprintf("api/%s.txt", releaseName)
+	fileName := fmt.Sprintf("api/%s.yaml", releaseName)
 	newCommit, err := c.CommitBlob(ctx, blobContent, fileName, *mainBranch.Object.SHA, commitMessage)
 	if err != nil {
 		return err
