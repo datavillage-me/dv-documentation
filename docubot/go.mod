@@ -16,6 +16,7 @@ require (
 )
 
 require (
+	github.com/cavaliercoder/grab v3.0.1+incompatible // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/dlclark/regexp2 v1.11.4 // indirect
 	github.com/fatih/color v1.18.0 // indirect
