@@ -1,0 +1,14 @@
+post:
+  operationId: HandleEvent
+  summary: Handle Github Event
+  description: Endpoint where Github pushes the events to.
+  requestBody:
+    description: A Github event payload.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../schemas/ReleasePublishedEvent.yaml"
+  responses:
+    "200":
+      description: Event was handled sucessfully

@@ -1,0 +1,11 @@
+type: object
+description: Events related to releases
+properties:
+  action:
+    type: string
+    enum: [published]
+  release:
+    $ref: ./objects/Release.yaml
+  repository:
+    type: object
+    additionalProperties: true
