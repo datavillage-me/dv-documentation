@@ -1,11 +1,11 @@
 ---
 id: get-client
-title: "Get Client Info"
-description: "Get public information about a client based on a human readable label."
-sidebar_label: "Get Client Info"
+title: "Get Client"
+description: "Get all information related to a client."
+sidebar_label: "Get Client"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVMFu2zAM/RWBpw1QmmLoSRgGBO1WZNsh6Dr0UASDYjOxWllSJaptYPjfB9pu6yTtLuvJtkzx8fE9sgEfMGoy3s1LUHCOdGoNOgIJjxO/QTd5Dphsos8BFFyhtT+cf3AgIWGRo6EtqOulBNKbBOoaFnllTQFLCSWmIprA9/v0InT/hHFrH+susdArn0loUXTQYqUTloLPRZVr7UREXeqVRWH1Cu0RSAg66hoJI8M1YDh50FSBBKdrBAV9rp98ASREvMsmYgmKYkYJqaiw1qAaoG3g8ETRuA20+xXPXi1BUKVJZGfuMtqtMCU6MmuDSVCFA40jaJcMnIJ3CRNjfTo+5scuwuKtfoxTSSi8I9ZFNaBDsKboQqc3iZM0h4T86gYLljFEVpBMX4JJKWM8JL7P+7JCMT9bjIoQOTE/L3SmivkWmlAYSqLEe7QMko6gbcfNvn7CW7Yt/zk5PjlswAUmn2OBwnkSa59d+X50MUYf/9SYkt7g66zXOlsCBWe+yDXzfCljn8xuto5TKwEfCV0y3vVevMUtqLeGR8K9thl3hohtUiNVngdwgx0JtrKC6dEDWju55bBpr0KaNiNnt90ExvunOcjRgoKKKCQ1nX7mJkZvJ8FqhxMdzJcO7Glmf3ET+z6tUEeMs8ywz03iPDDMCn/3QSCHl2+dX0HB96vLrlVs4e66Icvxpz38gtHFbDFn9hhTr7rVhIl44IJPVOtO1mF2eU30a0jMOeeeOZsXd7zfRhk4Ez7SNFhtHJfW9bMZ5LiGkRxs0V4QkKDGy2YpofKJOL5pGPh3tG3Lx3cZ47Ao73U0jN+pVprE7yWotbYJ/8H2w8Xgxo/ifxbTG2yHQ+22I5+CHBw95tguWwkV6pJXybPnZ0WBgUZ3DyZ3x+rnX9k2fwHf00SN
+api: eJy9VE1r20AQ/StiTi2s67TkJErBpG1ITyFN6MGIspbG0qar3c3sbIgR+u9lJNnIiQMtlJ4s787Hm7fzXgc+IGk23l1VkMMl8oU16BgUPC18jW5xCFjU5FOAHMaICApY1xHy9eGkUFBhLMkESRjrZdrazLitp3YokxFazVhl7DOdlUPmO1AQNOkWGUkqdmAkPWhuQIHTLUIOY+xVBQpi2WCrIe+Ad0HuIpNxNfQKCB+SIawgZ0r4HNBtg5lEYBQI++59IXkxeBcxStUPZ2fyU3rHQkbegQ7BmnKYYHkfpVb3EoXf3GMp3AUS2tiM1Ux1Euk41okLqzdoT9/42t/RqbujydfScmqwL1coYMNWcj4/To/c95J3fvZeCh4TdReRMhMz5znTiRt0LOOj1P1HtCCRp58txqjrU0Q8G+k4vNhjP3+J/QajT1TiAH7rk/t/oGXftjpZFpp9mVp0PIPxBzP1CvCJ0UXj3SiFX7iD/DU5KnjUNuFMlrLMLXLjRdA1DiOIjnJYjvsel91eSr1oCelxr7okuwUNc4j5cvlROCNvF8FqhwsdzKehesQykeHdkLJBTUirJB3Wxfz6u1A6sjYPOlAmbfZalv9jEKjp4+vgGJDDtx+3A3FiIkP6tMYXI7prAZetrq+EC6Q47oB4TGTRTPCRWz088mQk4koHmztanZnk/8a7poEYn3gZrDZO+qZRpyP368m9xDXzg5EVChofWa67bqMj3pHtezl+SEjCbyHvS0ZvZOJ1B5WJ8l1BvtU2Pre3Ofw3N9Oevc1Om94rsKdD7Xaz3QI1beEBel/0ChrUFdJsSVdliYFniS+kdrSdl1/kZX8DC0hArg==
 sidebar_class_name: "get api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -22,13 +22,13 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get Client Info"}
+  children={"Get Client"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/.well-known/clients/{clientLabel}"}
+  path={"/clients/{clientId}"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Get public information about a client based on a human readable label.
+Get all information related to a client.
 
 <Heading
   id={"request"}
@@ -47,7 +47,7 @@ Get public information about a client based on a human readable label.
 </Heading>
 
 <ParamsDetails
-  parameters={[{"in":"path","name":"clientLabel","required":true,"schema":{"type":"string"},"description":"A human readable label that uniquely identifies the client."}]}
+  parameters={[{"in":"path","name":"clientId","schema":{"type":"string"},"required":true,"description":"The requested client."}]}
 >
   
 </ParamsDetails>
@@ -62,7 +62,7 @@ Get public information about a client based on a human readable label.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Public information about the client.","content":{"application/json":{"schema":{"type":"object","properties":{"issuer":{"type":"string","description":"The IDP the client uses to authenticate its developers."}},"required":["issuer"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"label":{"type":"string"},"logoUrl":{"type":"string"}},"required":["id","name","label"],"title":"DvClient"}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

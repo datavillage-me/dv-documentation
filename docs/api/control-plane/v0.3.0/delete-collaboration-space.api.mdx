@@ -1,0 +1,71 @@
+---
+id: delete-collaboration-space
+title: "Delete Collaboration Space"
+description: "Delete a collaboration space by id. Allowed if the client owns the space."
+sidebar_label: "Delete Collaboration Space"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1rGzEQ/StiTi2s47TktJSCaVJw6SHkgx6MKbJ27FWqlRRplNgs+9/LaNeJvwItlJ5WO5rRvHnzZlpwHoMk7ey0ghIu0SDhF2eMXLjefuulQihgPXIrtKMX/9EquOShhGPvCAWQXEUoZ/u3YrieF1BhVEF7tr7kFVKoPffI7mKxEbo6ExNj3DNWQi8F1SiU0WhJuGcb83/2PYMCvAyyQcLA+VvQ/L6XVEMBVjYIJWTXaQUFRFVjI6FsgTY+X1HQdgVdAQEfkw5YQUkh4SHguxrF9FK4AcsJ1ORElas6g27Oz0XvbMTIyT6eX/Bn/8kbfEwYSeAaVSKsRExKYYzLZMyGEV2cfziOuo8YhI7COhIyUY2WtJKEXJ1yltASB0nvDdu1s+OHyJHtcfFu8YCKmMLAbSbdo8UQXPjZYIxyhSe42iNrduA+77ouYz9ZcXQpKMzgly7Z/wea+7mUyRCLz6nUsJZeYfxBTV0BuCa0UTvbK+0XbqB8a04KeJIm4RvzwgppkGrHQ9jLJiuZaihhvCevUZZXHLeDijuWMYanrd5TMFBCTeRjOR5/YjqDMyNvpMWR9PpzThZRpaBpk0MWKAOGSeJss/nu9S2z3RO66/TCJqfZjhH/905QDIevLjSSKf724y5zqu3S5XBNpucio7tmcGJyPWWaMMReHkYSRmLlexepkbn/wwgPC+PEdoGDUW1fFfVP18zAAOGaxt5IbRloJr8dGjeDU42DAsrtApoXULtI7Nq2CxnxPpiuY/NjwsDNmbNugpYLpmvWQqUjnysol9LEw7W0W+u7m0G/78VfLas3KhuM0m52pAzFIPptQd28K6BGWWHYGYmJUuhpJ+5osPf0f3n1/eruCrruN5eRT8w=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Collaboration Space"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/collaboration-spaces/{spaceId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a collaboration space by id. Allowed if the client owns the space.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space to delete."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

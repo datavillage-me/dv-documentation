@@ -35,7 +35,7 @@ const sidebar: SidebarsConfig = {
         {
           type: "doc",
           id: "api/control-plane/update-collaboration-space",
-          label: "Update a collaboration space by ID. Allowed if the client owns the space.",
+          label: "UpdateCollaborationSpace",
           className: "api-method patch",
         },
         {
@@ -43,12 +43,6 @@ const sidebar: SidebarsConfig = {
           id: "api/control-plane/delete-collaboration-space",
           label: "Delete Collaboration Space",
           className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "api/control-plane/invite-collaborator",
-          label: "Invite Collaborator",
-          className: "api-method post",
         },
         {
           type: "doc",
@@ -80,24 +74,6 @@ const sidebar: SidebarsConfig = {
           label: "Delete Collaborator",
           className: "api-method delete",
         },
-        {
-          type: "doc",
-          id: "api/control-plane/get-public-key",
-          label: "GetPublicKey",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/control-plane/publish-event",
-          label: "Publish Event",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/control-plane/get-attestation-report",
-          label: "Get Attestation Report",
-          className: "api-method get",
-        },
       ],
     },
     {
@@ -110,9 +86,21 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "api/control-plane/deploy-cage",
-          label: "Deploy Cage",
-          className: "api-method post",
+          id: "api/control-plane/get-algorithm-logs",
+          label: "Get Algorithm Logs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-attestation-report",
+          label: "Get Attestation Report",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-deployment",
+          label: "Get Deployment",
+          className: "api-method get",
         },
         {
           type: "doc",
@@ -122,15 +110,9 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/upload-resource",
-          label: "Upload Resource",
-          className: "api-method put",
-        },
-        {
-          type: "doc",
-          id: "api/control-plane/get-algorithm-logs",
-          label: "Get Algorithm Logs",
-          className: "api-method get",
+          id: "api/control-plane/deploy-cage",
+          label: "Deploy Cage",
+          className: "api-method post",
         },
         {
           type: "doc",
@@ -140,25 +122,79 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/get-pod-statusses",
-          label: "Get Pod Status",
+          id: "api/control-plane/publish-event",
+          label: "Publish Event",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/rotate-keys",
+          label: "Rotate keys",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-public-key",
+          label: "GetPublicKey",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/store-secret",
+          label: "Store secret",
+          className: "api-method put",
         },
       ],
     },
     {
       type: "category",
-      label: "Authentication",
+      label: "Invites",
       link: {
         type: "doc",
-        id: "api/control-plane/authentication",
+        id: "api/control-plane/invites",
       },
       items: [
         {
           type: "doc",
-          id: "api/control-plane/get-current-credentials",
-          label: "Get Current Credentials",
+          id: "api/control-plane/get-invites",
+          label: "Get Invites",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/create-invites",
+          label: "Invite Collaborator",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-invite",
+          label: "Get Invite",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/update-invite",
+          label: "Update Invite",
+          className: "api-method patch",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/delete-invite",
+          label: "Delete Invite",
+          className: "api-method delete",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/get-invite-status",
+          label: "Get Status",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/update-invite-status",
+          label: "Update Status",
+          className: "api-method patch",
         },
       ],
     },
@@ -264,6 +300,12 @@ const sidebar: SidebarsConfig = {
           label: "Get Notifications",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "api/control-plane/get-client",
+          label: "Get Client",
+          className: "api-method get",
+        },
       ],
     },
     {
@@ -288,8 +330,20 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/get-client",
+          id: "api/control-plane/get-public-client",
           label: "Get Client Info",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Authentication",
+      items: [
+        {
+          type: "doc",
+          id: "api/control-plane/get-current-credentials",
+          label: "Get Current Credentials",
           className: "api-method get",
         },
       ],

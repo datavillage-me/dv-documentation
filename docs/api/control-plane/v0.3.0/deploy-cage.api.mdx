@@ -1,0 +1,71 @@
+---
+id: deploy-cage
+title: "Deploy Cage"
+description: "Starts a confidential cluster if necessary and deploys the version of the algorithm as configured in the collaboration space model."
+sidebar_label: "Deploy Cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVF2L1EAQ/CtDPylkXRWfgginIpwvHp7iw7JI76STjE5m5mZ6zltC/rv0JKe7d3sgCOJTvroz1dVVNYIPFJGNd+cN1PCWgvX7N9gRVHCz8h251a+KVRd9DlDDG28t7vz89jKgpgQVMHYJ6g1Id4JtBQ0lHU2QIqjhkjFyUqi0d61pyLFBq7TNiSkq0ypHmlLCuFfoGtUUJElxT+qaYjLeKd+WR7Sdj4b7QWGa/9blSI0yrnzWh+hUEnhq8A3ZJ1BBwIgDMUWBOoIRZAG5hwocDgQ1lIbzBipIuqcBoR6B96F84mhcB1MFka6yidRAzTHT3VE/9aTO397CPYWn9VH96I3uFftlVGEGO3oC01b+n4J3iZKc/vzpU7kcn/GRrjIlVnRDOjM1KmUt/LXZ2r1AfHGq6zU2Ks6dUIH2jsmxlGEI1ugCcf0tSe14f36/+0ZaGkMUUbCZ8VGMPn4dZHkdnaDriK/NnfLtNE0F7bP7aD8nUUZSzrPCzL1oRiNT879hf3FqP8nnqKmAb312/w60yLHFbFkM7XUeyPEBjD+YaaqAbpicuG42ynfaQ/1QIlRwjTbTA8kgeh6Iey8BE3xRXrFcDesjb6yKN9J6XCw4rWdniBUpXt96NkcLNfTMIdXr9UvhNHq7ChYdrTCYV+XERDpHw/vSsiOMFM+yHLrZHn6+FMpnVg+LflEqx9xGgTzPRVAtN+98HFB4fv/lUyHWuNaXdsN2JqSguxBw6uziXLia0wxqsMhixKkqtAxYRLDE0JzEaoniI22Nv3X0n6TqQhbTDa+DReNkprKncVn1Bk6tGiqof+ftsu1tBb2opN7AOO4w0edop0leX2WKstCtCC4a3AnFmxEak+S+gbpFm+7G8SFdjz4uwn+s/i6kH5h5eYluf2AKqBb73I46bacKesKG4oG5zrSmwAd99yLiyEkXHy5Fcj8B2d66IQ==
+sidebar_class_name: "post api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Deploy Cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaboration-spaces/{spaceId}/deploy"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Starts a confidential cluster if necessary and deploys the version of the algorithm as configured in the collaboration space model.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space for which to deploy a cage."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Request executed successfully"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

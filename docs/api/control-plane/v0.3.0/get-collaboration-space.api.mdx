@@ -1,0 +1,72 @@
+---
+id: get-collaboration-space
+title: "Get Collaboration Space"
+description: "Get a collaboration space by ID. Allowed if the client either owns it or is a collaborator."
+sidebar_label: "Get Collaboration Space"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWEtv4zYQ/isDnlpAdtJi0YNQFDCSduECbYPNLnpIjWYsjSVuKJJLUs4ahv57MZQfkqykzqLdQ7sn2+RwHt98MzRnK4wlh0EaPc9FKl5TuDJK4dK0i7cWMxKJ+DgxBenJQXhSOFNbkYpTaS8SEbDwIr3r78Jue5GInHzmpOXV1iggZD1Zz7Kw3MD8egozpcwj5SBXEEqCTEnSAUiGkhyYR+1BBjAOpO/pMW76hxaJsOiwokCOfdoKyTYthlIkQmNFIhXR2jwXifBZSRWKdCvCxsat4KQuRJMIRx9q6SgXaXA1DYN4WxLMr8G0LrIs+UD5WFhT0SxYnbdGe/Js7NvLS/44VVmZnNRe66iuRGRGB9KBFaC1SmZx/+K9Zy3bTkio1G+riMEuOLN8T1lgiBynNsjWmxaVEQgyDFQYtxnZbBIRZFC8NFv64DAbY1KT/J1tmY9b7mTVdyTQOdyIRMhAlT+F8KpzTCTPANA/to8ABuf7rrY8nI87PI7hiSFgOSjkmvQgxcZN4W0pPaxR1cTclpzmnHIIBpbMMcy5Qsq6Qu2ZCPQRKxtT8Mum73qTCIVLUud4FAU/wSVHK3LtV6khMzn1fao2k2zgU2b0ShZ1y5DT7M2gJ3BaBgeHuPI1tNkER9aRJx2kLuCBNpPWXYvSeQglBniUSjGEuEapcKmIPY6qsSBAD6TX0hldcZ9Zo5MsEyEe8gbzXLJvqG563BhWR5OIXHJsldQx+nS7Z9Pm17YJOaO41VZoLZ9Jt+LK5HTjzFrm5DpKD8Z3XXnXxHrSw7TemoqMJngsDdhWyMccnbA6ujFCk2Mie4aaRHgKDLUfc7Gvu+fTKEje1C6jMU3H9nsnHBXSBxcLv8KC2iuHb5ZBLHu5sQptT47tsK6xdU+Zo3BODbWM63GNS8VZR3wpYKTrnB24qZW6jXqnMNOwQxkeTa3ySFEoZCjrJWCWkfcQzEOsSwxQspoAitCHyF6fGUtwbzF7wIJ8yh3iPoElevruFZDmfEfj97Unx7RJo7r7KcxXoM2xrncUyXlx4OYhoNpTDo8lacjJKrPhatvX0JSz2bkSus3ojVE0pNA1Bjyf6T3ps5jOJz6B6T1D/yjTn8FmaJR/Xxnt6+pcbA7Sz2GTtUIe8k/H5mDoc2JzNMqSRtMTV/qX7vilO/4nuuOXdvhCMP4v/W/x3JvLjKN1xmur6bcTye/iw1tn0bXatzZ6MKbliUPHZ2E8++rym9M3wDtP8WGvTQCsQ8l/6/kZmr/k4fs8COSccX9W5P14yxuE1Rdf7H1/der7G2obdnR+ZWr9+Zxm5q+wVoGZarI6vmSObpwRU8NkD6S9NLodnDzQRqRPjYISEdvjEyMhzn9FoTQ8ZCoohsMTmFRc9IYakzjU8Bfb3USm4ZEMufV+dlM7JVJRhmB9enHxPWPpjJpYhZomaOUP0ZKnrHYybOKRJaEjN6vZ2t2iu33LULdodoUOULKZ/UiIf7dCItl9+cm4Chnfn39/GwGVemXi8QPRo3c37BzMbuaMETnfckNhIB+4cVjjQ4X6OHiJA7GR0dmwnW2PXPrXZ2g7SAJ9DBdWodTseczGdpfJOzGWSZGIdD9dWySiND6w6HbL1+47p5qGlz/UxH9D7hbMova1HXOXS8/fc5GuUPnhzK0b/1dvdmz+Gl40iXsisv10SW86xBbJrgT2ATWLJhElYXy0HApklmVkQ+fcSZn3quH1j8yevwC3h5PU
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Collaboration Space"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaboration-spaces/{spaceId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a collaboration space by ID. Allowed if the client either owns it or is a collaborator.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaboration space."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The model of the collaboration space.","content":{"application/json":{"schema":{"allOf":[{"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"}},"title":"AbstractCollaborationSpace"},{"type":"object","properties":{"id":{"type":"string"},"collaborators":{"type":"array","items":{"description":"Collaborator","allOf":[{"type":"object","description":"Abstract Collaborator","properties":{"clientId":{"type":"string"},"name":{"type":"string","description":"A name given the collaborator. This value is intended to be read by humans.","example":"My Collaborator"},"label":{"type":"string","description":"A label given the collaborator. This value is intended to refered to in code.","example":"my-collaborator"},"configuration":{"description":"A configuration of the collaborator. This is an object representing key-value pairs that will be available in the cage as environment variables.","type":"object","additionalProperties":{"type":"string"}}},"discriminator":{"propertyName":"role","mapping":{"CodeProvider":{"type":"object","x-ogen-name":"CodeProvider","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}},"source":{"type":"object","required":["registry","image","tag"],"properties":{"registry":{"type":"string"},"image":{"type":"string"},"tag":{"type":"string"},"secret":{"type":"string","description":"A value that will be interpreted as an ImagePullSecret. An example would be a github access token that has at least the scope `packages:read`, base64 encoded as `username:token`. If no value is provided no ImagePullSecret will be used when deploying the cage."}}}},"title":"CollaboratorRoleCodeProvider"},"DataProvider":{"type":"object","x-ogen-name":"DataProvider","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataProvider"},"DataConsumer":{"type":"object","x-ogen-name":"DataConsumer","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataConsumer"}}},"oneOf":[{"type":"object","x-ogen-name":"CodeProvider","description":"Someone who provides code","properties":{"role":{"type":"string","example":"CodeProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}},"source":{"type":"object","required":["registry","image","tag"],"properties":{"registry":{"type":"string"},"image":{"type":"string"},"tag":{"type":"string"},"secret":{"type":"string","description":"A value that will be interpreted as an ImagePullSecret. An example would be a github access token that has at least the scope `packages:read`, base64 encoded as `username:token`. If no value is provided no ImagePullSecret will be used when deploying the cage."}}}},"title":"CollaboratorRoleCodeProvider"},{"type":"object","x-ogen-name":"DataProvider","description":"Someone who provides Data","properties":{"role":{"type":"string","example":"DataProvider"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataProvider"},{"type":"object","x-ogen-name":"DataConsumer","description":"Someone who consumes data","properties":{"role":{"type":"string","example":"DataConsumer"},"settings":{"type":"object","properties":{"description":{"type":"string"}}}},"title":"CollaboratorRoleDataConsumer"}],"title":"AbstractCollaborator"},{"type":"object","properties":{"id":{"type":"string"}},"required":["id","clientId"]}],"title":"Collaborator"}}},"required":["id","name"]}],"title":"CollaborationSpace"}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

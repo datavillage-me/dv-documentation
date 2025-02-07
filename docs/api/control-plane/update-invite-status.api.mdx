@@ -1,0 +1,71 @@
+---
+id: update-invite-status
+title: "Update Status"
+description: "Update the status of an invite by ID."
+sidebar_label: "Update Status"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU12L2zAQ/Ctmn1pQ6lLuyZRCuKM0fTrugz4EUxR5E+tqSzrt6kgw/u9lbSfnNL1Sv9iWZlejmdkOfMCo2Xq3qqCAx1BpxpV7sYz3rDkRKNgv/A7d4oRc7KJPAQoYcQKpkEy0QXZPXTKuMaOhSea3mXaZHfDZ5pCtbj6AAtY7gmJ96lMqCDrqFhmjbHRgpV3QXIMCp1uEAsYmqwoUkKmx1VB0wIcge8TRuh30CiI+JxuxgoJjwr6UFQreEZLgP328ktc57Tt8Tkic4R5NYqwySsYg0TY1zUGaXv29inyKBjPnOdv65ISZ8Y7RsaB1CI01g3D5E0lJd0ncb57QMCgIUWRmO9LEGH382SKR3uHlPUX3rU4NQwE33qQWHc9o9Gc6rP/oVvbyKMA9oyPr3aj4LzxA8ZblCl50k3BmvSjbIte+Go0y4tRgWAH5aBXl3dGzPqdjqAjjy9HlFBsooGYOVOT5ZxEv+mYRGu1woYP9MhxDaFK0fBhKNqgjxmWSg9blfPtetB3lm4NO2skxx+zI/wgCNX189bHVIuj3Hw+DgtZt/VBuuRH89cjuVshly9uViIKRxjA0mpFYshI8casHt6fgTlNxGquzGHWvkfn/8RkvxLjnPDTaOjl30LKbLFhP0yLHFfPBGTmUCmpPLLiu22jCx9j0vSw/J4widCmOR6s3cvV1B5Ul+a6g2OqG8B+XeHc3Je999hbVaVG7wyxYoKYInuj2Za+gRl1hnCV0aQwGnhVezNlZNG+XD9ffoO9/A3gbtWQ=
+sidebar_class_name: "patch api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/invites/{inviteId}/status"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update the status of an invite by ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"inviteId","schema":{"type":"string"},"required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

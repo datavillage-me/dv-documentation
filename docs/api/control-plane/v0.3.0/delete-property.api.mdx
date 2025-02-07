@@ -1,0 +1,71 @@
+---
+id: delete-property
+title: "Delete Property"
+description: "Delete a property by ID. Allowed if the client owns the contract."
+sidebar_label: "Delete Property"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VVFr2zAQ/ivinjZQ4m70yYxBaDrI2EPpOvYQwlDsS6xOkVzp1CYY//dxtpM4TQojC3uyLZ1O33333ecKSC0DpFMYK1LixlnyKqMAMwnrgVuiHbgSvSLt7GDpXSwhbUL3kRJ2EZOcd9Eg4Z3nVdqAhBxD5nXJAbttoUTZRYj5RkzGQzEyxr1gLvRCUIEiMxotCfdiQ/vdXTgECaXyaoWEnpFXoDlvqagACVatEFLYRk9ykBCyAlcK0gpoU/JuIK/tEmoJHp+i9phDSj7ia6wPBYrJWLgWUc4MbROLlwI9Nuu7QjJlxRzFwkWbD6GWJ5G1YC6Jq00jtD3g6WyA2+hLQtwhICfyRgBDqGecI5TOBgx8w8era34c5rnHp4iBBK4xi4S5CDHLMIRFNGbDMK6vPhyf+hHQCx2EdSRUpAIt6UwRcklMEFriQ6osDa9rZ5PHwCer44rd/BEzYtW1RegWLXrv/K8VhqCWeIKgA4amr8JndV032E9WHFz0GTbgm1b9N9DcxIWKhnhOXRZXPIF7GH9RUy0B14Q2aGfb4fyNG0jf8hIJz8pEPPIU1sYKqXBsKK1gmrGnAlJIeBAHW52HpNoPe520TCTVdszqZM9AUu21XbO40T9vPSR6AykURGVIk+RTk9KZQWmUxYEq9ecGU8Asek2b5sgclUc/igxqOutvf+fLW8b7QTu6+ZrtcPF3GwSye/ni/EpxD77+fGhI13bhmuOaDMfftOjuGJwY3U2YR/Sh1Y9RhIF4NEoXaKUagXSz3ZnvW+Zc7XV2EZ/uyiVcU1IapS2japiuumZO4bCZICE95d0S0p5x9kQtIe0Z1kxC4QJx3qqaq4A/vKlrXn6K6LltM5ac12rORE4ryHXg9xzShTLhtY31CXl330n/vfin/8IbtHSLym56UwGym58eJ2zbF0B97l/jLPi73l0I/Kn/yVnAetqpZ7WEAlWOvmdcoyzDknpHj+z3wKvGt99uH26hrv8A7Vg98A==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Property"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/data-contracts/{contractId}/schema/{schemaId}/properties/{propertyId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a property by ID. Allowed if the client owns the contract.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"contractId","schema":{"type":"string"},"required":true,"description":"The ID of the data contract where the property can be found."},{"in":"path","name":"schemaId","schema":{"type":"string"},"required":true,"description":"The ID of the schema in the contract where the property can be found."},{"in":"path","name":"propertyId","schema":{"type":"string"},"required":true,"description":"The ID of the property to delete."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

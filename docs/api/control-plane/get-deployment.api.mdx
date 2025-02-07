@@ -1,0 +1,71 @@
+---
+id: get-deployment
+title: "Get Deployment"
+description: "Get information of the current deployment of the cage. An object is returned that contains the status of the deployment as well as the status of individual pods of the platform."
+sidebar_label: "Get Deployment"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVcFu4zYQ/RViTi0gx0ER9CAUBdKkXaSnYLNFD4awGEtjibsUySWHSQzB/14MZdlyYhc97KUny+QM+ebNm8cBnKeArJ19aKCED8T35I3b9mQZCnhduJbs4hC0aINLHkq4c8bg2o2rTx5rilBAQ7EO2svaeJjSduNCn6OU2yjuSNUpBLKsmsNFhx1s6UrdWuXWX6hmpaMKxClYahR3yKp2llHbmKMjI6c45c5Ow6heyBj5PY3TttHPuklolHfNIdUbZEF5BQUwthHKFdxhSxGqAjwG7IkpyPIAWgrzyB0UYLEnKCFK9Q8NFBDrjnqEcgDe+rzFQdsWdgUE+pZ0oAZKDoneMvWpI/Vwf6Bhzq3KxyuM0dUamRr1ornbx9mNbsiyRqNqkyJTuIJdJbdF72ykKFh+ur6WH+FOmloOgN4bXefjl1+iIBjeYx97AAX4IO1nPZ42svm+xgLIpl6oGztBQsgGtckfnmwzRvU6xvEr2a/WvViodgVIO2ZnYgi4hQI0Ux/PYTrSuRrbUEzACtA9ttKP6i30sV9nmnOppsPW56htfSa3gFHdUEKDTAvWPUnWHsJ/KWm6arcrgDUbWXt0zdMIKS/Pi91DrY7Bs3nN0R1hk9U6wJNuLXIKGfmp4n7DSD/fKLK1k8ZM0puEo9au2aqoWxm99XacI6oDserRYkvhpAkbNJH+Rf8Z2M31zXscHym6FGpS1rHauGRFLd9JqhSCC597ihHbs81raIPJSPfuXZ2ydxxhvGX+9LRqNxZFr0w2amdHe/hKWygvuWYBz2gSXXBPmdueuHPiwy3lcsRnSlieGMIiG0JcDnvf2S2buWNHCs+TWaVgoISO2cdyufxFaA3OLLxBSwv0+td8aaQ6Bc3bnLImDBRuk1y8qubbT8L6SOw86MCqXDN5oPwfg6DYf/wxDcqff3/K3MrLkNP3Or4b0T0KOHX7+CB0UYijTAwyRYbsFJF7tMd5zs/MyaN1orCZ8f0/H6SRXaZXXnqD2goJubHDXh8rOKcPKKA8vkwziVQFdC6y5A3DGiP9FcxuJ8vfEgVRQSVCDRrX0pfVAI2O8n2c84sE//BxPzA/qu/5pF1gYXJWu52NFhT7IZyK31UHU5yN6G1dk+dZ3jujOZnHD7+LaP8BP384MQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Deployment"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaboration-spaces/{spaceId}/deployment"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get information of the current deployment of the cage. An object is returned that contains the status of the deployment as well as the status of individual pods of the platform.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space associated with the confidential cluster."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","enum":["deployed","failed","pending","missing","unknown"]},"pods":{"type":"array","items":{"type":"object","required":["name","status","imageId"],"properties":{"name":{"type":"string"},"status":{"type":"string"},"status_since":{"type":"string","format":"date-time"},"imageIds":{"type":"array","items":{"type":"string"}}},"title":"PodStatus"}}},"required":["status"],"title":"Deployment"}}},"headers":{"Signature":{"description":"Base64 encoding of the response body signed by the secret manager","required":false,"schema":{"type":"string"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

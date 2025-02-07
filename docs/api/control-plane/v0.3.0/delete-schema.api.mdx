@@ -1,0 +1,71 @@
+---
+id: delete-schema
+title: "Delete Schema"
+description: "Delete a schema by ID. Allowed if the client owns the contract."
+sidebar_label: "Delete Schema"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VN9r2zAQ/lfEPW2g1t3okxmD0HSQsYfSdewhhKHIl1qdLLnSqW0w/t/HyU6aNBmMrezJlu6Hvvvuu+uA1G2Ecg5TRUpceEdBaYqwkOBbDIqMd7MKSpiiRcKvusZGgYQKow6mZfPWKJSI2S6WazGbnoqJtf4RK2FWgmoU2hp0JPyji8N5fO0UJLQqqAYJA4PpwHDWVlENEpxqEErYeM8qkDC8A2UHtG7ZGikYdwu9hID3yQSsoKSQ8CXSmxrFbCr8gKjiojeJxWONAfP9WIZWTixRrHxy1Sn08iiuwfc1UY2vkxdV5vUU+gVniK13ESPnf392zp/9LNd4nzCSwCfUibASMWmNMa6StWsGcX727jDqW8QgTBTOk1CJanRktCLkgpgadMRBqm0t3xvvirvIkd1hvX55h5q4nYHVQ2ZAiyH48KPBGNUtHqFnj5/5C/dF3/cZ+9GKo09BYwaf2/TfQHMLVypZYvl7nRqW9jOMP6ipl9Ag1Z6na2h0ngOqoYSClXmyUWYsumf198VQQdFtlNez9DA8bIYnBQsl1ERtLIviQw719qS1yuGJas3HrKeIOgVD6xyyRBUwTBI/Pl/smvPED4zsOm3p4Gc20ufz4ARy/PnkQ6OYo8/fbzIpxq18Djdk2f9iQHfF4MTkagYSuJChv1YRRmLptj5So3IDx7kbd87xjdQ9q+AVltNYKuETFa1VxjGizHI3NmwO+w0DCeWxhSWh3O6LhYTaR+LgrluqiN+C7Xu+vk8YuC8LCQ8qGLVkpuYdVCbyfwXlStn4covs1vzmetTeW/EPG+83lY+Xyq25WcomPoGEn7je39O8MV8B8+E+/CtgW+L7RS+hRlVhyLQO5onW2NJO4MHy4LHYTuz08svlzSX0/S/K6oAx
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Schema"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/data-contracts/{contractId}/schema/{schemaId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a schema by ID. Allowed if the client owns the contract.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"contractId","schema":{"type":"string"},"required":true,"description":"The ID of the data contract where the schema can be found."},{"in":"path","name":"schemaId","schema":{"type":"string"},"required":true,"description":"The ID of the schema to delete."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
