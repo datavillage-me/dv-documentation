@@ -1,0 +1,71 @@
+---
+id: delete-cage
+title: "Delete Cage"
+description: "Shut down the confidential cluster running the algorithm of a collaboration space."
+sidebar_label: "Delete Cage"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsCTxvgLN3QkzEMKNoOyLBD0Q/sEASDIjOxOllyRapNYPi/D5TdNmlaYIdtJ8syaT4+vscOQotRsw1+VkEJZ+iQ8VSvEQrYTMIa/eQpYrKOIbVQwmlwTi/DcHvVaoMEBbBeE5RzkGyCRQEVkom2lSAo4apOrKrw4BXXqEzwK1uhZ6udMi4RY1QxeW/9Ogdotw7Rct2osFJamd2SiqTmByig1VE3yBilcgdWCrWaayjA6wahhBw6q6AAMjU2GsoOeNvmTxytX0NfQMS7ZCNWUHJM+BL5dY1qdiY4BuQHSJQmCsZqxko9WK5zHEdpqlLo720MvkHPH6BfSDFqgyckgfLp6Fge+wUv8S4hscINmiT/oGQMEq2Sc1vBe3z08TDrhjAqS8oHVjpxLeQawQQFmOAZPUuSblsn9zb46S1JZndITVjeomEhOMr42Q5oMcYQfzZIJAo5ZHKPyvmL8EXf9xn7qx1TSNFgBr8Kyf8/0DLtlU6ORf7BJBnUDow/6KkvADeMnmzwgw5/4RbKt/xTwL12Cd/wkSikQa6D2LHKdsw65xpKmO6Jb5LFR9Nu1Hg/NYNxCeP9oyVSdFBCzdxSOZ1+Fk5jcJPWaY8T3dovuSKhSdHyNqcsUUeMJ0lKzhe7n6+E8oHV3aAnSqXMo9PkfQiCYjx8DbHRwvO3H9eZWOtXIadbdgMhGd2FgFMnFzPhCiMNGnGakVjk3wbiRmcRjC4f9pYaF9eetrpnHf2bHTT2zrjhaeu09QIx096Nc5vDa3ODAsrn7ZRHtyigDsSS0XVLTXgTXd/L9V3CKNNZiHqi1Uvha95BZUnOFZQr7ejl6trt/d3lqOL36i8utDfaHy+13+7IHYrRGI9d94u+gBp1hXHHNifGYMs7eQfm3/PI2fn38+tz6PvfJGNjPA==
+sidebar_class_name: "delete api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Cage"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/collaboration-spaces/{spaceId}/cage"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Shut down the confidential cluster running the algorithm of a collaboration space.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space associated with the trusted environment."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

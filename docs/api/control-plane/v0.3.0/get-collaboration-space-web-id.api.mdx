@@ -1,0 +1,71 @@
+---
+id: get-collaboration-space-web-id
+title: "Get WebId Document"
+description: "Get the turtle document describing the collaboration space as an agent in a Solid eco-system. The URI serves as WebID of the agent."
+sidebar_label: "Get WebId Document"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU1v4zYQ/SvE9NICsuSmOamLoMFuu0jbQ5BkkYNjFCNqJHNDkVySiu0a+u/FUHJs5wM99NKTZXI+37x53EEg2XsVt1AulhlYRx6jsuaqhhI+U/xotcbKjoe3DiXdU3VVQwabmW3JzJ49Zq23vYMS7knrP4xdG8ggYhugXMB1X2klYZlBTUF65dhjzCDiikTsfdQkaiv7jkwUo1WlTJuu5XEVInAZAoNAI7Blc2UEilurVS1I2lnYhkhdLu5WJL7cXIlA/okCe3Dxn4RtUtTkm0MGDj12FMlzrTtQXJnDuIIMDHYEJaSUqe0gV9QhlDuIW5euolemhSEDT9965amGMvqeXrbKxRxyv91RsFJhpFqsVVwlu1RwDsOSwwdnTaDAyc/mc/55nSKN5wCktKaxvkuxRoCCI6kaJVPmkDE4CrX6m2qGcRoE+2DCRloTycTUMG1iMRrw3/eQyIA22Dk2gl+cp0ZtRGOxKcWHVYyuLIpNp03Ipe0KPi/m+Y/FRf5g9saB6zxYr9frfP1Tbn1bmFCkyyKS78J3J06PNrzpczafnxfzs4INCmk9JbcHk0xDWRToVN4+Ul5jxCelNbaUd1Tka9J69shELk6mNUvTCgVWsi7WVKn64sEIgWOTl4mQP/PJ2IdVtbwKoScvhHhOmu5mqnYv0l5MrtwNd/YnVqTFA9xRiG+R5gGSfUqtbWsPGaRWTO9pFgVf5s60Fwf7le3IYUvv+jBQMAzDkMH5/Pw1324o2N5LEsZG0dje1KeEQef0RLTia2CXN1hjq68kI2+hZy2JaiQ4eW/9Xx2FgC29RbKaGux1hBI+7cl+KGM4WcfFi2jLYWyKNpFM4DVIe/9IWyjf07UMnlD3dKJvvJUdxZVlsWwpNcGyUcK/s2c3ScowUoiVhVVqkqDeayhhP5YPjKm3euY0GpqhUxcp9167bxnTEbaK0JO/7LmKZ8w4zl66+P9oBNn08Vtadijh9/u7hJwyjU3uKq06fBzTX3N2cXl9xWCQDyMJNEYKkfXP2RA7TFOeZJPlfRSk/YzghSzuDnz5nzwGE2ZJ7JxGZbi1NI/dNN0FHE03Mf71fCGD8vBojCNeZrCyIXKA3a7CQF+8HgY+/taTn17gJ/QKK4Z9sYNaBf6uoWxQh5dPyjF2399MbP9B/KeH5p3+p0M026NFgGxamX2jw3LIYEVYkz9aqEspycUjv+N35GSFPv/K/PsHXjD8Eg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/control-plane/v0.3.0/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get WebId Document"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/.well-known/collaboration-spaces/{spaceId}/webid"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the turtle document describing the collaboration space as an agent in a Solid eco-system. The URI serves as WebID of the agent.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the collaboration space associated with the WebID."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The WebId document conform the Solid specifications, serialized in turtle format.","content":{"text/turtle":{"schema":{"type":"string","example":"@prefix foaf: <http://xmlns.com/foaf/0.1/>.\n@prefix solid: <http://www.w3.org/ns/solid/terms#>.\n@prefix skos: <http://www.w3.org/2004/02/skos/core#>.\n\n<https://api.gke.datavillage.me/.well-known/collaboration-spaces/abcd/webid>\n  a foaf:Agent ;\n  solid:oidcIssuer   <https://solid-idp.datavillage.me> ;\n  skos:prefLabel \"Test collaboration space\";\n  foaf:logo <https://client.example/logo.png>;\n  foaf:homepage <https://client.example/>.\n"}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
