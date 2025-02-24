@@ -1,11 +1,11 @@
 ---
 id: update-invite-status
 title: "Update Status"
-description: "Update the status of an invite by ID."
+description: "Update the status of an invite by ID. Only allowed for the invitee."
 sidebar_label: "Update Status"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU12L2zAQ/Ctmn1pQ6lLuyZRCuKM0fTrugz4EUxR5E+tqSzrt6kgw/u9lbSfnNL1Sv9iWZlejmdkOfMCo2Xq3qqCAx1BpxpV7sYz3rDkRKNgv/A7d4oRc7KJPAQoYcQKpkEy0QXZPXTKuMaOhSea3mXaZHfDZ5pCtbj6AAtY7gmJ96lMqCDrqFhmjbHRgpV3QXIMCp1uEAsYmqwoUkKmx1VB0wIcge8TRuh30CiI+JxuxgoJjwr6UFQreEZLgP328ktc57Tt8Tkic4R5NYqwySsYg0TY1zUGaXv29inyKBjPnOdv65ISZ8Y7RsaB1CI01g3D5E0lJd0ncb57QMCgIUWRmO9LEGH382SKR3uHlPUX3rU4NQwE33qQWHc9o9Gc6rP/oVvbyKMA9oyPr3aj4LzxA8ZblCl50k3BmvSjbIte+Go0y4tRgWAH5aBXl3dGzPqdjqAjjy9HlFBsooGYOVOT5ZxEv+mYRGu1woYP9MhxDaFK0fBhKNqgjxmWSg9blfPtetB3lm4NO2skxx+zI/wgCNX189bHVIuj3Hw+DgtZt/VBuuRH89cjuVshly9uViIKRxjA0mpFYshI8casHt6fgTlNxGquzGHWvkfn/8RkvxLjnPDTaOjl30LKbLFhP0yLHFfPBGTmUCmpPLLiu22jCx9j0vSw/J4widCmOR6s3cvV1B5Ul+a6g2OqG8B+XeHc3Je999hbVaVG7wyxYoKYInuj2Za+gRl1hnCV0aQwGnhVezNlZNG+XD9ffoO9/A3gbtWQ=
+api: eJy9VcGO2zYQ/RViTi1Ax0G7J6EosN20qHvpYrNBD4YR0OLYYkqRDDnctSHo34shZVtbJ0EOQXSSqTfDN2/mjQfwAaMi491KQwPvglaEK/dkCN+SopxAwmHh9+gWZ+RiH30O0EDFMURjaqMJ/PWcRVCHIpUkwu+EcsIUvNgexerNK/G3s0ehrPXPqMXOx4KvEHwFEkjtEzTr8y0bCUFF1SNh5A8DGL4sKOpAglM9QgM1fqVBQmo77BU0A9Ax8LdE0bg9jBIifswmooaGYsZxU08w0W9eHzniZT2PHYqIKXiXUJC/EC1yMNeXCSW03hE64lQqBGvaglx+SJxvuKbmtx+wJZAQIstMBlPB1RZclSABXe5ZHNW2GAh16UFrjUMNm7E8zKpyLhl+en1zXdlDLVvgAdtMqEXKbYsp7bK1R1bq5vXP11G3mTp0xFWhFjlhFNpjEs6T6NQTClWSwDfTAWP08X2PKak9fqKjL1q6/h98U8W4+XT9yefYYqG+89np70aaG7ZT2RI08Ma3uUdHMxpfUdMoAQ+ELhnvqiH+xSM0n/OrhCdlM858y4PfI3VeVx+1bKTipwaW1UlpOZwsNS7TaSMkjE8nE+ZooYGOKKRmufyFxYveLoJVDhcqmF/LNQnbHA0dS8gWVcTIUwTNejP//Ja1rfLNQWft+JqTtfl3BYGcXv7wsVcs6F//PBYFuWcPF2v/flB9sDi31sVBowTjdr7cZohRcFeLuedaxO39ijXEmOrsWEWYiMOCT9SrMhzTGpo24HmFvpi64TJh32pVVnUID7QMVhnHrEpjhqmf62kzMplmviQrw42Ezidi3DBsVcJ30Y4jH3/MGLlrGx6faNSWhVkPoE3idw3NTtmEXyjxh4dpjH8Un6M6HSp3nE0pyGmez3THzSihQ6Uxzsb9rt60eOQkl/Ar647yFHFbWv5F7NwZ97ePd3/yjE1/Dr3XHBTVM29+9Vy5+lJ6Gd1yNoBVbp+L96Em5ec/2KeYLA==
 sidebar_class_name: "patch api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Update the status of an invite by ID.
+Update the status of an invite by ID. Only allowed for the invitee.
 
 <Heading
   id={"request"}
@@ -54,7 +54,7 @@ Update the status of an invite by ID.
 
 <RequestSchema
   title={"Body"}
-  body={undefined}
+  body={{"description":"The response to the invitation.","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","enum":["accepted","declined"]}}}}}}}
 >
   
 </RequestSchema>
@@ -62,7 +62,7 @@ Update the status of an invite by ID.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"204":{"description":"Request executed successfully"},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"204":{"description":"Request executed successfully"},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

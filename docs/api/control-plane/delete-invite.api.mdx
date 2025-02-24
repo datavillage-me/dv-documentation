@@ -1,11 +1,11 @@
 ---
 id: delete-invite
 title: "Delete Invite"
-description: "Delete an invite by ID."
+description: "Delete an invite by ID. Only allowed for the creator of the invite."
 sidebar_label: "Delete Invite"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9lE1r3DAQhv+KmVML2m5acjKlEJoUtvQQ0oQeFlO09uxaqSwpmlHYxfi/l7G9rrf5oKeeLGtmpHdeP+MWfMCo2Xi3qiCHS7TIuHKPhhEU7Bd+h24x5Sx20acAOQwZBAoqpDKaINGpPtMuM31Gtjlkq8t3oID1jiBfT5WFgqCjbpAxSqAFIwcEzTUocLpByGE4ZFWBAiprbDTkLfAhSIw4GreDTkHEh2QiVpBzTNgVskPBO0KS/A9n5/I4FXqDDwmJM9xjmRirjFJZItE2WXuQQ8/P3j+tuiOMmaHMec504hodm1IzisDSO0bHUqRDsLJvvFvek1S2T/X7zT2WDApCFH/ZDGoxRh9/Nkikd/hMuyf9rv9KL7qu67U/2zH5FEvsxW99cv9PtFCy1cmyEOLL1KDjmYx/6KlTgHtGR8a7gZZfeID8JUAVPGqbcAaqUNEg114or3pKpQuhLYflwBkt2yNwnRCH8fHIZooWcqiZA+XL5UexLXq7CFY7XOhgPvUXEJYpGj70JRvUEeNFkhvWxTz8XVwdjJsnTa7JNUfi5X1IAjUuvvjYaLHy64/b3jvjtr4vN2wl//Og7lrEZRfXK7EDIw0YWM1ILIQHT9zo/juP4zZO7zT+JwC1f2B5bcyHFhj3vAxWGyc39e61o9vrcarl55FPA14oqD2xhNt2ownvou062X5IGMXRQj5qNHojPa5bqAzJuoJ8qy3hK2rf3Ixwvc1eUjhuaneYsQNqpGxS2RWdghp1hXEG4UVZYuBZ4ZNROqHv8urb1e0VdN1vFD3mFw==
+api: eJzNVFFr2zAQ/ivinjZwmm7rkxmFsnaQMVjpWvYQwlDsS6xOltTTKUsw/u/jbDdzlnbsYYw92ZburO/79H3XgA9Imo13sxJyuESLjDO3MYyQwXbi1+gm+5rJmnwKkENfESGDEmNBJsjuvl9pp0xXoZY7Nbs8UZ+c3Sltrf+OpVp5UlyhKgg1e1J+1X32HSeQAet1hHy+P2WRQdCka2Qk2WjAyGFBcwUZOF0j5NC3z0rIIBYV1hryBngXZC8yGbeGNgPCh2QIS8iZErYLWYnBu4hR6l+fnsnjkNQNPiSMrHCLRWIsVUxFgTGukrU7+enZ6avjrruIpExUzrPSiSt0bArNKAAL7xgdS5MOwcq68W56H6WzOcbvl/dYMGQQSO6CTY8WiTx9rTFGvcYn6B7wnf9SvmjbtsP+5hj7xRivSsKk9NhzqfQGle4E+N+YPHl30ScqsIO+8sn9O/klGyudLEsufJFqdDyC8Qec2gxwy+ii8a73/TfcQf5cLDPYaJtwFE/xd41cecl22WVTWEhucpj2iYnT5jE6rWQHafOYskQWcqiYQ8yn07ciG3k7CVY7nOhgzrsDIhaJDO+6liVqQhL/QD5fjLc/i6q9cOOivWpyzGN25bsvgmx4ee+p1iLlhy+3nXbGrXzXbthK/bse3bWAUxfXM5EDKfY2sJoxsmQ1+Mi17u55GBzDzNoPvQMDNT/N8reGW0+XccvTYLVxgqpTuhluZj7MMslXvh9riwwqH1m2m2apI96RbVtZfkhIov5CDEBGL0WPeQOlifJeQr7SNuJvmL24GYz4Uj2HcFjUbjfyGWSDI/co20WbQYW6RBoZ9qIoMPCo8Sh2B069vPp4dXsFbfsD7H5N+A==
 sidebar_class_name: "delete api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Delete an invite by ID.
+Delete an invite by ID. Only allowed for the creator of the invite.
 
 <Heading
   id={"request"}
@@ -62,7 +62,7 @@ Delete an invite by ID.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

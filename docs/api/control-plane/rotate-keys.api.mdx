@@ -5,7 +5,7 @@ description: "Rotates the keys of the secret manager supporting the space."
 sidebar_label: "Rotate keys"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VE1r3DAQ/StiTi14u2nJyZRCSChse2jIBz0sS9HKs2slsqRoRmEX4/9exnYSZ5NAaaEny9KM9N6bN9NCiJg02+AXFZRwEVgzfsc9QQG7Wdiinz1GzLYp5AglnAbn9DoMu5dRG5Rw1luCcgmneosEqwIqJJNslKDHq0lxjeoW96TCpl8TmoSsGu31FpOiHGNIbP12OJXbP0ABUSfdIGOSN1qwcmXUXEMBXjcIJfShiwoKIFNjo6FsgfexP+Jk/Ra6AhLeZZuwgpJTxkOMVzWqxdkDMjOlOSBRHFStfeWwj8B79PwBupVcTDF4QpJnPx0dyedAALzLSKxwhyYzVoqyMUi0yc7tBdvx0ceXWdeESVlSPrDSmWv0bI1mFJ4meEbPkqRjdLJvg5/fkGS2L2UI6xs0LGImKSrbAS2mFNKvBon0Fl9R7Zlsy4PwVdd1Pfbj1xhTyMlgD34Tsv9/oKWyG50dQwlnweQGPU9g/AGnrgDcMXqywQ+eu8U9lG91RQH32mV8ozvEIQ1yHaTJYqCej7i3hPkzm816m9G8Hd3czW+HZiRM9w/mz8lBCTVzpHI+/yyKpuBm0WmPMx3tl/49QpOT5X2fskadMJ1keXK5mh5fiuCDptOgR0HlmYeekv8hCIpx8TWkRovK335e9bJavwl9umU3yNGjOxdw6uR8IUphosEhTkYCi/lFlEb3Fhj7eRgYauT/zFntk4v+da6MLBl3PI9OWy9geoHbsUJLeK1CUED5NHF6kKsCailtuYS2XWvC6+S6TrbvMiapw0pckqxeizLLFipLsq6g3GhHh+NoyvLdxejW9+ovh9QbVMdN7fcTCw+MJjO1W3UF1KgrTJNWODEGI0/yXjT0M9+f/7gUi/wGeMZBhg==
+api: eJzNVd9r2zAQ/lfEPW3gLN3WJzMGpWWQ7WGlP9hDCONiX2y1tqRKp5Bg/L+Pk9PWSVoYG4w9RZHupO/77rtzB9aRR9bWzErI4coyMn2jbYAMNhNbkZk8RUwqb6ODHM5t0+DSDrvXDguScMYqQD6Hc6wowCKDkkLhtZOgp6uD4prUPW2Dsqu0DlR4YtWiwYq8CtE561mbajiV299BBg49tsTk5Y0OtFzpkGvIwGBLkEMKnZWQQShqahHyDnjr0hF7bSroM/D0ELWnEnL2kQ4x3tSkZhePyIoxzQGJYqtqNGVDKYLWZPgd9Au5ODhrAgV59sPJifwcCEAPkQIr2lARmUoVYlFQCKvYNFvBdnry/jjrNpBXOihjWWHkmgzrApmEZ2ENk2FJQuca2dfWTO+CZHbHMtjlHRUsYnopKusBLXlv/c+WQsCKXlBtT7b5Qfii7/uE/eMx9rMxXhWFSWlp4FLjmhQmAf43Jqcv1S7Y6AtK0Fc2mn8nv3h0hbFhyOHCFrElwyMYv8Gpz4A2TCZoa4buuact5K/1dwZrbCK90ufi9Za4tjIunA2Jj/RhDtO9hpmkhgnTbteX/fR+GCuB/PqxjaNvIIea2YV8Ov0kinrbTFyDhibo9Of0XqAies3blLIk9OTFWpDPF+PjaxF80HQc9CSoPPM4HeT/EATZbvHF+hZF5a8/bpKs2qxsStfcDHIkdJcCTp1dzkQp8mFwSCPDjaWNRZQWkwV2k2kYfWrHf89Z3bOL/nZC7lgybXjqGtRGwCSBu12F5vBShSCD/Hl2JpCLDGopbT6HrltioFvf9L1sP0TyUoeFuMRrXIoy8w5KHWRdQr7CJhwO1jHLN1c7t75VfzhuX6G620SzHVl4YDT6OvSLPoOasCQ/aoWzoiDHo7yjht7z/eX3a7HIL3/Jia4=
 sidebar_class_name: "post api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Rotates the keys of the secret manager supporting the space.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

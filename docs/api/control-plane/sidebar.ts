@@ -140,6 +140,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/control-plane/get-transport-key",
+          label: "GetTransportKey",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "api/control-plane/store-secret",
           label: "Store secret",
           className: "api-method put",
@@ -162,7 +168,7 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/create-invites",
+          id: "api/control-plane/create-invite",
           label: "Invite Collaborator",
           className: "api-method post",
         },
@@ -174,21 +180,9 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/update-invite",
-          label: "Update Invite",
-          className: "api-method patch",
-        },
-        {
-          type: "doc",
           id: "api/control-plane/delete-invite",
           label: "Delete Invite",
           className: "api-method delete",
-        },
-        {
-          type: "doc",
-          id: "api/control-plane/get-invite-status",
-          label: "Get Status",
-          className: "api-method get",
         },
         {
           type: "doc",
