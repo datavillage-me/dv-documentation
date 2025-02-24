@@ -5,7 +5,7 @@ description: "Delete a collaborator by ID. Allowed if the client owns the collab
 sidebar_label: "Delete Collaborator"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VN9r2zAQ/lfEPW3g1N3okxmDsHSQsYfSH+whhKHYl1idLKnSqW0w/t/HOW5jOwmMUvYUR7o7fffd910N1qGXpKyZF5DBDDUSfrNay5X1kqyHBJ4ndoNm8ho52XgbHWSwj1PW3DiZY4AESG4CZIvhreiulwkUGHKvHJ++viikyHuPitVWzGdnYqq1fcJCqLWgEkWuFRoS9smE3f9eyhkk4KSXFRJ6fr8GxfWdpBISMLJCyCAwinkBCYS8xEpCVgNtXXtFXpkNNAl4fIjKYwEZ+YhjwLclivlM2PUIAjfZlj+8YnRNchRQP+g9cXEsBsJiDGPJdYKzJmDgVz6fX/DPsNb1LlvgM+aRi4SY5xjCOmq9ZSgX558Os+4CeqGCMJaEjFSiIZVLQm4rt4bQECdJ5zSfK2vS+8CZ9WHXdnWPOfFMPeuO1A4tem/97wpDkBs8QtKApcUofNk0TYv9aMfBRp9jC35to/l/oHmQaxk1sRtsHivW+B7GP/TUJIDPhCYoa3bS/4NbyE4ZN4FHqSOeMDArpEIqLe+DonVnay0qIYN0oPdJq/eQ1p2tmrQvtpDWQ3U3LG/0jy/+jF5DBiWRC1mafmG2vdUTp6XBiXTqa4slYB69om2bskLp0U8jg1ks+9c3PIwd3/2gV7L5mRd78f9dECTdx3frK8kT+PHrtqVcmbVt0xXpHVUtuisGJ6ZXc2YRfdipR0vCQGwMZwNVspVH5/BuwY126kB99V5p77oPu9YJnyl1WirDCFvW626gCzg2UEgg22/KwUz5arSzlgmUNhAXq+uVDHjnddPw8UNEz3NbsuK8kitmclFDoQJ/F5CtpQ7jTdZn48N1p/yP4o179wQL3aE0254dIOmM89I8L+13AHtqGb8J24j9ZtkkUKIs0PecP81zdNRLP9hfA5vPLn9e3l5C0/wFK5nSIg==
+api: eJzNVd9r2zAQ/lfEPW3g1N3WJzMGYekgYw+lP9hDCEORL7E6WXKlc5tg/L+Ps93GdhIYpYw9xZHupO++u+9TBa5AL0k7O08hgRkaJPzqjJEr5yU5DxFsJ26DdvISOdl4VxaQwD5OO3tTSIUBIiC5CZAshrui215GkGJQXhe8+nKjkEL1LhWrnZjPzsTUGPeEqdBrQRkKZTRaEu7JhvZ/L+UMIiiklzkSer6/As3nF5IyiMDKHCGBwCjmKUQQVIa5hKQC2hXNFnltN1BH4PGh1B5TSMiXOAZ8m6GYz4RbjyBwkc3xh1uMro6OAuoHvSUujsVAmI5hLPmcUDgbMPAtH88v+Gd41nWbLXCLquRDQqkUhrAujdkxlIvzD4dZdwG90EFYR0KWlKElrSQhl6WcJbTESbIoDK9rZ+P7wJnVYdVudY+KuKee5450ixa9d/5XjiHIDR4hacDSYhS+rOu6wf7pEPu0j1eUXEnqsK0lk48oZEPA/1bJ0d4FV3qFDfS1K+2/o59Hci1LQ6xrp8qc1bqH8Rc11RHgltAG7Wwr4t+4g+SUBUXwKE2JJ6yIZz1Hyhw7W9r4TGMSlEEC8UC5k0a5Ia46g6jjvmxCXA11WrNQ0T8+O03pDSSQERUhiePPzLZ3ZlIYaXEiC/2lwRJQlV7TrklZofToeewgWSz72zfcjJbvftAL2XzNs1Hw/zYIou7jm/O55A58/3nbUK7t2jXpmkxLVYPuisGJ6dWcWUQf2ukxkjAQS7xwgXLZjEfnVZ1Vj16HwfRV+0l7U2fvSifcUlwYqS0jbFivuoYu4FhDIYJk7/mDnvLWyH2XEWQuEB9WVSsZ8M6buublhxI9923JE+e1XDGTiwpSHfg7hWQtTRh7cp+Nd9fd5L8Xr3xBTrDQLUq768kBok44z8Xz8/MGYE89K6/CNmK/XtYRZChT9D3lT5XCgnrpB/41kPns8sfl7SXU9R9wAxpZ
 sidebar_class_name: "delete api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Delete a collaborator by ID. Allowed if the client owns the collaborator.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

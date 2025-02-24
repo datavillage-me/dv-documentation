@@ -5,7 +5,7 @@ description: "Shut down the confidential cluster running the algorithm of a coll
 sidebar_label: "Delete Cage"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VE1r3DAQ/StiTi14u2nJyZRCSFJI6SHkgx6WpWjl2bVSWVI0oySL8X8vYzuJN5tAD21PluUZz5s3700LIWLSbIM/q6CEE3TIeKw3CAU8zMIG/ewpYrZJIUco4Tg4p1dhuL2M2iBBAaw3BOUCJJtgWUCFZJKNEgQlXNaZVRXuveIalQl+bSv0bLVTxmViTCpl763f9AHabUKyXDcqrJVWZlpSkdT8AAVEnXSDjEkqt2ClUNRcQwFeNwgl9KFnFRRApsZGQ9kCb2P/iZP1G+gKSHibbcIKSk4ZXyK/qlGdnQiOAfkeEqWJgrGasVL3lus+jpM0VSn0dzYF36DnD9AtpRjF4AlJoHw6OJTHbsELvM1IrPABTZZ/UDYGidbZua3gPTz4uJ91TZiUJeUDK525FnKNYIICTPCMniVJx+jk3gY/vyHJbPepCasbNCwEJxk/2wEtphTSzwaJRCH7TO5QuXgRvuy6rsf+ascUcjLYg1+H7P8faJn2WmfHIv9gsgxqAuMPeuoKwAdGTzb4QYe/cAvlW/4p4E67jG/4SBTSINdB7Fj1dux1zjWUMN8R36wXH83bUePdvMLowlY6EL1juns0Rk4OSqiZI5Xz+WdhNgU3i057nOlov/R1CU1Olrd9ygp1wnSUpfBiOf18KcQP3E6DnoiVMo9+k/chCIrx8DWkRgvb335c9fRavw59umU30NKjOxdw6uj8TBjDRINSnGYkFhPEQNzoXgqj14ftpcb1taOw9llN/2YTjb0zPvA8Om29QOxpb8fpLeC16UEB5fOOmgxwWUAdiCWvbVea8Dq5rpPr24xJZrQUJSWrV8LaooXKkpwrKNfa0cs1NmXg3cWo6PfqLy63N0gYL7XfTqQPxWiSx967ZVdAjbrCNLHQkTEYeZK3twh2/HJy+v306hS67jeTtWie
+api: eJzNVE1v1DAQ/SvWnEDKsnydIoRU0SIVcUC0iMNqhWad2Y3BsV17XLqK8t/ROGnJdqnEARCnzTozmTfP770efKCIbLw7b6CGU7LE9AZ3BBXcLPyO3OKuYrGLPgeo4Y23Fjd+PL0IqClBBYy7BPUKpDvBuoKGko4mSBHUcNFmVo3/7hS3pLR3W9OQY4NWaZsTU1QxO2fcrhSg3flouO2U3ypUej5SJZn5BCoIGLEjpiiTezAyKCC3UIHDjqCGUnreQAVJt9Qh1D3wPpRXHI3bwVBBpKtsIjVQc8x0H/llS+r8VHCMyI+QKEzJa4NMjfpuuC11HGWpRpG7NtG7jhw/gWEtw1LwLlESKM+fvpSfw4Ef6SpTYkU3pLN8I2WtKaVttnYveF8+fXbc9SlRVCYp51lh5lbI1YIJKtDeMTmWJgzByrnxbvk1SWd/TI3ffCXNQnCU62czoqUYffzSUUqikGMmD6hc3StfD8NQsL84xn4yx6uybNJ4Gndp8ZoUFgL+t01+eXfJ56ipQN/67P4d/aLbLWbLYmSvs0huBuM3dhoqoBsml4x3o6O+0R7qh5Kggmu0mR5IBNF6R9x6CZamBEtxLLdQw/LARotio7TsJ7cOy4aC9XvZQJxL8frW4jlaqKFlDqleLl8Js9HbRbDoaIHBvC5zE+kcDe9Ly4YwUhSJQb1az19fCPEjt/OiO2JlzG1yyP+xCKrp4a2PHQrb7z5fFnqN2/rSbtiOtBR0HwScOvlwLoxRTKNSLDIlFjsHn7jDIoUptcYcVlMQHyis/6mmv5Op0+5MN7wMFo0TiIX2frq9Ffzq9qCC+mfazi5wXUHrE0tf328w0adoh0GOrzJFuaO1KCka3Ahrqx4ak+S5gXqLNt0P5DkDjz5Oin6s/mBMP0DCdIhuP5M+VJNJbncf1kMFLWFDcWahE60p8KzvKAgO/HJ69v7s8gyG4QcEArDG
 sidebar_class_name: "delete api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Shut down the confidential cluster running the algorithm of a collaboration spac
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

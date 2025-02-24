@@ -5,7 +5,7 @@ description: "Delete a collaboration space by id. Allowed if the client owns the
 sidebar_label: "Delete Collaboration Space"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VE1rGzEQ/StiTi2s47TktJSCaVJw6SHkgx6MKbJ27FWqlRRplNgs+9/LaNeJvwItlJ5WO5rRvHnzZlpwHoMk7ey0ghIu0SDhF2eMXLjefuulQihgPXIrtKMX/9EquOShhGPvCAWQXEUoZ/u3YrieF1BhVEF7tr7kFVKoPffI7mKxEbo6ExNj3DNWQi8F1SiU0WhJuGcb83/2PYMCvAyyQcLA+VvQ/L6XVEMBVjYIJWTXaQUFRFVjI6FsgTY+X1HQdgVdAQEfkw5YQUkh4SHguxrF9FK4AcsJ1ORElas6g27Oz0XvbMTIyT6eX/Bn/8kbfEwYSeAaVSKsRExKYYzLZMyGEV2cfziOuo8YhI7COhIyUY2WtJKEXJ1yltASB0nvDdu1s+OHyJHtcfFu8YCKmMLAbSbdo8UQXPjZYIxyhSe42iNrduA+77ouYz9ZcXQpKMzgly7Z/wea+7mUyRCLz6nUsJZeYfxBTV0BuCa0UTvbK+0XbqB8a04KeJIm4RvzwgppkGrHQ9jLJiuZaihhvCevUZZXHLeDijuWMYanrd5TMFBCTeRjOR5/YjqDMyNvpMWR9PpzThZRpaBpk0MWKAOGSeJss/nu9S2z3RO66/TCJqfZjhH/905QDIevLjSSKf724y5zqu3S5XBNpucio7tmcGJyPWWaMMReHkYSRmLlexepkbn/wwgPC+PEdoGDUW1fFfVP18zAAOGaxt5IbRloJr8dGjeDU42DAsrtApoXULtI7Nq2CxnxPpiuY/NjwsDNmbNugpYLpmvWQqUjnysol9LEw7W0W+u7m0G/78VfLas3KhuM0m52pAzFIPptQd28K6BGWWHYGYmJUuhpJ+5osPf0f3n1/eruCrruN5eRT8w=
+api: eJzNVE1rGzEQ/StiTi2s47TNaSkF06Tg0kPIBz0YU2Tt2KtUKynSKIlZ9r+X0a4TfwVaKKWn1Y5mNG/ezJsWnMcgSTs7raCEczRI+NkZIxeut197qRAKeBq5FdrRs/9oFVzyUMKhd4QCSK4ilLPdWzFczwuoMKqgPVuf8wop1I57ZHexWAtdnYiJMe4RK6GXgmoUymi0JNyjjfk/+55AAV4G2SBh4PwtaH7fS6qhACsbhBKy67SCAqKqsZFQtkBrn68oaLuCroCA90kHrKCkkHAf8E2NYnou3IDlCGpyospVnUA35+eidzZi5GTvT8/4s/vkFd4njCTwCVUirERMSmGMy2TMmhGdnb47jLqNGISOwjoSMlGNlrSShFydcpbQEgdJ7w3btbPju8iR7WHxbnGHipjCwG0m3aPFEFz40WCMcoVHuNoha7bnPu+6LmP/cIh9so1XJK6kctjXUssHFDIT8L9VcrR30aWgMENfumT/Hf08mUuZDLGMnEoNq+IFxm/U1BWAT4Q2amd7zfzENZSvKb6AB2kSvqJ8nvUGqXa8TnoBZE1SDSWMd4QyykKJ43bQY8eCxPCwUW4KBkqoiXwsx+OPTGdwZuSNtDiSXn/KySKqFDStc8gCZcDAcwXlbL59fc1s94RuOz2zyWk2C4H/eycohsMXFxrJFH/9fpM51Xbpcrgm03OR0V0yODG5nDJNGGI/HkYSRmINexepkbn/wzIaVt+RPQl7S6d9mai/ujAHBgifaOyN1JaBZvLboXEzONY4KKDcrNJ5AbWLxK5tu5ARb4PpOjbfJwzcnDnPTdBywXTNWqh05HMF5VKauL9gt2t9czXM71vxR2v3lcoGo7TrrVGGYhj6TUHdvCugRllh2JLERCn0tBV3IOyd+T+/+HZxcwFd9wuVNJf0
 sidebar_class_name: "delete api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -62,7 +62,7 @@ Delete a collaboration space by id. Allowed if the client owns the space.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+  responses={{"204":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>

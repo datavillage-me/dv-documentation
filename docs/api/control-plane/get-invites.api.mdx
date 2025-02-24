@@ -1,11 +1,11 @@
 ---
 id: get-invites
 title: "Get Invites"
-description: "Get all invites for your client."
+description: "Get all invites either created by your client, or destined for your client."
 sidebar_label: "Get Invites"
 hide_title: true
 hide_table_of_contents: true
-api: eJyVkkGL20AMhf+K0XnSpKUnUwqhtEt6WmiXHoIpiqO1ZzuZmZXkkGD834vskHVYFtqTB+uN9OZ76iFlYlSf4mYPJdyRbuLRKwk4OC1SQ3FxVSwaTl2GEl4ke5KafbbqdLvAEAo/1YvHxMU5dVzUwVPUd+BAsREot9cWlQMmySkKCZQ9fFit7FOnqBTVjphz8PVoYPkkNqcHqVs6oJ30nAlKQGY8wzAMg4OPq/dWubX2IMSFlyImLbDTlqJaU9qD++9hafdEtYKDzMZG/WSdmBP/PpAINjSTi7KPDZg1pufOM+2NwK28GibzdFKK4lM0Sj38oTOUbwXh4Iiho1kgQ+XgQNomy7Kh0SNqCyUs/TUzIT4ST/07DlBCq5qlXC4/GQlOYZEDRlpg9p/HlkJ1x17P45UdIROvO2u7reblHwZqYjEXXUHYGJs/yqC8iMBdDt8SH1ChhO+/fo60fHxM43WvwfRfJnf3Zq5Y328MALFMAQdUEoXBQU6iBxyjizgOsr18Y2dnq/ZP6zu9ROmkyxzQRxs4QuwvpLfgX1a7TaL2q+93KPTAYRjs93NHbDArS5A97ux522pw0BLuiWfRr+uass6ifrWhN5nffTV0fwFixlS4
+api: eJzNVUuP2zgM/isCz0oz2+3JKAoMpg+klw7Q6e4hCArFZmJ1ZUml6HSCwP+9oOw4zkwGOy32sCfL4uvjR1I8QIhIhm3wiwoK+IC88DvLmEDD/Sxs0c9GjdmWQhuhgJNKhakkG0XaWyvjnLK9XKHlGkmVhIaxUuu92oeWVOksetYqkKowsfVYqU2gqfAFaGCzTVAsx2grDYQpBp8wQXGAl1dX8imDZ/QsRxOjs2XGOv+WBNIBUlljY+TE+4hQgCEye9BgGZvs5zyHPpqEt+xwemGc+7SBYjl6CutvWDJoiCQcse1x2WoSLTFZv4VOQ5/Y4oLwIY2LtypsFNc4kKES+sr6bb7quX0hHhMbbtO/+7urUfW6R79HJxrQt42QHPsQkmZZYmSsspvSSXVg1XWdfpz3eZjrdWIyJauRsQe85Gv8jfy5NqxsGmBXikOWpmjKgQk5PYfau6NZbrgftS3raaBTjOyWgnsGXPEpmpcdCdg6uEpZPwV9Yv4mVHhLYWcrJNDw1rB58HsTfGqb/PuXTZYDSUFOHXokfuD9UqXOKzEM5KXUNoEaw1BAZRhnbBvxB22sfs2gH9Tq+SbZ5ntrSUyWMkNjf+uxcyZDdKq5HtM54ZwCGMq46qSJJc6rqz8ej/2XhCRV84GVablGz/KSZPtffWGeYB2JAn1tMCWzvdBWDyk4V18dsf/5GPv1FK9qJZMqYJ9LbXaoZKRT+j9l0mnAe0afbPApv6n/4B6Kp1aOhp1xLU5WT7fS0CDXQbbWFjNGwzUUMLfjdkpIO6Tef0sOCqiZYyrm89fCBAU3i854nJlo32SXCcuWLO+zyRoNIQm7UCxXU/FnIarnYqo0EiFhJH5Wg2JQAj0c3h8H4OPfd5kt6zchmw8TfdOjuxVw6vp2IQQgpb7czjAmlimLIXFjcum8yYFkAz+xnSeb8r9e1H3SjPc8j85Yn58M4fswFGUJ9rTE65BYrg6HtUn4hVzXyfX3Fkl4X0mxyZq1MLFcdRpqNPIYnrrkOq+oSVc8auaz9vjwTlj+CRDTGFw=
 sidebar_class_name: "get api-method"
 info_path: docs/api/control-plane/controlplane-api
 custom_edit_url: null
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Get all invites for your client.
+Get all invites either created by your client, or destined for your client.
 
 <ParamsDetails
   parameters={undefined}
@@ -54,7 +54,7 @@ Get all invites for your client.
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"type":"array"}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
+  responses={{"200":{"content":{"application/json":{"schema":{"type":"array","items":{"description":"Invite","title":"Invite","allOf":[{"type":"object","properties":{"id":{"type":"string"},"clientId":{"type":"string","description":"ID of the client sending the invite."},"status":{"type":"string","description":"The status of the invite.","enum":["pending","accepted","declined"]}}},{"type":"object","description":"Abstract Invite","properties":{"invitee":{"type":"string","description":"ID of the client that is invited to the space."},"spaceId":{"type":"string","description":"The space for which the client is invited."},"role":{"type":"string","description":"The role the client is invited to hold in the space.","enum":["CodeProvider","DataProvider","DataConsumer","Visitor"]}},"title":"AbstractInvite"},{"type":"object","properties":{"created":{"type":"string","format":"date-time"},"updated":{"type":"string","format":"date-time"},"responded":{"type":"string","format":"date-time"}},"required":["id","status","invitee","clientId","spaceId","created","updated","responded","role"]}]}}}}},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"403":{"description":"Authenticated user does not have access","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}}}}
 >
   
 </StatusCodes>
