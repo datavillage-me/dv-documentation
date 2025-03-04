@@ -128,12 +128,6 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/rotate-keys",
-          label: "Rotate keys",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
           id: "api/control-plane/get-public-key",
           label: "GetPublicKey",
           className: "api-method get",
@@ -143,6 +137,18 @@ const sidebar: SidebarsConfig = {
           id: "api/control-plane/get-transport-key",
           label: "GetTransportKey",
           className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/rotate-transport-key",
+          label: "Rotate the transport key of the cage.",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/control-plane/rotate-storage-key",
+          label: "Rotate the storage key of the cage.",
+          className: "api-method post",
         },
         {
           type: "doc",
@@ -186,9 +192,9 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "api/control-plane/update-invite-status",
-          label: "Update Status",
-          className: "api-method patch",
+          id: "api/control-plane/accept-invite",
+          label: "Accept Invite",
+          className: "api-method post",
         },
       ],
     },

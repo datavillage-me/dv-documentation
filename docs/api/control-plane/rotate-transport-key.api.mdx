@@ -1,0 +1,71 @@
+---
+id: rotate-transport-key
+title: "Rotate the transport key of the cage."
+description: "Replace the current public/private keypair with a new one. Secrets that were already stored on the secret manager will still be usable."
+sidebar_label: "Rotate the transport key of the cage."
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVE1v4zYQ/SvEnFpAjtNiT0JRINhFgbSHBpssejCMxZgaW9zQJHc4TCII+u/FUE5i5wNoL0UvskzNx5vH92aEmIhRXAyXHbTwOQoK3TCGnCLLHzRAAw+LuKOweIpc7DiWBC18jN7jJs6n1wktZWhAcJehXcFH3FGGdQMdZcsuaZC2oOTRkpGejC3MFMSksvHOLhO7OxQytzQkdGzunfQGTaB7EwOdmWuyTJKN9CjmnpgMeibsBpMlMnUmhlo21zizx4A70jLemyz63JApGTeezqCBhIx7EmKFO4JTdAmlhwYC7glayDrTZQcNZNvTHqEdQYZUPwm7sIOpAabvxTF10AoXejnuTU/m8pOJ24pMYykLdcYec2dqozOY1loupxgyZW328/m5/rxksBYx9EC2aK1crKWct8X7QRF9OP/pddaXTGxcNiGKwSI9BXEWhXQ6G4NQEE3ClLyeuxiW37Jmjq+Hj5tvZEUpZFWFuBktMUf+uqeccUdvcHVC1upF+Hqapor9w1sT51jYUgW/jSX8d6D1PrdYvEALn6Ite9XrM4x/MNPUAD0IheximJV2SwO079mqgTv0hd6xlypkT9JHdWuKuc6jmm1heSKpRZVUXo4HDU/LWxryUh6tvbit3s7Ed48GKOyhhV4k5Xa5/EX55egXyWOgBSb3a+2eyRZ2MtSUDSETXxQFsFoff75W+meGj4Oe6NU2j77S/3MQNIeX3yLvUTn//a+bSrIL21jTnfiZnIruSsGZi6tL5Y04z3rxKJRFraAU7bEK4uDpecVVNz6RoRvn0aIWd3U7nChwfFbb/2iBHagUepBl8uiCTlxvcTyIYgVviQIaaJ9Xm+pCi50oY91Ar+pqVzCOG8z0hf006fH3QqyXv1ahslMsVQqdq7g6aLfo88s9eEzgD58PhvnR/Kvt+M7Ah0MMw5F35rmOVvi0nhroCTviIw9eWEtJjvJebZITw139ea1q/BskQ4mG
+sidebar_class_name: "post api-method"
+info_path: docs/api/control-plane/controlplane-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Rotate the transport key of the cage."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaboration-spaces/{spaceId}/keys/transport-key"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Replace the current public/private keypair with a new one. Secrets that were already stored on the secret manager will still be usable.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"spaceId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaboration space."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Request executed successfully"},"401":{"description":"User is not authenticated","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
