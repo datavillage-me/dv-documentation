@@ -83,23 +83,6 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "User Manual",
-          items: [
-            {
-              label: "Introduction",
-              to: "/docs/user-manual/intro",
-            },
-            {
-              label: "Authentication & authorization",
-              to: "/docs/user-manual/auth",
-            },
-            {
-              label: "Cage development",
-              to: "/docs/cage-development",
-            },
-          ],
-        },
-        {
           title: "API docs",
           items: [
             {
@@ -200,8 +183,25 @@ const config: Config = {
         config: loadApiConfiguration(),
       },
     ],
+    [
+      'docusaurus-plugin-remote-content',
+      {
+        name: 'cage-example', // this is the folder name where the file will be saved
+        sourceBaseUrl: 'https://raw.githubusercontent.com/datavillage-me/cage-example/main/',
+        outDir: 'docs/cage-example',
+        documents: ['README.md'],
+      },
+    ],
+    // [
+    //   'docusaurus-plugin-remote-content',
+    //   {
+    //     name: 'dv-utils-doc', // this is the folder name where the file will be saved
+    //     sourceBaseUrl: 'https://datavillage-me.github.io/dv-utils/',
+    //     outDir: 'docs/dv-utils-doc',
+    //     documents: ['README.md']
+    //   }
+    // ]
   ],
-
   themes: ["docusaurus-theme-openapi-docs"],
 };
 
