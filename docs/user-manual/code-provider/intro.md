@@ -1,4 +1,4 @@
-# Welcome
+# Get Started
 
 Welcome to the Code Provider section of your collaboration space. As a Code Provider, you are responsible for developing and maintaining the algorithms that drive data processing and analytics. Your work transforms raw data into actionable insights that empower collaborative decision-making.
 

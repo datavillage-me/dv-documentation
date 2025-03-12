@@ -20,7 +20,7 @@ Before you begin, make sure you have:
 3. **Configure Your Bucket:**
    - **Name:** Enter a unique name for your bucket. Bucket names must be globally unique.
    - **Location Type and Location:** Choose the location type (Region, Multi-region, or Dual-region) and select your preferred geographic location.
-   - **Storage Class:** Select Standart for the storage.
+   - **Storage Class:** Select Standard for the storage.
    - **Access Control:** Choose Uniform and  access control.
 
 4. **Review and Create:**  

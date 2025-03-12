@@ -13,7 +13,7 @@ Data contracts are a fundamental concept in the Data Collaboration Platform (DCP
   Data contracts are defined independently from collaboration spaces. An organization can already define all its schemas before creating/joining a collaboration space.
 
 - **Single Schema per Data Contract:**  
-  Each data contract is limited to one schema. This design allow to have for each data collaborator a data contract and a data source. The data provide/generated in the data source will have to be compliant with the datacontract 
+  Each data contract is limited to one schema. This design allow to have for each data collaborator a data contract and a data source. The data provide/generated in the data source will have to be compliant with the data contract 
 
 ## Role of the Collaboration Space Owner
 

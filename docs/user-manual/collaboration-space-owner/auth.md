@@ -2,7 +2,7 @@
 
 Welcome to the Authentication & Authorization section of our documentation. This page outlines the roles and permissions required for each collaborator in your collaboration space. Please note that the creation of clients and accounts must be requested through the DataVillage support team.
 
-Within the Data Collaboration Platform, every registered organisation is called a client. These organisations often consist of several people, each having their own role within the organisation. The roles that are given to the different users should follow the convention as defined in the authorization section.
+Within the Data Collaboration Platform, every registered organization is called a client. These organizations often consist of several people, each having their own role within the organization. The roles that are given to the different users should follow the convention as defined in the authorization section.
 
 ## Required Roles and Permissions
 

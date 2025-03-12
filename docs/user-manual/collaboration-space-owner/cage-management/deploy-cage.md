@@ -1,11 +1,11 @@
 # Deploy Cage
 
-A cage is a confidential computing environment containing the algorithm and datavillage utilies that make the collaboration space secured and easy to use.
+A cage is a confidential computing environment containing the algorithm and datavillage utilities that make the collaboration space secured and easy to use.
 <br />**If the cage isn't deployed, it is not possible to configure the secrets and collaborator's server/data source.**
 
 ## Deployment Process
 
-When you trigger the first deployment, the system initiates the creation of the cage. During its lifecycle, the cage can be in one of several states, each indicating a different stage of the deployment process. When you deploy a cage that it is already deployed it will deploy the new version of the cage with zero down time. Which means that the previous cage will stop only when the new one will be runing. 
+When you trigger the first deployment, the system initiates the creation of the cage. During its lifecycle, the cage can be in one of several states, each indicating a different stage of the deployment process. When you deploy a cage that it is already deployed it will deploy the new version of the cage with zero down time. Which means that the previous cage will stop only when the new one will be running. 
 
 ## Status Explanations
 

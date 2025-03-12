@@ -38,7 +38,6 @@ By using invitations, you maintain precise control over which organizations part
    Share the generated Invitation ID with the organization that will join your space.
 
 ## Example
-
 For our real-world use case:
 
 - **bank_a** and **bank_b** provides a daily file of accounts flagged as criminal.

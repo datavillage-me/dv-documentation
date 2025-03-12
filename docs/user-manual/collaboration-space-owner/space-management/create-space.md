@@ -6,7 +6,6 @@ title: Create Space
 
 To begin your collaborative journey, you must first create a new space. A space is the dedicated collaboration space environment where you manage the collaborators and the data collaboration solution. 
 
-
 ## Space Properties
 
 Every space must have a name, a category and a description.
@@ -39,4 +38,4 @@ Once your space is created, you'll be directed to the space dashboard, where you
 - **Category:** Finance
 - **Description:** Collaboration between banks to detect criminal accounts
 
-Congratulations on creating your new collaboration space! The next step is to define datacontracts! 
+Congratulations on creating your new collaboration space! The next step is to define data contracts! 

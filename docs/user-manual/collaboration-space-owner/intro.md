@@ -1,4 +1,4 @@
-# Welcome
+# Get Started
 
 As the Collaboration Space Owner, you play a crucial role in creating and managing a dynamic collaboration space. Your responsibilities span from the initial setup to ongoing maintenance and collaboration. Below is a high-level overview of what you’ll need to do:
 
@@ -6,7 +6,7 @@ As the Collaboration Space Owner, you play a crucial role in creating and managi
 
 As a Collaboration Space Owner, you manage the overall space, handle authentication, maintain space settings, manage data contracts, oversee cage management, and invite collaborators. Your workflow includes:
 
-1. **Create Client and Accounts**  
+1. **Create Clients and Accounts**  
    Request the creation of a client and user accounts for each participating organization.  
    - [Auth Page](/docs/user-manual/collaboration-space-owner/auth)
   
@@ -46,7 +46,7 @@ As a Collaboration Space Owner, you manage the overall space, handle authenticat
 ## Example
 
 This documentation follows a real-world use case where the "Finance Institution" creates a data collaboration platform for two banks, **bank_a** and **bank_b**.  
-The goal of the collaborative platform is to detect bank accounts that are used for financal criminality.  
+The goal of the collaborative platform is to detect bank accounts that are used for financial criminality.  
 As the collaboration space owner your are **"Finance Institution"**.
 
 Here’s how the scenario unfolds:
@@ -65,6 +65,6 @@ Here’s how the scenario unfolds:
 
 - **Getting Started**  
   Follow the **workflow** describe above.  
-  In each page you'll have a **example section** following this real-wrold use case.
+  In each page you'll have a **example section** following this real-world use case.
      
 Follow the subsequent guides in this documentation for detailed instructions on each of these steps. This structured approach will help you create and manage an efficient, fraud-fighting collaboration space.
