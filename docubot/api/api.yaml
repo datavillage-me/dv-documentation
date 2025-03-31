@@ -1,0 +1,9 @@
+openapi: 3.0.0
+info:
+  title: Docubot API
+  version: latest
+servers:
+  - url: https://<docubot-api>
+paths:
+  /github/payload:
+    $ref: "paths/github/payload.yaml"
