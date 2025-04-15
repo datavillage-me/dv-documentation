@@ -1,6 +1,7 @@
 # Logs
 
-In your collaboration space, logs are essential for monitoring and troubleshooting various aspects of your operations. All logs are accessible directly from the space page and are categorized into three types:
+In your collaboration space, logs are essential for monitoring and troubleshooting various aspects of your operations. 
+All logs are accessible in the logs page of your collaboration space and are categorized into three types:
 
 ## Audit Logs
 
@@ -13,5 +14,8 @@ Deployment logs capture the progress and status of your application deployments,
 ## Algo Logs
 
 Algo logs document the execution details of your algorithms, including performance metrics, errors, and execution outcomes. They are key to monitoring algorithm behavior and ensuring that your data processing runs smoothly.
+
+## Logs Page
+![screenshot of logs](img/logs.png)
 
 ---

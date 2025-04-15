@@ -1,4 +1,4 @@
-# Create Data Contract
+# Data Contract
 
 # Data Contract
 

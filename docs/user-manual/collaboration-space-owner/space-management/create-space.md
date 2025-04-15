@@ -22,20 +22,31 @@ Follow these steps to create your space:
 1. **Open Space creation**  
    Access the "Create Space" page from the main menu.
 
+![screenshot of the datavillage dashboard](img/empty_dashboard.png)
+
 2. **Configure Space:**  
    Provide name, category and description
 
-4. **Save space:**  
-   Click the **Create** button to finalize the creation of your space.
+![screenshot of space creation](img/create_space.png)
 
-Once your space is created, you'll be directed to the space dashboard, where you can invite collaborators and set up further configurations.
+4. **Save space:**  
+   Click the **Create** button to finalize the creation of your space.  
+   Once your space is created, you'll be directed to the main dashboard.
+
+![screenshot of space saving](img/save_space.png)
+
+4. **Datavillage  dashboard:**  
+   Your space is now created. You can access it via the left menu or the by clicking on it in the main dashboard.
+
+![screenshot of space saving](img/dashboard.png)
 
 ## Example
 
+For our real-world use case, you must create a space with the below properties:
 - **Create the fraud space:**  
 
-- **Name:** Fraud
+- **Name:** Suspicious Account
 - **Category:** Finance
-- **Description:** Collaboration between banks to detect criminal accounts
+- **Description:** Matching Suspicious Account list from Banks
 
-Congratulations on creating your new collaboration space! The next step is to define data contracts! 
+Congratulations on creating your new collaboration space! The next step is to create the algorithm

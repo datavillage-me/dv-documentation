@@ -21,9 +21,22 @@ When you trigger the first deployment, the system initiates the creation of the 
 - **Error:**  
   An error has occurred during the deployment. This status means that the K8s pod failed to deploy properly, possibly due to misconfiguration, missing resources, or runtime errors. Review the logs and error messages to identify and resolve the problem.
 
+## Deploy Cage
+
+To deploy a cage you must open the space **Settings** page.  
+On the top right of the page is displayed the status of the cage.  
+Click on the **Deploy** button to deploy the cage, this might take few seconds 
+
+![screenshot of the deploy cage page](img/deploy_cage.png)
+
+The status must change to **Deployed**, you might need to refresh the page to get the new status of the cage. 
+![screenshot of the deployed cage](img/deployed.png)
+
+
 ## Troubleshooting Tips
 
 If you encounter an **Error** status:
 - **Review Logs:** Check the deployment logs for detailed error messages.
+  - [Logs](/docs/user-manual/collaboration-space-owner/cage-management/logs)
 - **Verify Configuration:** Ensure that your docker image  is correctly configured and that can be run locally. 
 

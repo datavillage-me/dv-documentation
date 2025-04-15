@@ -30,27 +30,33 @@ All client and account creations must be requested through the DataVillage suppo
 
 For our real-word use case you must require the creation of the following clients and accounts:
 
-**Client: Finance Institution**
+**Client: Financial Institution**
     - Account roles:
         - collaboration-space:admin
         - data-contract:writer
         - collaborator:writer
         - collaboration-space:operator
 
-**Client: Bank_a**
+**Client: Bank A**
     - Account roles: 
         - collaboration-space:reader
         - collaborator:writer
         - data-contract:reader
 
-**Client: Bank_b**
+**Client: Bank B**
     - Account roles:
         - collaboration-space:reader
         - collaborator:writer
         - data-contract:reader  
         
-Each client will have a unique Datavillage url : https://$CLIENT.console.gke.datavillage.me/ .  
-The support will send an email to the users with their url.
+
+Each client will have a unique Datavillage url : https://$CLIENT.console.gke.datavillage.me/.  
+
+**Financial Institution**: https://financial_institution.console.gke.datavillage.me/  
+**Bank A**: https://bank_a.console.gke.datavillage.me/  
+**Bank B**: https://bank_b.console.gke.datavillage.me/  
+
+The support will send an email to the users with their url and credentials.
 
 ## Bring Your Own Identity Provider (IDP)
 

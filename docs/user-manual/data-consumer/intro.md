@@ -22,10 +22,12 @@ Follow these steps to get started as a Data Consumer, this process must be follo
    Ensure that all data is encrypted.  
    [Generate encryption key](/docs/user-manual/data-consumer/encryption/create-encryption-key)  
 
-3. **Create a Google Cloud Bucket**  
-   Create a designated Google Cloud bucket.  
-   [Create Bucket](/docs/user-manual/data-consumer/google-cloud-storage/create-bucket)  
-   [Create Service Account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)  
+3. **Set up your storage**  
+   Upload your data to your secure storage and get credentials.  
+   - **With Google Cloud Storage**  
+      Securely upload your encrypted data to a designated Google Cloud bucket.  
+      [Create Bucket](/docs/user-manual/data-consumer/google-cloud-storage/create-bucket)  
+      [Create Service Account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)  
 
 4. **Configure your collaborator**  
    Configure the collaborator, to provide the collaboration space the needed information to push data to your GCS.   
