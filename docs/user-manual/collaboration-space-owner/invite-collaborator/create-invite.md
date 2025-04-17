@@ -38,8 +38,10 @@ For our real-world use case:
 - **bank_b** consumes the processed data for analysis.
 - **Financial Institution** acts as collaboration space owner and also a code provider
 
-First, you must create the code provider invitation:
-- **Invitation 1:** For **Financial Institution** as **Code Provider**
+First, you must join as the code provider :
+- Click on the **+ button** under Algorithm or directly in the onboarding checklist **Create Algorithm**.   
+- Click on **Join as** in the modal, the interface will create the invitation and make you join automatically.   
+- The **Code Provider** is now created, you can configure it and deploy the space.   
 
 **When the first cage will be deployed and the data contracts created, you'll be able to send the other invitations.**
 

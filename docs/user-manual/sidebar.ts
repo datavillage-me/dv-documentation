@@ -39,7 +39,7 @@ const sidebar: SidebarsConfig = {
     //       label: 'Algorithm',
     //       items: [
     //         'user-manual/code-provider/intro',
-    //         'user-manual/code-provider/accept-invitation',
+    //         'user-manual/code-provider/accept-invite',
     //         {
     //           type: 'category',
     //           label: 'Create Algorithm',
@@ -69,17 +69,16 @@ const sidebar: SidebarsConfig = {
           label: 'Algorithm',
           items: [
             'user-manual/code-provider/intro',
-            'user-manual/code-provider/accept-invitation',
+            'user-manual/code-provider/create-invite',
+            'user-manual/code-provider/configure-collaborator/general',
             {
               type: 'category',
-              label: 'Create Algorithm',
+              label: 'Develop Algorithm',
               items: ['user-manual/code-provider/create-algorithm/get-docker-template', 'user-manual/code-provider/create-algorithm/develop-algorithm', 'user-manual/code-provider/create-algorithm/create-docker-image'],
             },
-            {
-              type: 'category',
-              label: 'Update Collaborator',
-              items: ['user-manual/code-provider/configure-collaborator/general', 'user-manual/code-provider/configure-collaborator/configure-secrets'],
-            }
+
+            'user-manual/code-provider/configure-collaborator/configure-secrets',
+            'user-manual/code-provider/accept-invite'
           ],
 
         },
@@ -96,7 +95,7 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         'user-manual/data-provider/intro',
-        'user-manual/data-provider/accept-invitation',
+        'user-manual/data-provider/accept-invite',
         {
           type: 'category',
           label: 'Configure Collaborator',
@@ -121,7 +120,7 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         'user-manual/data-consumer/intro',
-        'user-manual/data-consumer/accept-invitation',
+        'user-manual/data-consumer/accept-invite',
         {
           type: 'category',
           label: 'Configure Collaborator',

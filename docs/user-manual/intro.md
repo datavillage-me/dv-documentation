@@ -12,7 +12,7 @@ Users can log in using any configured IDP. By default, a [Keycloak](https://www.
 
 We start off with explaining some important concepts on which the DCP is built. Then it is shown how to make and configure a collaboration space. After going through all the steps, you will have a collaboration space setup that looks as follows.
 
-![screenshot of final state of collaboration space in Datavillage Developer Console](img/screenshot-finished-space.png)
+![screenshot of final state of collaboration space in Datavillage Developer Console](img/36_overview_dataconsumer_configured.png)
 
 ## Collaboration Spaces
 
@@ -36,13 +36,6 @@ Another very important concept in the DCP, is a **data contract**. This defines 
 
 Data contracts are defined apart from collaboration spaces: an organization could already define all their schemas before joining a single collaboration space.
 The data model is defined using [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/), current implementation supports up to `v3.0.0`, which is backwards compatible until `v2.2.0`. The endpoints to perform CRUD operations can be found [here](/dv-documentation/docs/api/control-plane/data-contracts).
-
-### Servers
-
-To tie the concepts 'data contract' and 'collaboration space' together, there is the notion of **servers** (analogous to servers in [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/#infrastructure-and-servers)).
-This is used to define where and how the algorithm should pull the data from, or push the insights to. It can be defined either for a data contract or specifically for a collaboration space.
-
-The ODCS model for servers does not incorporate secrets. This is a good thing, as we don't want secrets leaking. To tell the cage which secrets it should use to pull/push data, we should configure a **connector**. This is a simple object containing the secrets. It is not stored in the database, but rather send encrypted directly to the cage from the client side application.
 
 ### Integrity check
 

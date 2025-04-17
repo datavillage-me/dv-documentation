@@ -16,7 +16,7 @@ Follow these steps to get started as a Data Consumer, this process must be follo
 1. **Accept Your Invitation**  
    If you haven't done so already, accept your invitation to join the collaboration space.  
    You will receive one invitation per consumed source.  
-   [Accept Invitation](/docs/user-manual/data-consumer/accept-invitation)
+   [Accept Invitation](/docs/user-manual/data-consumer/accept-invite)
 
 2. **Create Your Encryption Key**  
    Ensure that all data is encrypted.  
