@@ -15,7 +15,7 @@ When you trigger the first deployment, the system initiates the creation of the 
 
 ![screenshot of an inactive space](img/06_space_algo_created.png)
 
-<!-- ![screenshot of an active space](img/33_space_overview_dataconsumer_joined.png) -->
+![screenshot of an active space](img/33_space_overview_dataconsumer_joined.png)
 
 
 
