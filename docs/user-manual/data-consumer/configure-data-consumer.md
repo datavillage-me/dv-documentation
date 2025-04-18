@@ -7,7 +7,7 @@ Here you can see three columns the first one is the **Data Consumers**, the seco
 
     - Click on your client **Data Consumer** card.    
 
-    ![screenshot of space dashboard](img/33_space_overview_dataConsumer_joined2.png)
+    ![screenshot of space dashboard](img/33_space_overview_dataconsumer_joined_3.png)
 
 2. **Configure with your properties** 
 
