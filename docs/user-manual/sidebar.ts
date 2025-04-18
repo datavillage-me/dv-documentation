@@ -6,55 +6,6 @@ const sidebar: SidebarsConfig = {
       type: "doc",
       id: "user-manual/intro",
     },
-    // {
-    //   type: 'category',
-    //   label: 'Collaboration Space Owner',
-    //   collapsible: true,
-    //   collapsed: true,
-    //   items: [
-    //     'user-manual/collaboration-space-owner/intro',
-    //     'user-manual/collaboration-space-owner/auth',
-    //     {
-    //       type: 'category',
-    //       label: 'Space Management',
-    //       items: ['user-manual/collaboration-space-owner/space-management/create-space', 'user-manual/collaboration-space-owner/space-management/update-space', 'user-manual/collaboration-space-owner/space-management/delete-space'],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Cage Management',
-    //       items: ['user-manual/collaboration-space-owner/cage-management/deploy-cage', 'user-manual/collaboration-space-owner/cage-management/logs'],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Data Contract Management',
-    //       items: ['user-manual/collaboration-space-owner/data-contract-management/create-data-contract', 'user-manual/collaboration-space-owner/data-contract-management/delete-data-contract'],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Invite Collaborator',
-    //       items: ['user-manual/collaboration-space-owner/invite-collaborator/create-invite', 'user-manual/collaboration-space-owner/invite-collaborator/list-invites', 'user-manual/collaboration-space-owner/invite-collaborator/delete-invite'],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Algorithm',
-    //       items: [
-    //         'user-manual/code-provider/intro',
-    //         'user-manual/code-provider/accept-invite',
-    //         {
-    //           type: 'category',
-    //           label: 'Create Algorithm',
-    //           items: ['user-manual/code-provider/create-algorithm/get-docker-template', 'user-manual/code-provider/create-algorithm/develop-algorithm', 'user-manual/code-provider/create-algorithm/create-docker-image'],
-    //         },
-    //         {
-    //           type: 'category',
-    //           label: 'Update Collaborator',
-    //           items: ['user-manual/code-provider/configure-collaborator/general', 'user-manual/code-provider/configure-collaborator/configure-secrets'],
-    //         }
-    //       ],
-
-    //     }
-    //   ],
-    // },
     {
       type: 'category',
       label: 'Collaboration Space Owner',
