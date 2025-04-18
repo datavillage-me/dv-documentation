@@ -15,38 +15,44 @@ Data contracts are a fundamental concept in the Data Collaboration Platform (DCP
 - **Single Schema per Data Contract:**  
   Each data contract is limited to one schema. This design allow to have for each data collaborator a data contract and a data source. The data provide/generated in the data source will have to be compliant with the data contract 
 
-## Role of the Collaboration Space Owner
+## Who can create a Data Contract   
+- Any role can create a **Data Contract**, and their are all accessible from all clients.  
+- Only the Collaboration Space Owner can attach a Data Contract to a Data Collaborator 
+- For a secure collaboration
+  - The data contract for the data provider must be defined by the data provider or the collaboration space owner.   
+  - The Data Contract for the data consumer must be defined bu the collaboration space owner.  
 
-The collaboration space owner is responsible for defining the data contract for the space. This definition is critical as it:
-- Validates data quality by ensuring the provided data meets the required schema.
-- Supports the integrity checks that determine whether the algorithm execution proceeds.
+## Role of the Data Contract
+
+- Validates data quality by ensuring the provided and created data meets the required schema.
 
 ## Data Contract ID
 
-When a data contract is created, DataVillage returns a unique ID. This ID must be included when sending invitations, ensuring that all collaborators are linked to the correct data contract.
+When a Data Contract is created, DataVillage returns a unique ID. This ID must be included when sending invitations, ensuring that all collaborators are linked to the correct data contract.
 
 ## Create Data Contract
 
 Follow these steps to create a new data contract:
 
 1. **Access the Data Contract Creation Page:**  
-   Navigate to the data contract section from the left main menu.
+  - Navigate to the data contract section from the left main menu.  
+  ![screenshot of data contract](img/26_create_datacontract_dataconsumer.png)
 
-2. **Define the Schema:**  
-   Input the required schema details following the ODC standard.
+2. **Define the Schema in form mode:**  
+  - The form mode is a simplify view of the Data Contract.   
+  - This view able you to create quickly a working simple schema.  
+  ![screenshot of data contract](img/26_create_datacontract_dataconsumer_form.png)
 
 3. **Submit the Data Contract:**  
-   Click the **Create** button to submit your data contract. Upon creation, DataVillage will return a unique Data Contract ID.
-
-4. **Utilize the Data Contract ID:**  
-   The returned ID is essential and must be used when inviting collaborators, ensuring that everyone is aligned with the correct data contract.
+  - Click the **Create** button to submit your data contract.
+  ![screenshot of data contract](img/26_create_datacontract_dataconsumer_create.png)
 
 ## Real World Use Case
 
 For our real world use case, we need two create two data contract. One for the input and one for the output. 
 
 - **Scenario Overview:**  
-  **bank_a** and **bank_b** provides a daily file containing accounts flagged as criminal, and **bank_b** receives the processed data for analysis.
+  **bank_a** and **bank_b** provides a daily file containing accounts with a fraudulent flag, and **bank_b** receives the processed data for analysis.
 
 - **Data Contract Role:**  
   The collaboration space owner creates a data contract that defines:
@@ -55,8 +61,18 @@ For our real world use case, we need two create two data contract. One for the i
   
   This data contract ensures that quality checks are applied and that only data conforming to the agreed schema is processed by the fraud detection algorithm.
 
+- **Input Data Contract** 
+  ![screenshot of data contract](img/13_create_datacontract_dataprovider.png)
+
+- **Output Data Contract**
+  ![screenshot of data contract](img/26_create_datacontract_dataconsumer_output.png)
+
+
 - **Integration with Invitations:**  
-  Once the data contract is created, the unique Data Contract ID is provided. This ID must be included when sending invitations to collaborators, linking them to the correct data contract and ensuring consistency across the collaboration.
+  - Once the data contract are created, you must select
+    - **Fraudulent Bank Account List** in the **Data Provider** invites
+    - **Fraudulent Bank Account Aggregated** in the **Data Consumer** invites
+
 
 
 ---

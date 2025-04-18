@@ -1,57 +1,65 @@
 # Invite Collaborator
 
-Invitations are the primary mechanism for onboarding new collaborators into your collaboration space. They serve as secure, unique access keys that grant specific permissions based on the type of collaborator you are inviting. There are three types of collaborators:
+
+**Invites** are the primary mechanism for onboarding new collaborators into your collaboration space. They serve as secure, unique access keys that grant specific permissions based on the type of collaborator you are inviting. There are three types of collaborators:
 
 - **Data Provider:**  
-  An organization that supplies data. When creating an invitation for a Data Provider, you can link a Data Contract ID to ensure that the provided data adheres to a defined schema. 
+  An organization that supplies data. When creating an **Invite** for a Data Provider, you must select a **Data Contract** to ensure that the provided data adheres to a defined schema. 
  
 - **Data Consumer:**  
-  An organization that receives and uses data. Invitations for Data Consumers also allow you to specify a Data Contract ID, ensuring the received data complies with the agreed-upon format.
+  An organization that receives and uses data. **Invite** for Data Consumers also require a Data Contract, to ensure that the created data complies with the agreed-upon format.
 
 - **Code Provider:**  
-  An entity responsible for supplying or managing the code that supports the collaboration. Invitations for Code Providers do not require a Data Contract ID.
+  An entity responsible for supplying or managing the code that supports the collaboration. Invites for Code Providers do not require a Data Contract.  
 
-<br />The data contract ID of the invitation will be used to create the collaborator. The data contract ID in the collaborator is an immutable value.
-<br />For Data Providers and Data Consumers: if an organization provides or consumes multiple data inputs/outputs, each input or output must be managed separately.
-<br />For example, if Organization A has three distinct data inputs/outputs, you should create three individual data contracts, one for each input/output, and then generate a separate invitation for each corresponding data contract.
+The **Data Contract**  of the **Invite** will be used to create the collaborator. The **Data Contract**  in the collaborator is an immutable value.   
+For Data Providers and Data Consumers: if an organization provides or consumes multiple data inputs/outputs, each input or output must be managed separately.   
+For example, if Organization A has three distinct data inputs/outputs, you should create three individual **Data Contracts**, one for each input/output, and then create a separate **Invite** for each corresponding **Data Source**.
 
-By using invitations, you maintain precise control over which organizations participate in each aspect of your collaboration space.
+By using Invites, you maintain precise control over which organizations participate in each aspect of your collaboration space.
 
-## Steps to Create an Invitation
+## Steps to Create an Invite
 
-1. **Open the Invitation Modal:**  
-   In the space management panel, click on the **+ Collaborator** button to open the invitation modal.
+1. **Open the Invite Modal:**   
+   - In the space **Overview** panel, click on the **+** under a collaborator column.  
+  ![empty space overview](img/empty_space.png)
 
-2. **Enter Data Contract ID (if applicable):**  
-   For **Data Provider** or **Data Consumer**, enter the corresponding Data Contract ID that defines the schema for the data flow.
+2. **Select a Data Contract (if applicable):**  
+   - For **Data Provider** and **Data Consumer**, select the corresponding Data Contract.
+  ![create invite ](img/16_invite_data_provider_withDC.png)
 
-3. **Submit the Invitation:**  
-   Click the **Create Invite** button. An Invitation ID will be generated upon successful creation.
+3. **Create the Invite:**  
+   - Click on **Create Invite** button. An Invite ID will be generated upon successful creation.
+  ![create invite ](img/16_invite_data_provider_withDC_create.png)
 
-4. **Distribute the Invitation ID:**  
-   Share the generated Invitation ID with the organization that will join your space.
+4. **Distribute the Invite ID:**  
+   - Share the generated **Invite ID** with the organization that will join your space.
+  ![create invite ](img/17_invite_data_provider_copy_invite.png)
 
 ## Example
-For our real-world use case:
 
-- **bank_a** and **bank_b** provides a daily file of accounts flagged as criminal.
-- **bank_b** consumes the processed data for analysis.
-- **Financial Institution** acts as collaboration space owner and also a code provider
+**First Phase**
+- **BankA** and **BankB** provides a daily file of accounts flagged as criminal.
+- **BankB** consumes the processed data for analysis.
+- **Financial Institution A** acts as collaboration space owner and code provider.  
 
 First, you must join as the code provider :
-- Click on the **+ button** under Algorithm or directly in the onboarding checklist **Create Algorithm**.   
-- Click on **Join as** in the modal, the interface will create the invitation and make you join automatically.   
-- The **Code Provider** is now created, you can configure it and deploy the space.   
+- Click on the **+** button under **Algorithm** or directly in the onboarding checklist **Create Algorithm**.   
+- Click on **Join as** in the modal, the interface will create the Invite and make you join automatically.   
+- The **Code Provider** is now created, you must [Configure Algorithm](/docs/user-manual/code-provider/configure-collaborator/general) and [Deploy Space](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage).      
 
-**When the first cage will be deployed and the data contracts created, you'll be able to send the other invitations.**
+**Second Phase**   
+   
+   - When the space is **deployed** and the **Data Contracts** are created, you can send the other **Invites**.   
 
-To manage these distinct data flows, you must create separate invitations, each linked to its own data contract:
+To manage these distinct data flows, you must create separate Invites, each linked to a **Data Contract**:
 
-- **Invitation 1:** For **bank_a** as a **Data Provider** with data contract criminal_account.
-- **Invitation 2:** For **bank_b** as a **Data Provider** with data contract criminal_account.
-- **Invitation 3:** For **bank_b** as a **Data Consumer** with data contract processed_criminal_account.
+- **Invite 1:** For **BankA** as a **Data Provider** with data contract **Fraudulent Bank Account List**.
+- **Invite 2:** For **BankB** as a **Data Provider** with data contract **Fraudulent Bank Account List**.
+- **Invite 3:** For **BankB** as a **Data Consumer** with data contract **Fraudulent Bank Account Aggregated**.   
 
-
+   Send the the **Invite ID** to **BankA** and **BankB**.  
+   They will join the space and configure their **Collaborators**.  
 ---
 
-This guide outlines the purpose and proper use of invitations, helping you effectively onboard collaborators with the appropriate permissions for your space.
+This guide outlines the purpose and proper use of Invites, helping you effectively onboard collaborators with the appropriate permissions for your space.

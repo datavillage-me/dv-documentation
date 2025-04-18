@@ -31,7 +31,7 @@ Follow these steps to get started as a Data Consumer, this process must be follo
 
 4. **Configure your collaborator**  
    Configure the collaborator, to provide the collaboration space the needed information to push data to your GCS.   
-   [Configure Collaborator](/docs/user-manual/data-consumer/configure-collaborator/configure-data-source)  
+   [Configure Collaborator](/docs/user-manual/data-consumer/configure-data-consumer)  
 
 ---
 

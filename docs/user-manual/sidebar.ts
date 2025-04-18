@@ -96,11 +96,8 @@ const sidebar: SidebarsConfig = {
       items: [
         'user-manual/data-provider/intro',
         'user-manual/data-provider/accept-invite',
-        {
-          type: 'category',
-          label: 'Configure Collaborator',
-          items: ['user-manual/data-provider/configure-collaborator/configure-data-source'],
-        },
+        'user-manual/data-provider/configure-data-provider',
+        'user-manual/data-provider/configure-secrets',
         {
           type: 'category',
           label: 'Google Cloud Storage GCS',
@@ -121,11 +118,8 @@ const sidebar: SidebarsConfig = {
       items: [
         'user-manual/data-consumer/intro',
         'user-manual/data-consumer/accept-invite',
-        {
-          type: 'category',
-          label: 'Configure Collaborator',
-          items: ['user-manual/data-consumer/configure-collaborator/configure-data-source'],
-        },
+        'user-manual/data-consumer/configure-data-consumer',
+        'user-manual/data-consumer/configure-secrets',
         {
           type: 'category',
           label: 'Google Cloud Storage GCS',

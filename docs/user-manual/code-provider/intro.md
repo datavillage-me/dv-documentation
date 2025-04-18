@@ -21,7 +21,7 @@ Follow these steps to get create your algorithm:
 
 3. **Deploy the Collaboration Space**   
    Before to do anything else, deploy your space.  
-   [Deploy Cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)  
+   [Deploy Space](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)  
 
 3. **Get the Docker Image Template/Example**  
    Download the Docker image template or example, which serves as the foundation for your development.  

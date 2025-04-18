@@ -1,17 +1,17 @@
 # Get Started
 
-Welcome to the Data Provider section of your collaboration space.  
-As a Data Provider, you are responsible for delivering high-quality, secure data to the collaboration solution.  
-For each data source you provide, you must configure a separate collaborator.  
-Datavillage standard use encrypted data file and Google Cloud Bucket.  
-Datavillage support other file formats and storages, for more information, contact the support team.
+Welcome to the **Data Provider** section of your collaboration space.  
+As a Data Provider, you are responsible for delivering high-quality, secure data.  
+For each **Data Source** you provide, you must configure a  **Collaborator**.  
+Datavillage standard accept **s3 storage** and **JSON**, **CSV** and **Parquet** files format.  
+Parquet files can be duckDB  encrypted.  
 
 ## Key Responsibilities
 
 - **Data Provisioning:** Supply data to the collaboration solution.
-- **Collaborator Setup:** Configure a distinct collaborator for every data source.
+- **Collaborator Setup:** Configure a distinct **Data Provider** collaborator for every data source.
 - **Data Security:** Encrypt your data to safeguard sensitive information.
-- **Storage:** Upload your encrypted data to a secure storage.
+- **Storage:** Upload your encrypted data to a secure **s3** storage.
 
 ## Workflow
 
@@ -20,7 +20,7 @@ Follow these steps to get started as a Data Provider:
 1. **Accept Your Invitation**  
    If you haven't done so already, accept your invitation to join the collaboration space.  
    You will receive one invitation per data source.  
-   [Accept Invitation](/docs/user-manual/data-provider/accept-invitation)
+   [Join Space](/docs/user-manual/data-provider/accept-invite)
 
 2. **Encrypt Your Data**  
    You can also provide unencrypted data in JSON or CSV format, but Datavillage does not recommend this for security reasons.    
@@ -37,7 +37,11 @@ Follow these steps to get started as a Data Provider:
 
 4. **Configure your collaborator**  
    For every unique data source, configure the collaborator.  
-   [Configure Collaborator](/docs/user-manual/data-provider/configure-collaborator/configure-data-source)  
+   [Configure Collaborator](/docs/user-manual/data-provider/configure-data-provider)  
+
+5. **Add your storage credentials**  
+   For every unique data source, add secret credentials.  
+   [Configure Data Source Secrets](/docs/user-manual/data-provider/configure-secrets)     
 
 ---
 
