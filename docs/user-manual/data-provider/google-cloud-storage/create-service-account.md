@@ -1,6 +1,6 @@
 # Creating Service Account HMAC Key
 
-Service Account HMAC keys allow your service accounts to authenticate using HMAC-based signatures. This method is especially useful for applications that require S3-compatible authentication when working with Google Cloud Storage.
+Service Account HMAC keys allow your service accounts to authenticate using HMAC-based signatures. This is the preferred method for applications that require S3-compatible authentication when working with Google Cloud Storage.
 
 In this guide, you’ll learn how to create an HMAC key using both the Cloud Console and the command-line tool.
 
@@ -23,21 +23,22 @@ Before proceeding, ensure you have:
 - Go to the [Service Accounts page](https://console.cloud.google.com/iam-admin/serviceaccounts).
 - Create a new service account or select an existing one.
 
-### 2. Access the HMAC Keys Section
+### 2. Assign the correct permissions to the service account
 
-- Navigate to the [Cloud Storage HMAC Keys page](https://console.cloud.google.com/storage/hmacKeys).
-- Ensure your project is selected.
+- Navigate to your bucket
+- Select the **Permissions** tab
+- Add the `Storage Bucket Viewer` role to the service account
 
 ### 3. Create the HMAC Key
 
-- Click the **Create key** button.
-- In the dialog that appears, select the service account you want to associate with this key.
-- Confirm the creation.
+- From the bucket overview, select **Settings** from the menu on the left hand side
+- Select the **Interoperability** tab
+- Under the section **Service account HMAC**, create an HMAC key tied to the service account
+  - You can only see the secret once, make sure you store it somewhere local and safe
 
-### 4. Retrieve and Secure Your Keys
+### 4. Upload the key
 
-- Once created, the page displays both the **Access Key ID** and **Secret Access Key**.
-- **Important:** Copy and securely store the Secret Access Key immediately. For security reasons, you cannot retrieve it later.
+- Create the JSON file and upload it to the cage as described in the section [Configure Data Source Secrets](/docs/user-manual/data-provider/configure-secrets)
 
 ---
 
@@ -49,3 +50,8 @@ If you don’t have a service account yet, create one using the Cloud SDK:
 
 ```bash
 gcloud iam service-accounts create my-service-account --display-name "My Service Account"
+```
+
+## External documentation
+
+Consult the offical [GCS documentation](https://cloud.google.com/storage/docs/authentication/managing-hmackeys) for a more detailed explanation.

@@ -4,7 +4,7 @@ title: Welcome to Datavillage
 
 # Welcome to Datavillage
 
-Welcome to the user manual of the Datavillage Collaboration Platform. This is composed to aid users of the platform to configure their collaboration spaces to unlock confidential data collaboration.
+Welcome to the user manual of the Datavillage Collaboration Platform (DCP). This is composed to aid users of the platform to configure their collaboration spaces to unlock confidential data collaboration.
 
 The user manual guides the user through the interface of the Datavillage Developer Console, a client side application that offers an intuitive UI to interact with the Datavillage Control Plane. If you wish to implement your own client side application, please consult the [Control Plane API](/docs/api/control-plane) to see the available endpoints.
 
@@ -24,19 +24,21 @@ Every collaboration space is owned by exactly one organization. Other organizati
 
 There are 3 kinds of collaborators:
 
-- **Data Provider**: the organization provides data that serves as input to the algorithm. It defines a _data contract_ and a _data source_ that is used by the cage to pull the data
-- **Data Consumer**: the organization should have access to the output of the algorithm, also called the _insights_. The way these insights are communicated can be configured analogous to the Data Provider
+- **Data Provider**: the organization provides data that serves as input to the algorithm. It defines a _server configuration_ that is used by the cage to pull the data. It can be validated using a _data contract_.
+- **Data Consumer**: the organization consumes the output of the algorithm, also called the _insights_. The way these insights are communicated can be configured analogous to a Data Provider
 - **Algorithm Provider**: the organization provides the algorithm that turns the data into insights. There can be only one algorithm provider (as opposed to data consumers and producers). It should create a docker image running the algorithm and provide the parameters to pull the image in the trusted environment
 
 An organization can take on multiple roles. The owner of the space is not required to take on any of these roles.
 
-## Data Contracts and Data Sources
+## Data Contracts and Servers
 
-Another very important concept in the DCP, is a **data contract**. This defines the schema of the data an organization delivers/receives. Before execution of the algorithm, the integrity of the data can be checked and the algorithm can be stopped if the data does not comply with the schema that is defined in the data contract.
+Another very important concept in the DCP, is a **data contract**. This defines the schema of the data an organization delivers/receives. Before execution of the algorithm, the validity of the data can be checked and the algorithm can be stopped if the data does not comply with the schema that is defined in the data contract.
 
 Data contracts are defined apart from collaboration spaces: an organization could already define all their schemas before joining a single collaboration space.
 The data model is defined using [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/), current implementation supports up to `v3.0.0`, which is backwards compatible until `v2.2.0`. The endpoints to perform CRUD operations can be found [here](/dv-documentation/docs/api/control-plane/data-contracts).
 
-### Integrity check
+**Servers** define how the data should be pulled or pushed. It is configured by the collaborator and also follows [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/) standard.
 
-Within the [Python SDK](https://pypi.org/project/dv-utils/) to develop algorithms for the Datavillage DCP, there is the possibility to perform _integrity checks_ before executing the algorithm. This will validate the pulled data to the configured data contract and throw an exception if it does not comply. The same goes for data that has to be pushed to a data consumer.
+### Quality check
+
+Quality checks can be run either from the algorithm in the cage, or through the Control Plane. The latter makes sure collaborators can test their data before the algorithm is executed. Running a quality check in the cage makes sure that the results are not outdated when running the algorithm.

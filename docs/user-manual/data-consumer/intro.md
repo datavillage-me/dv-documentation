@@ -1,37 +1,36 @@
 # Get Started
 
-Welcome to the Data Consumer section of your collaboration space. As a Data Consumer, you are responsible to make available a secure repository to receive data from the collaboration space.For each data source you consume, you must configure a separate collaborator. Additionally, all data will be encrypted in a parquet file and stored securely in a Google Cloud bucket.
-Datavillage is able to work other file format and storage, for more information, contact the support.
+Welcome to the Data Consumer section of the user manual. \
+As a Data Consumer, you will receive the results of the algorithm (insights). These are typically stored in an S3 bucket. For other data sources, please contact the support.
+
+A data consumer has a data contract that describes how the insights will be structured. These are validated before exporting to ensure data quality.
 
 ## Key Responsibilities
 
 - **Collaborator Setup:** Configure a distinct collaborator for every consumed data schema.
-- **Data Security:** Provide an encryption key to safeguard sensitive information.
-- **Cloud Storage:** Receive your encrypted data in a Google Cloud bucket.
+- **Data Security (optional):** Provide an encryption key to safeguard sensitive information.
+- **Storage:** Receive your encrypted data in an S3 bucket.
 
 ## Workflow
 
-Follow these steps to get started as a Data Consumer, this process must be followed for each consumed data:
+Follow these steps to get started as a Data Consumer:
 
 1. **Accept Your Invitation**  
-   If you haven't done so already, accept your invitation to join the collaboration space.  
-   You will receive one invitation per consumed source.  
-   [Accept Invitation](/docs/user-manual/data-consumer/accept-invite)
+   If you haven't done so already, accept your invitation to join the collaboration space. More detailed explanation can be found in the [Accept Invitation](/docs/user-manual/data-consumer/accept-invite) section.
 
-2. **Create Your Encryption Key**  
-   Ensure that all data is encrypted.  
-   [Generate encryption key](/docs/user-manual/data-consumer/encryption/create-encryption-key)  
+2. **Create Your Encryption Key (optional)**  
+   When using Parquet files, you can encrypt the data to enhance security. This is explained in the [Generate encryption key](/docs/user-manual/data-consumer/encryption/create-encryption-key) section.
 
 3. **Set up your storage**  
-   Upload your data to your secure storage and get credentials.  
+   Upload your data to your secure storage and get credentials.
+
    - **With Google Cloud Storage**  
       Securely upload your encrypted data to a designated Google Cloud bucket.  
       [Create Bucket](/docs/user-manual/data-consumer/google-cloud-storage/create-bucket)  
-      [Create Service Account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)  
+      [Create Service Account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)
 
 4. **Configure your collaborator**  
-   Configure the collaborator, to provide the collaboration space the needed information to push data to your GCS.   
-   [Configure Collaborator](/docs/user-manual/data-consumer/configure-data-consumer)  
+   Configure the collaborator, to provide the collaboration space the needed information to push data to your GCS. This is explained in the [Configure Collaborator](/docs/user-manual/data-consumer/configure-data-consumer) section.
 
 ---
 

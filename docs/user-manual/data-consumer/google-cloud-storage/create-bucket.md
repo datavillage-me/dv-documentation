@@ -5,6 +5,7 @@ This guide explains how to create a new bucket in Google Cloud Storage. You can 
 ## Prerequisites
 
 Before you begin, make sure you have:
+
 - A [Google Cloud account](https://cloud.google.com/).
 - A Google Cloud project with billing enabled.
 - (Optional) The [Google Cloud SDK](https://cloud.google.com/sdk) installed if you plan to use the command-line interface.
@@ -18,16 +19,17 @@ Before you begin, make sure you have:
    Click on the **Create bucket** button.
 
 3. **Configure Your Bucket:**
+
    - **Name:** Enter a unique name for your bucket. Bucket names must be globally unique.
    - **Location Type and Location:** Choose the location type (Region, Multi-region, or Dual-region) and select your preferred geographic location.
    - **Storage Class:** Select Standard for the storage.
-   - **Access Control:** Choose Uniform and  access control.
+   - **Access Control:** Choose Uniform and access control.
 
 4. **Review and Create:**  
-    Once you have configured the bucket settings, click **Create** to finalize the process.
+   Once you have configured the bucket settings, click **Create** to finalize the process.
 
 5. **Upload your parquet file**:  
-    You can upload you file via drag and drop or with the uploads button.  
+   You can upload you file via drag and drop or with the uploads button.
 
 ## Using the Command-Line with `gsutil`
 
@@ -38,3 +40,8 @@ Alternatively, you can use the `gsutil` command-line tool to create a bucket:
    ```bash
    gcloud auth login
    gcloud config set project YOUR_PROJECT_ID
+   ```
+
+## External documentation
+
+Consult the official [GCS documentation](https://cloud.google.com/storage/docs/creating-buckets) for a more detailed explanation.

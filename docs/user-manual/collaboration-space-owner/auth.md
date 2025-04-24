@@ -8,17 +8,16 @@ Within the Data Collaboration Platform, every registered organization is called 
 
 Each user in the space must have specific roles that grant them the necessary permissions. The table below details each role and the corresponding actions they are allowed to perform:
 
-| Role                                   | Permissions (Plain Language)                                                                           |
-|----------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **collaboration-space:reader**         | Can view all details and content of the collaboration space.                                         |
-| **collaboration-space:writer**         | Can view and make updates or modifications to the collaboration space.                               |
-| **collaboration-space:admin**          | Has full administrative rights, including: <br />• Creating and deleting collaboration spaces  <br />• Viewing and updating content  <br />• Inviting or removing collaborators  |
-| **collaboration-space:operator**       | Can publish events within the space and view system logs for monitoring purposes.                      |
-| **collaborator:reader**                | Can view collaborator information and details.                                                       |
-| **collaborator:writer**                | Can view and update collaborator information.                                                        |
-| **data-contract:reader**               | Can view the data contract that defines the terms and conditions.                                    |
-| **data-contract:writer**               | Can view and modify the data contract as needed.                                                     |
-
+| Role                             | Permissions (Plain Language)                                                                                                                                                  |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **collaboration-space:reader**   | Can view all details and content of the collaboration space.                                                                                                                  |
+| **collaboration-space:writer**   | Can view and make updates or modifications to the collaboration space.                                                                                                        |
+| **collaboration-space:admin**    | Has full administrative rights, including: <br />• Creating and deleting collaboration spaces <br />• Viewing and updating content <br />• Inviting or removing collaborators |
+| **collaboration-space:operator** | Can publish events within the space and view system logs for monitoring purposes.                                                                                             |
+| **collaborator:reader**          | Can view collaborator information and details.                                                                                                                                |
+| **collaborator:writer**          | Can view and update collaborator information.                                                                                                                                 |
+| **data-contract:reader**         | Can view the data contract that defines the terms and conditions.                                                                                                             |
+| **data-contract:writer**         | Can view and modify the data contract as needed.                                                                                                                              |
 
 > **Note:** Ensure that each collaborator is granted the appropriate permissions according to their role. This configuration is key to maintaining a secure and efficient collaboration environment.
 
@@ -30,31 +29,11 @@ All client and account creations must be requested through the DataVillage suppo
 
 For our real-word use case you must require the creation of the following clients and accounts:
 
-**Client: Financial Institution**
-    - Account roles:
-        - collaboration-space:admin
-        - data-contract:writer
-        - collaborator:writer
-        - collaboration-space:operator
+**Client: Financial Institution** - Account roles: - collaboration-space:admin - data-contract:writer - collaborator:writer - collaboration-space:operator
 
-**Client: Bank A**
-    - Account roles: 
-        - collaboration-space:reader
-        - collaborator:writer
-        - data-contract:reader
+**Client: Bank A** - Account roles: - collaboration-space:reader - collaborator:writer - data-contract:reader
 
-**Client: Bank B**
-    - Account roles:
-        - collaboration-space:reader
-        - collaborator:writer
-        - data-contract:reader  
-        
-
-Each client will have a unique Datavillage url : https://$CLIENT.console.gke.datavillage.me/.  
-
-**Financial Institution**: https://financial_institution.console.gke.datavillage.me/  
-**Bank A**: https://bank_a.console.gke.datavillage.me/  
-**Bank B**: https://bank_b.console.gke.datavillage.me/  
+**Client: Bank B** - Account roles: - collaboration-space:reader - collaborator:writer - data-contract:reader
 
 The support will send an email to the users with their url and credentials.
 
