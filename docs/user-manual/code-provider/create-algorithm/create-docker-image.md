@@ -6,9 +6,9 @@ Your algorithm is delivered as a Docker image. Since the cage-example repository
 
 Navigate to the root of the cage-example repository in your terminal and run the following command to build your Docker image:
 
-~~~bash
+```bash
 docker build -t your-username/your-image-name:tag .
-~~~
+```
 
 Replace `your-username/your-image-name:tag` with your desired image name and tag.
 
@@ -18,17 +18,17 @@ Once the image is built, push it to your container registry (e.g., Docker Hub):
 
 1. **Log in to your registry:**
 
-~~~bash
+```bash
 docker login
-~~~
+```
 
-   Enter your credentials when prompted.
+Enter your credentials when prompted.
 
 2. **Push your image:**
 
-~~~bash
+```bash
 docker push your-username/your-image-name:tag
-~~~
+```
 
 This command uploads your Docker image to the registry under your repository.
 
@@ -47,4 +47,4 @@ A private access token is required to authenticate deployments and securely pull
 
 ---
 
-By following these steps, you'll have successfully built your Docker image, pushed it to your registry, and secured it with a private access token—ready for deployment on the DataVillage platform.
+By following these steps, you'll have successfully built your Docker image, pushed it to your registry, and secured it with a private access token—ready for deployment on the Datavillage platform.
