@@ -37,9 +37,9 @@ For our real-word use case you must require the creation of the following client
 
 The support will send to the users their url and credentials.
 
-## Bring Your Own Identity Provider (IDP)
+## Bring Your Own Identity Provider
 
-If you wish to integrate your own Identity Provider (IDP) into your collaboration space, you can do so. For more information on integrating your custom IDP, please [contact us](mailto:support@datavillage.com).
+If you wish to integrate your own Identity Provider into your collaboration space, you can do so. For more information, please [contact us](mailto:support@datavillage.ai).
 
 ---
 
