@@ -1,6 +1,6 @@
 # Authentication & Authorization
 
-Welcome to the Authentication & Authorization section of our documentation. This page outlines the roles and permissions required for each collaborator in your collaboration space. Please note that the creation of clients and accounts must be requested through the Datavillage support team.
+Welcome to the Authentication & Authorization section of our documentation. This page outlines the roles and permissions required for each collaborator in your collaboration space. Please note that the creation of clients and accounts must be requested through the DataVillage support team.
 
 Within the Data Collaboration Platform, every registered organization is called a client. These organizations often consist of several people, each having their own role within the organization. The roles that are given to the different users should follow the convention as defined in the authorization section.
 
@@ -23,7 +23,7 @@ Each user in the space must have specific roles that grant them the necessary pe
 
 ## Client and Account Creation
 
-All client and account creations must be requested through the Dataillage support team. This process guarantees that every new client and account is set up correctly with the proper permissions and security measures.
+All client and account creations must be requested through the DataVillage support team. This process guarantees that every new client and account is set up correctly with the proper permissions and security measures.
 
 ## Example
 
@@ -37,9 +37,9 @@ For our real-word use case you must require the creation of the following client
 
 The support will send to the users their url and credentials.
 
-## Bring Your Own Identity Provider
+## Bring Your Own Identity Provider (IDP)
 
-If you wish to integrate your own Identity Provider with Datavillage, you can do so. For more information, please [contact us](mailto:support@datavillage.com).
+If you wish to integrate your own Identity Provider (IDP) into your collaboration space, you can do so. For more information on integrating your custom IDP, please [contact us](mailto:support@datavillage.ai).
 
 ---
 
