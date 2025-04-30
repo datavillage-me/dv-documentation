@@ -1,12 +1,8 @@
----
-title: Get the Docker Image Example
----
-
-# Get the Docker Image Example
+# Get docker image example
 
 Datavillage is providing a cage-example github repository, this code will help you to quickly create your first algorithm.  
 You don't have to modify anything in this algorithm to deploy it on the platform.  
-Only the code to process the data is needed.  
+Only the code to process the data is needed.
 
 The **cage-example** github repository contains:
 

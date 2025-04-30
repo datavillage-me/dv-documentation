@@ -1,6 +1,6 @@
-# Create Algorithm
+# Create algorithm
 
-To create a **Algorithm Collaborator**,  follow these steps:
+To create a **Algorithm Collaborator**, follow these steps:
 
 1. Click on the **+** button under **Algorithm** or click on **Create Algorithm** in the check list in the space **Overview**.
 
@@ -10,7 +10,7 @@ To create a **Algorithm Collaborator**,  follow these steps:
 
 ![screenshot of Algorithm provider invite](img/05_create_algo.png)
 
-That's it! You have created the **Algorithm Collaborator**  
+That's it! You have created the **Algorithm Collaborator**
 
 ![screenshot of space overview with Algorithm provider ](img/06_space_algo_created.png)
 

@@ -1,11 +1,11 @@
-# Get Started
+# Getting started
 
 Welcome to the Data Consumer section of the user manual. \
 As a Data Consumer, you will receive the results of the algorithm (insights). These are typically stored in an S3 bucket. For other data sources, please contact the support.
 
 A data consumer has a data contract that describes how the insights will be structured. These are validated before exporting to ensure data quality.
 
-## Key Responsibilities
+## Key responsibilities
 
 - **Collaborator Setup:** Configure a distinct collaborator for every consumed data schema.
 - **Data Security (optional):** Provide an encryption key to safeguard sensitive information.
@@ -15,16 +15,16 @@ A data consumer has a data contract that describes how the insights will be stru
 
 Follow these steps to get started as a Data Consumer:
 
-1. **Accept Your Invitation**  
+1. **Accept your invitation**  
    If you haven't done so already, accept your invitation to join the collaboration space. More detailed explanation can be found in the [Accept Invitation](/docs/user-manual/data-consumer/accept-invite) section.
 
-2. **Create Your Encryption Key (optional)**  
+2. **Create your encryption key (optional)**  
    When using Parquet files, you can encrypt the data to enhance security. This is explained in the [Generate encryption key](/docs/user-manual/data-consumer/encryption/create-encryption-key) section.
 
 3. **Set up your storage**  
    Upload your data to your secure storage and get credentials.
 
-   - **With Google Cloud Storage**  
+   - **With Google cloud storage**  
       Securely upload your encrypted data to a designated Google Cloud bucket.  
       [Create Bucket](/docs/user-manual/data-consumer/google-cloud-storage/create-bucket)  
       [Create Service Account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)

@@ -1,12 +1,8 @@
----
-title: Create Space
----
-
-# Create Space
+# Create space
 
 To begin your collaborative journey, you must first create a new space. A space is the dedicated collaboration space environment where you manage the collaborators and the data collaboration solution.
 
-## Space Properties
+## Space properties
 
 Every space must have a name, a category and a description.
 
@@ -16,11 +12,11 @@ Every space must have a name, a category and a description.
 
 > **Tip:** Select a name that is simple, descriptive, and memorable.
 
-## How to Create a Space
+## How to create a space
 
 Follow these steps to create your space:
 
-1. **Open Space creation**  
+1. **Open space creation**  
    Access the "Create Space" page from the main menu.
 
 If you haven't join a space or created one yet, directly click on **create a space**.
@@ -31,7 +27,7 @@ If you already have joined or created a space, click on the **+ button**
 
 ![screenshot of the datavillage dashboard](img/dashboard_create_space.png)
 
-2. **Configure Space:**  
+2. **Configure space:**  
    Provide name, category and description
 
 ![screenshot of space creation](img/02_create_space.png)

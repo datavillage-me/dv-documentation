@@ -1,4 +1,4 @@
-# Create Algorithm Image
+# Create algorithm image
 
 Your algorithm is delivered as a Docker image. Since the cage-example repository already contains the necessary Dockerfile, you can focus on building your image, pushing it to your registry, and obtaining a private access token for secure deployments.
 
@@ -6,9 +6,9 @@ Your algorithm is delivered as a Docker image. Since the cage-example repository
 
 Navigate to the root of the cage-example repository in your terminal and run the following command to build your Docker image:
 
-~~~bash
+```bash
 docker build -t your-username/your-image-name:tag .
-~~~
+```
 
 Replace `your-username/your-image-name:tag` with your desired image name and tag.
 
@@ -18,17 +18,17 @@ Once the image is built, push it to your container registry (e.g., Docker Hub):
 
 1. **Log in to your registry:**
 
-~~~bash
+```bash
 docker login
-~~~
+```
 
-   Enter your credentials when prompted.
+Enter your credentials when prompted.
 
 2. **Push your image:**
 
-~~~bash
+```bash
 docker push your-username/your-image-name:tag
-~~~
+```
 
 This command uploads your Docker image to the registry under your repository.
 
