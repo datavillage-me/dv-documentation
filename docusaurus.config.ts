@@ -109,7 +109,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Datavillage, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Datavillage, Inc.`,
     },
     prism: {
       prism: {
@@ -184,12 +184,13 @@ const config: Config = {
       },
     ],
     [
-      'docusaurus-plugin-remote-content',
+      "docusaurus-plugin-remote-content",
       {
-        name: 'cage-example', // this is the folder name where the file will be saved
-        sourceBaseUrl: 'https://raw.githubusercontent.com/datavillage-me/cage-example/main/',
-        outDir: 'docs/cage-example',
-        documents: ['README.md'],
+        name: "cage-example", // this is the folder name where the file will be saved
+        sourceBaseUrl:
+          "https://raw.githubusercontent.com/datavillage-me/cage-example/main/",
+        outDir: "docs/cage-example",
+        documents: ["README.md"],
       },
     ],
     // [
