@@ -26,9 +26,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/datavillage-me/dv-documentation",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         theme: {
@@ -184,12 +181,13 @@ const config: Config = {
       },
     ],
     [
-      'docusaurus-plugin-remote-content',
+      "docusaurus-plugin-remote-content",
       {
-        name: 'cage-example', // this is the folder name where the file will be saved
-        sourceBaseUrl: 'https://raw.githubusercontent.com/datavillage-me/cage-example/main/',
-        outDir: 'docs/cage-example',
-        documents: ['README.md'],
+        name: "cage-example", // this is the folder name where the file will be saved
+        sourceBaseUrl:
+          "https://raw.githubusercontent.com/datavillage-me/cage-example/main/",
+        outDir: "docs/cage-example",
+        documents: ["README.md"],
       },
     ],
     // [
