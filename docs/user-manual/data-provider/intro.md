@@ -1,6 +1,6 @@
 # Getting started
 
-Welcome to the **Data Provider** section of your collaboration space.  
+Welcome to the **data provider** section of your collaboration space.  
 As a Data Provider, you are responsible for delivering high-quality, secure data. For each input to the algorithm you contribute, you must configure a **collaborator**.  
 The platform supports reading from an **S3 bucket**. It can read **JSON**, **CSV** and **Parquet** files.  
 Parquet files can be encrypted.

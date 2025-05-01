@@ -13,7 +13,7 @@ The **cage-example** github repository contains:
   - Writing data.
 - Integration with the `dv_utils` Python library and the Data Engine.
 
-## How to Clone the Repository
+## How to clone the repository
 
 To get started, clone the repository using Git.  
 Open your terminal and run:

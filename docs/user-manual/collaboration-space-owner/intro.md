@@ -48,15 +48,15 @@ As a Collaboration Space Owner, you manage the overall space, handle authenticat
 
 This documentation follows a real-world use case where the "Financial Institution" creates a data collaboration platform for two banks, **Bank A** and **Bank B**.  
 The goal of the collaborative platform is to easily and securely match suspicious account list.  
-As the collaboration space owner your are **"Financial Institution"**.
+As the collaboration space owner your are **"Financial institution"**.
 
 Here’s how the scenario unfolds:
 
-Everyday, Bank A and Bank B provide a list of suspicious accounts. These accounts are registered at some bank. The algorithm can find the suspicious accounts that are registered at Bank A, but flagged by Bank B. Everyday, Bank A receives a list of these acccounts that were flagged by another bank.
+Everyday, Bank A and Bank B provide a list of suspicious accounts. These accounts are registered at some bank. The algorithm can find the suspicious accounts that are registered at Bank A, but flagged by Bank B. Everyday, Bank A receives a list of these accounts that were flagged by another bank.
 
 In this user manual, you will be guided through the steps to setup a collaboration space like this. The roles of the different parties are the following
 
-- **Financial Institution** is the _collaboration space owner_ and _algorithm provider_. It will create the space, invite collaborators and develop and deploy the algorithm
+- **Financial institution** is the _collaboration space owner_ and _algorithm provider_. It will create the space, invite collaborators and develop and deploy the algorithm
 - **Bank A** and **Bank B** are both _data provider_ (providing a list of suspicious accounts) and _data consumer_ (consuming a list of suspicious accounts flagged by the other bank)
 
 Follow the subsequent guides in this documentation for detailed instructions on each of these steps. This structured approach will help you create and manage an efficient, fraud-fighting collaboration space.

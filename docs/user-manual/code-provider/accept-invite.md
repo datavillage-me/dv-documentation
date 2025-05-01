@@ -21,6 +21,6 @@ To join a Collaboration Space, simply follow these steps:
    ![screenshot of the datavillage dashboard](img/join_invite_codeprovider_2.png)
 
 That's it! Once you submit your Invite ID, you'll be granted access to the Collaboration Space.  
-You must now [Configure Algorithm Collaborator](/docs/user-manual/code-provider/configure-collaborator/general).
+You must now [configure algorithm provider](/docs/user-manual/code-provider/configure-collaborator/general).
 
 For any issues or further assistance, please contact our support team.

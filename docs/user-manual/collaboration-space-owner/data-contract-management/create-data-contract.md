@@ -15,7 +15,7 @@ Data contracts are a fundamental concept in the Data Collaboration Platform (DCP
 - **Single data contract per server:**  
   A collaborator configures the server where the data should be pulled/pushed. Every such server should be described by exactly one data contract. The data pushed/pulled should comply with all properties defined in the schema. It is thus not possible to describe servers with different structures in one contract.
 
-## Create Data Contract
+## Create data contract
 
 Follow these steps to create a new data contract:
 
