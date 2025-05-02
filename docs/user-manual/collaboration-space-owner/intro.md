@@ -9,39 +9,39 @@ As a Collaboration Space Owner, you manage the overall space, handle authenticat
 1. **Create clients and accounts**  
    Request the creation of a client and user accounts for each participating organization.
 
-   - [Auth Page](/docs/user-manual/collaboration-space-owner/auth)
+   - [Auth page](/docs/user-manual/collaboration-space-owner/auth)
 
 2. **Create the collaboration space**  
    Set up the collaboration space, which serves as the central hub for managing all subsequent activities and invitations.
 
-   - [Create Space](/docs/user-manual/collaboration-space-owner/space-management/create-space)
+   - [Create space](/docs/user-manual/collaboration-space-owner/space-management/create-space)
 
 3. **Create the algorithm**  
    If you act as **collaboration space owner and also code provider** follow the **Algorithm** to create and configure the algorithm image.  
    If an **external organization acts as the code provider**, make sure that they followed the **Algorithm** before to start the next step.
 
-   - [Code Provider Workflow](/docs/user-manual/code-provider/intro)
+   - [Code provider workflow](/docs/user-manual/code-provider/intro)
 
 4. **Deploy the initial Cage**  
    Once the Code Provider has set up the initial algorithm image, you can deploy the cage. Verify its operation by reviewing the logs.
 
-   - [Deploy Cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
+   - [Deploy cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
    - [Logs](/docs/user-manual/collaboration-space-owner/cage-management/logs)
 
 5. **Create data contracts**  
    For each unique input or output schema, create an individual data contract to ensure data quality and consistency.  
    Data contracts aren't linked to a space, you can create them even if the space isn't created and you can use them in different spaces.
 
-   - [Create Data Contract](/docs/user-manual/collaboration-space-owner/data-contract-management/create-data-contract)
+   - [Create data contract](/docs/user-manual/collaboration-space-owner/data-contract-management/create-data-contract)
 
 6. **Invite data collaborators**  
    Extend invitations to the Data Provider and Data Consumer, including the corresponding Data Contract ID with each invitation.
 
-   - [Create Invite](/docs/user-manual/collaboration-space-owner/invite-collaborator/create-invite)
+   - [Create invite](/docs/user-manual/collaboration-space-owner/invite-collaborator/create-invite)
 
 7. **Deploy the final cage**  
    After all collaborators have completed their configurations, deploy the final version of the cage. Confirm system stability by checking the logs.
-   - [Deploy Cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
+   - [Deploy cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
    - [Logs](/docs/user-manual/collaboration-space-owner/cage-management/logs)
 
 ## Example
