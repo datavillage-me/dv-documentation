@@ -25,19 +25,6 @@ const defaultSidebars: SidebarsConfig = {
       items: require("./docs/user-manual/sidebar.js"),
     },
   ],
-  cageDevelopmentSidebar: [
-    {
-      type: "category",
-      label: "Cage Development",
-      link: {
-        type: "generated-index",
-        title: "Cage Development",
-        description: "How to develop algorithms to run in a cage",
-        slug: "/cage-development",
-      },
-      items: require("./docs/cage-development/sidebar.js"),
-    },
-  ],
 };
 
 type Projects = {
