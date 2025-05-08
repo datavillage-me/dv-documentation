@@ -21,7 +21,6 @@ const sidebar: SidebarsConfig = {
         {
           type: "category",
           label: "Algorithm",
-          customProps: { icon: "Handshake" },
           items: [
             "user-manual/code-provider/intro",
             "user-manual/code-provider/create-invite",
@@ -44,6 +43,7 @@ const sidebar: SidebarsConfig = {
         "user-manual/collaboration-space-owner/cage-management/logs",
         "user-manual/collaboration-space-owner/data-contract-management/create-data-contract",
         "user-manual/collaboration-space-owner/invite-collaborator/create-invite",
+        "user-manual/collaboration-space-owner/cage-management/events",
       ],
     },
     {
