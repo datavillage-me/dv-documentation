@@ -1,8 +1,8 @@
-# Configure Data Provider
+# Configure data provider
 
-To configure the **Data Provider**, open your space **Overview** where you can see all collaborators in the space.
+To configure the **data provider**, open your space **Overview** where you can see all collaborators in the space.
 
-1. **Open Data Provider**
+1. **Open data provider**
 
    - Click on your client **Data Provider** card.
 
@@ -12,7 +12,7 @@ To configure the **Data Provider**, open your space **Overview** where you can s
 
    - In the **Data Contract** section you can access the data contract attached to your collaborator.
    - In the **General Properties** set a name, a label and a description.
-     - The **label** is used to retrieve the collaborator in the code.
+     - The **Label** is used to retrieve the collaborator in the code.
    - In the **Configuration** section, you can add environment variables that can be used in the code.
    - In the **Data Source** section, configure the access to your **S3** bucket.
 

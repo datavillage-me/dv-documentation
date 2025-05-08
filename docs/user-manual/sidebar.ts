@@ -5,12 +5,15 @@ const sidebar: SidebarsConfig = {
     {
       type: "doc",
       id: "user-manual/intro",
+      customProps: { icon: "Home" },
     },
     {
       type: "category",
       label: "Collaboration Space Owner",
       collapsible: true,
       collapsed: true,
+      customProps: { icon: "Settings" },
+
       items: [
         "user-manual/collaboration-space-owner/intro",
         "user-manual/collaboration-space-owner/auth",
@@ -48,6 +51,8 @@ const sidebar: SidebarsConfig = {
       label: "Data Provider",
       collapsible: true,
       collapsed: true,
+      customProps: { icon: "Handshake" },
+
       items: [
         "user-manual/data-provider/intro",
         "user-manual/data-provider/accept-invite",
@@ -76,6 +81,8 @@ const sidebar: SidebarsConfig = {
       label: "Data Consumer",
       collapsible: true,
       collapsed: true,
+      customProps: { icon: "Handshake" },
+
       items: [
         "user-manual/data-consumer/intro",
         "user-manual/data-consumer/accept-invite",

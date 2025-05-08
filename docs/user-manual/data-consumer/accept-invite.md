@@ -1,26 +1,26 @@
-# Accept Invite
+# Accept invite
 
-To join a Collaboration Space, simply follow these steps:
+To join a collaboration space, simply follow these steps:
 
 1. You haven't created or join a space yet. Click on **join a space** in the welcome message
    ![screenshot of the datavillage dashboard](img/01_welcome_message.png)
 
-2. If you already collaborate in a space, click on the **+** button on the right of **Collaboration spaces** in the menu.  
+2. If you already collaborate in a space, click on the **+** button on the right of **collaboration spaces** in the menu.  
    ![screenshot of the datavillage dashboard](img/dashboard_create_space.png)
 
-3. Click on **Join Collaboration Space**
+3. Click on **Join collaboration space**
    ![screenshot of the datavillage dashboard](img/18_join_data_consumer.png)
 
-4. Enter the **Invite ID** provided by the Collaboration Space Owner.
+4. Enter the **Invite ID** provided by the collaboration space owner.
    ![screenshot of the datavillage dashboard](img/30_join_dataconsumer.png)
 
 5. Click on **Join** to see the **Invite** details.
    ![screenshot of the datavillage dashboard](img/31_join_dataconsumer_invite_info.png)
 
-6. Click on **Accept** to join the Collaboration Space.  
+6. Click on **Accept** to join the collaboration space.  
    ![screenshot of the datavillage dashboard](img/31_join_dataconsumer_invite_info_accept.png)
 
-That's it! Once you accept the invite, you'll be granted access to the Collaboration Space.  
-You should now [Configure Data Consumer Collaborator](/docs/user-manual/data-consumer/configure-data-consumer)
+That's it! Once you accept the invite, you'll be granted access to the collaboration space.  
+You should now [configure data consumer](/docs/user-manual/data-consumer/configure-data-consumer)
 
 For any issues or further assistance, please contact our support team.
