@@ -39,7 +39,7 @@ The support will send an email to the users with their url and credentials.
 
 ## Bring your own identity provider
 
-If you wish to integrate your own Identity Provider (IDP) into your collaboration space, you can do so. For more information on integrating your custom IDP, please [contact us](mailto:support@datavillage.com).
+If you wish to integrate your own Identity Provider (IDP) into your collaboration space, you can do so. For more information on integrating your custom IDP, please [contact us](mailto:support@datavillage.ai).
 
 ---
 
