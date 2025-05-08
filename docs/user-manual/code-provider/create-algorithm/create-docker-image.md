@@ -45,4 +45,5 @@ A private access token is required to authenticate deployments and securely pull
 3. **Store the token securely:**  
    Save this token securely, as it will be used in your deployment configurations to authenticate image pulls.
 
-By following these steps, you'll have successfully built your Docker image, pushed it to your registry, and secured it with a private access token—ready for deployment on the DataVillage platform.
+By following these steps, you'll have successfully built your Docker image, pushed it to your registry, and secured it with a private access token—ready for deployment on the Datavillage platform.
+

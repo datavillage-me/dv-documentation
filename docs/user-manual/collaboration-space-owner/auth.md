@@ -1,6 +1,6 @@
 # Authentication & Authorization
 
-Welcome to the Authentication & Authorization section of our documentation. This page outlines the roles and permissions required for each collaborator in your collaboration space. Please note that the creation of clients and accounts must be requested through the DataVillage support team.
+Welcome to the Authentication & Authorization section of our documentation. This page outlines the roles and permissions required for each collaborator in your collaboration space. Please note that the creation of clients and accounts must be requested through the Datavillage support team.
 
 Within the Data Collaboration Platform, every registered organization is called a client. These organizations often consist of several people, each having their own role within the organization. The roles that are given to the different users should follow the convention as defined in the authorization section.
 
@@ -23,7 +23,7 @@ Each user in the space must have specific roles that grant them the necessary pe
 
 ## Client and account creation
 
-All client and account creations must be requested through the DataVillage support team. This process guarantees that every new client and account is set up correctly with the proper permissions and security measures.
+All client and account creations must be requested through the Datavillage support team. This process guarantees that every new client and account is set up correctly with the proper permissions and security measures.
 
 ## Example
 
