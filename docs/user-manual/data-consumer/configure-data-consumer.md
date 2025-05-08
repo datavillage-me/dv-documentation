@@ -1,8 +1,8 @@
-# Configure Data Consumer
+# Configure data consumer
 
-To configure the **Data Consumer** collaborator, navigate to the **space overview page**.
+To configure the **cata consumer** collaborator, navigate to the space **Overview** page.
 
-1. **Open the Data Consumer**
+1. **Open the data consumer**
 
    - Click on your client **Data Consumer** card.
 
@@ -10,9 +10,9 @@ To configure the **Data Consumer** collaborator, navigate to the **space overvie
 
 2. **Configure with your properties**
 
-   - In the **Data Contract** section you can access the **Data Contract** attached to your **Data Consumer**.
+   - In the **Data Contract** section you can access the **data contract** attached to your **data consumer**.
    - In the **General Properties** set a name, a label and a description.
-     - The **label** is used to retrieve the collaborator in the code.
+     - The **Label** is used to retrieve the collaborator in the code.
    - In the **Configuration** you can add variables that can be used in the code.
    - In the **Data Source** configure the access to your **s3** storage.
 
@@ -21,4 +21,4 @@ To configure the **Data Consumer** collaborator, navigate to the **space overvie
 3. **Click on Update**
    ![screenshot of filled algorithm](img/34_configure_data_consumer_update.png).
 
-By correctly configuring these settings, the **Collaboration Space** will be able to write your data securely.
+By correctly configuring these settings, the **collaboration space** will be able to write your data securely.

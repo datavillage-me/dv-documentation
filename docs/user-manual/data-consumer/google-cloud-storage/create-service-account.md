@@ -1,10 +1,8 @@
-# Creating Service Account HMAC Key
+# Creating service account HMAC key
 
-Service Account HMAC keys allow your service accounts to authenticate using HMAC-based signatures. This is the preferred method for applications that require S3-compatible authentication when working with Google Cloud Storage.
+Service account HMAC keys allow your service accounts to authenticate using HMAC-based signatures. This is the preferred method for applications that require S3-compatible authentication when working with Google Cloud Storage.
 
 In this guide, you’ll learn how to create an HMAC key using both the Cloud Console and the command-line tool.
-
----
 
 ## Prerequisites
 
@@ -14,13 +12,11 @@ Before proceeding, ensure you have:
 - Sufficient permissions to manage service accounts and HMAC keys.
 - (Optional) The [Google Cloud SDK](https://cloud.google.com/sdk) installed if you prefer using the command line.
 
----
+## Creating a service account HMAC Key via the cloud console
 
-## Creating a Service Account HMAC Key via the Cloud Console
+### 1. Create or select a service account
 
-### 1. Create or Select a Service Account
-
-- Go to the [Service Accounts page](https://console.cloud.google.com/iam-admin/serviceaccounts).
+- Go to the [service sccounts page](https://console.cloud.google.com/iam-admin/serviceaccounts).
 - Create a new service account or select an existing one.
 
 ### 2. Assign the correct permissions to the service account
@@ -40,11 +36,9 @@ Before proceeding, ensure you have:
 
 - Create the JSON file and upload it to the cage as described in the section [Configure Data Source Secrets](/docs/user-manual/data-provider/configure-secrets)
 
----
+## Creating a service account HMAC Key via the command line
 
-## Creating a Service Account HMAC Key via the Command Line
-
-### 1. Create or Select a Service Account
+### 1. Create or select a service account
 
 If you don’t have a service account yet, create one using the Cloud SDK:
 
@@ -54,4 +48,4 @@ gcloud iam service-accounts create my-service-account --display-name "My Service
 
 ## External documentation
 
-Consult the offical [GCS documentation](https://cloud.google.com/storage/docs/authentication/managing-hmackeys) for a more detailed explanation.
+Consult the official [GCS documentation](https://cloud.google.com/storage/docs/authentication/managing-hmackeys) for a more detailed explanation.

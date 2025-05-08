@@ -1,36 +1,44 @@
-# Get Started
+# Getting started
 
-Welcome to the Data Consumer section of the user manual. \
-As a Data Consumer, you will receive the results of the algorithm (insights). These are typically stored in an S3 bucket. For other data sources, please contact the support.
+Welcome to the **data consumer** section of the user manual. \
+As a data consumer, you will receive the results of the algorithm (insights).  
+A data consumer has a data contract that describes how the insights will be structured.  
+These are validated before exporting to ensure data quality.
 
-A data consumer has a data contract that describes how the insights will be structured. These are validated before exporting to ensure data quality.
+The output files are typically stored in an S3 bucket. For other data sources, please contact the support.
 
-## Key Responsibilities
+## Key responsibilities
 
-- **Collaborator Setup:** Configure a distinct collaborator for every consumed data schema.
-- **Data Security (optional):** Provide an encryption key to safeguard sensitive information.
+- **Collaborator setup:** Configure a distinct collaborator for every consumed data schema.
+- **Data security (optional):** Provide an encryption key to safeguard sensitive information.
 - **Storage:** Receive your encrypted data in an S3 bucket.
 
 ## Workflow
 
-Follow these steps to get started as a Data Consumer:
+Follow these steps to get started as a data consumer:
 
-1. **Accept Your Invitation**  
-   If you haven't done so already, accept your invitation to join the collaboration space. More detailed explanation can be found in the [Accept Invitation](/docs/user-manual/data-consumer/accept-invite) section.
+1. **Accept your invitation**
 
-2. **Create Your Encryption Key (optional)**  
-   When using Parquet files, you can encrypt the data to enhance security. This is explained in the [Generate encryption key](/docs/user-manual/data-consumer/encryption/create-encryption-key) section.
+   - If you haven't done so already, accept your invitation to join the collaboration space.
+   - More detailed explanation can be found in the [accept invitation](/docs/user-manual/data-consumer/accept-invite) section.
 
-3. **Set up your storage**  
-   Upload your data to your secure storage and get credentials.
+2. **Create your encryption key (optional)**
 
-   - **With Google Cloud Storage**  
-      Securely upload your encrypted data to a designated Google Cloud bucket.  
-      [Create Bucket](/docs/user-manual/data-consumer/google-cloud-storage/create-bucket)  
-      [Create Service Account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)
+   - When using Parquet files, you can encrypt the data to enhance security.
+   - This is explained in the [generate encryption key](/docs/user-manual/data-consumer/encryption/create-encryption-key) section.
 
-4. **Configure your collaborator**  
-   Configure the collaborator, to provide the collaboration space the needed information to push data to your GCS. This is explained in the [Configure Collaborator](/docs/user-manual/data-consumer/configure-data-consumer) section.
+3. **Set up your storage**
+
+   - Upload your data to your secure storage and get credentials.
+
+   - **With Google cloud storage**
+     - Securely upload your encrypted data to a designated Google cloud bucket.
+       - [Create bucket](/docs/user-manual/data-consumer/google-cloud-storage/create-bucket)
+       - [Create service account](/docs/user-manual/data-consumer/google-cloud-storage/create-service-account)
+
+4. **Configure your collaborator**
+   - Configure the collaborator, to provide the collaboration space the needed information to push data to your GCS.
+   - This is explained in the [configure collaborator](/docs/user-manual/data-consumer/configure-data-consumer) section.
 
 ---
 

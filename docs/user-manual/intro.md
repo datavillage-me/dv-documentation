@@ -1,7 +1,3 @@
----
-title: Welcome to Datavillage
----
-
 # Welcome to Datavillage
 
 Welcome to the user manual of the Datavillage Collaboration Platform (DCP). This is composed to aid users of the platform to configure their collaboration spaces to unlock confidential data collaboration.
@@ -14,7 +10,7 @@ We start off with explaining some important concepts on which the DCP is built. 
 
 ![screenshot of final state of collaboration space in Datavillage Developer Console](img/36_overview_dataconsumer_configured.png)
 
-## Collaboration Spaces
+## Collaboration spaces
 
 The core concept around which the DCP is built, is a **collaboration space**. This is the unit of collaboration: every collaboration space has exactly one algorithm that processes data from one or more parties.
 
@@ -24,13 +20,13 @@ Every collaboration space is owned by exactly one organization. Other organizati
 
 There are 3 kinds of collaborators:
 
-- **Data Provider**: the organization provides data that serves as input to the algorithm. It defines a _server configuration_ that is used by the cage to pull the data. It can be validated using a _data contract_.
-- **Data Consumer**: the organization consumes the output of the algorithm, also called the _insights_. The way these insights are communicated can be configured analogous to a Data Provider
+- **Data provider**: the organization provides data that serves as input to the algorithm. It defines a _server configuration_ that is used by the cage to pull the data. It can be validated using a _data contract_.
+- **Data consumer**: the organization consumes the output of the algorithm, also called the _insights_. The way these insights are communicated can be configured analogous to a Data Provider
 - **Algorithm Provider**: the organization provides the algorithm that turns the data into insights. There can be only one algorithm provider (as opposed to data consumers and producers). It should create a docker image running the algorithm and provide the parameters to pull the image in the trusted environment
 
 An organization can take on multiple roles. The owner of the space is not required to take on any of these roles.
 
-## Data Contracts and Servers
+## Data contracts and servers
 
 Another very important concept in the DCP, is a **data contract**. This defines the schema of the data an organization delivers/receives. Before execution of the algorithm, the validity of the data can be checked and the algorithm can be stopped if the data does not comply with the schema that is defined in the data contract.
 

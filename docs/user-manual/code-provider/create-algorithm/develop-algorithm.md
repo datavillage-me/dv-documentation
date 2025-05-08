@@ -1,4 +1,4 @@
-# Develop Algorithm
+# Develop algorithm
 
 Developing your algorithm is a critical part of the Code Provider workflow. In this section, you'll find detailed guidance on how to leverage the `dv_utils` Python library to build, test, and deploy your algorithm in the Datavillage platform.
 
