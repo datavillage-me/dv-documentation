@@ -26,9 +26,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/datavillage-me/dv-documentation",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         theme: {
