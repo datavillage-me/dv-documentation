@@ -21,18 +21,21 @@ Follow these steps to create a new data contract:
 
 1. **Access the data contract creation page:**
 
-- Navigate to the data contract section from the left main menu.  
+- Navigate to the data contract section from the left main menu.
+
   ![screenshot of data contract](img/26_create_datacontract_dataconsumer.png)
 
 2. **Define the schema in form mode:**
 
 - The form mode is a simplified view of the data contract.
-- This view enables you to quickly create a working contract.  
+- This view enables you to quickly create a working contract.
+
   ![screenshot of data contract](img/26_create_datacontract_dataconsumer_form.png)
 
 3. **Submit the data contract:**
 
 - Click the **Create** button to submit your data contract.
+
   ![screenshot of data contract](img/26_create_datacontract_dataconsumer_create.png)
 
 ## Real world use case
@@ -51,9 +54,11 @@ For our real world use case, we need to create two data contracts. One for the i
   This data contract ensures that quality checks are applied and that only data conforming to the agreed schema is processed by the fraud detection algorithm.
 
 - **Input data contract**
+
   ![screenshot of data contract](img/13_create_datacontract_dataprovider.png)
 
 - **Output data contract**
+
   ![screenshot of data contract](img/26_create_datacontract_dataconsumer_output.png)
 
 - **Integration with invitations:**

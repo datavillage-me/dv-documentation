@@ -19,6 +19,7 @@ To configure the **data provider**, open your space **Overview** where you can s
    ![screenshot of filled algorithm](img/22_configure_data_provider.png).
 
 3. **Click on Update**
+
    ![screenshot of filled algorithm](img/22_configure_data_provider_update.png).
 
 By correctly configuring these settings, the cage will be able to fetch your data securely.

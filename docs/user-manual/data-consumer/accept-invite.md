@@ -2,22 +2,28 @@
 
 To join a collaboration space, simply follow these steps:
 
-1. You haven't created or join a space yet. Click on **join a space** in the welcome message
+1. You haven't created or join a space yet. Click on **join a space** in the welcome message.
+
    ![screenshot of the datavillage dashboard](img/01_welcome_message.png)
 
-2. If you already collaborate in a space, click on the **+** button on the right of **collaboration spaces** in the menu.  
+2. If you already collaborate in a space, click on the **+** button on the right of **collaboration spaces** in the menu.
+
    ![screenshot of the datavillage dashboard](img/dashboard_create_space.png)
 
-3. Click on **Join collaboration space**
+3. Click on **Join collaboration space**.
+
    ![screenshot of the datavillage dashboard](img/18_join_data_consumer.png)
 
 4. Enter the **Invite ID** provided by the collaboration space owner.
+
    ![screenshot of the datavillage dashboard](img/30_join_dataconsumer.png)
 
 5. Click on **Join** to see the **Invite** details.
+
    ![screenshot of the datavillage dashboard](img/31_join_dataconsumer_invite_info.png)
 
-6. Click on **Accept** to join the collaboration space.  
+6. Click on **Accept** to join the collaboration space.
+
    ![screenshot of the datavillage dashboard](img/31_join_dataconsumer_invite_info_accept.png)
 
 That's it! Once you accept the invite, you'll be granted access to the collaboration space.  

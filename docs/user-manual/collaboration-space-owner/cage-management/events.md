@@ -13,14 +13,18 @@ An event as two properties:
 
 ## Send an event
 
-1. Open the **Execution** section of your space
+1. Open the **Execution** section of your space.
+
    ![screenshot of execution](img/events_menu.png)
 
-2. Click on **New Event**
+2. Click on **New Event**.
+
    ![screenshot of execution](img/events.png)
 
-3. Configure the **event**
+3. Configure the **event**.
+
    ![screenshot of execution](img/configure_event.png)
 
-4. Click on **Publish**
+4. Click on **Publish**.
+
    ![screenshot of execution](img/publish_event.png)

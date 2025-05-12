@@ -16,17 +16,21 @@ The needed values are:
 }
 ```
 
-1. Open the **Data Provider** page
+1. Open the **Data Provider** page.
+
    ![screenshot of data provider](img/22_configure_data_provider_page.png)
 
-2. Click on the **Add Secret**
+2. Click on the **Add Secret**.
+
    ![screenshot of data provider](img/22_configure_data_provider_secret.png)
 
 3. Click on **Choose File**, and select your **JSON** file containing your data source credentials.
+
    ![screenshot of administration](img/23_upload_secret_dataprovider.png)
 
-4. Click on **Upload** \
+4. Click on **Upload**.
    This will encrypt the JSON file on the client side, using the public key of the cage, and upload it to the trusted environment.
+
    ![screenshot of administration](img/data_provider_secret_file_selected.png)
 
 5. Your secret is now saved in the trusted environment.
