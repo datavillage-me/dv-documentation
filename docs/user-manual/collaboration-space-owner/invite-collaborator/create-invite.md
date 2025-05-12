@@ -21,21 +21,26 @@ By using invites, you maintain precise control over which organizations particip
 
 1. **Open the invite modal:**
 
-   - In the space **Overview** panel, click on the **+** under a collaborator column.  
+   - In the space **Overview** panel, click on the **+** under a collaborator column.
+
      ![empty space overview](img/empty_space.png)
 
 2. **Select a data contract (if applicable):**
 
-   - For **data provider** and **data consumer**, select the corresponding Data Contract.
+   - For **data provider** and **data consumer**, select the corresponding Data contract.
+
      ![create invite ](img/16_invite_data_provider_withDC.png)
 
 3. **Create the invite:**
 
    - Click on **Create Invite** button. An Invite ID will be generated upon successful creation.
+
      ![create invite ](img/16_invite_data_provider_withDC_create.png)
 
 4. **Distribute the invite ID:**
+
    - Share the generated **Invite ID** with the organization that will join your space.
+
      ![create invite ](img/17_invite_data_provider_copy_invite.png)
 
 ## Example

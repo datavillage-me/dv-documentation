@@ -16,32 +16,36 @@ Every space must have a name, a category and a description.
 
 Follow these steps to create your space:
 
-1. **Open space creation**  
-   Access the "Create Space" page from the main menu.
+1. **Open space creation**
 
-If you haven't join a space or created one yet, directly click on **create a space**.
+   - Access the "Create Space" page from the main menu.
 
-![screenshot of the datavillage dashboard](img/01_welcome_message.png)
+   - If you haven't join a space or created one yet, directly click on **create a space**.
 
-If you already have joined or created a space, click on the **+ button**
+   ![screenshot of the datavillage dashboard](img/01_welcome_message.png)
 
-![screenshot of the datavillage dashboard](img/dashboard_create_space.png)
+   - If you already have joined or created a space, click on the **+ button**.
 
-2. **Configure space:**  
-   Provide name, category and description
+   ![screenshot of the datavillage dashboard](img/dashboard_create_space.png)
 
-![screenshot of space creation](img/02_create_space.png)
+2. **Configure space:**
 
-4. **Save space:**  
-   Click the **Create** button to finalize the creation of your space.  
-   Once your space is created, you'll be directed to the **Space Overview**.
+   - Provide name, category and description.
 
-![screenshot of space saving](img/02_create_space_red_square.png)
+   ![screenshot of space creation](img/02_create_space.png)
 
-5. **Datavillage dashboard:**  
-   Your space is now created. You can access it via the left menu or by clicking it from the main dashboard.
+3. **Save space:**
 
-![screenshot of space saving](img/dashboard_create_space_click_space.png)
+   - Click the **Create** button to finalize the creation of your space.
+   - Once your space is created, you'll be directed to the **Space Overview**.
+
+   ![screenshot of space saving](img/02_create_space_red_square.png)
+
+4. **Datavillage dashboard:**
+
+   - Your space is now created. You can access it via the left menu or by clicking it from the main dashboard.
+
+   ![screenshot of space saving](img/dashboard_create_space_click_space.png)
 
 ## Example
 

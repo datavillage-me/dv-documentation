@@ -16,16 +16,20 @@ The needed values are:
 }
 ```
 
-1. Open the **Data Consumer** page
+1. Open the **Data Consumer** page.
+
    ![screenshot of data Consumer](img/34_configure_data_consumer.png)
 
-2. Click on the **Add Secret**
+2. Click on the **Add Secret**.
+
    ![screenshot of data Consumer](img/34_configure_data_consumer_secret.png)
 
 3. Click on **Choose File**, and select your **JSON** file containing your data source credentials.
+
    ![screenshot of administration](img/23_upload_secret_dataConsumer.png)
 
-4. Click on **Upload**
+4. Click on **Upload**.
+
    ![screenshot of administration](img/data_Consumer_secret_file_selected.png)
 
 5. Your secret is now saved in the secret manager.

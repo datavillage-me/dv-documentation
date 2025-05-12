@@ -19,6 +19,7 @@ To configure the **cata consumer** collaborator, navigate to the space **Overvie
    ![screenshot of filled algorithm](img/34_configure_data_consumer.png).
 
 3. **Click on Update**
+
    ![screenshot of filled algorithm](img/34_configure_data_consumer_update.png).
 
 By correctly configuring these settings, the **collaboration space** will be able to write your data securely.

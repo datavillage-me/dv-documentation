@@ -14,20 +14,20 @@ When you trigger the first deployment, the system initiates the creation of the 
 - Find the status of the space on the top right of your screen.
 - There are two status **Active** and **Inactive**
 
-![screenshot of an inactive space](img/06_space_algo_created.png)
+  ![screenshot of an inactive space](img/06_space_algo_created.png)
 
-![screenshot of an active space](img/33_space_overview_dataconsumer_joined.png)
+  ![screenshot of an active space](img/33_space_overview_dataconsumer_joined.png)
 
 ## Deploy space
 
 - Open the **Administration** page
 - If the space is **Inactive** a message will appear to ask you to **Deploy** the space.
 
-![screenshot of the deploy cage page](img/10_deploy_first_time_space.png)
+  ![screenshot of the deploy cage page](img/10_deploy_first_time_space.png)
 
 - If the space is **Active**, you can deploy by clicking on the **Deploy** button.
 
-![screenshot of the deploy cage page](img/40_administration.png)
+  ![screenshot of the deploy cage page](img/40_administration.png)
 
 ## Troubleshooting tips
 
