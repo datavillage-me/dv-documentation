@@ -35,11 +35,12 @@ For our real-word use case you must require the creation of the following client
 
 **Client: Bank B** - Account roles: - collaboration-space:reader - collaborator:writer - data-contract:reader
 
-The support will send an email to the users with their url and credentials.
+The support will send to the users their url and credentials.
 
-## Bring your own identity provider
+## Bring Your Own Identity Provider
 
-If you wish to integrate your own Identity Provider (IDP) into your collaboration space, you can do so. For more information on integrating your custom IDP, please [contact us](mailto:support@datavillage.ai).
+If you wish to integrate your own Identity Provider into your collaboration space, you can do so. For more information, please [contact us](mailto:support@datavillage.ai).
+
 
 ---
 
