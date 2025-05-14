@@ -35,12 +35,6 @@ jobs:
       - name: Generate Control Plane legacy versions
         run: yarn docusaurus gen-api-docs:version control-plane:all
 
-      - name: Clean Cage Manager legacy versions
-        run: yarn docusaurus clean-api-docs:version cage-manager:all
-
-      - name: Generate Cage Manager legacy versions
-        run: yarn docusaurus gen-api-docs:version cage-manager:all
-
       - name: Build website
         run: yarn build
 

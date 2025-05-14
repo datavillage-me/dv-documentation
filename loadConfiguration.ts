@@ -25,6 +25,19 @@ const defaultSidebars: SidebarsConfig = {
       items: require("./docs/user-manual/sidebar.js"),
     },
   ],
+  algorithmDevelopment: [
+    {
+      type: "category",
+      label: "Algorithm Development",
+      link: {
+        type: "generated-index",
+        title: "Algorithm Development",
+        description: "Algorithm Development",
+        slug: "/algorithm-development",
+      },
+      items: require("./docs/algorithm-development/sidebar.js"),
+    },
+  ],
 };
 
 type Projects = {
@@ -170,6 +183,8 @@ export function loadSidebars(): SidebarsConfig {
       );
     });
   }
+  console.log("bonjour");
+  console.log(result);
   return result;
 }
 

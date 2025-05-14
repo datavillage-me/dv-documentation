@@ -49,14 +49,14 @@ const config: Config = {
       },
       items: [
         {
-          position: "left",
           label: "User Manual",
+          position: "left",
           to: "/docs/user-manual",
         },
         {
-          label: "Cage Manager API",
+          label: "Algorithm Development",
           position: "left",
-          to: "/docs/api/cage-manager",
+          to: "/docs/algorithm-development",
         },
         {
           label: "Control Plane API",
@@ -77,10 +77,6 @@ const config: Config = {
         {
           title: "API docs",
           items: [
-            {
-              label: "Cage Manager API",
-              href: "/docs/api/cage-manager",
-            },
             {
               label: "Control Plane API",
               href: "/docs/api/control-plane",
