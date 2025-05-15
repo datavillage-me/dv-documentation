@@ -1,4 +1,4 @@
-# Query a data provider
+# Query Data Providers
 
 - To **query** data in a **provider**:
   - **Mount** the provider [mount provider](/docs/algorithm-development/mount)

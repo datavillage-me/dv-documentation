@@ -1,4 +1,4 @@
-# Process an event
+# Process Events
 
 - Events are the only way to communicate to the algorithm.
 - In a **index.py** file put the below code.
