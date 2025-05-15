@@ -1,7 +1,7 @@
-# Mount a collaborator
+# Mount Collaborators
 
 - Mounting a collaborator is the first step to read or write data.
-- It fetch the data of the providers.
+- It fetches the data of the providers.
 - It creates the output schema of the consumers.
 
 ## Mount provider

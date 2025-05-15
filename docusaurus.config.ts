@@ -7,7 +7,7 @@ import { loadApiConfiguration } from "./loadConfiguration";
 
 const config: Config = {
   title: "Datavillage Documentation",
-  tagline: "Trusted Data Collaborations",
+  tagline: "Secured Data Collaborations",
   url: "https://datavillage.me",
   baseUrl: "/dv-documentation/",
   onBrokenLinks: "throw",

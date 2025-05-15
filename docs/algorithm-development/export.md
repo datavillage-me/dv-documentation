@@ -1,4 +1,4 @@
-# Export results to a data consumer
+# Export Consumers
 
 - To **export** data to a **consumer**:
   - **Mount** the consumer [mount provider](/docs/algorithm-development/mount)
