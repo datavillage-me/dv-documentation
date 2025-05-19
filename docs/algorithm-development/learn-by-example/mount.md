@@ -10,7 +10,7 @@
   - **client** created with **create_client()** from dv_utils.
   - **collaborator_id**, you can get the collaborator id from the label with **os.environ[\"ID_\{COLLABORATOR_ID}"]**.
   - **body** with **MountCollaboratorBody()**.
-- After mounting the collaborator check that it is **mounted** [check status](/docs/algorithm-development/check-status).
+- After mounting the collaborator check that it is **mounted** [check status](/docs/algorithm-development/learn-by-example/check-status).
 
 ```python
 from dv_utils.data_engine import create_client
@@ -28,7 +28,7 @@ def __mount_provider(provider_id) -> bool:
   - **client** created with **create_client()** from dv_utils.
   - **collaborator_id**, you can get the collaborator id from the label with **os.environ[\"ID_\{COLLABORATOR_ID}"]**.
   - **body** with **MountCollaboratorBody().from_dict()** with in it the schema of the output data.
-- After mounting the collaborator check that it is **mounted** [check status](/docs/algorithm-development/check-status).
+- After mounting the collaborator check that it is **mounted** [check status](/docs/algorithm-development/learn-by-example/check-status).
 
 ```python
 RESULT_COLUMNS = [

@@ -183,8 +183,7 @@ export function loadSidebars(): SidebarsConfig {
       );
     });
   }
-  console.log("bonjour");
-  console.log(result);
+
   return result;
 }
 

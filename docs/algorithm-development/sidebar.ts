@@ -8,24 +8,29 @@ const sidebar: SidebarsConfig = {
       customProps: { icon: "Home" },
     },
     {
-      type: "doc",
-      id: "algorithm-development/event",
+      type: "category",
+      label: "Basics",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "algorithm-development/basics/logging",
+        "algorithm-development/basics/event-processing",
+        "algorithm-development/basics/control-plane-data-engine",
+      ],
     },
     {
-      type: "doc",
-      id: "algorithm-development/check-status",
-    },
-    {
-      type: "doc",
-      id: "algorithm-development/mount",
-    },
-    {
-      type: "doc",
-      id: "algorithm-development/query",
-    },
-    {
-      type: "doc",
-      id: "algorithm-development/export",
+      type: "category",
+      label: "Learn By Example",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "algorithm-development/learn-by-example/intro",
+        "algorithm-development/learn-by-example/event",
+        "algorithm-development/learn-by-example/check-status",
+        "algorithm-development/learn-by-example/mount",
+        "algorithm-development/learn-by-example/query",
+        "algorithm-development/learn-by-example/export",
+      ],
     },
   ],
 };

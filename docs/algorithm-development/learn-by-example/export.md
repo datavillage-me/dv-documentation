@@ -1,7 +1,7 @@
 # Export Consumers
 
 - To **export** data to a **consumer**:
-  - **Mount** the consumer [mount provider](/docs/algorithm-development/mount)
+  - **Mount** the consumer [mount provider](/docs/algorithm-development/learn-by-example/mount)
   - **Append** the data to the consumer
   - **Export** the data to the consumer
 
@@ -12,7 +12,7 @@
   - **client** created with **create_client()** from dv_utils
   - **collaborator_id**, you can get the collaborator id from the label with **os.environ[\"ID_\{COLLABORATOR_ID}"]**
   - **body** with **AppendCollaboratorBody()** and the in memory csv
-- After appending the data check that the collaborator status it is **mounted** [check status](/docs/algorithm-development/check-status).
+- After appending the data check that the collaborator status it is **mounted** [check status](/docs/algorithm-development/learn-by-example/check-status).
 
 ```python
 import pandas as pd
@@ -34,7 +34,7 @@ def __append_results(results: pd.DataFrame, consumer_id: str) -> bool:
 - Export the data to the provider with **query_collaborator.sync()**
   - **client** created with **create_client()** from dv_utils
   - **collaborator_id**, you can get the collaborator id from the label with **os.environ[\"ID_\{COLLABORATOR_ID}"]**
-- After exporting the data check that the collaborator status it is **exported** [check status](/docs/algorithm-development/check-status).
+- After exporting the data check that the collaborator status it is **exported** [check status](/docs/algorithm-development/learn-by-example/check-status).
 
 ```python
 from dv_utils.data_engine import create_client
