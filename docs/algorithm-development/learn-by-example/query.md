@@ -1,7 +1,7 @@
 # Query Data Providers
 
 - To **query** data in a **provider**:
-  - **Mount** the provider [mount provider](/docs/algorithm-development/mount)
+  - **Mount** the provider [mount provider](/docs/algorithm-development/learn-by-example/mount)
   - **Query** the provider with **query_collaborator.sync()**
     - **client** created with **create_client()** from dv_utils
     - **collaborator_id**, you can get the collaborator id from the label with **os.environ[\"ID_\{COLLABORATOR_ID}"]**
