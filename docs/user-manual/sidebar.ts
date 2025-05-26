@@ -25,16 +25,6 @@ const sidebar: SidebarsConfig = {
             "user-manual/code-provider/intro",
             "user-manual/code-provider/create-invite",
             "user-manual/code-provider/configure-collaborator/general",
-            {
-              type: "category",
-              label: "Develop Algorithm",
-              items: [
-                "user-manual/code-provider/create-algorithm/get-docker-template",
-                "user-manual/code-provider/create-algorithm/develop-algorithm",
-                "user-manual/code-provider/create-algorithm/create-docker-image",
-              ],
-            },
-
             "user-manual/code-provider/configure-collaborator/configure-secrets",
             "user-manual/code-provider/accept-invite",
           ],

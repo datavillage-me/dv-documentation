@@ -16,6 +16,8 @@ These libs contain 2 packages:
   - instances of these classes can be parsed to a `dict` object using the `to_dict` method
   - the buillt-in Python method `isinstance` can be used to check the response type
 
+You can find the complete api documentation [here](/docs/reference/).
+
 To create the clients that enable communication with the APIs, helper methods are included in `dv_utils`.
 
 For the control plane client:
