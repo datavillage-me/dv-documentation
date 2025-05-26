@@ -174,22 +174,41 @@ const config: Config = {
     [
       "docusaurus-plugin-remote-content",
       {
-        name: "cage-example", // this is the folder name where the file will be saved
+        name: "cage-template", // this is the folder name where the file will be saved
         sourceBaseUrl:
-          "https://raw.githubusercontent.com/datavillage-me/cage-example/main/",
-        outDir: "docs/cage-example",
+          "https://raw.githubusercontent.com/datavillage-me/cage-template/main/",
+        outDir: "docs/algorithm-development/reference-repositories",
         documents: ["README.md"],
+        modifyContent(filename, content) {
+          if (filename === "README.md") {
+            return {
+              filename: "cage-template.md",
+              content: `https://github.com/datavillage-me/cage-template ${content}`,
+            };
+          }
+          return undefined;
+        },
       },
     ],
-    // [
-    //   'docusaurus-plugin-remote-content',
-    //   {
-    //     name: 'dv-utils-doc', // this is the folder name where the file will be saved
-    //     sourceBaseUrl: 'https://datavillage-me.github.io/dv-utils/',
-    //     outDir: 'docs/dv-utils-doc',
-    //     documents: ['README.md']
-    //   }
-    // ]
+    [
+      "docusaurus-plugin-remote-content",
+      {
+        name: "algorithm-demo",
+        sourceBaseUrl:
+          "https://raw.githubusercontent.com/datavillage-me/algorithm-demo/main/",
+        outDir: "docs/algorithm-development/reference-repositories",
+        documents: ["README.md"],
+        modifyContent(filename, content) {
+          if (filename === "README.md") {
+            return {
+              content: `https://github.com/datavillage-me/algorithm-demo ${content}`,
+              filename: "algorithm-demo.md",
+            };
+          }
+          return undefined;
+        },
+      },
+    ],
   ],
   themes: ["docusaurus-theme-openapi-docs"],
 };
