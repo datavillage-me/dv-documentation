@@ -3,7 +3,7 @@
 Our GitHub versioning workflow will automatically build and publish Docker images whenever you push a new Git tag matching `X.Y.Z` or `X.Y.ZrcN`. Here’s how to use it:
 
 1. **Ensure the workflow file is in place**  
-   We provide `.github/workflows/release-image.yml` in the repository.
+   We provide `.github/workflows/release-image.yml` in the repositories.
 
 2. **Create and push a release tag**
 
