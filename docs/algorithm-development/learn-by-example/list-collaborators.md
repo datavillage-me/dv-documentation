@@ -1,7 +1,7 @@
 # List collaborators
 
-- To **list and sort** the space **collaborator**:
-  - Get the space collaborators by using the **get_collaborators** api
+- To **list and sort** the space **collaborators**:
+  - Get the space collaborators by using the **get_collaborators** control_plane_cage_client API
   - Sort them by role
     - DataProvider
     - DataConsumer
