@@ -9,6 +9,16 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Reference repositories",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "algorithm-development/reference-repositories/algorithm-demo",
+        "algorithm-development/reference-repositories/cage-template",
+      ],
+    },
+    {
+      type: "category",
       label: "Basics",
       collapsible: true,
       collapsed: true,
@@ -20,17 +30,20 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Learn By Example",
+      label: "Learn by example",
       collapsible: true,
       collapsed: true,
       items: [
-        "algorithm-development/learn-by-example/intro",
-        "algorithm-development/learn-by-example/event",
+        "algorithm-development/learn-by-example/list-collaborators",
         "algorithm-development/learn-by-example/check-status",
         "algorithm-development/learn-by-example/mount",
         "algorithm-development/learn-by-example/query",
         "algorithm-development/learn-by-example/export",
       ],
+    },
+    {
+      type: "doc",
+      id: "algorithm-development/versioning",
     },
   ],
 };
