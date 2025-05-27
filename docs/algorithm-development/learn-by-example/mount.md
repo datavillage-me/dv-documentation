@@ -1,4 +1,4 @@
-# Mount Collaborators
+# Mount collaborators
 
 - Mounting a collaborator is the first step to read or write data.
 - It fetches the data of the providers.

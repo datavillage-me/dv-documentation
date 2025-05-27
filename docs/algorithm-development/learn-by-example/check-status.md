@@ -1,4 +1,4 @@
-# Check Collaborators Status
+# Check collaborators status
 
 - Checking the **status** is crucial to make sure the collaborator is either:
 

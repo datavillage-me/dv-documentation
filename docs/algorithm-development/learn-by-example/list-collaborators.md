@@ -1,4 +1,4 @@
-# List and sort collaborators
+# List collaborators
 
 - To **list and sort** the space **collaborator**:
   - Get the space collaborators by using the **get_collaborators** api

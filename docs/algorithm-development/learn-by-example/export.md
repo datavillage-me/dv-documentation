@@ -1,4 +1,4 @@
-# Export Consumers
+# Export consumers
 
 - To **export** data to a **consumer**:
   - **Mount** the consumer [mount provider](/docs/algorithm-development/learn-by-example/mount)
