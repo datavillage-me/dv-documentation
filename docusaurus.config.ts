@@ -59,6 +59,11 @@ const config: Config = {
           to: "/docs/algorithm-development",
         },
         {
+          label: "dv-utils",
+          position: "left",
+          to: "/docs/reference",
+        },
+        {
           label: "Control Plane API",
           position: "left",
           to: "/docs/api/control-plane",

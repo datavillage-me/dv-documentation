@@ -38,6 +38,19 @@ const defaultSidebars: SidebarsConfig = {
       items: require("./docs/algorithm-development/sidebar.js"),
     },
   ],
+  reference: [
+    {
+      type: "category",
+      label: "API",
+      link: {
+        type: "generated-index",
+        title: "API",
+        description: "API",
+        slug: "/reference",
+      },
+      items: require("./docs/reference/sidebar.js"),
+    },
+  ],
 };
 
 type Projects = {
