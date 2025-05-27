@@ -6,7 +6,7 @@ Welcome to the **Develop Algorithm** section of our documentation. Here you’ll
 
 - **dv_utils** is our python library to communicate with Datavillage modules.
 - We provide a [**template**](reference-repositories/cage-template) and a [**demo**](reference-repositories/algorithm-demo) to kick-start your development.
-- The [**learn by example**](learn-by-example/intro) section offers practical walkthroughs to guide you step by step.
+- The **learn by example**section offers practical walkthroughs to guide you step by step.
 - Full API details are available in the dedicated **dv_utils** documentation.
 - Our support team is here to help you.
 
