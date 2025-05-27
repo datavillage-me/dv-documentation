@@ -1,27 +1,27 @@
 # Introduction
 
-Welcome to the **Develop Algorithm** section of our documentation. Here you’ll find everything you need to get started with **dv_utils** and to build, test, and refine your custom algorithms.
+Welcome to the **algorithm development** section of our documentation. Here you’ll find everything you need to get started with **dv_utils** and to build your custom algorithms.
 
 ## Overview
 
-- **dv_utils** is our python library to communicate with Datavillage modules.
+- **dv_utils** is our python library to communicate with Datavillage modules API's.
 - We provide a [**template**](reference-repositories/cage-template) and a [**demo**](reference-repositories/algorithm-demo) to kick-start your development.
-- The **learn by example**section offers practical walkthroughs to guide you step by step.
-- Full API details are available in the dedicated **dv_utils** documentation.
+- The **learn by example** section offers practical walkthroughs to guide you step by step.
+- Full API details are available in the dedicated [**dv_utils**](../reference) documentation.
 - Our support team is here to help you.
 
 ## Learn by example
 
-Follow this real-world use case to detect and investigate suspected accounts:
+Follow a real-world use case to understand how to develop your algorithm:
 
 1. [List collaborators](learn-by-example/list-collaborators)  
-   Retrieve and sort the list of collaborators of your secured collaboration space.
+   Retrieve and sort the collaborators of your secured collaboration space.
 
-2. [Check collaborator status](learn-by-example/check-status)  
-   Check collaborator status to know if it mounted or other status.
+2. [Check collaborators status](learn-by-example/check-status)  
+   Get the collaborator status and let the algorithm adjust based on it.
 
-3. [Mount collaborator](learn-by-example/mount)  
-   Mount your collaborator to be able to read or write data.
+3. [Mount collaborators](learn-by-example/mount)  
+   Mount your collaborators to be able to read or write data.
 
 4. [Query](learn-by-example/query)  
    Execute query on your mounted data providers to retrieve data.
@@ -31,9 +31,9 @@ Follow this real-world use case to detect and investigate suspected accounts:
 
 ## Full dv_utils API
 
-For comprehensive coverage of every method in dv_utils, see the official docs:
+For full details on every API method in dv_utils, check out the official documentation:
 
-> https://datavillage-me.github.io/dv-documentation/docs/reference
+> [dv_utils API documentation](../reference)
 
 ## Support
 
