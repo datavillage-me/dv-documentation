@@ -66,7 +66,7 @@ For example, if Organization A has three distinct data inputs/outputs, it should
 
 - Click on the **+** button under **Algorithm** or directly in the onboarding checklist **Create Algorithm**.
 - Click on **Join as** in the modal, the interface will create the Invite and make you join automatically.
-- The **Algorithm** is now created and you are ready to [configure it](/docs/user-manual/code-provider/configure-collaborator/general) and [deploy the space](/docs/user-manual/collaboration-space-owner/deploy-space).
+- The **Algorithm** is now created and you are ready to [configure it](/docs/user-manual/collaboration-space-owner/algorithm/configure) and [deploy the space](/docs/user-manual/collaboration-space-owner/deploy-space).
 
 ### Join as data provider or consumer
 

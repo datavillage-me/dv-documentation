@@ -9,7 +9,7 @@ Here you can see three columns the first one is the **Data Provider**, the secon
 
    ![screenshot of space dashboard](img/06_space_algo_created.png)
 
-   - If you don't see the **algorithm** card , it means you haven't created yet the **algorithm provider**, refer to [create algorithm](/docs/user-manual/code-provider/create-invite)
+   - If you don't see the **algorithm** card , it means you haven't created yet the **algorithm provider**, refer to [create algorithm](/docs/user-manual/collaboration-space-owner/invite-collaborator/create-invite)
 
 2. **Use the auto-fill for the properties**
 
@@ -24,7 +24,7 @@ Here you can see three columns the first one is the **Data Provider**, the secon
 
    ![screenshot of filled algorithm](img/09__no_env_space_algo_configured.png).
 
-   - You can now deploy your **collaboration space** [deploy space](/docs/user-manual/collaboration-space-owner/deploy-cage)
+   - You can now deploy your **collaboration space** [deploy space](/docs/user-manual/collaboration-space-owner/deploy-space)
 
 4. **Configure with your properties**
 

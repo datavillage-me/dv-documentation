@@ -8,7 +8,7 @@ Secrets are key in a Collaboration Space, they can be used in the Algorithm to p
 
 **Secrets** are created via uploading a **JSON** file.
 
-1. If the **space** is **inactive**, [deploy space](/docs/user-manual/collaboration-space-owner/deploy-cage)
+1. If the **space** is **inactive**, [deploy space](/docs/user-manual/collaboration-space-owner/deploy-space)
 
 2. Open the **Administration** page of your space.
 
