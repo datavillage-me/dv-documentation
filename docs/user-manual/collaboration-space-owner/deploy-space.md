@@ -35,6 +35,6 @@ If you encounter an **Inactive** status after a deployment:
 
 - **Review logs**  
   Check the deployment logs for detailed error messages.
-  - [Logs](/docs/user-manual/collaboration-space-owner/cage-management/logs)
+  - [Logs](/docs/user-manual/collaboration-space-owner/logs)
 - **Verify configuration**  
   Ensure that your docker image is correctly configured and that it can be run locally.

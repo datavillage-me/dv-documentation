@@ -1,15 +1,18 @@
 # Getting started
 
-As the Collaboration Space Owner, you play a crucial role in creating and managing a dynamic collaboration space. Your responsibilities span from the initial setup to ongoing maintenance and collaboration. Below is a high-level overview of what you’ll need to do:
+As the Collaboration Space Owner, you play a crucial role in creating and managing the collaboration space.  
+Your responsibilities span from the initial setup to ongoing maintenance and collaboration.  
+Below is a high-level overview of what you’ll need to do:
 
 ## Workflow
 
-As a Collaboration Space Owner, you manage the overall space, handle authentication, maintain space settings, manage data contracts, oversee cage management,create the algorithm, and invite collaborators. Your workflow includes:
+As the **Collaboration Space Owner**, you manage the overall space, handle authentication, maintain space settings, manage data contracts, oversee space management,create the algorithm, and invite collaborators.  
+Your workflow includes:
 
 1. **Create clients and accounts**  
    Request the creation of a client and user accounts for each participating organization.
 
-   - [Auth page](/docs/user-manual/collaboration-space-owner/auth)
+   - [Register your organization](/docs/user-manual/auth)
 
 2. **Create the collaboration space**  
    Set up the collaboration space, which serves as the central hub for managing all subsequent activities and invitations.
@@ -17,16 +20,16 @@ As a Collaboration Space Owner, you manage the overall space, handle authenticat
    - [Create space](/docs/user-manual/collaboration-space-owner/space-management/create-space)
 
 3. **Create the algorithm**  
-   If you act as **collaboration space owner and also code provider** follow the **Algorithm** to create and configure the algorithm image.  
-   If an **external organization acts as the code provider**, make sure that they followed the **Algorithm** before to start the next step.
+   If you act as **collaboration space owner** and provide the algorithm follow the **Algorithm** section to configure the algorithm.  
+   If an **external organization** provides the algorithm, make sure that they followed the **Algorithm** before to start the next step.
 
-   - [Code provider workflow](/docs/user-manual/code-provider/intro)
+   - [Algorithm workflow](/docs/user-manual/collaboration-space-owner/algorithm/intro)
 
-4. **Deploy the initial Cage**  
-   Once the Code Provider has set up the initial algorithm image, you can deploy the cage. Verify its operation by reviewing the logs.
+4. **Deploy the initial space**  
+   Once the initial algorithm is setup, you can deploy the space. Verify its operation by reviewing the logs.
 
-   - [Deploy cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
-   - [Logs](/docs/user-manual/collaboration-space-owner/cage-management/logs)
+   - [Deploy space](/docs/user-manual/collaboration-space-owner/deploy-space)
+   - [Logs](/docs/user-manual/collaboration-space-owner/logs)
 
 5. **Create data contracts**  
    For each unique input or output schema, create an individual data contract to ensure data quality and consistency.  
@@ -39,24 +42,42 @@ As a Collaboration Space Owner, you manage the overall space, handle authenticat
 
    - [Create invite](/docs/user-manual/collaboration-space-owner/invite-collaborator/create-invite)
 
-7. **Deploy the final cage**  
-   After all collaborators have completed their configurations, deploy the final version of the cage. Confirm system stability by checking the logs.
-   - [Deploy cage](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
-   - [Logs](/docs/user-manual/collaboration-space-owner/cage-management/logs)
+7. **Deploy the final space**  
+   After all collaborators have completed their configurations, deploy the final version of the space. Confirm system stability by checking the logs.
+   - [Deploy space](/docs/user-manual/collaboration-space-owner/deploy-space)
+   - [Logs](/docs/user-manual/collaboration-space-owner/logs)
 
 ## Example
 
-This documentation follows a real-world use case where the "Financial Institution" creates a data collaboration platform for two banks, **Bank A** and **Bank B**.  
+This documentation follows a real-world use case where
+
+- **Financial Institution** creates a data collaboration platform for two banks
+  - **Bank A**
+  - **Bank B**
+
 The goal of the collaborative platform is to easily and securely match suspicious account list.  
-As the collaboration space owner your are **"Financial institution"**.
+As the collaboration space owner your are **Financial institution**.
 
 Here’s how the scenario unfolds:
 
-Everyday, Bank A and Bank B provide a list of suspicious accounts. These accounts are registered at some bank. The algorithm can find the suspicious accounts that are registered at Bank A, but flagged by Bank B. Everyday, Bank A receives a list of these accounts that were flagged by another bank.
+Everyday:
 
-In this user manual, you will be guided through the steps to setup a collaboration space like this. The roles of the different parties are the following
+- Bank A and Bank B provide a list of suspicious accounts.
+- Bank A receives a aggregated list of its accounts that were flagged by Bank B.
 
-- **Financial institution** is the _collaboration space owner_ and _algorithm provider_. It will create the space, invite collaborators and develop and deploy the algorithm
-- **Bank A** and **Bank B** are both _data provider_ (providing a list of suspicious accounts) and _data consumer_ (consuming a list of suspicious accounts flagged by the other bank)
+In this user manual, you will be guided through the steps to setup a collaboration space like this.  
+The roles of the different parties are the following
 
-Follow the subsequent guides in this documentation for detailed instructions on each of these steps. This structured approach will help you create and manage an efficient, fraud-fighting collaboration space.
+- **Financial institution** is:
+
+  - The collaboration space owner
+    - Creates the space
+    - Invites the data collaborators
+  - Provides the algorithm
+
+- **Bank A** and **Bank B** are:
+  - Data providers (providing suspicious accounts list)
+  - Data consumers (getting the aggregated list)
+
+Follow the subsequent guides in this documentation for detailed instructions on each of these steps.  
+This structured approach will help you create and manage an efficient, fraud-fighting collaboration space.

@@ -34,7 +34,7 @@ Before proceeding, ensure you have:
 
 ### 4. Upload the key
 
-- Create the JSON file and upload it to the cage as described in the section [Configure Data Source Secrets](/docs/user-manual/data-provider/configure-secrets)
+- Create the JSON file and upload it to the cage as described in the section [Configure Data Source Secrets](/docs/user-manual/data-collaborator/configure-secrets)
 
 ## Creating a service account HMAC Key via the command line
 

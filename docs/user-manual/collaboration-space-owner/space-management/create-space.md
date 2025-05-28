@@ -1,6 +1,7 @@
 # Create space
 
-To begin your collaborative journey, you must first create a new space. A space is the dedicated collaboration space environment where you manage the collaborators and the data collaboration solution.
+To begin your collaborative journey, you must first create a new space.  
+A space is the dedicated secured collaboration environment where you manage the collaborators and the algorithm.
 
 ## Space properties
 

@@ -27,6 +27,6 @@ To join a Collaboration Space, simply follow these steps:
    ![screenshot of the datavillage dashboard](img/19_join_dataprovider_invite_info.png)
 
 That's it! Once you accept the **Invite**, you'll be granted access to the Collaboration Space.  
-You must now [configure data provider](/docs/user-manual/data-provider/configure-data-provider)
+You must now [configure collaborator](/docs/user-manual/data-collaborator/configure-data-collaborartor)
 
 For any issues or further assistance, please contact our support team.
