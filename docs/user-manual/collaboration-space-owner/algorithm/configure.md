@@ -1,4 +1,4 @@
-# Configure algorithm
+# Configure
 
 To configure the **algorithm** collaborator, open your space **Overview**.  
 Here you can see three columns the first one is the **Data Provider**, the second one is the **Algorithm**, and the last one is the **Data Consumer**.
@@ -24,7 +24,7 @@ Here you can see three columns the first one is the **Data Provider**, the secon
 
    ![screenshot of filled algorithm](img/09__no_env_space_algo_configured.png).
 
-   - You can now deploy your **collaboration space** [deploy space](/docs/user-manual/collaboration-space-owner/cage-management/deploy-cage)
+   - You can now deploy your **collaboration space** [deploy space](/docs/user-manual/collaboration-space-owner/deploy-cage)
 
 4. **Configure with your properties**
 
