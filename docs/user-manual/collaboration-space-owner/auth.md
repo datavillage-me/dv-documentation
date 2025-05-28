@@ -23,7 +23,3 @@ The support will send to the users their url and credentials.
 ## Bring Your Own Identity Provider
 
 If you wish to integrate your own Identity Provider into your collaboration space, you can do so. For more information, please [contact us](mailto:support@datavillage.ai).
-
----
-
-This section details the required roles and their permissions, ensuring that you have a clear and secure framework for managing access within your collaboration space. For any questions or further assistance, feel free to reach out to our support team.
