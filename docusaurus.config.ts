@@ -76,34 +76,34 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "API docs",
-          items: [
-            {
-              label: "Control Plane API",
-              href: "/docs/api/control-plane",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "GitHub",
-              href: "https://github.com/datavillage-me",
-            },
-            {
-              label: "Datavillage Home",
-              href: "https://datavillage.me",
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Datavillage, Inc.`,
-    },
+    // footer: {
+    //   style: "dark",
+    //   links: [
+    //     {
+    //       title: "API docs",
+    //       items: [
+    //         {
+    //           label: "Control Plane API",
+    //           href: "/docs/api/control-plane",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: "More",
+    //       items: [
+    //         {
+    //           label: "GitHub",
+    //           href: "https://github.com/datavillage-me",
+    //         },
+    //         {
+    //           label: "Datavillage Home",
+    //           href: "https://datavillage.me",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    //   copyright: `Copyright © ${new Date().getFullYear()} Datavillage, Inc.`,
+    // },
     prism: {
       prism: {
         additionalLanguages: [
