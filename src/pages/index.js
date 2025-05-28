@@ -5,34 +5,85 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import dvLogoWhite from "../../static/img/Datavillage_Logo_White.png";
-function HomepageHeader() {
+import * as LucideIcons from "lucide-react";
+
+// Define each documentation section as a card
+const docs = [
+  {
+    title: "User Manual",
+    description: "Learn how to manage or join a collaboration space.",
+    link: "/docs/user-manual/intro",
+    icon: LucideIcons.BookOpen,
+  },
+  {
+    title: "Algorithm Development",
+    description: "Learn how to build a custom algorithm.",
+    link: "/docs/algorithm-development/intro",
+    icon: LucideIcons.Cpu,
+  },
+  {
+    title: "dv_utils",
+    description: "Complete documentation of Datavillage python lib dv_utils.",
+    link: "/docs/reference",
+    icon: LucideIcons.Package,
+  },
+  {
+    title: "Control Plane API",
+    description: "Complete documentation of Datavillage API's.",
+    link: "/docs/api/control-plane",
+    icon: LucideIcons.Server,
+  },
+];
+
+// Card component
+function DocCard({ title, description, link, icon: Icon }) {
+  return (
+    <div className="col col--3">
+      <Link className={styles.card} to={link}>
+        <Icon className={styles.cardIcon} />
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardDescription}>{description}</p>
+      </Link>
+    </div>
+  );
+}
+
+// Hero/banner with embedded cards and website button
+function Homepage() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <div className={clsx("hero hero--primary", styles.heroBanner)}>
+    <div className={styles.heroBanner}>
       <div className="container">
-        <img src={dvLogoWhite} className={styles.dvLogo} />
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <img src={dvLogoWhite} className={styles.dvLogo} alt="Logo" />
+        <p className="hero__subtitle" style={{ margin: "1rem 0" }}>
+          {siteConfig.tagline}
+        </p>
+        <div className="row" style={{ margin: "6rem 0" }}>
+          {docs.map((doc) => (
+            <DocCard key={doc.title} {...doc} />
+          ))}
+        </div>
         <div className={styles.buttons}>
-          <Link
+          <a
             className="button button--secondary button--lg"
-            to="https://datavillage.me"
+            href={siteConfig.url}
+            target="_blank"
+            style={{ margin: "8rem 0" }}
+            rel="noopener noreferrer"
           >
-            🔗 Go to homepage
-          </Link>
+            Visit Website
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
+// Main export
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Trusted Data Collaborations"
-    >
-      <HomepageHeader />
+    <Layout title="Home" description="Trusted Data Collaborations">
+      <Homepage />
     </Layout>
   );
 }
