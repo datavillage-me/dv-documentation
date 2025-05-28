@@ -4,26 +4,9 @@ Welcome to the Authentication & Authorization section of our documentation. This
 
 Within the Data Collaboration Platform, every registered organization is called a client. These organizations often consist of several people, each having their own role within the organization. The roles that are given to the different users should follow the convention as defined in the authorization section.
 
-## Required roles and permissions
-
-Each user in the space must have specific roles that grant them the necessary permissions. The table below details each role and the corresponding actions they are allowed to perform:
-
-| Role                             | Permissions (Plain Language)                                                                                                                                                  |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **collaboration-space:reader**   | Can view all details and content of the collaboration space.                                                                                                                  |
-| **collaboration-space:writer**   | Can view and make updates or modifications to the collaboration space.                                                                                                        |
-| **collaboration-space:admin**    | Has full administrative rights, including: <br />• Creating and deleting collaboration spaces <br />• Viewing and updating content <br />• Inviting or removing collaborators |
-| **collaboration-space:operator** | Can publish events within the space and view system logs for monitoring purposes.                                                                                             |
-| **collaborator:reader**          | Can view collaborator information and details.                                                                                                                                |
-| **collaborator:writer**          | Can view and update collaborator information.                                                                                                                                 |
-| **data-contract:reader**         | Can view the data contract that defines the terms and conditions.                                                                                                             |
-| **data-contract:writer**         | Can view and modify the data contract as needed.                                                                                                                              |
-
-> **Note:** Ensure that each collaborator is granted the appropriate permissions according to their role. This configuration is key to maintaining a secure and efficient collaboration environment.
-
 ## Client and account creation
 
-All client and account creations must be requested through the Datavillage support team. This process guarantees that every new client and account is set up correctly with the proper permissions and security measures.
+All client and account creations must be requested through the Datavillage support team. This process guarantees that every new client and account is set up correctly with the proper permissions and security measures. [contact us](mailto:support@datavillage.ai)
 
 ## Example
 
@@ -40,7 +23,6 @@ The support will send to the users their url and credentials.
 ## Bring Your Own Identity Provider
 
 If you wish to integrate your own Identity Provider into your collaboration space, you can do so. For more information, please [contact us](mailto:support@datavillage.ai).
-
 
 ---
 
