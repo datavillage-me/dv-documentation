@@ -12,7 +12,6 @@ import { translate } from "@docusaurus/Translate";
 import type { Props } from "@theme/DocCard";
 import Heading from "@theme/Heading";
 import type {
-  DocMetadata,
   PropSidebarItemCategory,
   PropSidebarItemLink,
 } from "@docusaurus/plugin-content-docs";
@@ -47,11 +46,13 @@ function getCategoryIcon(item: PropSidebarItemCategory) {
 }
 
 function getLinkIcon(item: PropSidebarItemLink) {
+  if (item.label.toLowerCase() === "introduction") {
+    return LucideIcons.Home;
+  }
   const sidebarIcon = (item.customProps as any)?.icon;
   if (typeof sidebarIcon === "string" && (LucideIcons as any)[sidebarIcon]) {
     return (LucideIcons as any)[sidebarIcon];
   }
-
   return isInternalUrl(item.href)
     ? LucideIcons.FileText
     : LucideIcons.ExternalLink;
@@ -83,7 +84,7 @@ function CardLayout({
   href: string;
   icon: ReactNode;
   title: string;
-  description?: string;
+  description: string;
 }): JSX.Element {
   return (
     <CardContainer href={href}>
@@ -94,14 +95,12 @@ function CardLayout({
       >
         {icon} {title}
       </Heading>
-      {description && (
-        <p
-          className={clsx("text--truncate", styles.cardDescription)}
-          title={description}
-        >
-          {description}
-        </p>
-      )}
+      <p
+        className={clsx("text--truncate", styles.cardDescription)}
+        title={description}
+      >
+        {description}
+      </p>
     </CardContainer>
   );
 }
@@ -114,31 +113,39 @@ function CardCategory({
   const href = findFirstSidebarItemLink(item);
   const categoryItemsPlural = useCategoryItemsPlural();
   const IconComponent = getCategoryIcon(item);
-  // Unexpected: categories that don't have a link have been filtered upfront
   if (!href) {
     return null;
   }
+
+  const description =
+    item.description ?? categoryItemsPlural(item.items.length);
 
   return (
     <CardLayout
       href={href}
       icon={<IconComponent size={20} aria-label="doc icon" />}
       title={item.label}
-      description={item.description ?? categoryItemsPlural(item.items.length)}
+      description={description}
     />
   );
 }
 
 function CardLink({ item }: { item: PropSidebarItemLink }): JSX.Element {
   const doc = useDocById(item.docId ?? undefined);
-  const IconComponent = getLinkIcon(item, doc);
+  const IconComponent = getLinkIcon(item);
+
+  // Show description if present; otherwise repeat title
+  let description = item.description ?? doc?.description;
+  if (!description || description.trim() === "") {
+    description = item.label;
+  }
 
   return (
     <CardLayout
       href={item.href}
       icon={<IconComponent size={20} aria-label="doc icon" />}
       title={item.label}
-      description={item.description ?? doc?.description}
+      description={description}
     />
   );
 }
