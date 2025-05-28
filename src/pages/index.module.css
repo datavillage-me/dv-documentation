@@ -3,6 +3,46 @@
  * and scoped locally.
  */
 
+.cardsSection {
+  padding: 4rem 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+
+.card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  height: 55px;
+  width: 55px;
+  margin-bottom: 1rem;
+  color: rgba(0, 255, 255, 0.6);
+}
+
+.cardTitle {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.cardDescription {
+  margin: 0;
+  flex-grow: 1;
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -18,7 +58,8 @@
 
 @media screen {
   .heroBanner {
-    padding: 17rem;
+    padding: 5rem;
+    height: 100%;
   }
 }
 
