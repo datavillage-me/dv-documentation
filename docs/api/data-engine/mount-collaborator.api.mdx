@@ -1,0 +1,71 @@
+---
+id: mount-collaborator
+title: "Mount a new collaborator"
+description: "Mount a new collaborator"
+sidebar_label: "Mount a new collaborator"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVe9r2zAQ/VfEfdpAacroJzMG+cUWaJuSpvtizLhYl1idLbmSnDYY/+9DcrLESShlX2ZCsOXT3XvvdM816JIMOqnVVEAEd7pSbqTzHJfaoNMGOJRosCBHxkIU1yAVRFCiy4CDwoIggvRow1QAB5tmVCBENbht6SOsM1KtoeFg6KWShgREzlTEQZBNjSw9AohgkRGbjpleMZcR87FkHQl2XOEKmqTNQ9YNtdj6OqlWjpTzt1iWuUwDp/6z9Wnrc0B6+UypAw5vPb0m1dsxGem8KpT1rI1Xxkmybfp2PaovAN69ZE6z1BA6YittGDKBDlmqla0KMldskUnL/G+ttCERgkJIafRGCjL2CvgeHxqDW+AgHRX2Eu4uvhb+BbnbhdMXHEhVBUQx/BzMRz8Gc+Awnj0NbyfAYXq/mHyf+KXhbHY7GdwDh8X0bvK4GNw9QNJ0mhi3pXeFkqa9fIQttbItui/XN+fKzdsGsgyVyEkwW6VkV1Webz3um+vr8y1DFPszAfzfW96VjozR5ldB1uL6olSCVljl7qT+qQzdNEmrws1l4lZXJiWmtGMrXSnxX8iMdVoVpNwRjA9wak4nNjgGQ6botTOlwKEgl2nvKqUODQumEUH/OMz26657NN4+yGz2dlOZHCLInCtt1O9/9QPTI7WWir4FH/AKzQ9eMHnDosypM7Pxfj4OMuxk2Z/+Jmk4SLXSQTLpfAIYo8NJqMQGD1Pg4DG1pHN04QzwQK1AdZjB9wTpKPe3N47eXL/MUSqfMPCtd1rFHWv1thSdeG3CIfPqRjHU9RItPZm8afzyS0VmC1GccNigkbj0pOIahLT+XkC0wtyeOvCRk8Kn+e4sfGYf82V+mdLe0pQ3tA3mlX8CDr9pe/7xCK3ICAWZALcNGrWgeguf6pDkbFQavt8xSFMq3buxydERfZg9LoDDcvc5KbTwewy+Ag//AbAOIoVBC2s15KjWVRg1aHP66w8DK4hb
+sidebar_class_name: "post api-method"
+info_path: docs/api/data-engine/dataengine-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Mount a new collaborator"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaborators/{collaboratorId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Mount a new collaborator
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaborator."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","x-ogen-name":"Columns","properties":{"columns":{"description":"The columns to create for a data consumer. This is ignored for data providers.","type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string","enum":["VARCHAR","DOUBLE","INTEGER","BOOLEAN","TIMESTAMP"]}},"required":["name","type"]}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request handled sucesfully"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Bad request"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

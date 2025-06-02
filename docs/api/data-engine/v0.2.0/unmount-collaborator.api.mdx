@@ -1,0 +1,71 @@
+---
+id: unmount-collaborator
+title: "Unmount a collaborator"
+description: "Unmount a collaborator"
+sidebar_label: "Unmount a collaborator"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNU0uL2zAQ/itmTi2om6XsSZRCaXII9FC2u6cQykSexNrKklYzWhqM/3sZJ93m0UJ9kS3NjL6XB0iZCopPcdmChcfYpxrlcwoBN6mgpAIGMhbsSagw2NUAPoKFjNKBgYg9gQV30rBswQC7jnoEO4Dss1awFB93MBoo9Fx9oRaslEoGWmJXfFYMYOGho2Y5b9K2kY4arSUWapvTG25gXOsczikysd7y/vZWl/NZ36pzxNsawr5hwaJz6oGhj7sml+SI+UZB3d3eXfffE6daHDUxSbNNNSozl6JQFK3GnIN3k3qzJ9aW4Zp42jyRE1WxqNbiD4CplFS+98SMO7rWSWXZYg0CFubJ1Z6inMAYz3RcXUxbj/pcKnv0tsEzLcFAT9Ildb+lQEKT4dKBhdlpIc+Gc5dHtZnKy+9Y1BLAQieS2c5mH1oUfEdx5yN9nPzycZsmol6CMp2j4GI6bz59XYIBnXSAGlCIRX3JiaXHSdlj1P5J44ztq55CP2WWA/qo4yaMw5Hf6iy2DAbsRY7XBrrEoqXDsEGmxxLGUbefK5U92NXawAsWjxultBqg9azvLdgtBr5M9/AnPfDm/ujf2+b/Mm/+Tum4iXGvEmKo+gUGftD++scc16OBjrClMsE9FH1yjrKctF8FW/17jcl88WXxsIBx/AWpXXtT
+sidebar_class_name: "delete api-method"
+info_path: docs/api/data-engine/v0.2.0/dataengine-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Unmount a collaborator"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/collaborators/{collaboratorId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Unmount a collaborator
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaborator."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Succesfully started unmounting process."},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

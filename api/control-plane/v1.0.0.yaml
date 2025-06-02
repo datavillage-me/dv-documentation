@@ -8,7 +8,7 @@ security:
   - bearerAuth: []
 tags:
   - name: Collaboration Spaces
-    description: 'Endpoints related to collaboration spaces: CRUD and operating the space'
+    description: "Endpoints related to collaboration spaces: CRUD and operating the space"
   - name: Cages
     description: Endpoints related to operating and monitoring cages
   - name: Invites
@@ -24,16 +24,17 @@ paths:
     get:
       operationId: getCurrentCredentials
       summary: Get Current Credentials
+      x-ogen-operation-group: Auth
       tags:
         - Authentication
       description: Get details about the authenticated account.
       responses:
-        '200':
+        "200":
           description: The description of the authenticated developer.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Developer'
+                $ref: "#/components/schemas/Developer"
   /collaboration-spaces:
     get:
       operationId: GetCollaborationSpaces
@@ -43,16 +44,16 @@ paths:
         - Collaboration Spaces
       description: Get all collaboration spaces the user has access to.
       responses:
-        '200':
+        "200":
           description: The models of the collaboration spaces.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
     post:
       operationId: CreateCollaborationSpace
       x-ogen-operation-group: CollaborationSpaces
@@ -66,16 +67,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaborationSpaceCreate'
+              $ref: "#/components/schemas/CollaborationSpaceCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
   /collaboration-spaces/{spaceId}:
     get:
       operationId: GetCollaborationSpace
@@ -93,18 +94,18 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: The model of the collaboration space.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     patch:
       operationId: UpdateCollaborationSpace
       x-ogen-operation-group: CollaborationSpaces
@@ -125,16 +126,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaborationSpaceUpdate'
+              $ref: "#/components/schemas/CollaborationSpaceUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       operationId: DeleteCollaborationSpace
       x-ogen-operation-group: CollaborationSpaces
@@ -150,14 +151,14 @@ paths:
           required: true
           description: The ID of the collaboration space to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/collaborators:
     get:
       operationId: GetCollaborators
@@ -174,20 +175,20 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: The models of the collaborators in the space.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Collaborator'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                  $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     post:
       operationId: CreateCollaborator
       tags:
@@ -207,18 +208,62 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaboratorCreate'
+              $ref: "#/components/schemas/CollaboratorCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "410":
+          description: Endpoint is deprecated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_message:
+                    type: string
+                    example: Endpoint is deprecated. Use invite flow to add a collaborator.
+                required:
+                  - error_message
+  /collaboration-spaces/{spaceId}/collaborators/{collaboratorId}/server-secret:
+    put:
+      operationId: StoreCollaboratorServerSecret
+      x-ogen-operation-group: CollaborationSpaces
+      tags:
+        - Cages
+      summary: Store secret
+      description: |
+        Stores the content of the request as a secret in the cage. Secrets that already exist will be overwritten.  A secret can be encrypted with the public key of the cage. The cage will then have access to the decrypted version. This encryption should be done client side such that the platform never sees the decrypted data.
+      parameters:
+        - in: path
+          name: spaceId
+          schema:
+            type: string
+          required: true
+          description: The ID of the collaboration space associated with the cage.
+        - in: path
+          name: collaboratorId
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: The content of the file to upload to the cage.
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - secret
+              properties:
+                secret:
+                  type: string
+                  format: binary
+                  description: The secret to store in the secret-manager. It is stored 'as-is'. These files should be encrypted with the public key obtained via the `/public-key` endpoint.
+      responses:
+        "200":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/collaborators/{collaboratorId}:
     get:
       operationId: GetCollaborator
@@ -241,18 +286,18 @@ paths:
           required: true
           description: The ID of the requested collaborator.
       responses:
-        '200':
+        "200":
           description: The description of the collaborator.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Collaborator'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     patch:
       operationId: UpdateCollaborator
       x-ogen-operation-group: CollaborationSpaces
@@ -279,18 +324,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaboratorUpdate'
+              $ref: "#/components/schemas/CollaboratorUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       operationId: DeleteCollaborator
       x-ogen-operation-group: CollaborationSpaces
@@ -312,14 +357,14 @@ paths:
           required: true
           description: The ID of the requested collaborator.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/algo/logs:
     get:
       operationId: GetAlgorithmLogs
@@ -342,20 +387,20 @@ paths:
           required: false
           description: Number of lines to return.
       responses:
-        '200':
+        "200":
           description: List of `tail_lines` most recent algorithm logs
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/AlgoLog'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                  $ref: "#/components/schemas/AlgoLog"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/attestation-token:
     get:
       operationId: GetAttestationReport
@@ -381,15 +426,15 @@ paths:
               - fingerprint
           required: false
       responses:
-        '200':
+        "200":
           description: An attestation report.
           content:
             text/plain:
               schema: null
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/deployment:
     get:
       operationId: GetDeployment
@@ -406,21 +451,21 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the confidential cluster.
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Deployment'
+                $ref: "#/components/schemas/Deployment"
           headers:
             Signature:
               description: Base64 encoding of the response body signed by the secret manager
               required: false
               schema:
                 type: string
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       operationId: DeleteCage
       x-ogen-operation-group: CollaborationSpaces
@@ -436,14 +481,14 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the trusted environment.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     post:
       operationId: DeployCage
       x-ogen-operation-group: CollaborationSpaces
@@ -459,16 +504,16 @@ paths:
           required: true
           description: The ID of the collaboration space for which to deploy a cage.
       responses:
-        '200':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/deployment/logs:
     get:
       operationId: GetDeploymentLogs
@@ -485,20 +530,20 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the cage.
       responses:
-        '200':
+        "200":
           description: Deployment logs of the last 24 hours.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DeploymentLog'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                  $ref: "#/components/schemas/DeploymentLog"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/event:
     post:
       operationId: PublishEvent
@@ -536,7 +581,7 @@ paths:
                 - type
               additionalProperties: true
       responses:
-        '200':
+        "200":
           description: The ID of the event that has been published.
           content:
             application/json:
@@ -547,14 +592,14 @@ paths:
                     type: string
                 required:
                   - messageId
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/keys/public-key:
     get:
       operationId: GetPublicKey
@@ -571,15 +616,15 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: The public key.
           content:
             text/plain:
               schema: null
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/keys/transport-key:
     get:
       operationId: GetTransportKey
@@ -596,16 +641,16 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: An RSA public key
           content:
             text/plain:
               schema:
                 type: string
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     post:
       operationId: RotateTransportKey
       x-ogen-operation-group: CollaborationSpaces
@@ -621,12 +666,12 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/keys/storage-key:
     post:
       operationId: RotateStorageKey
@@ -643,12 +688,12 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaboration-spaces/{spaceId}/secrets/{secretId}:
     put:
       operationId: StoreSecret
@@ -686,12 +731,12 @@ paths:
                   format: binary
                   description: The secret to store in the secret-manager. It is stored 'as-is'. These files should be encrypted with the public key obtained via the `/public-key` endpoint.
       responses:
-        '200':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "200":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /clients/{clientId}/notifications:
     get:
       operationId: GetNotifications
@@ -708,10 +753,10 @@ paths:
           required: true
           description: The requested client.
       responses:
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /clients/{clientId}:
     get:
       operationId: GetClient
@@ -728,15 +773,15 @@ paths:
           required: true
           description: The requested client.
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DvClient'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/DvClient"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /data-contracts:
     get:
       tags:
@@ -752,16 +797,16 @@ paths:
             type: string
           description: The name filter. Filtering is case insensitive.
       responses:
-        '200':
+        "200":
           description: The summary of the contracts that matched the filter.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DataContractSummary'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/DataContractSummary"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
     post:
       tags:
         - Data Contracts
@@ -775,15 +820,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataContractCreate'
+              $ref: "#/components/schemas/DataContractCreate"
           application/yaml:
             schema:
-              $ref: '#/components/schemas/DataContractCreate'
+              $ref: "#/components/schemas/DataContractCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
   /data-contracts/{contractId}:
     get:
       tags:
@@ -800,19 +847,21 @@ paths:
           required: true
           description: The ID of the requested data contract
       responses:
-        '200':
+        "200":
           description: The ODCS description of the data contract.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataContract'
+                $ref: "#/components/schemas/DataContract"
             application/yaml:
               schema:
-                $ref: '#/components/schemas/DataContract'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/DataContract"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     patch:
       tags:
         - Data Contracts
@@ -833,14 +882,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataContractUpdate'
+              $ref: "#/components/schemas/DataContractUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       tags:
         - Data Contracts
@@ -855,12 +906,12 @@ paths:
           required: true
           description: The ID of the data contract to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /data-contracts/{contractId}/schema:
     post:
       tags:
@@ -882,14 +933,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SchemaCreate'
+              $ref: "#/components/schemas/SchemaCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /data-contracts/{contractId}/schema/{schemaId}:
     get:
       tags:
@@ -912,16 +965,16 @@ paths:
           required: true
           description: The ID of the requested schema.
       responses:
-        '200':
+        "200":
           description: The ODCS description of the schema.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Schema"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     patch:
       tags:
         - Data Contracts
@@ -947,14 +1000,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SchemaUpdate'
+              $ref: "#/components/schemas/SchemaUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       tags:
         - Data Contracts
@@ -975,12 +1030,12 @@ paths:
           required: true
           description: The ID of the schema to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /data-contracts/{contractId}/schema/{schemaId}/properties:
     post:
       tags:
@@ -1008,14 +1063,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PropertyCreate'
+              $ref: "#/components/schemas/PropertyCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /data-contracts/{contractId}/schema/{schemaId}/properties/{propertyId}:
     get:
       tags:
@@ -1044,16 +1101,16 @@ paths:
           required: true
           description: The ID of the requested property.
       responses:
-        '200':
+        "200":
           description: The ODCS description of the property.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Property'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Property"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     patch:
       tags:
         - Data Contracts
@@ -1086,14 +1143,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PropertyUpdate'
+              $ref: "#/components/schemas/PropertyUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       tags:
         - Data Contracts
@@ -1121,12 +1180,12 @@ paths:
           required: true
           description: The ID of the property to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /invites:
     get:
       operationId: GetInvites
@@ -1136,17 +1195,17 @@ paths:
       tags:
         - Invites
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Invite'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
+                  $ref: "#/components/schemas/Invite"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
     post:
       operationId: CreateInvite
       x-ogen-operation-group: Invites
@@ -1160,16 +1219,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InviteCreate'
+              $ref: "#/components/schemas/InviteCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
   /invites/{inviteId}:
     get:
       operationId: GetInvite
@@ -1185,18 +1244,18 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: Succesfully got invite.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Invite'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Invite"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       operationId: DeleteInvite
       x-ogen-operation-group: Invites
@@ -1211,16 +1270,16 @@ paths:
             type: string
           required: true
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "401":
+          $ref: "#/components/responses/Err401Unauthorized"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /invites/{inviteId}/accept:
     post:
       operationId: AcceptInvite
@@ -1236,14 +1295,14 @@ paths:
             type: string
           required: true
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '403':
-          $ref: '#/components/responses/ForbiddenError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "403":
+          $ref: "#/components/responses/Err403Forbidden"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /.well-known/collaboration-spaces/{spaceId}/webid:
     get:
       security: []
@@ -1261,7 +1320,7 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the WebID.
       responses:
-        '200':
+        "200":
           description: The WebId document conform the Solid specifications, serialized in turtle format.
           content:
             text/turtle:
@@ -1278,8 +1337,8 @@ paths:
                     skos:prefLabel "Test collaboration space";
                     foaf:logo <https://client.example/logo.png>;
                     foaf:homepage <https://client.example/>.
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /.well-known/collaboration-spaces/{spaceId}/appid:
     get:
       security: []
@@ -1297,7 +1356,7 @@ paths:
           required: true
           description: The ID of the requested collaboration space associated with the AppID.
       responses:
-        '200':
+        "200":
           description: The AppId document serialized as JSON-LD conform the Solid specifications.
           content:
             application/ld+json:
@@ -1313,8 +1372,8 @@ paths:
                     "client_name": "Test collaboration space - application",
                     "logo_uri": "https://client.example/logo.png"
                   }
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /.well-known/clients/{clientLabel}:
     get:
       operationId: GetPublicClient
@@ -1332,7 +1391,7 @@ paths:
             type: string
           description: A human readable label that uniquely identifies the client.
       responses:
-        '200':
+        "200":
           description: Public information about the client.
           content:
             application/json:
@@ -1344,83 +1403,91 @@ paths:
                     description: The IDP the client uses to authenticate its developers.
                 required:
                   - issuer
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
 components:
   schemas:
     CollaborationSpace:
+      title: CollaborationSpace
+      description: Collaboration Space
+      x-ogen-name: CollaborationSpace
       allOf:
         - type: object
           properties:
             id:
               type: string
+            owner:
+              type: string
+              description: Client ID of the owner of the space.
           required:
             - id
             - name
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
-        - $ref: '#/components/schemas/Timestamps'
+            - owner
+        - $ref: "#/components/schemas/CollaborationSpaceUpdate"
+        - $ref: "#/components/schemas/Timestamps"
         - type: object
           properties:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/Collaborator'
+                $ref: "#/components/schemas/Collaborator"
     CollaborationSpaceCreate:
+      title: CollaborationSpaceCreate
+      type: object
+      description: Create Collaboration Space
+      x-ogen-name: CollaborationSpaceCreate
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
-        - type: object
-          properties:
-            collaborators:
-              type: array
-              items:
-                $ref: '#/components/schemas/CollaboratorCreate'
-          required:
+        - $ref: "#/components/schemas/CollaborationSpaceUpdate"
+        - required:
             - name
     Collaborator:
       description: Collaborator
       title: Collaborator
+      type: object
       allOf:
         - type: object
           properties:
             id:
               type: string
+            clientId:
+              type: string
           required:
             - id
             - clientId
-        - $ref: '#/components/schemas/AbstractCollaborator'
-    CollaboratorCreate:
-      description: CollaboratorCreate
-      title: CollaboratorCreate
-      allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
-        - type: object
-          required:
-            - clientId
+        - $ref: "#/components/schemas/AbstractCollaborator"
+        - $ref: "#/components/schemas/DiscriminatorCollaborator"
+        - oneOf:
+            - $ref: "#/components/schemas/CollaboratorRoleCodeProvider"
+            - $ref: "#/components/schemas/CollaboratorRoleDataProvider"
+            - $ref: "#/components/schemas/CollaboratorRoleDataConsumer"
     Developer:
       type: object
       properties:
         clientId:
           type: string
+        clientName:
+          type: string
       required:
         - clientId
+        - clientName
     DataContract:
       title: Data Contract
       description: ODCS compliant description of a data contract with metadata fields added by Datavillage DCP
       allOf:
-        - $ref: '#/components/schemas/DataContractDV'
-        - $ref: '#/components/schemas/Timestamps'
+        - $ref: "#/components/schemas/DataContractDV"
+        - $ref: "#/components/schemas/Timestamps"
         - type: object
           properties:
             dataContract:
               title: Data Contract ODCS
               allOf:
-                - $ref: '#/components/schemas/AbstractDataContract'
+                - $ref: "#/components/schemas/AbstractDataContract"
                 - type: object
                   properties:
                     schema:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Schema'
+                        $ref: "#/components/schemas/Schema"
                   required:
                     - version
                     - name
@@ -1434,13 +1501,13 @@ components:
       title: Data Contract Create
       description: ODCS description of a data contract
       allOf:
-        - $ref: '#/components/schemas/AbstractDataContract'
+        - $ref: "#/components/schemas/AbstractDataContract"
         - type: object
           properties:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/SchemaCreate'
+                $ref: "#/components/schemas/SchemaCreate"
           required:
             - version
             - name
@@ -1458,8 +1525,8 @@ components:
               type: string
             clientId:
               type: string
-              description: ID of the client sending the invite.
-        - $ref: '#/components/schemas/AbstractInvite'
+              description: ID of the client that created the invite.
+        - $ref: "#/components/schemas/InviteCreate"
         - type: object
           properties:
             created:
@@ -1480,14 +1547,26 @@ components:
             - created
             - role
     InviteCreate:
+      type: object
       description: Create Invite
       title: InviteCreate
-      allOf:
-        - $ref: '#/components/schemas/AbstractInvite'
-        - type: object
-          required:
-            - spaceId
-            - role
+      properties:
+        spaceId:
+          type: string
+          description: The space for which to create an invite.
+        role:
+          type: string
+          description: The role in the space that will be held by the client that accepts the invite.
+          enum:
+            - CodeProvider
+            - DataProvider
+            - DataConsumer
+        dataContract:
+          type: string
+          description: The data contract the collaborator needs to adhere to. Only allowed for DataProvider and DataConsumer.
+      required:
+        - spaceId
+        - role
     Schema:
       title: Schema
       description: Identifiable ODCS description of a schema
@@ -1496,29 +1575,35 @@ components:
           properties:
             id:
               type: string
+            name:
+              type: string
+              description: Name of the element.
           required:
             - name
             - id
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/Property'
+                $ref: "#/components/schemas/Property"
     SchemaCreate:
       title: Schema Create
       description: ODCS description of a schema
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
         - type: object
           properties:
+            name:
+              type: string
+              description: Name of the element.
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/PropertyCreate'
+                $ref: "#/components/schemas/PropertyCreate"
           required:
             - name
+        - $ref: "#/components/schemas/AbstractSchema"
     Property:
       title: Property
       description: Identifiable ODCS description of a property
@@ -1527,18 +1612,23 @@ components:
           properties:
             id:
               type: string
+            name:
+              type: string
           required:
-            - name
             - id
-        - $ref: '#/components/schemas/AbstractProperty'
+            - name
+        - $ref: "#/components/schemas/AbstractProperty"
     PropertyCreate:
       title: Property Create
       description: ODCS compliant description of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
         - type: object
+          properties:
+            name:
+              type: string
           required:
             - name
+        - $ref: "#/components/schemas/AbstractProperty"
     DataQuality:
       type: array
       description: Data quality rules with all the relevant information for rule setup and execution
@@ -1547,11 +1637,11 @@ components:
         discriminator:
           propertyName: type
           mapping:
-            library: '#/components/schemas/DataQualityLibrary'
-            sql: '#/components/schemas/DataQualitySql'
+            library: "#/components/schemas/DataQualityLibrary"
+            sql: "#/components/schemas/DataQualitySql"
         oneOf:
-          - $ref: '#/components/schemas/DataQualityLibrary'
-          - $ref: '#/components/schemas/DataQualitySql'
+          - $ref: "#/components/schemas/DataQualityLibrary"
+          - $ref: "#/components/schemas/DataQualitySql"
         properties:
           businessImpact:
             type: string
@@ -1611,21 +1701,27 @@ components:
           authoritativeDefinitions:
             type: array
             items:
-              $ref: '#/components/schemas/AuthoritativeDefinition'
+              $ref: "#/components/schemas/AuthoritativeDefinition"
           customProperties:
             type: array
             description: Additional properties required for rule execution.
             items:
-              $ref: '#/components/schemas/CustomProperty'
+              $ref: "#/components/schemas/CustomProperty"
     Server:
-      $ref: '#/components/schemas/ODCSServer'
-    AbstractCollaborationSpace:
+      $ref: "#/components/schemas/ODCSServer"
+    CollaborationSpaceUpdate:
       type: object
+      title: CollaborationSpaceUpdate
+      description: Update Collaboration Space
+      x-ogen-name: CollaborationSpaceUpdate
       properties:
         name:
           type: string
         category:
           type: string
+        description:
+          type: string
+          description: A short description of the purpose of the space.
     Timestamps:
       type: object
       properties:
@@ -1640,6 +1736,25 @@ components:
       required:
         - created
         - updated
+    AbstractCollaborator:
+      type: object
+      description: Abstract Collaborator
+      properties:
+        name:
+          type: string
+          description: A name given the collaborator. This value is intended to be read by humans.
+          example: My Collaborator
+        label:
+          type: string
+          description: A label given the collaborator. This value is intended to refered to in code.
+          example: my-collaborator
+        role:
+          type: string
+        configuration:
+          description: A configuration of the collaborator. This is an object representing key-value pairs that will be available in the cage as environment variables.
+          type: object
+          additionalProperties:
+            type: string
     CollaboratorRoleCodeProvider:
       type: object
       x-ogen-name: CodeProvider
@@ -1649,6 +1764,8 @@ components:
         role:
           type: string
           example: CodeProvider
+          enum:
+            - CodeProvider
         settings:
           type: object
           properties:
@@ -1685,247 +1802,6 @@ components:
             secret:
               type: string
               description: A value that will be interpreted as an ImagePullSecret. An example would be a github access token that has at least the scope `packages:read`, base64 encoded as `username:token`. If no value is provided no ImagePullSecret will be used when deploying the cage.
-    CollaboratorRoleDataProvider:
-      type: object
-      x-ogen-name: DataProvider
-      title: DataProvider
-      description: Someone who provides Data
-      properties:
-        role:
-          type: string
-          example: DataProvider
-        dataContract:
-          type: string
-          description: ID of the data contract that describes the expected structure of the provided data.
-        settings:
-          type: object
-          properties:
-            description:
-              type: string
-    CollaboratorRoleDataConsumer:
-      type: object
-      x-ogen-name: DataConsumer
-      title: DataConsumer
-      description: Someone who consumes data
-      properties:
-        role:
-          type: string
-          example: DataConsumer
-        dataContract:
-          type: string
-          description: ID of the data conttract that describes the expected structure of the consumed data.
-        settings:
-          type: object
-          properties:
-            description:
-              type: string
-    AbstractCollaborator:
-      allOf:
-        - type: object
-          description: Abstract Collaborator
-          properties:
-            clientId:
-              type: string
-            name:
-              type: string
-              description: A name given the collaborator. This value is intended to be read by humans.
-              example: My Collaborator
-            label:
-              type: string
-              description: A label given the collaborator. This value is intended to refered to in code.
-              example: my-collaborator
-            configuration:
-              description: A configuration of the collaborator. This is an object representing key-value pairs that will be available in the cage as environment variables.
-              type: object
-              additionalProperties:
-                type: string
-        - discriminator:
-            propertyName: role
-            mapping:
-              CodeProvider: '#/components/schemas/CollaboratorRoleCodeProvider'
-              DataProvider: '#/components/schemas/CollaboratorRoleDataProvider'
-              DataConsumer: '#/components/schemas/CollaboratorRoleDataConsumer'
-          oneOf:
-            - $ref: '#/components/schemas/CollaboratorRoleCodeProvider'
-            - $ref: '#/components/schemas/CollaboratorRoleDataProvider'
-            - $ref: '#/components/schemas/CollaboratorRoleDataConsumer'
-    CollaborationSpaceUpdate:
-      allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
-        - type: object
-          properties:
-            collaborators:
-              type: array
-              items:
-                $ref: '#/components/schemas/CollaboratorCreate'
-    CollaboratorUpdate:
-      description: Collaborator Update
-      title: CollaboratorUpdate
-      allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
-    AlgoLog:
-      type: object
-      properties:
-        time:
-          type: string
-          format: date-time
-        log:
-          type: object
-          properties:
-            msg:
-              type: string
-            event:
-              type: string
-            eventStream:
-              type: string
-            libraryVersion:
-              type: string
-          required:
-            - msg
-            - libraryVersion
-      required:
-        - time
-        - log
-    PodStatus:
-      type: object
-      required:
-        - name
-        - status
-        - imageId
-      properties:
-        name:
-          type: string
-        status:
-          type: string
-        status_since:
-          type: string
-          format: date-time
-        containers:
-          type: array
-          items:
-            type: object
-            properties:
-              imageId:
-                type: string
-              image:
-                type: string
-              state:
-                type: string
-            required:
-              - imageId
-              - image
-              - state
-    Deployment:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-            - deployed
-            - failed
-            - pending
-            - missing
-            - unknown
-        pods:
-          type: array
-          items:
-            $ref: '#/components/schemas/PodStatus'
-      required:
-        - status
-    DeploymentLog:
-      type: object
-      properties:
-        time:
-          type: string
-          format: date-time
-        msg:
-          type: string
-      required:
-        - time
-        - msg
-    DvClient:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        label:
-          type: string
-        logoUrl:
-          type: string
-      required:
-        - id
-        - name
-        - label
-    DataContractDV:
-      description: Metadata added to data contracts by Datavillage DCP
-      type: object
-      properties:
-        id:
-          type: string
-          description: A unique identifier used in the Datavillage DCP to identify a data contract
-        clientId:
-          type: string
-          description: Id of the client owning the data contract
-      required:
-        - id
-        - clientId
-    DataContractSummary:
-      title: Data Contract Summary
-      description: The metadata fields added by Datavillage DCP along with key properties of ODCS description
-      allOf:
-        - $ref: '#/components/schemas/DataContractDV'
-        - $ref: '#/components/schemas/Timestamps'
-        - type: object
-          properties:
-            dataContractSummary:
-              type: object
-              properties:
-                version:
-                  type: string
-                  description: Current version of the data contract.
-                name:
-                  type: string
-                  description: Name of the data contract.
-                status:
-                  type: string
-                  description: Current status of the dataset. Valid values are `production`, `test`, or `development`.
-                  example:
-                    - production
-                    - test
-                    - development
-              required:
-                - version
-                - name
-                - status
-        - required:
-            - dataContractSummary
-    Description:
-      type: object
-      properties:
-        usage:
-          type: string
-          description: Intended usage of the dataset.
-        purpose:
-          type: string
-          description: Purpose of the dataset.
-        limitations:
-          type: string
-          description: Limitations of the dataset.
-    Price:
-      type: object
-      title: Price
-      properties:
-        priceAmount:
-          type: number
-          description: Subscription price per unit of measure in `priceUnit`.
-        priceCurrency:
-          type: string
-          description: Currency of the subscription price in `priceAmount`.
-        priceUnit:
-          type: string
-          description: The unit of measure for calculating cost. Examples megabyte, gigabyte.
     ApiServer:
       type: object
       x-ogen-name: ApiServer
@@ -2011,17 +1887,63 @@ components:
           description: Name of the cluster or warehouse.
       required:
         - type
+    S3Server:
+      type: object
+      x-ogen-name: S3Server
+      description: Data can be fetched via S3 protocol
+      properties:
+        type:
+          type: string
+          description: Type of the server.
+          example: s3
+        location:
+          type: string
+          format: uri
+          description: S3 URL, starting with s3://
+          examples:
+            - s3://api.example.com/v1
+        endpointUrl:
+          type: string
+          format: uri
+          description: The server endpoint for S3-compatible servers, such as MioIO or Google Cloud Storage
+          examples:
+            - https://minio.example.com
+        format:
+          type: string
+          description: Format of files
+          enum:
+            - parquet
+            - json
+            - csv
+        delimeter:
+          type: string
+          description: (Only for format = json), how multiple json documents are delimited within one file
+          examples:
+            - new_line
+            - array
+        dvProperties:
+          type: object
+          description: Properties for Datavillage DCP
+          properties:
+            region:
+              type: string
+              description: The region where the S3 bucket is located.
+      required:
+        - type
+        - location
     ODCSServer:
       type: object
       description: Data source details of where data is physically stored.
       discriminator:
         propertyName: type
         mapping:
-          api: '#/components/schemas/ApiServer'
-          custom: '#/components/schemas/CustomServer'
+          api: "#/components/schemas/ApiServer"
+          custom: "#/components/schemas/CustomServer"
+          s3: "#/components/schemas/S3Server"
       oneOf:
-        - $ref: '#/components/schemas/ApiServer'
-        - $ref: '#/components/schemas/CustomServer'
+        - $ref: "#/components/schemas/ApiServer"
+        - $ref: "#/components/schemas/CustomServer"
+        - $ref: "#/components/schemas/S3Server"
       properties:
         server:
           type: string
@@ -2039,6 +1961,271 @@ components:
             - uat
       required:
         - server
+    CollaboratorRoleDataProviderUpdate:
+      type: object
+      x-ogen-name: DataProviderUpdate
+      title: DataProvider
+      description: Someone who provides Data
+      properties:
+        role:
+          type: string
+          example: DataProvider
+          enum:
+            - DataProvider
+        server:
+          $ref: "#/components/schemas/ODCSServer"
+        settings:
+          type: object
+          properties:
+            description:
+              type: string
+    CollaboratorRoleDataProvider:
+      type: object
+      x-ogen-name: DataProvider
+      title: DataProvider
+      description: Someone who provides Data
+      allOf:
+        - $ref: "#/components/schemas/CollaboratorRoleDataProviderUpdate"
+        - type: object
+          properties:
+            dataContract:
+              type: string
+              description: ID of the data contract that describes the expected structure of the provided data.
+    CollaboratorRoleDataConsumerUpdate:
+      type: object
+      x-ogen-name: DataConsumerUpdate
+      title: DataConsumer
+      description: Someone who consumes data
+      properties:
+        role:
+          type: string
+          example: DataConsumer
+          enum:
+            - DataConsumer
+        server:
+          $ref: "#/components/schemas/ODCSServer"
+        settings:
+          type: object
+          properties:
+            description:
+              type: string
+    CollaboratorRoleDataConsumer:
+      type: object
+      x-ogen-name: DataConsumer
+      title: DataConsumer
+      description: Someone who consumes data
+      allOf:
+        - $ref: "#/components/schemas/CollaboratorRoleDataConsumerUpdate"
+        - type: object
+          properties:
+            dataContract:
+              type: string
+              description: ID of the data contract that describes the expected structure of the consumed data.
+    DiscriminatorCollaborator:
+      type: object
+      discriminator:
+        propertyName: role
+        mapping:
+          CodeProvider: "#/components/schemas/CollaboratorRoleCodeProvider"
+          DataProvider: "#/components/schemas/CollaboratorRoleDataProvider"
+          DataConsumer: "#/components/schemas/CollaboratorRoleDataConsumer"
+    CollaboratorCreate:
+      description: CollaboratorCreate
+      title: CollaboratorCreate
+      allOf:
+        - $ref: "#/components/schemas/AbstractCollaborator"
+        - type: object
+          properties:
+            clientId:
+              type: string
+          required:
+            - clientId
+        - $ref: "#/components/schemas/DiscriminatorCollaborator"
+        - oneOf:
+            - $ref: "#/components/schemas/CollaboratorRoleCodeProvider"
+            - $ref: "#/components/schemas/CollaboratorRoleDataProvider"
+            - $ref: "#/components/schemas/CollaboratorRoleDataConsumer"
+    DiscriminatorCollaboratorUpdate:
+      type: object
+      discriminator:
+        propertyName: role
+        mapping:
+          CodeProvider: "#/components/schemas/CollaboratorRoleCodeProvider"
+          DataProvider: "#/components/schemas/CollaboratorRoleDataProviderUpdate"
+          DataConsumer: "#/components/schemas/CollaboratorRoleDataConsumerUpdate"
+    CollaboratorUpdate:
+      description: Collaborator Update
+      title: CollaboratorUpdate
+      allOf:
+        - $ref: "#/components/schemas/AbstractCollaborator"
+        - $ref: "#/components/schemas/DiscriminatorCollaboratorUpdate"
+        - oneOf:
+            - $ref: "#/components/schemas/CollaboratorRoleCodeProvider"
+            - $ref: "#/components/schemas/CollaboratorRoleDataProviderUpdate"
+            - $ref: "#/components/schemas/CollaboratorRoleDataConsumerUpdate"
+    AlgoLog:
+      type: object
+      properties:
+        time:
+          type: string
+          format: date-time
+        log:
+          type: object
+          properties:
+            msg:
+              type: string
+            event:
+              type: string
+            eventStream:
+              type: string
+            libraryVersion:
+              type: string
+          required:
+            - msg
+            - libraryVersion
+      required:
+        - time
+        - log
+    PodStatus:
+      type: object
+      required:
+        - name
+        - status
+        - imageId
+      properties:
+        name:
+          type: string
+        status:
+          type: string
+        status_since:
+          type: string
+          format: date-time
+        containers:
+          type: array
+          items:
+            type: object
+            properties:
+              imageId:
+                type: string
+              image:
+                type: string
+              state:
+                type: string
+            required:
+              - imageId
+              - image
+              - state
+    Deployment:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - deployed
+            - failed
+            - pending
+            - missing
+            - unknown
+        pods:
+          type: array
+          items:
+            $ref: "#/components/schemas/PodStatus"
+      required:
+        - status
+    DeploymentLog:
+      type: object
+      properties:
+        time:
+          type: string
+          format: date-time
+        msg:
+          type: string
+      required:
+        - time
+        - msg
+    DvClient:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        label:
+          type: string
+        logoUrl:
+          type: string
+      required:
+        - id
+        - name
+        - label
+    DataContractDV:
+      description: Metadata added to data contracts by Datavillage DCP
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique identifier used in the Datavillage DCP to identify a data contract
+        clientId:
+          type: string
+          description: Id of the client owning the data contract
+      required:
+        - id
+        - clientId
+    DataContractSummary:
+      title: Data Contract Summary
+      description: The metadata fields added by Datavillage DCP along with key properties of ODCS description
+      allOf:
+        - $ref: "#/components/schemas/DataContractDV"
+        - $ref: "#/components/schemas/Timestamps"
+        - type: object
+          properties:
+            dataContractSummary:
+              type: object
+              properties:
+                version:
+                  type: string
+                  description: Current version of the data contract.
+                name:
+                  type: string
+                  description: Name of the data contract.
+                status:
+                  type: string
+                  description: Current status of the dataset. Valid values are `production`, `test`, or `development`.
+                  example:
+                    - production
+                    - test
+                    - development
+              required:
+                - version
+                - name
+                - status
+        - required:
+            - dataContractSummary
+    Description:
+      type: object
+      properties:
+        usage:
+          type: string
+          description: Intended usage of the dataset.
+        purpose:
+          type: string
+          description: Purpose of the dataset.
+        limitations:
+          type: string
+          description: Limitations of the dataset.
+    Price:
+      type: object
+      title: Price
+      properties:
+        priceAmount:
+          type: number
+          description: Subscription price per unit of measure in `priceUnit`.
+        priceCurrency:
+          type: string
+          description: Currency of the subscription price in `priceAmount`.
+        priceUnit:
+          type: string
+          description: The unit of measure for calculating cost. Examples megabyte, gigabyte.
     AbstractDataContract:
       type: object
       properties:
@@ -2085,9 +2272,9 @@ components:
           type: string
           description: The name of the data product.
         description:
-          $ref: '#/components/schemas/Description'
+          $ref: "#/components/schemas/Description"
         price:
-          $ref: '#/components/schemas/Price'
+          $ref: "#/components/schemas/Price"
         domain:
           type: string
           description: Name of the logical data domain
@@ -2106,7 +2293,18 @@ components:
           type: array
           description: List of servers where the datasets reside.
           items:
-            $ref: '#/components/schemas/ODCSServer'
+            $ref: "#/components/schemas/ODCSServer"
+    AnyType:
+      nullable: true
+      anyOf:
+        - type: string
+        - type: number
+        - type: integer
+        - type: boolean
+        - type: array
+          items: {}
+        - type: object
+          additionalProperties: true
     DataQualityLibrary:
       type: object
       x-ogen-name: DataQualityLibrary
@@ -2129,8 +2327,10 @@ components:
             - rowCount
         mustBe:
           description: Must be equal to the value to be valid. When using numbers, it is equivalent to '='.
+          $ref: "#/components/schemas/AnyType"
         mustNotBe:
           description: Must not be equal to the value to be valid. When using numbers, it is equivalent to '!='.
+          $ref: "#/components/schemas/AnyType"
         mustBeGreaterThan:
           type: number
           description: Must be greater than the value to be valid. It is equivalent to '>'.
@@ -2192,7 +2392,7 @@ components:
           description: URL to the authority.
         type:
           type: string
-          description: 'Type of definition for authority: v2.3 adds standard values: `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`.'
+          description: "Type of definition for authority: v2.3 adds standard values: `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`."
           examples:
             - businessDefinition
             - transformationImplementation
@@ -2202,17 +2402,6 @@ components:
       required:
         - url
         - type
-    AnyType:
-      nullable: true
-      anyOf:
-        - type: string
-        - type: number
-        - type: integer
-        - type: boolean
-        - type: array
-          items: {}
-        - type: object
-          additionalProperties: true
     CustomProperty:
       type: object
       properties:
@@ -2221,13 +2410,10 @@ components:
           description: The name of the key. Names should be in camel-case the same as if they were permanent properties in the contract.
         value:
           description: The value of the key.
-          $ref: '#/components/schemas/AnyType'
+          $ref: "#/components/schemas/AnyType"
     Element:
       type: object
       properties:
-        name:
-          type: string
-          description: Name of the element.
         physicalType:
           type: string
           description: The physical element data type in the data source.
@@ -2248,36 +2434,16 @@ components:
             type: string
           description: A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level.
         quality:
-          $ref: '#/components/schemas/DataQuality'
-    AbstractSchema:
-      allOf:
-        - $ref: '#/components/schemas/Element'
-        - type: object
-          properties:
-            logicalType:
-              type: string
-              description: The logical element data type.
-              enum:
-                - object
-            physicalName:
-              type: string
-              description: Physical name.
-              example:
-                - table_1_2_0
-            dataGranularityDescription:
-              type: string
-              description: Granular level of the data in the object.
-              example:
-                - Aggregation by country
+          $ref: "#/components/schemas/DataQuality"
     AbstractProperty:
       properties:
         examples:
           type: array
           description: List of sample element values.
           items:
-            $ref: '#/components/schemas/AnyType'
+            $ref: "#/components/schemas/AnyType"
       allOf:
-        - $ref: '#/components/schemas/Element'
+        - $ref: "#/components/schemas/Element"
         - type: object
           properties:
             primaryKey:
@@ -2288,18 +2454,48 @@ components:
               description: If element is a primary key, the position of the primary key element. Starts from 1. Example of `account_id, name` being primary key columns, `account_id` has primaryKeyPosition 1 and `name` primaryKeyPosition 2. Default to -1.
             logicalType:
               type: string
-              description: The logical element data type.
               enum:
+                - integer
                 - string
                 - date
-                - number
-                - integer
-                - object
-                - array
                 - boolean
             logicalTypeOptions:
+              description: Metadata based on logicalType. This property needs to be set in order to set logicalTypeOptions.
               type: object
-              description: Additional optional metadata to describe the logical type.
+              properties:
+                minimum:
+                  description: logicalType = integer or logicalType = date. The minimum value.
+                  oneOf:
+                    - type: string
+                      format: date-time
+                    - type: integer
+                maximum:
+                  description: logicalType = integer or logicalType = date. The maximum value.
+                  oneOf:
+                    - type: string
+                      format: date-time
+                    - type: integer
+                pattern:
+                  description: logicalType = string. Regular expression pattern to define valid value. Follows regular expression syntax from ECMA-262 (https://262.ecma-international.org/5.1/#sec-15.10.1).
+                  type: string
+                exclusiveMaximum:
+                  description: logicalType = integer or logicalType = date. If set to true, all values are strictly less than the maximum value (values < maximum). Otherwise, less than or equal to the maximum value (values <= maximum).
+                  type: boolean
+                exclusiveMinimum:
+                  description: logicalType = integer or logicalType = date. If set to true, all values are strictly greater than the minimum value (values > minimum). Otherwise, greater than or equal to the minimum value (values >= minimum).
+                  type: boolean
+                multipleOf:
+                  description: logicalType = integer. Values must be multiples of this number. For example, multiple of 5 has valid values 0, 5, 10, -5.
+                  type: integer
+                maxLength:
+                  description: logicalType = string. Maximum length of the string.
+                  type: integer
+                minLength:
+                  description: logicalType = string. Minimum length of the string.
+                  type: integer
+                format:
+                  description: logicalType = date. How the date should be formatted using DuckDB notation. By default, the dates are formatted according to the ISO 8601 standard.
+                  type: string
             physicalType:
               type: string
               description: The physical element data type in the data source. For example, VARCHAR(2), DOUBLE, INT.
@@ -2339,54 +2535,68 @@ components:
             criticalDataElement:
               type: boolean
               description: True or false indicator; If element is considered a critical data element (CDE) then true else false.
+    AbstractSchema:
+      allOf:
+        - $ref: "#/components/schemas/Element"
+        - type: object
+          properties:
+            logicalType:
+              type: string
+              description: The logical element data type.
+              enum:
+                - object
+            physicalName:
+              type: string
+              description: Physical name.
+              example:
+                - table_1_2_0
+            dataGranularityDescription:
+              type: string
+              description: Granular level of the data in the object.
+              example:
+                - Aggregation by country
     DataContractUpdate:
       title: Data Contract Update
       description: ODCS properties of a data contract where schemas should comply
       allOf:
-        - $ref: '#/components/schemas/AbstractDataContract'
+        - $ref: "#/components/schemas/AbstractDataContract"
         - type: object
           properties:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/SchemaCreate'
+                $ref: "#/components/schemas/SchemaCreate"
     SchemaUpdate:
       title: Schema Update
       description: ODCS properties of a schema where 'properties'-property should comply
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
         - type: object
           properties:
+            name:
+              type: string
+              description: Name of the element.
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/PropertyCreate'
+                $ref: "#/components/schemas/PropertyCreate"
+        - $ref: "#/components/schemas/AbstractSchema"
     PropertyUpdate:
       title: Update Property
       description: ODCS properties of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
-    AbstractInvite:
-      type: object
-      description: Abstract Invite
-      properties:
-        spaceId:
-          type: string
-          description: The space for which to create an invite.
-        role:
-          type: string
-          description: The role in the space that will be held by the client that accepts the invite.
-          enum:
-            - CodeProvider
-            - DataProvider
-            - DataConsumer
+        - type: object
+          properties:
+            name:
+              type: string
+              description: Name of the element.
+        - $ref: "#/components/schemas/AbstractProperty"
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
   responses:
-    UnauthorizedError:
+    Err401Unauthorized:
       description: User is not authenticated
       content:
         application/json:
@@ -2413,7 +2623,7 @@ components:
           required: true
           schema:
             type: string
-    BadRequestError:
+    Err400BadRequest:
       description: Bad request
       content:
         application/json:
@@ -2424,7 +2634,7 @@ components:
                 type: string
             required:
               - error_message
-    ForbiddenError:
+    Err403Forbidden:
       description: Authenticated user does not have access
       content:
         application/json:
@@ -2435,7 +2645,7 @@ components:
                 type: string
             required:
               - error_message
-    NotFoundError:
+    Err404NotFound:
       description: Resource not found
       content:
         application/json:

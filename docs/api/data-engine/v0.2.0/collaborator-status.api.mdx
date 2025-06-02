@@ -1,0 +1,71 @@
+---
+id: collaborator-status
+title: "Status of a collaborator in the data engine"
+description: "Status of a collaborator in the data engine"
+sidebar_label: "Status of a collaborator in the data engine"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWFtr21AM/itGTxu4Sxl9MmNQ1lDysAu9sIcShmIr8ensc9xz5K6Z8X8f8iWxk7Rrsra0rOQhyYmkT98nGeWoAJORRVZGjyII4JNJEpwYi2zsKSPnDnzI0GJKTNZBcFGA0hBAhhyDDxpTggDCjtsoAh9cGFOKEBTA80wsHFulZ1D6YOkqV5YiCNjm5ENELrQqkxQggLOYvNGRZ6Yex+SJLTmmyOsivINyLHFcZrQjJyjv9/flrR/r2LDnKhISrx/Bh9BoJs3ihlmWqLBSYXDpxLdYZ2AmlxQyrCa8UIkVJ9Q9wCT5Oq0Ui5R4pEoLtoTMrMjO8y+1fK51STHLRKaggFynJtcsOq2n0GKdL4z8NqaqBWlCrhXAB9J5CsFFB2BclqUPSitWmKjfd0OOOmbbg3ZBxreCLtymxqbIEECETHusUoKy10LrEX9ZxY2Et1H43phsn34bfMfU6+zolNHyA9DthZOU7tExn3ful2W3PBn3TYweRCy/x4ZuMmP/1jTDhdH20i0BnrN4rRCP0p7LbPowS/3v7ttha7Or+s+8c3cSf6N0j1ouv68mWVsPtFvLVhnsULPKbxNE+0dihUnrIKOsAKOpGb1PMDlf7Kz8/ybk61zcYi6+zsKnn4WvA/BFDcBnNPjkVd3jDvYP1q/CJ+RMbkPytGFvanId/csNuE+qyuBHSs7hjDZxi2iKeSKFODJhnpLmThob+SyiVZzKzXduudRj71rvKV2tDSJk9EjPlCYpJHFsZLkxoyp52VwEMOg6ukHRX2GUssMge93uPHKbQAAxc+aCweCDAOzVAB+rZYTSU1NRb8p/hIzD6nfv8NsIfJBIdfIJMjmW3s2M4xQrrZs9ynbEeqIsZGe64UGWoNKCUSVeNKQveosaWTgEK5ubsQ+xcSymRTFBR+c2KUs5vsrJziG4GPtwjVbhRHjWuw35HEEwxcSt7nOKZZPBm5OmzG+9+215/M2UmkPUc9EVk1y+gQ8/ab6+iirlUYoJI7JVurXRYRhSxh33tf6Xoi4a53h4BmX5B8xVqjI=
+sidebar_class_name: "get api-method"
+info_path: docs/api/data-engine/v0.2.0/dataengine-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Status of a collaborator in the data engine"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaborators/{collaboratorId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Status of a collaborator in the data engine
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true,"description":"The ID of the requested collaborator."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Got status of collaborator.","content":{"application/json":{"schema":{"type":"object","description":"Status","title":"Status","allOf":[{"discriminator":{"propertyName":"status","mapping":{"unmounted":{"type":"object","title":"Unmounted","properties":{"status":{"type":"string","enum":["unmounted"]}}},"initialized":{"type":"object","title":"Initialized","properties":{"status":{"type":"string","enum":["initialized"]},"initialized":{"type":"string","format":"date-time"}},"required":["initialized"]},"writing":{"type":"object","title":"Writing","properties":{"status":{"type":"string","enum":["writing"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"}},"required":["initialized","writeStart"]},"mounted":{"type":"object","title":"Mounted","properties":{"status":{"type":"string","enum":["mounted"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"},"mounted":{"type":"string","format":"date-time"}},"required":["initialized","writeStart","mounted"]},"exporting":{"type":"object","title":"Exporting","properties":{"status":{"type":"string","enum":["exporting"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"},"mounted":{"type":"string","format":"date-time"},"exportStart":{"type":"string","format":"date-time"}},"required":["initialized","writeStart","mounted","exportStart"]},"exported":{"type":"object","title":"Exported","properties":{"status":{"type":"string","enum":["exported"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"},"mounted":{"type":"string","format":"date-time"},"exportStart":{"type":"string","format":"date-time"},"exported":{"type":"string","format":"date-time"}},"required":["initialized","writeStart","mounted","exportStart","exported"]},"error":{"type":"object","title":"Error","properties":{"status":{"type":"string","enum":["error"]},"error":{"type":"string"}},"required":["error"]}}}},{"oneOf":[{"type":"object","title":"Unmounted","properties":{"status":{"type":"string","enum":["unmounted"]}}},{"type":"object","title":"Initialized","properties":{"status":{"type":"string","enum":["initialized"]},"initialized":{"type":"string","format":"date-time"}},"required":["initialized"]},{"type":"object","title":"Writing","properties":{"status":{"type":"string","enum":["writing"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"}},"required":["initialized","writeStart"]},{"type":"object","title":"Mounted","properties":{"status":{"type":"string","enum":["mounted"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"},"mounted":{"type":"string","format":"date-time"}},"required":["initialized","writeStart","mounted"]},{"type":"object","title":"Exporting","properties":{"status":{"type":"string","enum":["exporting"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"},"mounted":{"type":"string","format":"date-time"},"exportStart":{"type":"string","format":"date-time"}},"required":["initialized","writeStart","mounted","exportStart"]},{"type":"object","title":"Exported","properties":{"status":{"type":"string","enum":["exported"]},"initialized":{"type":"string","format":"date-time"},"writeStart":{"type":"string","format":"date-time"},"mounted":{"type":"string","format":"date-time"},"exportStart":{"type":"string","format":"date-time"},"exported":{"type":"string","format":"date-time"}},"required":["initialized","writeStart","mounted","exportStart","exported"]},{"type":"object","title":"Error","properties":{"status":{"type":"string","enum":["error"]},"error":{"type":"string"}},"required":["error"]}]}]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

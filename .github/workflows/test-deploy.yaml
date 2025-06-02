@@ -35,5 +35,11 @@ jobs:
       - name: Generate Control Plane legacy versions
         run: yarn docusaurus gen-api-docs:version control-plane:all
 
+      - name: Clean Data Engine legacy versions
+        run: yarn docusaurus clean-api-docs:version data-engine:all
+
+      - name: Generate Data Engine legacy versions
+        run: yarn docusaurus gen-api-docs:version data-engine:all
+
       - name: Test build website
         run: yarn build

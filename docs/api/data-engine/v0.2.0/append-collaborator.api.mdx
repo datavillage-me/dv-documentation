@@ -1,0 +1,71 @@
+---
+id: append-collaborator
+title: "Append data on a Data Consumer"
+description: "Append data on a Data Consumer"
+sidebar_label: "Append data on a Data Consumer"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVMFu2zAM/RWBpw1Q62LoSRgGpOkOOa1ou12CYGAsplZnS65EFwsC//tA2W2TOMC6024GTVLvPZJvB6GliOyCX1gwMGtb8nYe6hrXISKHCBpajNgQU0xgljtwHgy0yBVo8NgQGCj3ChYWNKSyogbB7IC3rWQkjs4/QK8h0lPnIlkwHDvSYCmV0bUCAQzcV6QW1ypsFFekLDKqMvjUNRQVB4UZ3xDncA79amhIia+C3cqD035j9lis1SbEBpnJKkxqfvfjHKaoyuCZPEvDpqvZtRi5kMIz6SbhCcWwfqSSRa8oorKjlPGM+YdCaBhQgIG18xi3cEqJMjQNqkQyAcH7jHVHSbg4nyiycj7rxLiu6aRo59AfaL4c8Kz6foinNvg0AP10cTnV73YQV1XobU1Wpa6ktOnqeiuzvLy4mJZcoVXjTOBASGzb2pV52YrHJLnvV5FiDPFnQynhA52S09IGu5qP3j8mf9hmVOHyNPEUuliS8oHVJnTe/hcy16HsGvK8B+MdnPrjZZrt3U3wCtW1fM3HJQENDXEVxAHakMeW79tAsX/ZqdgdHnpfDCclB0/x+cUguliDgYq5TaYoPsujZ+QfnKcv+WCd34TM2nEttAXL1/xfzW4WoEE6Dbhr5DxGnXE1mGUeTeevnA4keBWZ6TcXbY3OS9uMdTfSXR4YWQINZuJsI+OVhkqUMkvY7daY6Hus+17CTx3FLZjlSsMzRieXmVWxLsm3BbPBOh0b3+5tt+DD7Tjdj+of7VCfJjkG0YvLZA8BA6DhF22n5t2veg0VoaWYcQ9J8wHd2b20emtyyht7/VI0K0tqeS99cjSyDq+rd/Pt7h40rEcjb4KVGmmc++q3T7OUNf8DvNtXrQ==
+sidebar_class_name: "post api-method"
+info_path: docs/api/data-engine/v0.2.0/dataengine-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Append data on a Data Consumer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/collaborators/{collaboratorId}/append"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Append data on a Data Consumer
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true,"description":"The ID of the data consumer to append data to."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"The data to append, formatted as CSV.","required":true,"content":{"multipart/form-data":{"schema":{"type":"object","properties":{"data":{"type":"string","format":"binary","description":"The comma separated values to insert in the table of the data consumer."}},"required":["data"]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Request handled sucesfully"},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Bad request"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
