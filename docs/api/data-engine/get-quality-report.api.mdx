@@ -1,0 +1,71 @@
+---
+id: get-quality-report
+title: "Get Quality Report"
+description: "Get Quality Report"
+sidebar_label: "Get Quality Report"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV99r20AM/leMnja4LGX0yYxBIV3Jy9aV7imEodhyfJ19597JpcH4fx/yj/yws3ZjFEoJeYhj6aTv+6RTUAW2IIesrZnHEMIV8fcSM82bGyqsY1DAuPYQLqB7D0sFBTrMicmJoQJtIIQCOQUFBnOCEFxzeh6DAh+llCOEFfCmEJtnp80aagWO7kvtKIaQXUkKYvKR04WggRBuUwrms8AmAacU3LfpgzbyB6iXct4X1njyEv3j2Zl8jWMMTyqIrGEyLO5YFJmOGgGmd17OVGPEdnVHkWjxOLFrMpOO5Egpzdne+2BrmB1gGpkxy74ljZKxFsdcG2TrBEDhpD68+dpm9IxcelCQY1GIiOJCJu4eh3B7QNedy5BA937Io0uqW111fLR2HZSRSQGZMpeG6YEta1E8y3BlnfCaHw+Y27ItyTBeYl2ODCHEyDRhnVOX3/21+0GvLYTSCFIPoI+8ZSjwE220Tyl+SuQvvc9Q5d7wQjJvsb0CnXul/iF8GUXk9wmic7gBBZop98cEP9StFfkIz7hs59qeURumNTkYTppZ59rPGibPgTZB7j+MeqfJtxd9KQ4J6uwVU1CQk/e4PpblGXq7ow1Rcq4dTG+c6bGBsR2+z06O7hLsurvrkF4/SVCrCqyhbvCfJvfLTO7TuD6N69O4fvNMX3pcy6fJcn52Pl4ybsjb0kUUGMtBYksT/8+OcViCBsHPP6okaidYZnJRZzYqczK8B2MozGG0hlM9LNgVcTBaUXLi1MqCuKYGoyx7IUy71WrSrlbTql/7ahGT3EO/IZYugxBS5sKH0+mnGBknZNba0OdmkdMmsQ25bjjPkPGysQcX13NQIJFaeBlKB0nrFNZzjmbXqMehH7Db6sf0yNMiQ20kVIOv6mgt4JAWKAi3++xSQWo9i1dVrdDTD5fVtby+L8ltIFwsFTyg07gSJu1OJ88xhAlmfrjlVrtGgXc3XaneB0/vvuo4i/6SG7niD5iV8gsU/KLN/kpeyz9PShiTawC25osoooL3Do66Vgq17YOry1uo69+GCpYn
+sidebar_class_name: "get api-method"
+info_path: docs/api/data-engine/dataengine-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Quality Report"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/quality-report/{reportId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Quality Report
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"reportId","schema":{"type":"string"},"required":true,"description":"The ID of the quality report."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The quality report.","content":{"application/json":{"schema":{"type":"object","x-ogen-name":"QualityReport","title":"Quality Report","Description":"Quality Report","allOf":[{"discriminator":{"propertyName":"status","mapping":{"pending":{"type":"object","title":"Pending","x-ogen-name":"PendingQualityReport","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["pending"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"}},"required":["id","collaboratorId","mount","start","status"]},"finished":{"type":"object","title":"Finished","x-ogen-name":"FinishedQualityReport","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["finished"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"},"finish":{"type":"string","format":"date-time"},"success":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"duration":{"type":"integer","description":"Duration of the test in ms."}},"required":["name","duration"]}},"fail":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"duration":{"type":"integer","description":"Duration of the test in ms."},"message":{"type":"string"}},"required":["name","duration","message"]}},"error":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"duration":{"type":"integer","description":"Duration of the test in ms."},"message":{"type":"string"}},"required":["name","duration","message"]}}},"required":["id","status","collaboratorId","mount","start","finish","success","fail","error"]}}}},{"oneOf":[{"type":"object","title":"Pending","x-ogen-name":"PendingQualityReport","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["pending"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"}},"required":["id","collaboratorId","mount","start","status"]},{"type":"object","title":"Finished","x-ogen-name":"FinishedQualityReport","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["finished"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"},"finish":{"type":"string","format":"date-time"},"success":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"duration":{"type":"integer","description":"Duration of the test in ms."}},"required":["name","duration"]}},"fail":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"duration":{"type":"integer","description":"Duration of the test in ms."},"message":{"type":"string"}},"required":["name","duration","message"]}},"error":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"},"duration":{"type":"integer","description":"Duration of the test in ms."},"message":{"type":"string"}},"required":["name","duration","message"]}}},"required":["id","status","collaboratorId","mount","start","finish","success","fail","error"]}]}]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -70,6 +70,12 @@ const config: Config = {
           docsPluginId: "classic",
         },
         {
+          label: "Data Engine API",
+          position: "left",
+          to: "/docs/api/data-engine",
+          docsPluginId: "classic",
+        },
+        {
           href: "https://datavillage.me",
           label: "Datavillage home",
           position: "right",

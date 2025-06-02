@@ -1,0 +1,71 @@
+---
+id: get-collaborator-reports
+title: "Get Collaborator Reports"
+description: "Get Collaborator Reports"
+sidebar_label: "Get Collaborator Reports"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV0tv00AQ/iurOYG0JRXqyUJIQEvVC4UCpypCU3scL6x33d1xILL839H4kTpOeAoEhyqHODuz33zfPKxJA76igGy8u8gggXPiF95avPEB2YcrqnzgCBoYVxGSa3hTozW8gaWGCgOWxBTE0IBxkECFXIAGhyVBAukE6iIDDTEtqERIGuBNJR6Rg3EraDUEuq1NoAwSDjVpyCimwVTCDBJ4V5C6OFU+V1yQmuIq9mpF3J3f9uRU6Gk/gnYpwLHyLlKUsI+Pj+VrF/xyTWFt6LPAo7UqMgambAuXFpR+iiqXYLPoj0BD6h2TY8HFqrIm7dK5+BgFvNnXjCHgBjQYpjJOzv3NR0oZNHw58ityR0MSh4z3pXhblyUGuc2G7cSsert6EHuPhzBP4XC1EznLlKhAay/zrpCZkWulcSJQ+FVBmoQ3r3pCkZFr6YkSq0qqJy7ksuFxrmYk+npwmesbzndkgh6Dmr5uJjvYNAOVPZMGcnUp/ToSW7Z63o6HAEtf95Wc4+U+lMiQQIZMR2xKGuKHn3bfafJrkbRHaSQwIm8VCv3cOBMLyr6X5JejzzzLo+Eb3fSHsr2l+B+ke0zYL8DXaUpxKtA4phWFDgyNPWyhEPo5mZsOFXw7PD+s/MD+jtbAYQy4bNu21Q14R8Pg3k/e35m8+3G7HzdYtvLpZg5ODm0RzzFTEp8i/8ZSsG2t3dboYn8oKUZc0aHUZpRjbXkWf56LXZjlqOJkX8UVRV+HlJTzrHJfu+yfiDn1aV2S4wmNn9DUzneec2I13WfV3UJbEhdeVt4VdUxlcU1gMe2TuGh226ZdDHuTtAmF9bj61sFCAgVzFZPF4kmGjEfkVsbR024FNS73nd7htXGKjGedXT17fQEaBKlnbJG7AmqofOQSuwQPL5XvqNmRvU0s0xdeVBaNE8COZTMovd6ZCIFI9kbk9m7XL3xkudQ0NxjpfbBtK8e3NYUNJNdLDWsMBm9EXr9CynMGSY42zrf55q6h4MHVUNKH6jd3fH1Y7bhsOynWGm0tv0DDJ9rs/zNp5QVaEGYUOv6907M0pYon1/eaX4q7baTzs3fQtl8BuVCdMQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/data-engine/dataengine-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Collaborator Reports"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/collaborators/{collaboratorId}/quality"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Collaborator Reports
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"collaboratorId","schema":{"type":"string"},"required":true,"description":"The ID of the collaborator to get the quality reports."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Overview of all started quality checks for the collaborator.","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","x-ogen-name":"QualityReportSummary","title":"Quality Report (summary)","description":"Summary of a quality report.","allOf":[{"discriminator":{"propertyName":"status","mapping":{"pending":{"type":"object","title":"Pending","x-ogen-name":"PendingQualityReport","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["pending"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"}},"required":["id","collaboratorId","mount","start","status"]},"finished":{"type":"object","title":"Finished","x-ogen-name":"FinishedQualityReportSummary","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["finished"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"},"finish":{"type":"string","format":"date-time"},"success":{"type":"integer"},"fail":{"type":"integer"},"error":{"type":"integer"}},"required":["id","status","collaboratorId","mount","start","finish","success","fail","error"]}}}},{"oneOf":[{"type":"object","title":"Pending","x-ogen-name":"PendingQualityReport","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["pending"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"}},"required":["id","collaboratorId","mount","start","status"]},{"type":"object","title":"Finished","x-ogen-name":"FinishedQualityReportSummary","properties":{"id":{"type":"string"},"status":{"type":"string","enum":["finished"]},"collaboratorId":{"type":"string"},"mount":{"type":"string","format":"date-time"},"start":{"type":"string","format":"date-time"},"finish":{"type":"string","format":"date-time"},"success":{"type":"integer"},"fail":{"type":"integer"},"error":{"type":"integer"}},"required":["id","status","collaboratorId","mount","start","finish","success","fail","error"]}]}]}}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Bad request"}},"required":["error_message"]}}}},"404":{"description":"Resource not found","content":{"application/json":{"schema":{"type":"object","properties":{"error_message":{"type":"string","default":"Document not found"}},"required":["error_message"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
