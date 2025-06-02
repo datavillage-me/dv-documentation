@@ -86,6 +86,12 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "api/control-plane/store-collaborator-server-secret",
+          label: "Store secret",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "api/control-plane/get-algorithm-logs",
           label: "Get Algorithm Logs",
           className: "api-method get",
