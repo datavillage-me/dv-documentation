@@ -5,6 +5,8 @@ info:
 servers:
   - url: https://<data-engine>
 tags:
+  - name: Collaborator
+    description: Mount, query and export collaborator data
   - name: Quality
     description: Monitor the data quality
 paths:
@@ -12,6 +14,8 @@ paths:
     get:
       summary: Status of a collaborator in the data engine
       operationId: CollaboratorStatus
+      tags:
+        - Collaborator
       parameters:
         - in: path
           name: collaboratorId
@@ -31,6 +35,8 @@ paths:
     post:
       summary: Mount a new collaborator
       operationId: MountCollaborator
+      tags:
+        - Collaborator
       parameters:
         - in: path
           name: collaboratorId
@@ -74,6 +80,8 @@ paths:
     delete:
       summary: Unmount a collaborator
       operationId: UnmountCollaborator
+      tags:
+        - Collaborator
       parameters:
         - in: path
           name: collaboratorId
@@ -90,6 +98,8 @@ paths:
     get:
       summary: Query on a collaborator
       operationId: QueryCollaborator
+      tags:
+        - Collaborator
       parameters:
         - in: path
           name: collaboratorId
@@ -152,6 +162,8 @@ paths:
     post:
       summary: Append data on a Data Consumer
       operationId: AppendCollaborator
+      tags:
+        - Collaborator
       parameters:
         - in: path
           name: collaboratorId
@@ -184,6 +196,8 @@ paths:
     post:
       summary: Export Data Consumer
       operationId: ExportCollaborator
+      tags:
+        - Collaborator
       parameters:
         - in: path
           name: collaboratorId
@@ -275,6 +289,8 @@ components:
           type: string
           enum:
             - unmounted
+      required:
+        - status
     StatusInitialized:
       type: object
       title: Initialized
@@ -288,6 +304,7 @@ components:
           format: date-time
       required:
         - initialized
+        - status
     StatusWriting:
       type: object
       title: Writing
@@ -305,6 +322,7 @@ components:
       required:
         - initialized
         - writeStart
+        - status
     StatusMounted:
       type: object
       title: Mounted
@@ -326,9 +344,10 @@ components:
         - initialized
         - writeStart
         - mounted
+        - status
     StatusExporting:
       type: object
-      title: Exporting
+      title: Initialized
       properties:
         status:
           type: string
@@ -351,6 +370,7 @@ components:
         - writeStart
         - mounted
         - exportStart
+        - status
     StatusExported:
       type: object
       title: Exported
@@ -380,6 +400,7 @@ components:
         - mounted
         - exportStart
         - exported
+        - status
     StatusError:
       type: object
       title: Error
@@ -392,6 +413,7 @@ components:
           type: string
       required:
         - error
+        - status
     Status:
       type: object
       description: Status
@@ -407,7 +429,7 @@ components:
               exporting: '#/components/schemas/StatusExporting'
               exported: '#/components/schemas/StatusExported'
               error: '#/components/schemas/StatusError'
-        - oneOf:
+        - anyOf:
             - $ref: '#/components/schemas/StatusUnmounted'
             - $ref: '#/components/schemas/StatusInitialized'
             - $ref: '#/components/schemas/StatusWriting'
@@ -458,10 +480,10 @@ components:
           $ref: '#/components/schemas/Expression'
         gtB:
           $ref: '#/components/schemas/Expression'
-    QualityReportPending:
+    QualityReportSummaryPending:
       type: object
-      title: Pending
-      x-ogen-name: PendingQualityReport
+      title: Pending Summary
+      x-ogen-name: PendingQualityReportSummary
       properties:
         id:
           type: string
@@ -485,7 +507,7 @@ components:
         - status
     QualityReportSummaryFinished:
       type: object
-      title: Finished
+      title: Finished Summary
       x-ogen-name: FinishedQualityReportSummary
       properties:
         id:
@@ -530,14 +552,39 @@ components:
         - discriminator:
             propertyName: status
             mapping:
-              pending: '#/components/schemas/QualityReportPending'
+              pending: '#/components/schemas/QualityReportSummaryPending'
               finished: '#/components/schemas/QualityReportSummaryFinished'
         - oneOf:
-            - $ref: '#/components/schemas/QualityReportPending'
+            - $ref: '#/components/schemas/QualityReportSummaryPending'
             - $ref: '#/components/schemas/QualityReportSummaryFinished'
+    QualityReportPending:
+      type: object
+      title: Pending Report
+      x-ogen-name: PendingQualityReport
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+            - pending
+        collaboratorId:
+          type: string
+        mount:
+          type: string
+          format: date-time
+        start:
+          type: string
+          format: date-time
+      required:
+        - id
+        - collaboratorId
+        - mount
+        - start
+        - status
     QualityReportFinished:
       type: object
-      title: Finished
+      title: Finished Report
       x-ogen-name: FinishedQualityReport
       properties:
         id:
@@ -604,7 +651,6 @@ components:
               - message
       required:
         - id
-        - status
         - collaboratorId
         - mount
         - start
