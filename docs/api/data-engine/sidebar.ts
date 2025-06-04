@@ -8,35 +8,11 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Quality",
+      label: "Collaborator",
       link: {
         type: "doc",
-        id: "api/data-engine/quality",
+        id: "api/data-engine/collaborator",
       },
-      items: [
-        {
-          type: "doc",
-          id: "api/data-engine/get-collaborator-reports",
-          label: "Get Collaborator Reports",
-          className: "api-method get",
-        },
-        {
-          type: "doc",
-          id: "api/data-engine/start-quality-validation",
-          label: "Start Quality Validation",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "api/data-engine/get-quality-report",
-          label: "Get Quality Report",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "UNTAGGED",
       items: [
         {
           type: "doc",
@@ -73,6 +49,34 @@ const sidebar: SidebarsConfig = {
           id: "api/data-engine/export-collaborator",
           label: "Export Data Consumer",
           className: "api-method post",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Quality",
+      link: {
+        type: "doc",
+        id: "api/data-engine/quality",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "api/data-engine/get-collaborator-reports",
+          label: "Get Collaborator Reports",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "api/data-engine/start-quality-validation",
+          label: "Start Quality Validation",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "api/data-engine/get-quality-report",
+          label: "Get Quality Report",
+          className: "api-method get",
         },
       ],
     },
