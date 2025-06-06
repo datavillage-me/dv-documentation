@@ -2,7 +2,7 @@
 
 You can send events to your collaboration space.  
 Those events will be received by the algorithm to trigger actions.  
-Events are accessible in the **Execution** page of your collaboration space.
+Events are accessible in the **Activity** page of your collaboration space.
 
 ## Event structure
 
@@ -13,18 +13,18 @@ An event as two properties:
 
 ## Send an event
 
-1. Open the **Execution** section of your space.
+1. Open the **Activity** section of your space.
 
-   ![screenshot of execution](img/events_menu.png)
+   ![screenshot of activity](img/events_menu.png)
 
 2. Click on **New Event**.
 
-   ![screenshot of execution](img/events.png)
+   ![screenshot of activity](img/events.png)
 
 3. Configure the **event**.
 
-   ![screenshot of execution](img/configure_event.png)
+   ![screenshot of activity](img/configure_event.png)
 
 4. Click on **Publish**.
 
-   ![screenshot of execution](img/publish_event.png)
+   ![screenshot of activity](img/publish_event.png)
