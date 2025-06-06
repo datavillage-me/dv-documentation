@@ -15,6 +15,32 @@ Data contracts are a fundamental concept in the Data Collaboration Platform (DCP
 - **Single data contract per server:**  
   A collaborator configures the server where the data should be pulled/pushed. Every such server should be described by exactly one data contract. The data pushed/pulled should comply with all properties defined in the schema. It is thus not possible to describe servers with different structures in one contract.
 
+# Quality Check Configuration
+
+We run the quality checks on the following core properties:
+
+- `required`
+- `unique`
+- `logicalType`
+
+Depending on the `logicalType` of the field, it is possible to configure additional quality checks as defined in the table below.
+
+| Type    | Property         | Name              | Description                                                                                                                                                                 |
+| ------- | ---------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| date    | exclusiveMaximum | Exclusive Maximum | If set to true, all values are strictly less than the maximum value (values &lt; maximum). Otherwise, less than or equal to the maximum value (values &lt;= maximum).       |
+| date    | exclusiveMinimum | Exclusive Minimum | If set to true, all values are strictly greater than the minimum value (values &gt; minimum). Otherwise, greater than or equal to the minimum value (values &gt;= minimum). |
+| date    | maximum          | Maximum           | All date values are less than or equal to this value (values &lt;= maximum).                                                                                                |
+| date    | minimum          | Minimum           | All date values are greater than or equal to this value (values &gt;= minimum).                                                                                             |
+| date    | format           | Format            | Define the date format.                                                                                                                                                     |
+| integer | exclusiveMaximum | Exclusive Maximum | If set to true, all values are strictly less than the maximum value (values &lt; maximum). Otherwise, less than or equal to the maximum value (values &lt;= maximum).       |
+| integer | exclusiveMinimum | Exclusive Minimum | If set to true, all values are strictly greater than the minimum value (values &gt; minimum). Otherwise, greater than or equal to the minimum value (values &gt;= minimum). |
+| integer | format           | Format            | Format of the value in terms of how many bits of space it can use and whether it is signed or unsigned (follows the Rust integer types).                                    |
+| integer | maximum          | Maximum           | All values are less than or equal to this value (values &lt;= maximum).                                                                                                     |
+| integer | minimum          | Minimum           | All values are greater than or equal to this value (values &gt;= minimum).                                                                                                  |
+| string  | maxLength        | Maximum Length    | Maximum length of the string.                                                                                                                                               |
+| string  | minLength        | Minimum Length    | Minimum length of the string.                                                                                                                                               |
+| string  | pattern          | Pattern           | Regular expression pattern to define valid value. Follows regular expression syntax from ECMA-262 (https://262.ecma-international.org/5.1/#sec-15.10.1).                    |
+
 ## Create data contract
 
 Follow these steps to create a new data contract:
