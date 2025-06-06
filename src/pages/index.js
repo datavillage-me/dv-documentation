@@ -38,7 +38,7 @@ const docs = [
 // Card component
 function DocCard({ title, description, link, icon: Icon }) {
   return (
-    <div className="col col--3">
+    <div className={clsx("col col--3", styles.cardCol)}>
       <Link className={styles.card} to={link}>
         <Icon className={styles.cardIcon} />
         <h3 className={styles.cardTitle}>{title}</h3>
