@@ -56,15 +56,6 @@ const sidebar: SidebarsConfig = {
             "user-manual/data-collaborator/google-cloud-storage/create-service-account",
           ],
         },
-        {
-          type: "category",
-          label: "Encryption",
-          items: [
-            "user-manual/data-collaborator/encryption/create-encryption-key",
-            "user-manual/data-collaborator/encryption/encrypt-parquet-file",
-            "user-manual/data-collaborator/encryption/decrypt-parquet-file",
-          ],
-        },
       ],
     },
   ],
