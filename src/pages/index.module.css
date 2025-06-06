@@ -7,6 +7,10 @@
   padding: 4rem 0;
 }
 
+.cardCol {
+  margin-top: 1.5rem;
+}
+
 .card {
   background: #fff;
   border: 1px solid #eaeaea;
@@ -44,7 +48,7 @@
 }
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 4srem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -54,6 +58,13 @@
 
 .dvLogo {
   height: 200px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .dvLogo {
+    height: 10%;
+  }
 }
 
 @media screen {
