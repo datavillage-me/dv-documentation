@@ -35,15 +35,7 @@ Follow these steps to get started as a data collaborator:
    - You will receive one invitation per data source.
    - This is further explained in the [Join space](/docs/user-manual/data-collaborator/accept-invite) section.
 
-2. **Encrypt/Decrypt your data** (optional)
-
-   - The algorithm can read and write encrypted parquet file.
-   - To encrypt/decrypt a file follow these steps:
-     - [generate encryption key](/docs/user-manual/data-collaborator/encryption/create-encryption-key)
-     - [encrypt parquet file](/docs/user-manual/data-collaborator/encryption/encrypt-parquet-file)
-     - [decrypt parquet file](/docs/user-manual/data-collaborator/encryption/decrypt-parquet-file)
-
-3. **Set up your storage**
+2. **Set up your storage**
 
    - Upload your data to your secure storage and get the credentials to access them.
 
@@ -52,12 +44,12 @@ Follow these steps to get started as a data collaborator:
       [Create bucket](/docs/user-manual/data-collaborator/google-cloud-storage/create-bucket)  
       [Create service account](/docs/user-manual/data-collaborator/google-cloud-storage/create-service-account)
 
-4. **Configure your collaborator**
+3. **Configure your collaborator**
 
    - For every unique data source, configure the collaborator.
    - This is further explained in the [Configure collaborator](/docs/user-manual/data-collaborator/configure) section.
 
-5. **Add your storage credentials**
+4. **Add your storage credentials**
    - For every collaborator, add the credentials for access.
    - This is further explained in the [Configure data source secrets](/docs/user-manual/data-collaborator/configure-secrets) section.
 
