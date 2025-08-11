@@ -46,6 +46,55 @@ const defaultSidebars: SidebarsConfig = {
   ],
 };
 
+export function loadNavbarItems(): any[] {
+  const projectIdToName = (projectId: string): string => {
+    return projectId
+      .replaceAll("-", " ")
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  const filePathToVersion = (filePath: string): string => {
+    const pathSplit = filePath.split(path.sep);
+    return pathSplit[pathSplit.length - 1].substring(0, ".yaml".length + 1);
+  };
+
+  const createItems = (baseUrl: string, versions: string[]): any[] => {
+    return versions.map((f, i) => {
+      var version = filePathToVersion(f);
+      var url = baseUrl + "/" + version;
+      var label = version;
+      if (i == 0) {
+        url = baseUrl;
+        label += " (latest)";
+      }
+
+      return {
+        label,
+        to: url,
+      };
+    });
+  };
+
+  return findProjects("api").flatMap((p) => {
+    const pId = p[0];
+    const pName = projectIdToName(pId);
+    const baseUrl = "/docs/api/" + pId;
+    const items = createItems(baseUrl, p[1]);
+
+    return {
+      label: pName + " API",
+      position: "left",
+      to: baseUrl,
+      docsPluginId: "classic",
+      type: "dropdown",
+      items,
+    };
+  });
+}
+
 export function loadRedoclyConfiguration(): {
   spec: string;
   id: string;

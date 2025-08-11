@@ -3,7 +3,7 @@
 
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import { loadRedoclyConfiguration } from "./loadConfiguration";
+import { loadNavbarItems, loadRedoclyConfiguration } from "./loadConfiguration";
 
 const config: Config = {
   title: "Datavillage Documentation",
@@ -80,18 +80,7 @@ const config: Config = {
           position: "left",
           to: "/docs/reference",
         },
-        {
-          label: "Control Plane API",
-          position: "left",
-          to: "/docs/api/control-plane",
-          docsPluginId: "classic",
-        },
-        {
-          label: "Data Engine API",
-          position: "left",
-          to: "/docs/api/data-engine",
-          docsPluginId: "classic",
-        },
+        ...loadNavbarItems(),
         {
           href: "https://datavillage.me",
           label: "Datavillage home",
