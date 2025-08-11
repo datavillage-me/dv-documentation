@@ -1,14 +1,14 @@
 openapi: 3.0.0
 info:
   title: ControlPlane API
-  version: latest
+  version: v0.3.0
 servers:
   - url: https://<control-plane-api>
 security:
   - bearerAuth: []
 tags:
   - name: Collaboration Spaces
-    description: 'Endpoints related to collaboration spaces: CRUD and operating the space'
+    description: "Endpoints related to collaboration spaces: CRUD and operating the space"
   - name: Cages
     description: Endpoints related to operating and monitoring cages
   - name: Authentication
@@ -28,12 +28,12 @@ paths:
         - Authentication
       description: Get details about the authenticated account.
       responses:
-        '200':
+        "200":
           description: The description of the authenticated developer.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Developer'
+                $ref: "#/components/schemas/Developer"
   /collaboration-spaces:
     get:
       operationId: GetCollaborationSpaces
@@ -43,16 +43,16 @@ paths:
         - Collaboration Spaces
       description: Get all collaboration spaces the user has access to.
       responses:
-        '200':
+        "200":
           description: The models of the collaboration spaces.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
     post:
       operationId: CreateCollaborationSpace
       x-ogen-operation-group: CollaborationSpaces
@@ -66,12 +66,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaborationSpaceCreate'
+              $ref: "#/components/schemas/CollaborationSpaceCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
   /collaboration-spaces/{spaceId}:
     get:
       operationId: GetCollaborationSpace
@@ -89,16 +89,16 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: The model of the collaboration space.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CollaborationSpace'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/CollaborationSpace"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       operationId: UpdateCollaborationSpace
       x-ogen-operation-group: CollaborationSpaces
@@ -118,12 +118,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaborationSpaceUpdate'
+              $ref: "#/components/schemas/CollaborationSpaceUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       operationId: DeleteCollaborationSpace
       x-ogen-operation-group: CollaborationSpaces
@@ -139,12 +139,12 @@ paths:
           required: true
           description: The ID of the collaboration space to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/invite:
     post:
       operationId: InviteCollaborator
@@ -161,12 +161,12 @@ paths:
           required: true
           description: The ID of the collaboration space where the client is invited.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/collaborators:
     get:
       operationId: GetCollaborators
@@ -183,18 +183,18 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: The models of the collaborators in the space.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Collaborator'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                  $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     post:
       operationId: CreateCollaborator
       tags:
@@ -214,14 +214,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaboratorCreate'
+              $ref: "#/components/schemas/CollaboratorCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/collaborators/{collaboratorId}:
     get:
       operationId: GetCollaborator
@@ -244,16 +244,16 @@ paths:
           required: true
           description: The ID of the requested collaborator.
       responses:
-        '200':
+        "200":
           description: The description of the collaborator.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Collaborator'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Collaborator"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       operationId: UpdateCollaborator
       x-ogen-operation-group: CollaborationSpaces
@@ -280,16 +280,16 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CollaboratorUpdate'
+              $ref: "#/components/schemas/CollaboratorUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       operationId: DeleteCollaborator
       x-ogen-operation-group: CollaborationSpaces
@@ -311,12 +311,12 @@ paths:
           required: true
           description: The ID of the requested collaborator.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/public-key:
     get:
       operationId: GetPublicKey
@@ -333,15 +333,15 @@ paths:
           required: true
           description: The ID of the requested collaboration space.
       responses:
-        '200':
+        "200":
           description: The public key.
           content:
             text/plain:
               schema: null
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/event:
     post:
       operationId: PublishEvent
@@ -379,7 +379,7 @@ paths:
                 - type
               additionalProperties: true
       responses:
-        '200':
+        "200":
           description: The ID of the event that has been published.
           content:
             application/json:
@@ -390,12 +390,12 @@ paths:
                     type: string
                 required:
                   - messageId
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/deploy:
     post:
       operationId: DeployCage
@@ -412,14 +412,14 @@ paths:
           required: true
           description: The ID of the collaboration space for which to deploy a cage.
       responses:
-        '200':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/cage:
     delete:
       operationId: DeleteCage
@@ -436,12 +436,12 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the trusted environment.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/attestation-token:
     get:
       operationId: GetAttestationReport
@@ -467,15 +467,15 @@ paths:
               - fingerprint
           required: false
       responses:
-        '200':
+        "200":
           description: An attestation report.
           content:
             text/plain:
               schema: null
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/resources/{path}:
     put:
       operationId: UploadResource
@@ -505,12 +505,12 @@ paths:
             schema:
               type: string
       responses:
-        '200':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "200":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/logs/algo:
     get:
       operationId: GetAlgorithmLogs
@@ -533,7 +533,7 @@ paths:
           required: false
           description: Number of lines to return.
       responses:
-        '200':
+        "200":
           description: List of `tail_lines` most recent algorithm logs
           content:
             application/json:
@@ -541,10 +541,10 @@ paths:
                 type: array
                 items:
                   type: string
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/logs/deployment:
     get:
       operationId: GetDeploymentLogs
@@ -567,7 +567,7 @@ paths:
           required: false
           description: Number of lines to return.
       responses:
-        '200':
+        "200":
           description: List of `tail_lines` most recent deployment logs.
           content:
             application/json:
@@ -575,10 +575,10 @@ paths:
                 type: array
                 items:
                   type: string
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /collaboration-spaces/{spaceId}/logs/pod-status:
     get:
       operationId: GetPodStatusses
@@ -595,22 +595,22 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the confidential cluster.
       responses:
-        '200':
+        "200":
           description: List of status of pods.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PodStatus'
+                  $ref: "#/components/schemas/PodStatus"
           headers:
             Signature:
               description: Base64 encoding of the response body signed by the secret manager
               required: false
               schema:
                 type: string
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts:
     get:
       tags:
@@ -626,16 +626,16 @@ paths:
             type: string
           description: The name filter. Filtering is case insensitive.
       responses:
-        '200':
+        "200":
           description: The summary of the contracts that matched the filter.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DataContractSummary'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+                  $ref: "#/components/schemas/DataContractSummary"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
     post:
       tags:
         - Data Contracts
@@ -649,15 +649,15 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataContractCreate'
+              $ref: "#/components/schemas/DataContractCreate"
           application/yaml:
             schema:
-              $ref: '#/components/schemas/DataContractCreate'
+              $ref: "#/components/schemas/DataContractCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
   /data-contracts/{contractId}:
     get:
       tags:
@@ -674,19 +674,19 @@ paths:
           required: true
           description: The ID of the requested data contract
       responses:
-        '200':
+        "200":
           description: The ODCS description of the data contract.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataContract'
+                $ref: "#/components/schemas/DataContract"
             application/yaml:
               schema:
-                $ref: '#/components/schemas/DataContract'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/DataContract"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       tags:
         - Data Contracts
@@ -707,14 +707,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataContractUpdate'
+              $ref: "#/components/schemas/DataContractUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       tags:
         - Data Contracts
@@ -729,12 +729,12 @@ paths:
           required: true
           description: The ID of the data contract to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema:
     post:
       tags:
@@ -756,14 +756,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SchemaCreate'
+              $ref: "#/components/schemas/SchemaCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema/{schemaId}:
     get:
       tags:
@@ -786,16 +786,16 @@ paths:
           required: true
           description: The ID of the requested schema.
       responses:
-        '200':
+        "200":
           description: The ODCS description of the schema.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Schema"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       tags:
         - Data Contracts
@@ -821,14 +821,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SchemaUpdate'
+              $ref: "#/components/schemas/SchemaUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       tags:
         - Data Contracts
@@ -849,12 +849,12 @@ paths:
           required: true
           description: The ID of the schema to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema/{schemaId}/properties:
     post:
       tags:
@@ -882,14 +882,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PropertyCreate'
+              $ref: "#/components/schemas/PropertyCreate"
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /data-contracts/{contractId}/schema/{schemaId}/properties/{propertyId}:
     get:
       tags:
@@ -918,16 +918,16 @@ paths:
           required: true
           description: The ID of the requested property.
       responses:
-        '200':
+        "200":
           description: The ODCS description of the property.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Property'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+                $ref: "#/components/schemas/Property"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     patch:
       tags:
         - Data Contracts
@@ -960,14 +960,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PropertyUpdate'
+              $ref: "#/components/schemas/PropertyUpdate"
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
     delete:
       tags:
         - Data Contracts
@@ -995,12 +995,12 @@ paths:
           required: true
           description: The ID of the property to delete.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /clients/{clientId}/notifications:
     get:
       operationId: GetNotifications
@@ -1017,10 +1017,10 @@ paths:
           required: true
           description: The requested client.
       responses:
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /.well-known/collaboration-spaces/{spaceId}/webid:
     get:
       security: []
@@ -1038,7 +1038,7 @@ paths:
           required: true
           description: The ID of the collaboration space associated with the WebID.
       responses:
-        '200':
+        "200":
           description: The WebId document conform the Solid specifications, serialized in turtle format.
           content:
             text/turtle:
@@ -1055,8 +1055,8 @@ paths:
                     skos:prefLabel "Test collaboration space";
                     foaf:logo <https://client.example/logo.png>;
                     foaf:homepage <https://client.example/>.
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /.well-known/collaboration-spaces/{spaceId}/appid:
     get:
       security: []
@@ -1074,7 +1074,7 @@ paths:
           required: true
           description: The ID of the requested collaboration space associated with the AppID.
       responses:
-        '200':
+        "200":
           description: The AppId document serialized as JSON-LD conform the Solid specifications.
           content:
             application/ld+json:
@@ -1090,8 +1090,8 @@ paths:
                     "client_name": "Test collaboration space - application",
                     "logo_uri": "https://client.example/logo.png"
                   }
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
   /.well-known/clients/{clientLabel}:
     get:
       operationId: GetClient
@@ -1109,7 +1109,7 @@ paths:
             type: string
           description: A human readable label that uniquely identifies the client.
       responses:
-        '200':
+        "200":
           description: Public information about the client.
           content:
             application/json:
@@ -1121,13 +1121,13 @@ paths:
                     description: The IDP the client uses to authenticate its developers.
                 required:
                   - issuer
-        '404':
-          $ref: '#/components/responses/NotFoundError'
+        "404":
+          $ref: "#/components/responses/NotFoundError"
 components:
   schemas:
     CollaborationSpace:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - $ref: "#/components/schemas/AbstractCollaborationSpace"
         - type: object
           properties:
             id:
@@ -1135,25 +1135,25 @@ components:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/Collaborator'
+                $ref: "#/components/schemas/Collaborator"
           required:
             - id
             - name
     CollaborationSpaceCreate:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - $ref: "#/components/schemas/AbstractCollaborationSpace"
         - type: object
           properties:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/CollaboratorCreate'
+                $ref: "#/components/schemas/CollaboratorCreate"
           required:
             - name
     Collaborator:
       description: Collaborator
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           properties:
             id:
@@ -1164,7 +1164,7 @@ components:
     CollaboratorCreate:
       description: CollaboratorCreate
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
         - type: object
           required:
             - clientId
@@ -1183,18 +1183,18 @@ components:
       title: Data Contract
       description: ODCS compliant description of a data contract with metadata fields added by Datavillage DCP
       allOf:
-        - $ref: '#/components/schemas/DataContractDV'
+        - $ref: "#/components/schemas/DataContractDV"
         - type: object
           properties:
             dataContract:
               allOf:
-                - $ref: '#/components/schemas/AbstractDataContract'
+                - $ref: "#/components/schemas/AbstractDataContract"
                 - type: object
                   properties:
                     schema:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Schema'
+                        $ref: "#/components/schemas/Schema"
                   required:
                     - version
                     - name
@@ -1208,13 +1208,13 @@ components:
       title: Data Contract Create
       description: ODCS description of a data contract
       allOf:
-        - $ref: '#/components/schemas/AbstractDataContract'
+        - $ref: "#/components/schemas/AbstractDataContract"
         - type: object
           properties:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/SchemaCreate'
+                $ref: "#/components/schemas/SchemaCreate"
           required:
             - version
             - name
@@ -1226,7 +1226,7 @@ components:
       title: Schema
       description: Identifiable ODCS description of a schema
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             _id:
@@ -1234,7 +1234,7 @@ components:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/Property'
+                $ref: "#/components/schemas/Property"
           required:
             - name
             - _id
@@ -1242,20 +1242,20 @@ components:
       title: Schema Create
       description: ODCS description of a schema
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/PropertyCreate'
+                $ref: "#/components/schemas/PropertyCreate"
           required:
             - name
     Property:
       title: Property
       description: Identifiable ODCS description of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
+        - $ref: "#/components/schemas/AbstractProperty"
         - type: object
           properties:
             _id:
@@ -1267,7 +1267,7 @@ components:
       title: Property Create
       description: ODCS compliant description of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
+        - $ref: "#/components/schemas/AbstractProperty"
         - type: object
           required:
             - name
@@ -1355,26 +1355,26 @@ components:
       discriminator:
         propertyName: role
         mapping:
-          CodeProvider: '#/components/schemas/CollaboratorRoleCodeProvider'
-          DataProvider: '#/components/schemas/CollaboratorRoleDataProvider'
-          DataConsumer: '#/components/schemas/CollaboratorRoleDataConsumer'
+          CodeProvider: "#/components/schemas/CollaboratorRoleCodeProvider"
+          DataProvider: "#/components/schemas/CollaboratorRoleDataProvider"
+          DataConsumer: "#/components/schemas/CollaboratorRoleDataConsumer"
       oneOf:
-        - $ref: '#/components/schemas/CollaboratorRoleCodeProvider'
-        - $ref: '#/components/schemas/CollaboratorRoleDataProvider'
-        - $ref: '#/components/schemas/CollaboratorRoleDataConsumer'
+        - $ref: "#/components/schemas/CollaboratorRoleCodeProvider"
+        - $ref: "#/components/schemas/CollaboratorRoleDataProvider"
+        - $ref: "#/components/schemas/CollaboratorRoleDataConsumer"
     CollaborationSpaceUpdate:
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborationSpace'
+        - $ref: "#/components/schemas/AbstractCollaborationSpace"
         - type: object
           properties:
             collaborators:
               type: array
               items:
-                $ref: '#/components/schemas/CollaboratorCreate'
+                $ref: "#/components/schemas/CollaboratorCreate"
     CollaboratorUpdate:
       description: Collaborator Update
       allOf:
-        - $ref: '#/components/schemas/AbstractCollaborator'
+        - $ref: "#/components/schemas/AbstractCollaborator"
     PodStatus:
       type: object
       required:
@@ -1410,7 +1410,7 @@ components:
       title: Data Contract Summary
       description: The metadata fields added by Datavillage DCP along with key properties of ODCS description
       allOf:
-        - $ref: '#/components/schemas/DataContractDV'
+        - $ref: "#/components/schemas/DataContractDV"
         - type: object
           properties:
             dataContractSummary:
@@ -1491,7 +1491,7 @@ components:
           description: The business name of the element.
     AbstractSchema:
       allOf:
-        - $ref: '#/components/schemas/Element'
+        - $ref: "#/components/schemas/Element"
         - type: object
           properties:
             logicalType:
@@ -1523,7 +1523,7 @@ components:
               - type: array
               - type: object
       allOf:
-        - $ref: '#/components/schemas/Element'
+        - $ref: "#/components/schemas/Element"
         - type: object
           properties:
             primaryKey:
@@ -1589,29 +1589,29 @@ components:
       title: Data Contract Update
       description: ODCS properties of a data contract where schemas should comply
       allOf:
-        - $ref: '#/components/schemas/AbstractDataContract'
+        - $ref: "#/components/schemas/AbstractDataContract"
         - type: object
           properties:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/SchemaCreate'
+                $ref: "#/components/schemas/SchemaCreate"
     SchemaUpdate:
       title: Schema Update
       description: ODCS properties of a schema where 'properties'-property should comply
       allOf:
-        - $ref: '#/components/schemas/AbstractSchema'
+        - $ref: "#/components/schemas/AbstractSchema"
         - type: object
           properties:
             properties:
               type: array
               items:
-                $ref: '#/components/schemas/PropertyCreate'
+                $ref: "#/components/schemas/PropertyCreate"
     PropertyUpdate:
       title: Update Property
       description: ODCS properties of a property
       allOf:
-        - $ref: '#/components/schemas/AbstractProperty'
+        - $ref: "#/components/schemas/AbstractProperty"
   securitySchemes:
     bearerAuth:
       type: http

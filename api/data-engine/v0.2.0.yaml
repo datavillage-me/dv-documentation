@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: DataEngine API
-  version: latest
+  version: v0.2.0
 servers:
   - url: https://<data-engine>
 tags:
@@ -20,14 +20,14 @@ paths:
           required: true
           description: The ID of the requested collaborator.
       responses:
-        '200':
+        "200":
           description: Got status of collaborator.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Status'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+                $ref: "#/components/schemas/Status"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     post:
       summary: Mount a new collaborator
       operationId: MountCollaborator
@@ -65,12 +65,12 @@ paths:
                       - name
                       - type
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/Err400BadRequest'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     delete:
       summary: Unmount a collaborator
       operationId: UnmountCollaborator
@@ -82,10 +82,10 @@ paths:
           required: true
           description: The ID of the requested collaborator.
       responses:
-        '200':
+        "200":
           description: Succesfully started unmounting process.
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaborators/{collaboratorId}/query:
     get:
       summary: Query on a collaborator
@@ -114,13 +114,13 @@ paths:
                     type: object
                     properties:
                       property:
-                        $ref: '#/components/schemas/Property'
+                        $ref: "#/components/schemas/Property"
                       alias:
                         type: string
                     required:
                       - property
                 where:
-                  $ref: '#/components/schemas/Expression'
+                  $ref: "#/components/schemas/Expression"
                 limit:
                   type: number
                   format: int32
@@ -133,21 +133,21 @@ paths:
                       joinCollaboratorId:
                         type: string
                       joinOn:
-                        $ref: '#/components/schemas/Equal'
+                        $ref: "#/components/schemas/Equal"
                     required:
                       - joinCollaboratorId
                       - joinOn
       responses:
-        '200':
+        "200":
           description: Succesfully executed the query
           content:
             text/csv:
               schema:
                 type: string
-        '400':
-          $ref: '#/components/responses/Err400BadRequest'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaborators/{collaboratorId}/append:
     post:
       summary: Append data on a Data Consumer
@@ -174,12 +174,12 @@ paths:
               required:
                 - data
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/Err400BadRequest'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaborators/{collaboratorId}/export:
     post:
       summary: Export Data Consumer
@@ -192,12 +192,12 @@ paths:
           required: true
           description: The ID of the data consumer to export.
       responses:
-        '204':
-          $ref: '#/components/responses/NoContent'
-        '400':
-          $ref: '#/components/responses/Err400BadRequest'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+        "204":
+          $ref: "#/components/responses/NoContent"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /collaborators/{collaboratorId}/quality:
     get:
       summary: Get Collaborator Reports
@@ -212,18 +212,18 @@ paths:
           required: true
           description: The ID of the collaborator to get the quality reports.
       responses:
-        '200':
+        "200":
           description: Overview of all started quality checks for the collaborator.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/QualityReportSummary'
-        '400':
-          $ref: '#/components/responses/Err400BadRequest'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+                  $ref: "#/components/schemas/QualityReportSummary"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
     post:
       summary: Start Quality Validation
       operationId: StartQualityValidation
@@ -237,12 +237,12 @@ paths:
           required: true
           description: The ID of the collaborator to perform the quality checks.
       responses:
-        '201':
-          $ref: '#/components/responses/CreatedResource'
-        '400':
-          $ref: '#/components/responses/Err400BadRequest'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+        "201":
+          $ref: "#/components/responses/CreatedResource"
+        "400":
+          $ref: "#/components/responses/Err400BadRequest"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
   /quality-report/{reportId}:
     get:
       summary: Get Quality Report
@@ -257,14 +257,14 @@ paths:
           required: true
           description: The ID of the quality report.
       responses:
-        '200':
+        "200":
           description: The quality report.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/QualityReport'
-        '404':
-          $ref: '#/components/responses/Err404NotFound'
+                $ref: "#/components/schemas/QualityReport"
+        "404":
+          $ref: "#/components/responses/Err404NotFound"
 components:
   schemas:
     StatusUnmounted:
@@ -400,21 +400,21 @@ components:
         - discriminator:
             propertyName: status
             mapping:
-              unmounted: '#/components/schemas/StatusUnmounted'
-              initialized: '#/components/schemas/StatusInitialized'
-              writing: '#/components/schemas/StatusWriting'
-              mounted: '#/components/schemas/StatusMounted'
-              exporting: '#/components/schemas/StatusExporting'
-              exported: '#/components/schemas/StatusExported'
-              error: '#/components/schemas/StatusError'
+              unmounted: "#/components/schemas/StatusUnmounted"
+              initialized: "#/components/schemas/StatusInitialized"
+              writing: "#/components/schemas/StatusWriting"
+              mounted: "#/components/schemas/StatusMounted"
+              exporting: "#/components/schemas/StatusExporting"
+              exported: "#/components/schemas/StatusExported"
+              error: "#/components/schemas/StatusError"
         - oneOf:
-            - $ref: '#/components/schemas/StatusUnmounted'
-            - $ref: '#/components/schemas/StatusInitialized'
-            - $ref: '#/components/schemas/StatusWriting'
-            - $ref: '#/components/schemas/StatusMounted'
-            - $ref: '#/components/schemas/StatusExporting'
-            - $ref: '#/components/schemas/StatusExported'
-            - $ref: '#/components/schemas/StatusError'
+            - $ref: "#/components/schemas/StatusUnmounted"
+            - $ref: "#/components/schemas/StatusInitialized"
+            - $ref: "#/components/schemas/StatusWriting"
+            - $ref: "#/components/schemas/StatusMounted"
+            - $ref: "#/components/schemas/StatusExporting"
+            - $ref: "#/components/schemas/StatusExported"
+            - $ref: "#/components/schemas/StatusError"
     Property:
       type: object
       properties:
@@ -426,8 +426,8 @@ components:
         - property
     Expression:
       oneOf:
-        - $ref: '#/components/schemas/Equal'
-        - $ref: '#/components/schemas/Property'
+        - $ref: "#/components/schemas/Equal"
+        - $ref: "#/components/schemas/Property"
         - x-ogen-name: LiteralString
           type: object
           properties:
@@ -442,22 +442,22 @@ components:
               type: integer
           required:
             - intValue
-        - $ref: '#/components/schemas/GreaterThan'
+        - $ref: "#/components/schemas/GreaterThan"
     Equal:
       type: object
       properties:
         equalA:
-          $ref: '#/components/schemas/Expression'
+          $ref: "#/components/schemas/Expression"
         equalB:
-          $ref: '#/components/schemas/Expression'
+          $ref: "#/components/schemas/Expression"
     GreaterThan:
       x-ogen-name: GreaterThan
       type: object
       properties:
         gtA:
-          $ref: '#/components/schemas/Expression'
+          $ref: "#/components/schemas/Expression"
         gtB:
-          $ref: '#/components/schemas/Expression'
+          $ref: "#/components/schemas/Expression"
     QualityReportPending:
       type: object
       title: Pending
@@ -530,11 +530,11 @@ components:
         - discriminator:
             propertyName: status
             mapping:
-              pending: '#/components/schemas/QualityReportPending'
-              finished: '#/components/schemas/QualityReportSummaryFinished'
+              pending: "#/components/schemas/QualityReportPending"
+              finished: "#/components/schemas/QualityReportSummaryFinished"
         - oneOf:
-            - $ref: '#/components/schemas/QualityReportPending'
-            - $ref: '#/components/schemas/QualityReportSummaryFinished'
+            - $ref: "#/components/schemas/QualityReportPending"
+            - $ref: "#/components/schemas/QualityReportSummaryFinished"
     QualityReportFinished:
       type: object
       title: Finished
@@ -621,11 +621,11 @@ components:
         - discriminator:
             propertyName: status
             mapping:
-              pending: '#/components/schemas/QualityReportPending'
-              finished: '#/components/schemas/QualityReportFinished'
+              pending: "#/components/schemas/QualityReportPending"
+              finished: "#/components/schemas/QualityReportFinished"
         - oneOf:
-            - $ref: '#/components/schemas/QualityReportPending'
-            - $ref: '#/components/schemas/QualityReportFinished'
+            - $ref: "#/components/schemas/QualityReportPending"
+            - $ref: "#/components/schemas/QualityReportFinished"
   responses:
     Err404NotFound:
       description: Resource not found

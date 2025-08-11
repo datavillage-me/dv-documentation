@@ -31,7 +31,7 @@ An organization can take on multiple roles. The owner of the space is not requir
 Another very important concept in the DCP, is a **data contract**. This defines the schema of the data an organization delivers/receives. Before execution of the algorithm, the validity of the data can be checked and the algorithm can be stopped if the data does not comply with the schema that is defined in the data contract.
 
 Data contracts are defined apart from collaboration spaces: an organization could already define all their schemas before joining a single collaboration space.
-The data model is defined using [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/), current implementation supports up to `v3.0.0`, which is backwards compatible until `v2.2.0`. The endpoints to perform CRUD operations can be found [here](/dv-documentation/docs/api/control-plane/data-contracts).
+The data model is defined using [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/), current implementation supports up to `v3.0.0`, which is backwards compatible until `v2.2.0`. The endpoints to perform CRUD operations can be found [here](/dv-documentation/docs/api/control-plane/#tag/Data-Contracts).
 
 **Servers** define how the data should be pulled or pushed. It is configured by the collaborator and also follows [ODCS](https://bitol-io.github.io/open-data-contract-standard/v3.0.0/) standard.
 

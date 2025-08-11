@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: ControlPlane API
-  version: latest
+  version: v0.1.0
 servers:
   - url: https://<cage-manager-api>
 security:
