@@ -3,7 +3,7 @@
 
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import type * as Redocusaurus from "redocusaurus";
+import { loadRedoclyConfiguration } from "./loadConfiguration";
 
 const config: Config = {
   title: "Datavillage Documentation",
@@ -42,22 +42,8 @@ const config: Config = {
           routeBasePath: "/docs/api",
         },
         specs: [
-          // TODO: load automatically + add more nav in header
-          {
-            spec: "api/control-plane/v1.0.0.yaml",
-            id: "control-plane-v100",
-            route: "/docs/api/control-plane",
-          },
-          {
-            spec: "api/control-plane/v0.3.0.yaml",
-            id: "control-plane-v030",
-            route: "/docs/api/control-plane/v0.3.0",
-          },
-          {
-            spec: "api/data-engine/v0.3.0.yaml",
-            id: "data-engine-v030",
-            route: "/docs/api/data-engine",
-          },
+          // TODO: add more nav in header
+          ...loadRedoclyConfiguration(),
         ],
       },
     ],
