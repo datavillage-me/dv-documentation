@@ -45,6 +45,9 @@ const config: Config = {
           // TODO: add more nav in header
           ...loadRedoclyConfiguration(),
         ],
+        theme: {
+          primaryColor: "#0011ff",
+        },
       },
     ],
   ],
