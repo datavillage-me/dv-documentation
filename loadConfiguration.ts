@@ -1,11 +1,7 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-import {
-  versionSelector,
-  versionCrumb,
-} from "docusaurus-plugin-openapi-docs/lib/sidebars/utils";
+
 import fs from "fs";
 import path from "path";
-import { SidebarItemConfig } from "@docusaurus/plugin-content-docs/src/sidebars/types.js";
 
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 import type * as Plugin from "@docusaurus/types/src/plugin";
@@ -117,47 +113,6 @@ function getVersionsFromFileStructure(
     });
 }
 
-function createSidebarConfigProjectVersion(
-  projectId: string,
-  version: ProjectVersionConfig,
-  versionSelector: string,
-  isLatest: boolean
-): SidebarItemConfig[] {
-  const projectName = projectIdToName(projectId);
-
-  const sidebarLocation = isLatest
-    ? `./docs/api/${projectId}/sidebar`
-    : `./docs/api/${projectId}/${version.version}/sidebar`;
-
-  const slug = isLatest
-    ? `/api/${projectId}`
-    : `/api/${projectId}/${version.version}`;
-
-  return [
-    {
-      type: "html",
-      defaultStyle: true,
-      value: versionSelector,
-    },
-    {
-      type: "html",
-      defaultStyle: true,
-      value: versionCrumb(version.version),
-    },
-    {
-      type: "category",
-      label: `${projectName} API ${version.label}`,
-      link: {
-        type: "generated-index",
-        title: `${projectName} ${version.label}`,
-        description: `An exhaustive API description of ${projectName} ${version.label}`,
-        slug,
-      },
-      items: require(sidebarLocation),
-    },
-  ];
-}
-
 function getHighestVersion(
   versions: ProjectVersionConfig[]
 ): ProjectVersionConfig | null {
@@ -170,34 +125,8 @@ function getHighestVersion(
   return highestVersion;
 }
 
-function projectIdToName(projectId: string): string {
-  return projectId
-    .split("-")
-    .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase())
-    .join(" ");
-}
-
 export function loadSidebars(): SidebarsConfig {
-  const projects = loadVersionsFromJsons();
-
-  const result = defaultSidebars;
-  for (const [projectId, versions] of Object.entries(projects)) {
-    const highestVersion = getHighestVersion(versions);
-
-    const selector = versionSelector(versions);
-
-    versions.forEach((v) => {
-      const projectVersionId = `${projectId}-${v.version}`;
-      result[projectVersionId] = createSidebarConfigProjectVersion(
-        projectId,
-        v,
-        selector,
-        v.version == highestVersion?.version
-      );
-    });
-  }
-
-  return result;
+  return defaultSidebars;
 }
 
 export function loadApiConfiguration(): Plugin.PluginOptions {

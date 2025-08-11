@@ -1,9 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
-import { loadApiConfiguration } from "./loadConfiguration";
+import type * as Preset from "@docusaurus/preset-classic";
+import type * as Redocusaurus from "redocusaurus";
 
 const config: Config = {
   title: "Datavillage Documentation",
@@ -32,6 +32,34 @@ const config: Config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
       } satisfies Preset.Options,
+    ],
+    // ["@docusaurus/preset-classic", {} satisfies Preset.Options],
+    [
+      "redocusaurus",
+      {
+        openapi: {
+          path: "api",
+          routeBasePath: "/docs/api",
+        },
+        specs: [
+          // TODO: load automatically + add more nav in header
+          {
+            spec: "api/control-plane/v1.0.0.yaml",
+            id: "control-plane-v100",
+            route: "/docs/api/control-plane",
+          },
+          {
+            spec: "api/control-plane/v0.3.0.yaml",
+            id: "control-plane-v030",
+            route: "/docs/api/control-plane/v0.3.0",
+          },
+          {
+            spec: "api/data-engine/v0.3.0.yaml",
+            id: "data-engine-v030",
+            route: "/docs/api/data-engine",
+          },
+        ],
+      },
     ],
   ],
 
@@ -174,14 +202,6 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
-    [
-      "docusaurus-plugin-openapi-docs",
-      {
-        id: "api-docs",
-        docsPluginId: "classic",
-        config: loadApiConfiguration(),
-      },
-    ],
     [
       "docusaurus-plugin-remote-content",
       {
