@@ -54,7 +54,6 @@ function Homepage() {
   return (
     <div className={styles.heroBanner}>
       <div className="container">
-        <img src={dvLogoWhite} className={styles.dvLogo} alt="Logo" />
         <p className="hero__subtitle" style={{ margin: "1rem 0" }}>
           {siteConfig.tagline}
         </p>
