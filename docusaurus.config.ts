@@ -6,9 +6,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 import { loadNavbarItems, loadRedoclyConfiguration } from "./loadConfiguration";
 
 const config: Config = {
-  title: "Datavillage Documentation",
-  tagline: "",
-  url: "https://datavillage.me",
+  title: "Secure Data Collaboration Documentation",
+  tagline: "Secure Data Collaboration Documentation",
+  url: "https://datavillage.ai",
   baseUrl: "/dv-documentation/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -59,7 +59,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "Datavillage Documentation",
+      title: "Documentation",
       logo: {
         alt: "Datavillage Logo",
         src: "img/logo.png",
@@ -82,8 +82,8 @@ const config: Config = {
         },
         ...loadNavbarItems(),
         {
-          href: "https://datavillage.me",
-          label: "Datavillage home",
+          href: "https://datavillage.ai",
+          label: "Datavillage.ai",
           position: "right",
         },
       ],
